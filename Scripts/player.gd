@@ -12,6 +12,7 @@ const JUMP_VELOCITY = 10
 @export var sensitivity = -0.3
 @export var camera_is_locked = false
 @export var zoom_speed = 0.3
+@export var default_zoom = 5
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -39,6 +40,9 @@ func _input(event):
 				spring_arm.spring_length += zoom_speed * spring_arm.spring_length
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				spring_arm.spring_length -= zoom_speed * spring_arm.spring_length
+			# Snap to default zoom
+			if event.button_index == MOUSE_BUTTON_MIDDLE:
+				spring_arm.spring_length = default_zoom
 			
 func _physics_process(delta):
 	

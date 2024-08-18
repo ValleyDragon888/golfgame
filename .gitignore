@@ -1,3 +1,5 @@
 .godot/shader_cache
 .godot/.gdignore
+.gotot/editor/script_editor_cache.cfg
+.godot/editor/editor_layout.cfg
 
