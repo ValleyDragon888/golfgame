@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://pp6nwuvvb5v2"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_i07rm"]
+[ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_s6nwr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kbfql"]
+radius = 0.505518
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_i07rm")
+
+[node name="Ball" parent="." instance=ExtResource("2_s6nwr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_kbfql")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+spring_length = 5.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
