@@ -2,4 +2,5 @@
 .godot/.gdignore
 .gotot/editor/script_editor_cache.cfg
 .godot/editor/editor_layout.cfg
-
+.godot/editor/game.tscn-editstate-d45e16ca8d170891778b9dcfa9c69e68.cfg
+.godot/editor/player.tscn-editstate-1753c997600d68ab5d20ae99fddb15c6.cfg
