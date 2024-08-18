@@ -8,8 +8,10 @@ const JUMP_VELOCITY = 10
 
 @onready var ball = $Ball
 @onready var camera_pivot = $CameraPivot
+@onready var spring_arm = $CameraPivot/SpringArm3D
 @export var sensitivity = -0.3
 @export var camera_is_locked = false
+@export var zoom_speed = 0.3
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -25,10 +27,19 @@ func _input(event):
 			ball.rotate_y(deg_to_rad(event.relative.x * sensitivity * -1))
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
 	if Input.is_action_just_pressed("LockCamera") and camera_is_locked == false:
 		camera_is_locked = true
 	elif Input.is_action_just_pressed("LockCamera") and camera_is_locked == true:
 		camera_is_locked = false
+		
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				spring_arm.spring_length += zoom_speed * spring_arm.spring_length
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				spring_arm.spring_length -= zoom_speed * spring_arm.spring_length
+			
 func _physics_process(delta):
 	
 	if not is_on_floor():
