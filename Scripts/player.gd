@@ -41,6 +41,7 @@ func _input(event):
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				spring_arm.spring_length -= zoom_speed * spring_arm.spring_length
 			
+			#Clamps camera zoom
 			if spring_arm.spring_length < 3:
 				spring_arm.spring_length = 3
 			if spring_arm.spring_length > 20:
