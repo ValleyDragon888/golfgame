@@ -6,3 +6,4 @@
 .godot/extension_list.cfg
 .godot/global_script_class_cache.cfg
 .godot/uid_cache.bin
+*.blend1
