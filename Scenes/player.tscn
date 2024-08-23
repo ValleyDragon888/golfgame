@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://pp6nwuvvb5v2"]
+[gd_scene load_steps=5 format=3 uid="uid://pp6nwuvvb5v2"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_i07rm"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_s6nwr"]
+[ext_resource type="PackedScene" uid="uid://oedvp0r2f33v" path="res://Assets/Arrow.glb" id="3_db7fu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kbfql"]
 radius = 0.505518
@@ -24,3 +25,6 @@ margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Arrow" parent="." instance=ExtResource("3_db7fu")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -2)
