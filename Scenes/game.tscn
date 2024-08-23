@@ -39,7 +39,3 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.865, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_6p1bi")]
-sensitivity = -0.3
-camera_is_locked = false
-zoom_speed = 0.3
-default_zoom = 5

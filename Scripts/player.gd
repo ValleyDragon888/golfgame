@@ -40,9 +40,17 @@ func _input(event):
 				spring_arm.spring_length += zoom_speed * spring_arm.spring_length
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				spring_arm.spring_length -= zoom_speed * spring_arm.spring_length
+			
+			if spring_arm.spring_length < 3:
+				spring_arm.spring_length = 3
+			if spring_arm.spring_length > 20:
+				spring_arm.spring_length = 20
+			
 			# Snap to default zoom
 			if event.button_index == MOUSE_BUTTON_MIDDLE:
 				spring_arm.spring_length = default_zoom
+			
+	
 			
 func _physics_process(delta):
 	
