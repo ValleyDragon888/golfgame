@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://duied7idcee1u"]
+[gd_scene load_steps=2 format=3 uid="uid://duied7idcee1u"]
+
+[ext_resource type="MeshLibrary" uid="uid://bdtfv7i8bjvof" path="res://Assets/TrackEditor/generated_meshlib.tres" id="1_dfpri"]
 
 [node name="TemplateLevel" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_dfpri")
