@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://u1bovl4at4fh"]
+[gd_scene load_steps=2 format=3 uid="uid://u1bovl4at4fh"]
+
+[ext_resource type="MeshLibrary" uid="uid://15facis0bdtw" path="res://Assets/TrackEditor/meshlib_trackpieces.tres" id="1_61cg8"]
 
 [node name="TemplateLevel" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_61cg8")
+data = {
+"cells": PackedInt32Array(65535, 0, 0, 0, 0, 1, 65535, 65535, 1, 65535, 65534, 1441792)
+}
