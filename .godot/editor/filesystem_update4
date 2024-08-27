@@ -1,8 +1,8 @@
+res://Scenes/game.tscn
 res://Assets/TrackEditor/meshlib_trackpieces.tres
+res://Scenes/player.tscn
 res://Scenes/track_pieces_mesh_library.tscn
 res://Scenes/TemplateLevel.tscn
-res://Scenes/game.tscn
-res://Scenes/player.tscn
 res://Scenes/JSONTrackLoader.tscn
-res://Scripts/JSONTrackLoader.gd
-res://Tracks/JSON/test_track.json
+Assets/TrackEditor/meshlib_trackpieces.tres
+res://Scenes/Ball.tscn

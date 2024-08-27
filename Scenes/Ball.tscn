@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7lb2ws1lt0r3"]
+
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_7awjl"]
+[ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
+[ext_resource type="PackedScene" uid="uid://oedvp0r2f33v" path="res://Assets/Arrow.glb" id="3_x0rqi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1pkp"]
+friction = 4.0
+rough = true
+bounce = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6kik4"]
+radius = 0.505518
+
+[node name="Player" type="Node3D"]
+
+[node name="Ball" type="RigidBody3D" parent="."]
+collision_layer = 2
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_e1pkp")
+linear_damp = 0.2
+angular_damp = 0.2
+script = ExtResource("1_7awjl")
+
+[node name="BallMesh" parent="Ball" instance=ExtResource("2_tlyj4")]
+
+[node name="BallCollision" type="CollisionShape3D" parent="Ball"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_6kik4")
+
+[node name="CameraPivotV" type="Node3D" parent="."]
+
+[node name="CameraPivotH" type="Node3D" parent="CameraPivotV"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivotV/CameraPivotH"]
+spring_length = 5.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.75627)
+
+[node name="ArrowPivot" type="Node3D" parent="."]
+
+[node name="Arrow" parent="ArrowPivot" instance=ExtResource("3_x0rqi")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -2)
