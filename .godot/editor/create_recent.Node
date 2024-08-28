@@ -1,3 +1,11 @@
+Node3D
+MeshInstance3D
+ColorRect
+Polygon2D
+ItemList
+OptionButton
+Button
+Node
+CanvasLayer
 Camera3D
 GridMap
-MeshInstance3D

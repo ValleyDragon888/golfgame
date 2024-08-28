@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://crnpgfffxreu"]
+
+[ext_resource type="Script" path="res://Scripts/Freecam.gd" id="1_810o6"]
+[ext_resource type="Script" path="res://Scripts/Editor.gd" id="1_megtk"]
+[ext_resource type="ArrayMesh" uid="uid://bmiseymht8ngi" path="res://Assets/TrackEditor/TrackStraight.obj" id="2_clvs6"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w40u7"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_dkeik"]
+sky_material = SubResource("ProceduralSkyMaterial_w40u7")
+
+[sub_resource type="Environment" id="Environment_6xua7"]
+background_mode = 2
+sky = SubResource("Sky_dkeik")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_486vj"]
+transparency = 1
+albedo_color = Color(1, 1, 0.592157, 0.172549)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j07nk"]
+
+[node name="Editor" type="Node3D"]
+script = ExtResource("1_megtk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6xua7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+script = ExtResource("1_810o6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_clvs6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ShowHideButton" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Hide Blocks"
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 34.0
+offset_right = 194.0
+offset_bottom = 465.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2.16338, 0)
+material_override = SubResource("StandardMaterial3D_486vj")
+mesh = SubResource("BoxMesh_j07nk")
+
+[node name="AddedBlocksRoot" type="Node3D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]
+[connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_item_list_item_selected"]
