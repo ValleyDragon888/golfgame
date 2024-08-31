@@ -3,7 +3,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	load_level_from_file("res://Tracks/JSON/test_track.json")
+	load_level_from_file("res://Tracks/JSON/testsave.json")
 
 func add_track_piece(type: String, position: Vector3, rot: Vector3 = Vector3(0.0, 0.0, 0.0)):
 	var mesh = MeshInstance3D.new()

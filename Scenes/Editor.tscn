@@ -67,6 +67,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
 
+[node name="SaveButton" type="Button" parent="CanvasLayer"]
+offset_left = 239.0
+offset_right = 283.0
+offset_bottom = 31.0
+text = "Save"
+
+[node name="SaveAsButton" type="Button" parent="CanvasLayer"]
+offset_left = 124.0
+offset_right = 191.0
+offset_bottom = 31.0
+text = "Set Save Path"
+
+[node name="SaveAsDialog" type="FileDialog" parent="CanvasLayer"]
+title = "Save As"
+position = Vector2i(100, 100)
+size = Vector2i(1000, 500)
+ok_button_text = "Save"
+
 [node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2.16338, 0)
 material_override = SubResource("StandardMaterial3D_486vj")
@@ -76,3 +94,6 @@ mesh = SubResource("BoxMesh_j07nk")
 
 [connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SaveAsButton" to="." method="_on_save_path_button_pressed"]
+[connection signal="file_selected" from="CanvasLayer/SaveAsDialog" to="." method="_on_save_as_dialog_file_selected"]

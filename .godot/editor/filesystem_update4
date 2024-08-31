@@ -4,3 +4,5 @@ res://Scenes/game.tscn
 res://Scripts/Editor.gd
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
+res://Scripts/JSONTrackLoader.gd
+res://Tracks/JSON/testsave.json
