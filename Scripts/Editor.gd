@@ -4,7 +4,8 @@ extends Node3D
 @onready var blocks_ui_showing = false
 @onready var blocks_ui_root = $CanvasLayer/ItemList
 @onready var block_selected: String = "TrackStraight"
-@onready var z_plane = $Plane 
+@onready var z_plane = $Plane
+@onready var block_instances: Array[EditorBlockInstance] = []
 @export var valid_blocks = [
 		"TrackStraight",
 		"TrackCornerSharp"
@@ -15,20 +16,16 @@ func _ready():
 	for block in valid_blocks:
 		blocks_ui_root.add_item(block)
 	blocks_ui_root.select(0)
+	block_instances.append(EditorBlockInstance.new(0, Vector3.ZERO, Vector3.ZERO, "TrackStraight"))
+	$AddedBlocksRoot.add_child(block_instances[0].node())
+	print_debug(block_instances[0].get_json_dict())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func add_block(type: String, pos:Vector3, rot:Vector3 = Vector3.ZERO):
-	var new_block = MeshInstance3D.new()
-	new_block.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": type}))
-	new_block.position = pos
-	new_block.rotation = rot
-	$AddedBlocksRoot.add_child(new_block)
-	
-		
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
@@ -50,5 +47,6 @@ func _on_show_hide_button_pressed():
 
 
 func _on_item_list_item_selected(index):
+	# Here, block_selected is the block in the menu
 	block_selected = valid_blocks[index]
 	print_debug(block_selected)
