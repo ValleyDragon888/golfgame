@@ -1,8 +1,7 @@
 res://Scenes/Editor.tscn
-res://Scripts/EditorBlockInstance.gd
 res://Scenes/game.tscn
-res://Scripts/Editor.gd
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
-res://Scripts/JSONTrackLoader.gd
+res://Scripts/Editor.gd
+res://Scripts/EditorBlockInstance.gd
 res://Tracks/JSON/testsave.json

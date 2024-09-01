@@ -85,6 +85,26 @@ position = Vector2i(100, 100)
 size = Vector2i(1000, 500)
 ok_button_text = "Save"
 
+[node name="LoadButton" type="Button" parent="CanvasLayer"]
+offset_left = 301.0
+offset_right = 347.0
+offset_bottom = 31.0
+text = "Load"
+
+[node name="LoadDialog" type="ConfirmationDialog" parent="CanvasLayer"]
+title = "Load File?"
+size = Vector2i(413, 106)
+ok_button_text = "Load File"
+dialog_text = "Loading a level will discard any changes to this one.
+Proceed?"
+
+[node name="LoadFileSelectorDialog" type="FileDialog" parent="CanvasLayer"]
+title = "Open a File"
+position = Vector2i(100, 100)
+size = Vector2i(1000, 500)
+ok_button_text = "Open"
+file_mode = 0
+
 [node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2.16338, 0)
 material_override = SubResource("StandardMaterial3D_486vj")
@@ -97,3 +117,6 @@ mesh = SubResource("BoxMesh_j07nk")
 [connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SaveAsButton" to="." method="_on_save_path_button_pressed"]
 [connection signal="file_selected" from="CanvasLayer/SaveAsDialog" to="." method="_on_save_as_dialog_file_selected"]
+[connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]
+[connection signal="file_selected" from="CanvasLayer/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
