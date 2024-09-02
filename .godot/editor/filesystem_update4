@@ -1,7 +1,7 @@
+res://Scenes/freecam.tscn
+res://Scripts/Freecam-2.gd
 res://Scenes/Editor.tscn
 res://Scenes/game.tscn
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
-res://Scripts/Editor.gd
-res://Scripts/EditorBlockInstance.gd
-res://Tracks/JSON/testsave.json
+res://Scripts/ball.gd

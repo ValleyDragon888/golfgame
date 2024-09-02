@@ -1,8 +1,9 @@
+Camera3D
+Node3D
 FileDialog
 ConfirmationDialog
 Button
 MenuButton
-Node3D
 MeshInstance3D
 ColorRect
 Polygon2D
@@ -10,5 +11,4 @@ ItemList
 OptionButton
 Node
 CanvasLayer
-Camera3D
 GridMap

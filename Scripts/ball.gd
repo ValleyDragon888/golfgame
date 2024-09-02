@@ -28,7 +28,7 @@ func _input(event):
 			camera_pivot_h.rotate_x(deg_to_rad(event.relative.y * sensitivity))
 			camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(45))
 		if Input.is_mouse_button_pressed(2):
-			arrow_pivot.rotation.y = camera_pivot_v.rotation.y			
+			arrow_pivot.rotation.y = camera_pivot_v.rotation.y
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
