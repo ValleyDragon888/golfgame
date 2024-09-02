@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8ng83e0upg4t"]
+[gd_scene load_steps=3 format=3 uid="uid://c8ng83e0upg4t"]
 
 [ext_resource type="Script" path="res://Scripts/Freecam.gd" id="1_ywp3r"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_8ai8g"]
 
 [node name="Freecam" type="Node3D"]
 script = ExtResource("1_ywp3r")
@@ -10,3 +12,11 @@ script = ExtResource("1_ywp3r")
 [node name="CameraPivotH" type="Node3D" parent="CameraPivotV"]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+spring_length = 10.0
+margin = 0.5
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SpringArm3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("SphereMesh_8ai8g")

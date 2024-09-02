@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://crnpgfffxreu"]
+[gd_scene load_steps=10 format=3 uid="uid://crnpgfffxreu"]
 
 [ext_resource type="Script" path="res://Scripts/Editor.gd" id="1_megtk"]
 [ext_resource type="ArrayMesh" uid="uid://bmiseymht8ngi" path="res://Assets/TrackEditor/TrackStraight.obj" id="2_clvs6"]
@@ -22,6 +22,8 @@ transparency = 1
 albedo_color = Color(1, 1, 0.592157, 0.172549)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j07nk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_alwub"]
 
 [node name="Editor" type="Node3D"]
 script = ExtResource("1_megtk")
@@ -104,12 +106,19 @@ size = Vector2i(1000, 500)
 ok_button_text = "Open"
 file_mode = 0
 
-[node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2.16338, 0)
+[node name="AddedBlocksRoot" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Plane" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2, 0)
 material_override = SubResource("StandardMaterial3D_486vj")
 mesh = SubResource("BoxMesh_j07nk")
+skeleton = NodePath("../..")
 
-[node name="AddedBlocksRoot" type="Node3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2, 0)
+shape = SubResource("BoxShape3D_alwub")
 
 [connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_item_list_item_selected"]

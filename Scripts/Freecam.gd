@@ -3,6 +3,9 @@ extends Node3D
 #Instance and import variables
 @onready var camera_pivot_v = $CameraPivotV
 @onready var camera_pivot_h = $CameraPivotV/CameraPivotH
+@onready var spring_arm_3d = $SpringArm3D
+@onready var mesh_instance_3d = $SpringArm3D/MeshInstance3D
+
 var sensitivity = -0.3
 const SPEED = 3
 var velocity = Vector3.ZERO
@@ -24,6 +27,11 @@ func _process(delta):
 	position.x += velocity.x
 	position.y += velocity.y
 	position.z += velocity.z
+
+#Rotates the spring arm
+	spring_arm_3d.rotation.x = camera_pivot_h.rotation.x * -1
+	spring_arm_3d.rotation.y = deg_to_rad(rad_to_deg(camera_pivot_v.rotation.y) + 180)
+	print(mesh_instance_3d.global_position)
 	
 #Quits the game
 	if Input.is_action_just_pressed("DevQuit"):
