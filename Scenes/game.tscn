@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cgojqaw0p0t8t"]
 
-[ext_resource type="PackedScene" uid="uid://ow51gqkh6ids" path="res://Assets/Floor.dae" id="2_4wtgp"]
-[ext_resource type="PackedScene" uid="uid://b7lb2ws1lt0r3" path="res://Scenes/Ball.tscn" id="2_g3c8s"]
+[ext_resource type="PackedScene" uid="uid://ow51gqkh6ids" path="res://Assets/Floor.dae" id="1_semv1"]
+[ext_resource type="PackedScene" uid="uid://b7lb2ws1lt0r3" path="res://Scenes/Ball.tscn" id="2_o7vqv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jmkms"]
 sky_top_color = Color(0.221996, 0.779624, 0.961626, 1)
@@ -35,7 +35,7 @@ environment = SubResource("Environment_mkkmy")
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -1, 5)
 shadow_enabled = true
 
-[node name="Floor" parent="." instance=ExtResource("2_4wtgp")]
+[node name="Floor" parent="." instance=ExtResource("1_semv1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.865, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_g3c8s")]
+[node name="Player" parent="." instance=ExtResource("2_o7vqv")]

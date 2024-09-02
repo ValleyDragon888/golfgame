@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7lb2ws1lt0r3"]
 
-[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_7awjl"]
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
 [ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="3_r486x"]
 [ext_resource type="Material" uid="uid://bgqsqvywe2wit" path="res://Assets/ArrowMaterial.tres" id="4_y5t71"]
@@ -21,7 +21,7 @@ mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_e1pkp")
 linear_damp = 0.2
 angular_damp = 0.2
-script = ExtResource("1_7awjl")
+script = ExtResource("1_urg3s")
 
 [node name="BallMesh" parent="Ball" instance=ExtResource("2_tlyj4")]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Editor.gd" id="1_megtk"]
 [ext_resource type="ArrayMesh" uid="uid://bmiseymht8ngi" path="res://Assets/TrackEditor/TrackStraight.obj" id="2_clvs6"]
-[ext_resource type="PackedScene" uid="uid://c8ng83e0upg4t" path="res://Scenes/freecam.tscn" id="2_v856w"]
+[ext_resource type="PackedScene" uid="uid://c8ng83e0upg4t" path="res://Scenes/Freecam.tscn" id="2_v856w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w40u7"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
