@@ -1,136 +1,41 @@
-extends Camera3D
+extends Node3D
 
-## Camera with flying script attached to it.
-class_name Freecam3D
+#Instance and import variables
+@onready var camera_pivot_v = $CameraPivotV
+@onready var camera_pivot_h = $CameraPivotV/CameraPivotH
+var sensitivity = -0.3
+const SPEED = 3
+var velocity = Vector3.ZERO
 
-##
-## Camera with toggleable freecam mode for prototyping when creating levels, shaders, lighting, etc.
-##
-## Usage: Run your game, press <TAB> and fly around freely. Uses Minecraft-like controls.
-##
-
-## Customize your own toggle key to avoid collisions with your current mappings.
-@export var toggle_key: Key = KEY_TAB
-## Speed up / down by scrolling the mouse whell down / up
-
-
-@export var overlay_text: bool = false
-
-## Pivot node for camera looking around
-@onready var pivot := Node3D.new()
-## Main parent for camera overlay.
-@onready var screen_overlay := VBoxContainer.new()
-## Container for the chat-like event log.
-@onready var event_log := VBoxContainer.new()
-
-const MAX_SPEED := 4
-const MIN_SPEED := 0.1
-const ACCELERATION := 0.1
-const MOUSE_SENSITIVITY := 0.002
-
-## Whether or not the camera can move.
-var movement_active := false:
-	set(val):
-		movement_active = val
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED if movement_active else Input.MOUSE_MODE_VISIBLE)
-		display_message("[Movement ON]" if movement_active else "[Movement OFF]")
-
-## The current maximum speed. Lower or higher it by scrolling the mouse wheel.
-var target_speed := MIN_SPEED
-## Movement velocity.
-var velocity := Vector3.ZERO
-
-
-## Sets up pivot and UI overlay elements.
-func _setup_nodes() -> void:
-	self.add_sibling(pivot)
-	pivot.position = position
-	pivot.rotation = rotation
-	pivot.name = "FreecamPivot"
-	self.reparent(pivot)
-	self.position = Vector3.ZERO
-	self.rotation = Vector3.ZERO
-	# UI stuff
-	screen_overlay.add_theme_constant_override("Separation", 8)
-	self.add_child(screen_overlay)
-	screen_overlay.add_child(_make_label("Debug Camera"))
-	screen_overlay.add_spacer(false)
+func _process(delta):
+#Moves the camera
+	var direction = Input.get_vector("DevLeft", "DevRight", "DevUp", "DevDown")
+	direction = (camera_pivot_v.transform.basis * Vector3(direction.x, Input.get_axis("DevSneak", "DevJump"), direction.y)).normalized()
 	
-	screen_overlay.add_child(event_log)
-	screen_overlay.visible = overlay_text
-
-
-func _ready() -> void:
-	_setup_nodes.call_deferred()
-	_add_keybindings()
-
-
-func _process(delta: float) -> void:
-	
-	if Input.is_action_just_released("__debug_camera_toggle"):
-		movement_active = not movement_active
-	
-	if movement_active:
-		var dir = Vector3.ZERO
-		if Input.is_action_pressed("__debug_camera_forward"): 	dir.z -= 1
-		if Input.is_action_pressed("__debug_camera_back"): 		dir.z += 1
-		if Input.is_action_pressed("__debug_camera_left"): 		dir.x -= 1
-		if Input.is_action_pressed("__debug_camera_right"): 	dir.x += 1
-		if Input.is_action_pressed("__debug_camera_up"): 		dir.y += 1
-		if Input.is_action_pressed("__debug_camera_down"): 		dir.y -= 1
+	if direction:
+		velocity.x = direction.x * delta * SPEED
+		velocity.y = direction.y * delta * SPEED
+		velocity.z = direction.z * delta * SPEED
+	else:
+		velocity.x *= 0.95
+		velocity.y *= 0.95
+		velocity.z *= 0.95
 		
-		dir = dir.normalized()
-		dir = dir.rotated(Vector3.UP, pivot.rotation.y)
-		
-		velocity = lerp(velocity, dir * target_speed, ACCELERATION)
-		pivot.position += velocity
-
-
-func _input(event: InputEvent) -> void:
-	if movement_active:
-		# Turn around
+	position.x += velocity.x
+	position.y += velocity.y
+	position.z += velocity.z
+	
+#Quits the game
+	if Input.is_action_just_pressed("DevQuit"):
+		get_tree().quit()
+	
+func _input(event):
+#Rotates the camera
+	if Input.is_mouse_button_pressed(2):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if event is InputEventMouseMotion:
-			pivot.rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
-			rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
-			rotation.x = clamp(rotation.x, -PI/2, PI/2)
-		
-		# Speed up and down with the mouse wheel
-		if event is InputEventMouseButton:
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
-				pass
-				
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
-				pass
-
-
-## Pushes new message label into "chat" and removes the old ones if necessary
-func display_message(text: String) -> void:
-	while event_log.get_child_count() >= 3:
-		event_log.remove_child(event_log.get_child(0))
-	
-	event_log.add_child(_make_label(text))
-
-
-func _make_label(text: String) -> Label:
-	var l = Label.new()
-	l.text = text
-	return l
-
-
-func _add_keybindings() -> void:
-	var actions = InputMap.get_actions()
-	if "__debug_camera_forward" not in actions: _add_key_input_action("__debug_camera_forward", KEY_W)
-	if "__debug_camera_back" 	not in actions: _add_key_input_action("__debug_camera_back", KEY_S)
-	if "__debug_camera_left" 	not in actions: _add_key_input_action("__debug_camera_left", KEY_A)
-	if "__debug_camera_right" 	not in actions: _add_key_input_action("__debug_camera_right", KEY_D)
-	if "__debug_camera_up" 		not in actions: _add_key_input_action("__debug_camera_up", KEY_SPACE)
-	if "__debug_camera_down" 	not in actions: _add_key_input_action("__debug_camera_down", KEY_SHIFT)
-	if "__debug_camera_toggle" 	not in actions: _add_key_input_action("__debug_camera_toggle", toggle_key)
-
-
-func _add_key_input_action(name: String, key: Key) -> void:
-	var ev = InputEventKey.new()
-	ev.physical_keycode = key
-	
-	InputMap.add_action(name)
-	InputMap.action_add_event(name, ev)
+			camera_pivot_v.rotate_y(deg_to_rad(event.relative.x * sensitivity))
+			camera_pivot_h.rotate_x(deg_to_rad(event.relative.y * sensitivity))
+			camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(90))	
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

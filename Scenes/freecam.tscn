@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8ng83e0upg4t"]
 
-[ext_resource type="Script" path="res://Scripts/Freecam-2.gd" id="1_tow85"]
+[ext_resource type="Script" path="res://Scripts/Freecam.gd" id="1_ywp3r"]
 
 [node name="Freecam" type="Node3D"]
-script = ExtResource("1_tow85")
+script = ExtResource("1_ywp3r")
 
 [node name="CameraPivotV" type="Node3D" parent="."]
 

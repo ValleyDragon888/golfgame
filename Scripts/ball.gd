@@ -62,6 +62,7 @@ func _physics_process(delta):
 		linear_velocity.x = (arrow.global_position.x - global_position.x)
 		angular_velocity = Vector3(randf()*arrow.position.z, randf()*arrow.position.z, randf()*arrow.position.z)
 
+#Quit the game
 	if Input.is_action_just_pressed("DevQuit"):
 		get_tree().quit()
 

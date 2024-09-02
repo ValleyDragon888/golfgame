@@ -5,3 +5,4 @@ res://Scenes/game.tscn
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
 res://Scripts/ball.gd
+res://Scripts/Freecam.gd
