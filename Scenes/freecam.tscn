@@ -13,10 +13,10 @@ script = ExtResource("1_ywp3r")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH"]
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="TileDetector" type="SpringArm3D" parent="."]
 spring_length = 10.0
 margin = 0.5
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SpringArm3D"]
+[node name="TileDetectionIndicator" type="MeshInstance3D" parent="TileDetector"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("SphereMesh_8ai8g")

@@ -56,17 +56,17 @@ func _physics_process(delta):
 	arrow_pivot.position = position
 
 #May be replaced with correct controls
-	if Input.is_action_just_pressed("DevJump"):
+	if Input.is_action_just_pressed("Up"):
 		linear_velocity.y = arrow.position.z*-1
 		linear_velocity.z = (arrow.global_position.z - global_position.z)
 		linear_velocity.x = (arrow.global_position.x - global_position.x)
 		angular_velocity = Vector3(randf()*arrow.position.z, randf()*arrow.position.z, randf()*arrow.position.z)
 
 #Quit the game
-	if Input.is_action_just_pressed("DevQuit"):
+	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 
-	var input_dir = Input.get_vector("DevLeft", "DevRight", "DevUp", "DevDown")
+	var input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
 
 #Rotates and moves the arrow
 	#arrow_pivot.rotate_y(deg_to_rad(input_dir.x)*3/arrow.position.z)

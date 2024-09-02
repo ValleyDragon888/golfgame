@@ -3,8 +3,8 @@ extends Node3D
 #Instance and import variables
 @onready var camera_pivot_v = $CameraPivotV
 @onready var camera_pivot_h = $CameraPivotV/CameraPivotH
-@onready var spring_arm_3d = $SpringArm3D
-@onready var mesh_instance_3d = $SpringArm3D/MeshInstance3D
+@onready var tile_detector = $TileDetector
+@onready var tile_detection_indicator = $TileDetector/TileDetectionIndicator
 
 var sensitivity = -0.3
 const SPEED = 3
@@ -12,8 +12,8 @@ var velocity = Vector3.ZERO
 
 func _process(delta):
 #Moves the camera
-	var direction = Input.get_vector("DevLeft", "DevRight", "DevUp", "DevDown")
-	direction = (camera_pivot_v.transform.basis * Vector3(direction.x, Input.get_axis("DevSneak", "DevJump"), direction.y)).normalized()
+	var direction = Input.get_vector("Left", "Right", "Forward", "Backward")
+	direction = (camera_pivot_v.transform.basis * Vector3(direction.x, Input.get_axis("Down", "Up"), direction.y)).normalized()
 	
 	if direction:
 		velocity.x = direction.x * delta * SPEED
@@ -28,13 +28,13 @@ func _process(delta):
 	position.y += velocity.y
 	position.z += velocity.z
 
-#Rotates the spring arm
-	spring_arm_3d.rotation.x = camera_pivot_h.rotation.x * -1
-	spring_arm_3d.rotation.y = deg_to_rad(rad_to_deg(camera_pivot_v.rotation.y) + 180)
-	print(mesh_instance_3d.global_position)
+#Rotates the tile detector
+	tile_detector.rotation.x = camera_pivot_h.rotation.x * -1
+	tile_detector.rotation.y = deg_to_rad(rad_to_deg(camera_pivot_v.rotation.y) + 180)
+	print(tile_detection_indicator.global_position)
 	
 #Quits the game
-	if Input.is_action_just_pressed("DevQuit"):
+	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 	
 func _input(event):
