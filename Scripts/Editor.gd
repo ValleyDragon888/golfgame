@@ -3,7 +3,7 @@ extends Node3D
 @onready var show_blocks_button = $CanvasLayer/ShowHideButton
 @onready var blocks_ui_showing = false
 @onready var blocks_ui_root = $CanvasLayer/ItemList
-@export var block_selected: String = "TrackStraight"
+@onready var block_selected: String = "TrackStraight"
 @onready var y_plane = $YPlane
 @onready var block_instances: Array[EditorBlockInstance] = []
 @onready var save_path = ""
