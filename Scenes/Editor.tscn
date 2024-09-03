@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://crnpgfffxreu"]
+[gd_scene load_steps=9 format=3 uid="uid://crnpgfffxreu"]
 
 [ext_resource type="Script" path="res://Scripts/Editor.gd" id="1_megtk"]
-[ext_resource type="ArrayMesh" uid="uid://bmiseymht8ngi" path="res://Assets/TrackEditor/TrackStraight.obj" id="2_clvs6"]
 [ext_resource type="PackedScene" uid="uid://c8ng83e0upg4t" path="res://Scenes/Freecam.tscn" id="2_v856w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w40u7"]
@@ -37,10 +36,6 @@ shadow_enabled = true
 environment = SubResource("Environment_6xua7")
 
 [node name="Freecam" parent="." instance=ExtResource("2_v856w")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.68456, 0, 0)
-mesh = ExtResource("2_clvs6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
