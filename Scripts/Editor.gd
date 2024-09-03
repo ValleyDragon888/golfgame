@@ -34,10 +34,10 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
 			# Why. WHY IS GODOT Z = Y NOOOOOOOO
-			z_plane.position.y += 0.1
+			z_plane.position.y += 1
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
 			# Sanity levels just dropped
-			z_plane.position.y -= 0.1
+			z_plane.position.y -= 1
 
 func set_save_path():
 	save_as_dialog.popup()

@@ -15,8 +15,11 @@ script = ExtResource("1_ywp3r")
 
 [node name="TileDetector" type="SpringArm3D" parent="."]
 spring_length = 10.0
-margin = 0.5
+margin = 0.1
 
-[node name="TileDetectionIndicator" type="MeshInstance3D" parent="TileDetector"]
+[node name="TileDetectorEnd" type="Node3D" parent="TileDetector"]
+
+[node name="TileDetectionIndicator" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("SphereMesh_8ai8g")
+skeleton = NodePath("../TileDetector")

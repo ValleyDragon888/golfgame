@@ -108,15 +108,15 @@ file_mode = 0
 
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Plane" type="StaticBody3D" parent="."]
 
-[node name="Plane" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="PlaneMesh" type="MeshInstance3D" parent="Plane"]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2, 0)
 material_override = SubResource("StandardMaterial3D_486vj")
 mesh = SubResource("BoxMesh_j07nk")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="PlaneCollision" type="CollisionShape3D" parent="Plane"]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2, 0)
 shape = SubResource("BoxShape3D_alwub")
 

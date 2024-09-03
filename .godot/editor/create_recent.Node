@@ -1,9 +1,9 @@
+Node3D
 CollisionShape3D
 StaticBody3D
 MeshInstance3D
 SpringArm3D
 Camera3D
-Node3D
 FileDialog
 ConfirmationDialog
 Button
@@ -12,4 +12,3 @@ ColorRect
 Polygon2D
 ItemList
 OptionButton
-Node
