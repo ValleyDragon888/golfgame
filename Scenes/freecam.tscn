@@ -21,6 +21,5 @@ margin = 0.0
 [node name="TileDetectorEnd" type="Node3D" parent="TileDetector"]
 
 [node name="TileIndicator" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("SphereMesh_8ai8g")
 skeleton = NodePath("../TileDetector")
