@@ -3,8 +3,21 @@
 		{
 			"position": [
 				0,
-				10,
+				0,
 				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				2
 			],
 			"rotation": [
 				0,

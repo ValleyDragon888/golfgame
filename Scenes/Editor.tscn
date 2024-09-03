@@ -110,6 +110,7 @@ file_mode = 0
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
 
 [node name="YPlane" type="StaticBody3D" parent="."]
+collision_layer = 2
 
 [node name="YPlaneMesh" type="MeshInstance3D" parent="YPlane"]
 transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)

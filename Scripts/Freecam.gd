@@ -4,14 +4,16 @@ extends Node3D
 @onready var camera_pivot_v = $CameraPivotV
 @onready var camera_pivot_h = $CameraPivotV/CameraPivotH
 @onready var tile_detector = $TileDetector
-@onready var tile_indicator = $TileDetectionIndicator
+@onready var tile_indicator = $TileIndicator
 @onready var tile_detector_end = $TileDetector/TileDetectorEnd
 @onready var y_plane = $"../YPlane"
+@onready var editor = $".."
 
 var sensitivity = -0.3
 const SPEED = 3
 var velocity = Vector3.ZERO
 var tile_pos = Vector3.ZERO
+var type = "TrackStraight"
 
 func _process(delta):
 #Moves the camera
@@ -45,8 +47,10 @@ func _process(delta):
 	else:
 		tile_indicator.global_position = tile_pos
 		tile_indicator.visible = true
+		tile_indicator.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": type}))
 		print(tile_pos)
-		
+	type = editor.block_selected
+	
 #Quits the game
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()

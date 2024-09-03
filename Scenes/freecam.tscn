@@ -14,12 +14,13 @@ script = ExtResource("1_ywp3r")
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH"]
 
 [node name="TileDetector" type="SpringArm3D" parent="."]
+collision_mask = 2
 spring_length = 10.0
 margin = 0.0
 
 [node name="TileDetectorEnd" type="Node3D" parent="TileDetector"]
 
-[node name="TileDetectionIndicator" type="MeshInstance3D" parent="."]
+[node name="TileIndicator" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("SphereMesh_8ai8g")
 skeleton = NodePath("../TileDetector")
