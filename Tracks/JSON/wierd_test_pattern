@@ -1,0 +1,706 @@
+{
+	"blocks": [
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-8,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-8,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				2,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-7,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				2,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				1,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				0,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				0,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-10,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "EndBlock"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				1,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "TrackCornerSharp"
+		}
+	]
+}
