@@ -7,7 +7,6 @@ extends Node3D
 @onready var tile_indicator = $TileIndicator
 @onready var tile_detector_end = $TileDetector/TileDetectorEnd
 @onready var y_plane = $"../YPlane"
-@onready var editor = $".."
 
 var sensitivity = -0.3
 const SPEED = 3
@@ -49,8 +48,8 @@ func _process(delta):
 		tile_indicator.visible = true
 		tile_indicator.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": type}))
 		print(tile_pos)
-	type = editor.block_selected
-	
+	type = GlobalVariables.block_selected
+
 #Quits the game
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()

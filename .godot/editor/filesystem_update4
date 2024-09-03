@@ -6,3 +6,4 @@ res://Scenes/Freecam.tscn
 res://Scripts/Freecam.gd
 res://Scripts/Editor.gd
 res://Tracks/JSON/testsave.json
+res://Scripts/GlobalVariables.gd

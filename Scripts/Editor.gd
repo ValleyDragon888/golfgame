@@ -3,7 +3,6 @@ extends Node3D
 @onready var show_blocks_button = $CanvasLayer/ShowHideButton
 @onready var blocks_ui_showing = false
 @onready var blocks_ui_root = $CanvasLayer/ItemList
-@onready var block_selected: String = "TrackStraight"
 @onready var y_plane = $YPlane
 @onready var block_instances: Array[EditorBlockInstance] = []
 @onready var save_path = ""
@@ -72,8 +71,8 @@ func _on_show_hide_button_pressed():
 
 func _on_item_list_item_selected(index):
 	# Here, block_selected is the block in the menu
-	block_selected = valid_blocks[index]
-	print_debug(block_selected)
+	GlobalVariables.block_selected = valid_blocks[index]
+	print(GlobalVariables.block_selected)
 
 func _on_save_button_pressed():
 	save()
