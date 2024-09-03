@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ck87xhpeancqn"
+path="res://.godot/imported/End.obj-152bd5b610eb5257012fb3fe37bc714c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/End.obj-152bd5b610eb5257012fb3fe37bc714c.mesh"]
+
+source_file="res://Assets/TrackEditor/End.obj"
+dest_files=["res://.godot/imported/End.obj-152bd5b610eb5257012fb3fe37bc714c.mesh", "res://.godot/imported/End.obj-152bd5b610eb5257012fb3fe37bc714c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

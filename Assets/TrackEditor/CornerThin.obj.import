@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://fyt5j6chvhh1"
+path="res://.godot/imported/CornerThin.obj-d8cd3e0e16deb46e1f4c61cd3d4a4659.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CornerThin.obj-d8cd3e0e16deb46e1f4c61cd3d4a4659.mesh"]
+
+source_file="res://Assets/TrackEditor/CornerThin.obj"
+dest_files=["res://.godot/imported/CornerThin.obj-d8cd3e0e16deb46e1f4c61cd3d4a4659.mesh", "res://.godot/imported/CornerThin.obj-d8cd3e0e16deb46e1f4c61cd3d4a4659.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

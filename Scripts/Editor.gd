@@ -10,9 +10,12 @@ extends Node3D
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
 @export var valid_blocks = [
-		"TrackStraight",
-		"TrackCornerSharp",
-		"EndBlock"
+		"Corner",
+		"CornerThin",
+		"End",
+		"Straight",
+		"StraightThin",
+		"ThickThickThin"
 	]
 
 # Called when the node enters the scene tree for the first time.

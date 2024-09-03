@@ -1,3 +1,3 @@
 extends Node
 
-var block_selected: String = "TrackStraight"
+var block_selected: String = "End"
