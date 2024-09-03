@@ -1,5 +1,4 @@
 res://Scenes/Game.tscn
-res://Scripts/Freecam.gd
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn

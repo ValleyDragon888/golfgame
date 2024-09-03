@@ -22,7 +22,7 @@ func _ready():
 	tree.hide_root = true
 	var blocks_dict = {
 		"Standard Blocks": ["Straight", "Corner", "End"],
-		"Transitions": ["ThickThickThin"],
+		"Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
 		"Thin Blocks": ["StraightThin", "CornerThin"]
 	}
 	for category in categories:

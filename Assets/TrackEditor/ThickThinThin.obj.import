@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5eo76duwvdcs"
+path="res://.godot/imported/ThickThinThin.obj-b76ee5b97376e8784edf7e1522c1285e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ThickThinThin.obj-b76ee5b97376e8784edf7e1522c1285e.mesh"]
+
+source_file="res://Assets/TrackEditor/ThickThinThin.obj"
+dest_files=["res://.godot/imported/ThickThinThin.obj-b76ee5b97376e8784edf7e1522c1285e.mesh", "res://.godot/imported/ThickThinThin.obj-b76ee5b97376e8784edf7e1522c1285e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
