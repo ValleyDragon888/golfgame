@@ -107,3 +107,8 @@ func _on_load_file_selector_dialog_file_selected(path):
 		# The last arg of blkinstance from json is the id.
 		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
+
+
+func _on_place(type, pos, rot):
+	block_instances.append(EditorBlockInstance.new(len(block_instances), pos, rot, type))
+	$AddedBlocksRoot.add_child(block_instances[-1].node())

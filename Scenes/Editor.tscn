@@ -117,6 +117,7 @@ skeleton = NodePath("../..")
 [node name="YPlaneCollision" type="CollisionShape3D" parent="YPlane"]
 shape = SubResource("BoxShape3D_alwub")
 
+[connection signal="place" from="Freecam" to="." method="_on_place"]
 [connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]
 [connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]

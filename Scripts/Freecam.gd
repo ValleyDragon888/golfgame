@@ -1,5 +1,7 @@
 extends Node3D
 
+signal place(type: String, pos: Vector3, rot: Vector3)
+
 #Instance and import variables
 @onready var camera_pivot_v = $CameraPivotV
 @onready var camera_pivot_h = $CameraPivotV/CameraPivotH
@@ -61,6 +63,9 @@ func _input(event):
 		if event is InputEventMouseMotion:
 			camera_pivot_v.rotate_y(deg_to_rad(event.relative.x * sensitivity))
 			camera_pivot_h.rotate_x(deg_to_rad(event.relative.y * sensitivity))
-			camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(90))	
+			camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	if Input.is_action_just_pressed("PlaceBlock"):
+		place.emit(type, tile_pos, tile_indicator.rotation)
