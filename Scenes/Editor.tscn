@@ -24,6 +24,7 @@ albedo_color = Color(1, 1, 0.592157, 0.172549)
 [sub_resource type="BoxMesh" id="BoxMesh_j07nk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alwub"]
+size = Vector3(10, 0.1, 10)
 
 [node name="Editor" type="Node3D"]
 script = ExtResource("1_megtk")
@@ -108,16 +109,16 @@ file_mode = 0
 
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
 
-[node name="Plane" type="StaticBody3D" parent="."]
+[node name="YPlane" type="StaticBody3D" parent="."]
 
-[node name="PlaneMesh" type="MeshInstance3D" parent="Plane"]
-transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2, 0)
+[node name="YPlaneMesh" type="MeshInstance3D" parent="YPlane"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_486vj")
+cast_shadow = 0
 mesh = SubResource("BoxMesh_j07nk")
 skeleton = NodePath("../..")
 
-[node name="PlaneCollision" type="CollisionShape3D" parent="Plane"]
-transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 2, 0)
+[node name="YPlaneCollision" type="CollisionShape3D" parent="YPlane"]
 shape = SubResource("BoxShape3D_alwub")
 
 [connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]

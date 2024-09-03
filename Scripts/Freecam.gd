@@ -6,6 +6,7 @@ extends Node3D
 @onready var tile_detector = $TileDetector
 @onready var tile_indicator = $TileDetectionIndicator
 @onready var tile_detector_end = $TileDetector/TileDetectorEnd
+@onready var y_plane = $"../YPlane"
 
 var sensitivity = -0.3
 const SPEED = 3
@@ -30,17 +31,19 @@ func _process(delta):
 	position.y += velocity.y
 	position.z += velocity.z
 
-#Rotates and snaps the tile detector
+#Rotates the tile detector
 	tile_detector.rotation.x = camera_pivot_h.rotation.x * -1
 	tile_detector.rotation.y = deg_to_rad(rad_to_deg(camera_pivot_v.rotation.y) + 180)
 	
+#Snaps the tile_pos to 1x1 grid
 	tile_pos.x = snapped(tile_detector_end.global_position.x, 1)
-	tile_pos.y = snapped(tile_detector_end.global_position.y, 1)
+	tile_pos.y = y_plane.global_position.y
 	tile_pos.z = snapped(tile_detector_end.global_position.z, 1)
 
 	if tile_detector.spring_length == tile_detector.get_hit_length():
 		tile_indicator.visible = false
 	else:
+		tile_indicator.global_position = tile_pos
 		tile_indicator.visible = true
 		print(tile_pos)
 		

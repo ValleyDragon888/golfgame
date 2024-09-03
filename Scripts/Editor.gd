@@ -4,7 +4,7 @@ extends Node3D
 @onready var blocks_ui_showing = false
 @onready var blocks_ui_root = $CanvasLayer/ItemList
 @onready var block_selected: String = "TrackStraight"
-@onready var z_plane = $Plane
+@onready var y_plane = $YPlane
 @onready var block_instances: Array[EditorBlockInstance] = []
 @onready var save_path = ""
 @onready var save_as_dialog = $CanvasLayer/SaveAsDialog
@@ -34,10 +34,10 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
 			# Why. WHY IS GODOT Z = Y NOOOOOOOO
-			z_plane.position.y += 1
+			y_plane.position.y += 1
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
 			# Sanity levels just dropped
-			z_plane.position.y -= 1
+			y_plane.position.y -= 1
 
 func set_save_path():
 	save_as_dialog.popup()
