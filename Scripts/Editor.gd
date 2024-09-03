@@ -9,7 +9,7 @@ extends Node3D
 @onready var save_as_dialog = $CanvasLayer/SaveAsDialog
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
-@onready var ignored_blocks = ["StandardBlocks"]
+@onready var categories = ["Standard Blocks", "Thin Blocks", "Transitions"]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -20,9 +20,10 @@ func _ready():
 	var tree = $CanvasLayer/Tree
 	var root = tree.create_item()
 	tree.hide_root = true
-	var categories = ["StandardBlocks"]
 	var blocks_dict = {
-		"StandardBlocks": ["TrackStraight", "TrackCornerSharp", "EndBlock"]
+		"Standard Blocks": ["Straight", "Corner", "End"],
+		"Transitions": ["ThickThickThin"],
+		"Thin Blocks": ["StraightThin", "CornerThin"]
 	}
 	for category in categories:
 		var current_categoru_treeitem = tree.create_item(root)
@@ -31,19 +32,12 @@ func _ready():
 			var treeitem = tree.create_item(current_categoru_treeitem)
 			treeitem.set_text(0, item)
 			treeitem.select(0) #Hack
-	#var StandardBlocks = tree.create_item(root)
-	#StandardBlocks.set_text(0, "StandardBlocks")
-	#var Straight = tree.create_item(StandardBlocks)
-	#Straight.set_text(0, "TrackStraight")
-	#var Turn = tree.create_item(StandardBlocks)
-	#Turn.set_text(0, "TrackCornerSharp")
-	#Turn.select(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
-	if not blocklist_selected.get_text(0) in ignored_blocks:
+	if not blocklist_selected.get_text(0) in categories:
 		GlobalVariables.block_selected = blocklist_selected.get_text(0)
 
 
