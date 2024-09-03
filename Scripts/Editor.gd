@@ -2,32 +2,49 @@ extends Node3D
 
 @onready var show_blocks_button = $CanvasLayer/ShowHideButton
 @onready var blocks_ui_showing = false
-@onready var blocks_ui_root = $CanvasLayer/ItemList
+@onready var blocks_ui_root = $CanvasLayer/Tree
 @onready var y_plane = $YPlane
 @onready var block_instances: Array[EditorBlockInstance] = []
 @onready var save_path = ""
 @onready var save_as_dialog = $CanvasLayer/SaveAsDialog
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
-@export var valid_blocks = [
-		"TrackStraight",
-		"TrackCornerSharp",
-		"EndBlock"
-	]
+@onready var ignored_blocks = ["StandardBlocks"]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for block in valid_blocks:
-		blocks_ui_root.add_item(block)
-	blocks_ui_root.select(0)
-	
 	block_instances.append(EditorBlockInstance.new(0, Vector3.ZERO, Vector3.ZERO, "TrackStraight"))
 	$AddedBlocksRoot.add_child(block_instances[0].node())
+	
+	var tree = $CanvasLayer/Tree
+	var root = tree.create_item()
+	tree.hide_root = true
+	var categories = ["StandardBlocks"]
+	var blocks_dict = {
+		"StandardBlocks": ["TrackStraight", "TrackCornerSharp", "EndBlock"]
+	}
+	for category in categories:
+		var current_categoru_treeitem = tree.create_item(root)
+		current_categoru_treeitem.set_text(0, category)
+		for item in blocks_dict[category]:
+			var treeitem = tree.create_item(current_categoru_treeitem)
+			treeitem.set_text(0, item)
+			treeitem.select(0) #Hack
+	#var StandardBlocks = tree.create_item(root)
+	#StandardBlocks.set_text(0, "StandardBlocks")
+	#var Straight = tree.create_item(StandardBlocks)
+	#Straight.set_text(0, "TrackStraight")
+	#var Turn = tree.create_item(StandardBlocks)
+	#Turn.set_text(0, "TrackCornerSharp")
+	#Turn.select(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var blocklist_selected = $CanvasLayer/Tree.get_selected()
+	if not blocklist_selected.get_text(0) in ignored_blocks:
+		GlobalVariables.block_selected = blocklist_selected.get_text(0)
 
 
 func _input(event: InputEvent) -> void:
@@ -68,12 +85,6 @@ func _on_show_hide_button_pressed():
 	else:
 		show_blocks_button.text = "Show Blocks"
 		blocks_ui_root.hide()
-
-
-func _on_item_list_item_selected(index):
-	# Here, block_selected is the block in the menu
-	GlobalVariables.block_selected = valid_blocks[index]
-	print(GlobalVariables.block_selected)
 
 func _on_save_button_pressed():
 	save()

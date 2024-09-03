@@ -44,12 +44,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Hide Blocks"
 
-[node name="ItemList" type="ItemList" parent="CanvasLayer"]
-offset_left = 1.0
-offset_top = 34.0
-offset_right = 194.0
-offset_bottom = 465.0
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,6 +96,12 @@ size = Vector2i(1000, 500)
 ok_button_text = "Open"
 file_mode = 0
 
+[node name="Tree" type="Tree" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 35.0
+offset_right = 191.0
+offset_bottom = 362.0
+
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
 
 [node name="YPlane" type="StaticBody3D" parent="."]
@@ -119,7 +119,6 @@ shape = SubResource("BoxShape3D_alwub")
 
 [connection signal="place" from="Freecam" to="." method="_on_place"]
 [connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]
-[connection signal="item_selected" from="CanvasLayer/ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SaveAsButton" to="." method="_on_save_path_button_pressed"]
 [connection signal="file_selected" from="CanvasLayer/SaveAsDialog" to="." method="_on_save_as_dialog_file_selected"]
