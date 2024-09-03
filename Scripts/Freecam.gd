@@ -4,12 +4,13 @@ extends Node3D
 @onready var camera_pivot_v = $CameraPivotV
 @onready var camera_pivot_h = $CameraPivotV/CameraPivotH
 @onready var tile_detector = $TileDetector
-@onready var tile_detection_indicator = $TileDetectionIndicator
+@onready var tile_indicator = $TileDetectionIndicator
 @onready var tile_detector_end = $TileDetector/TileDetectorEnd
 
 var sensitivity = -0.3
 const SPEED = 3
 var velocity = Vector3.ZERO
+var tile_pos = Vector3.ZERO
 
 func _process(delta):
 #Moves the camera
@@ -33,15 +34,15 @@ func _process(delta):
 	tile_detector.rotation.x = camera_pivot_h.rotation.x * -1
 	tile_detector.rotation.y = deg_to_rad(rad_to_deg(camera_pivot_v.rotation.y) + 180)
 	
-	tile_detection_indicator.global_position.x = snapped(tile_detector_end.global_position.x, 1)
-	tile_detection_indicator.global_position.y = snapped(tile_detector_end.global_position.y, 1)
-	tile_detection_indicator.global_position.z = snapped(tile_detector_end.global_position.z, 1)
+	tile_pos.x = snapped(tile_detector_end.global_position.x, 1)
+	tile_pos.y = snapped(tile_detector_end.global_position.y, 1)
+	tile_pos.z = snapped(tile_detector_end.global_position.z, 1)
 
 	if tile_detector.spring_length == tile_detector.get_hit_length():
-		tile_detection_indicator.visible = false
+		tile_indicator.visible = false
 	else:
-		tile_detection_indicator.visible = true
-		print(round(tile_detection_indicator.global_position))
+		tile_indicator.visible = true
+		print(tile_pos)
 		
 #Quits the game
 	if Input.is_action_just_pressed("Quit"):

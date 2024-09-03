@@ -15,7 +15,7 @@ script = ExtResource("1_ywp3r")
 
 [node name="TileDetector" type="SpringArm3D" parent="."]
 spring_length = 10.0
-margin = 0.1
+margin = 0.0
 
 [node name="TileDetectorEnd" type="Node3D" parent="TileDetector"]
 
