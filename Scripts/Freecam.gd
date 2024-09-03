@@ -69,3 +69,5 @@ func _input(event):
 	
 	if Input.is_action_just_pressed("PlaceBlock"):
 		place.emit(type, tile_pos, tile_indicator.rotation)
+	if Input.is_action_just_pressed("RotateTrackPieceLeft"):
+		tile_indicator.rotation_degrees.y += 90
