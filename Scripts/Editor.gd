@@ -21,7 +21,7 @@ func _ready():
 	var root = tree.create_item()
 	tree.hide_root = true
 	var blocks_dict = {
-		"Standard Blocks": ["Straight", "Corner", "End"],
+		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins", "Corner", "End"],
 		"Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
 		"Thin Blocks": ["StraightThin", "CornerThin"]
 	}

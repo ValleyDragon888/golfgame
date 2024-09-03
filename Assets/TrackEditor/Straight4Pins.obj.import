@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cduw8ly1xpvfh"
+path="res://.godot/imported/Straight4Pins.obj-0b40dbdcca7c2f737b797ae65f7cea3a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Straight4Pins.obj-0b40dbdcca7c2f737b797ae65f7cea3a.mesh"]
+
+source_file="res://Assets/TrackEditor/Straight4Pins.obj"
+dest_files=["res://.godot/imported/Straight4Pins.obj-0b40dbdcca7c2f737b797ae65f7cea3a.mesh", "res://.godot/imported/Straight4Pins.obj-0b40dbdcca7c2f737b797ae65f7cea3a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
