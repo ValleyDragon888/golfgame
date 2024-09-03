@@ -1,3 +1,6 @@
+Tree
+PopupMenu
+MenuBar
 Node3D
 CollisionShape3D
 StaticBody3D
@@ -10,5 +13,3 @@ Button
 MenuButton
 ColorRect
 Polygon2D
-ItemList
-OptionButton
