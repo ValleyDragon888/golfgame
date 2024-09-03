@@ -32,7 +32,6 @@ func _process(delta):
 #Rotates and snaps the tile detector
 	tile_detector.rotation.x = camera_pivot_h.rotation.x * -1
 	tile_detector.rotation.y = deg_to_rad(rad_to_deg(camera_pivot_v.rotation.y) + 180)
-	print(round(tile_detection_indicator.global_position))
 	
 	tile_detection_indicator.global_position.x = snapped(tile_detector_end.global_position.x, 1)
 	tile_detection_indicator.global_position.y = snapped(tile_detector_end.global_position.y, 1)
@@ -42,6 +41,7 @@ func _process(delta):
 		tile_detection_indicator.visible = false
 	else:
 		tile_detection_indicator.visible = true
+		print(round(tile_detection_indicator.global_position))
 		
 #Quits the game
 	if Input.is_action_just_pressed("Quit"):
