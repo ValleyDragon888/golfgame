@@ -1,3 +1,4 @@
+CanvasLayer
 CodeEdit
 Control
 Tree
@@ -12,4 +13,3 @@ Camera3D
 FileDialog
 ConfirmationDialog
 Button
-MenuButton
