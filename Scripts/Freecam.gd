@@ -60,7 +60,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 
-#Manages hovering while placing problems - temporary fix
+#Prevents moving while popup is open
 	if $"../CanvasLayer/LoadDialog".visible or $"../CanvasLayer/LoadFileSelectorDialog".visible or $"../CanvasLayer/SaveAsDialog".visible:
 		GlobalVariables.mouse_hovered = true
 
@@ -80,39 +80,8 @@ func _input(event):
 	if Input.is_action_just_pressed("RotateTrackPieceRight"):
 		tile_indicator.rotation_degrees.y -= 90
 
-#Manages hovering while placing problems - temporary fix
-func _on_tree_mouse_entered():
+#Manages hovering while placing problems
+func _on_control_mouse_exited():
 	GlobalVariables.mouse_hovered = true
-func _on_tree_mouse_exited():
+func _on_control_mouse_entered():
 	GlobalVariables.mouse_hovered = false
-
-func _on_load_button_mouse_entered():
-	GlobalVariables.mouse_hovered = true
-func _on_load_button_mouse_exited():
-	GlobalVariables.mouse_hovered = false
-
-func _on_save_button_mouse_entered():
-	GlobalVariables.mouse_hovered = true
-func _on_save_button_mouse_exited():
-	GlobalVariables.mouse_hovered = false
-
-func _on_save_as_button_mouse_entered():
-	GlobalVariables.mouse_hovered = true
-func _on_save_as_button_mouse_exited():
-	GlobalVariables.mouse_hovered = false
-
-func _on_show_hide_button_mouse_entered():
-	GlobalVariables.mouse_hovered = true
-func _on_show_hide_button_mouse_exited():
-	GlobalVariables.mouse_hovered = false
-
-
-func _on_load_dialog_visibility_changed():
-	if not $"../CanvasLayer/LoadDialog".visible:
-		GlobalVariables.mouse_hovered = false
-func _on_save_as_dialog_visibility_changed():
-	if not $"../CanvasLayer/SaveAsDialog".visible:
-		GlobalVariables.mouse_hovered = false
-func _on_load_file_selector_dialog_visibility_changed():
-	if not $"../CanvasLayer/LoadFileSelectorDialog".visible:
-		GlobalVariables.mouse_hovered = false

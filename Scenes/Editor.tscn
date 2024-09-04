@@ -39,11 +39,6 @@ environment = SubResource("Environment_6xua7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ShowHideButton" type="Button" parent="CanvasLayer"]
-offset_right = 98.0
-offset_bottom = 31.0
-text = "Hide Blocks"
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -57,6 +52,20 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 14.0
+offset_bottom = 13.0
+
+[node name="ShowHideButton" type="Button" parent="CanvasLayer"]
+offset_right = 98.0
+offset_bottom = 31.0
+text = "Hide Blocks"
 
 [node name="SaveButton" type="Button" parent="CanvasLayer"]
 offset_left = 239.0
@@ -119,23 +128,12 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_alwub")
 
 [connection signal="place" from="Freecam" to="." method="_on_place"]
-[connection signal="mouse_entered" from="CanvasLayer/ShowHideButton" to="Freecam" method="_on_show_hide_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/ShowHideButton" to="Freecam" method="_on_show_hide_button_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/SaveButton" to="Freecam" method="_on_save_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/SaveButton" to="Freecam" method="_on_save_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/SaveAsButton" to="Freecam" method="_on_save_as_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/SaveAsButton" to="Freecam" method="_on_save_as_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/SaveAsButton" to="." method="_on_save_path_button_pressed"]
 [connection signal="file_selected" from="CanvasLayer/SaveAsDialog" to="." method="_on_save_as_dialog_file_selected"]
-[connection signal="visibility_changed" from="CanvasLayer/SaveAsDialog" to="Freecam" method="_on_save_as_dialog_visibility_changed"]
-[connection signal="mouse_entered" from="CanvasLayer/LoadButton" to="Freecam" method="_on_load_button_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/LoadButton" to="Freecam" method="_on_load_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]
-[connection signal="visibility_changed" from="CanvasLayer/LoadDialog" to="Freecam" method="_on_load_dialog_visibility_changed"]
 [connection signal="file_selected" from="CanvasLayer/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
-[connection signal="visibility_changed" from="CanvasLayer/LoadFileSelectorDialog" to="Freecam" method="_on_load_file_selector_dialog_visibility_changed"]
-[connection signal="mouse_entered" from="CanvasLayer/Tree" to="Freecam" method="_on_tree_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Tree" to="Freecam" method="_on_tree_mouse_exited"]
