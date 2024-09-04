@@ -11,6 +11,7 @@ const DEFAULT_ZOOM = 5
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
+var has_velocity = false
 
 #Camera controls
 func _input(event):
@@ -56,11 +57,15 @@ func _physics_process(delta):
 	arrow_pivot.position = position
 
 #May be replaced with correct controls
-	if Input.is_action_just_pressed("Up"):
+	if Input.is_action_just_pressed("Up") and not has_velocity:
+		has_velocity = true
 		linear_velocity.y = arrow.position.z*-1
 		linear_velocity.z = (arrow.global_position.z - global_position.z) * 10
 		linear_velocity.x = (arrow.global_position.x - global_position.x) * 10
 		angular_velocity = Vector3(randf()*arrow.position.z, randf()*arrow.position.z, randf()*arrow.position.z)
+
+	if abs(linear_velocity.x) < 0.1 and abs(linear_velocity.y) < 0.1 and abs(linear_velocity.z) < 0.1:
+		has_velocity = false
 
 #Quit the game
 	if Input.is_action_just_pressed("Quit"):
