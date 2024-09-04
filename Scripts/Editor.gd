@@ -32,6 +32,7 @@ func _ready():
 	tree.hide_root = true
 	for key in blocks_dict.keys():
 		root.add_child(generate_treeitem(blocks_dict[key], key, root, tree))
+		root.get_children()[-1].collapsed = true
 	root.get_children()[0].select(0)
 	
 func generate_treeitem(dict, name, parent, tree) -> TreeItem:
@@ -48,7 +49,7 @@ func generate_treeitem(dict, name, parent, tree) -> TreeItem:
 				treeitem,
 				tree
 			))
-			treeitem.get_children()[-1].uncollapse_tree()
+			treeitem.get_children()[-1].collapsed = true
 	return treeitem
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
