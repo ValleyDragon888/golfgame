@@ -58,8 +58,8 @@ func _physics_process(delta):
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up"):
 		linear_velocity.y = arrow.position.z*-1
-		linear_velocity.z = (arrow.global_position.z - global_position.z)
-		linear_velocity.x = (arrow.global_position.x - global_position.x)
+		linear_velocity.z = (arrow.global_position.z - global_position.z) * 10
+		linear_velocity.x = (arrow.global_position.x - global_position.x) * 10
 		angular_velocity = Vector3(randf()*arrow.position.z, randf()*arrow.position.z, randf()*arrow.position.z)
 
 #Quit the game
