@@ -18,21 +18,33 @@ func _ready():
 	$AddedBlocksRoot.add_child(block_instances[0].node())
 	
 	var tree = $CanvasLayer/Tree
-	var root = tree.create_item()
-	tree.hide_root = true
 	var blocks_dict = {
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins", "Corner", "End"],
 		"Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
-		"Thin Blocks": ["StraightThin", "CornerThin"]
+		"Thin Blocks": ["StraightThin", "CornerThin"],
+		"Cat1": [{"Cat2": ["Wonk", "Chonk"]}]
 	}
-	for category in categories:
-		var current_categoru_treeitem = tree.create_item(root)
-		current_categoru_treeitem.set_text(0, category)
-		for item in blocks_dict[category]:
-			var treeitem = tree.create_item(current_categoru_treeitem)
-			treeitem.set_text(0, item)
-			treeitem.select(0) #Hack
-
+	var root = tree.create_item()
+	tree.hide_root = true
+	for key in blocks_dict.keys():
+		root.add_child(generate_treeitem(blocks_dict[key], key, root, tree))
+	root.get_children()[0].select(0)
+	
+func generate_treeitem(dict, name, parent, tree) -> TreeItem:
+	var treeitem = tree.create_item(parent)
+	treeitem.set_text(0, name)
+	for item in dict:
+		if typeof(item) == TYPE_STRING:
+			var new = tree.create_item(treeitem)
+			new.set_text(0, item)
+		elif typeof(item) == TYPE_DICTIONARY:
+			treeitem.add_child(generate_treeitem(
+				item[item.keys()[0]],
+				item.keys()[0],
+				treeitem,
+				tree
+			))
+	return treeitem
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
