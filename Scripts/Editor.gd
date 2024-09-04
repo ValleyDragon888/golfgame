@@ -22,7 +22,6 @@ func _ready():
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins", "Corner", "End"],
 		"Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
 		"Thin Blocks": ["StraightThin", "CornerThin"],
-		"Cat1": [{"Cat2": ["Wonk", "Chonk"]}]
 	}
 	var root = tree.create_item()
 	tree.hide_root = true
