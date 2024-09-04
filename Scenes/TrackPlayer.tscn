@@ -54,10 +54,10 @@ file_mode = 0
 [node name="Player" parent="." instance=ExtResource("2_2ytfu")]
 
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4997, 0, 2.49892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15, 0)
 
 [node name="Floor" parent="." instance=ExtResource("3_4g3qy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.865, 0)
+transform = Transform3D(0.1, 0, 0, 0, -0.1, 8.74228e-09, 0, -8.74228e-09, -0.1, 0, -1, 0)
 
 [connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]
