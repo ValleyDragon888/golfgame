@@ -111,8 +111,8 @@ file_mode = 0
 [node name="Tree" type="Tree" parent="CanvasLayer"]
 offset_left = 4.0
 offset_top = 35.0
-offset_right = 222.0
-offset_bottom = 362.0
+offset_right = 260.0
+offset_bottom = 626.0
 allow_search = false
 
 [node name="AddedBlocksRoot" type="Node3D" parent="."]

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://prcf3li62w40"
+path="res://.godot/imported/ThinRamp.obj-34e8ac2ef59e402f2260239dfba4c7d0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ThinRamp.obj-34e8ac2ef59e402f2260239dfba4c7d0.mesh"]
+
+source_file="res://Assets/TrackEditor/ThinRamp.obj"
+dest_files=["res://.godot/imported/ThinRamp.obj-34e8ac2ef59e402f2260239dfba4c7d0.mesh", "res://.godot/imported/ThinRamp.obj-34e8ac2ef59e402f2260239dfba4c7d0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

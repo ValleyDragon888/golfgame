@@ -19,9 +19,14 @@ func _ready():
 	
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
-		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins", "Corner", "End", "Start"],
-		"Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin", "Ramp", "RampTransitionUp", "RampTransitionDown"],
-		"Thin Blocks": ["StraightThin", "CornerThin"],
+		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins", "Corner", "End", "Start",
+			{"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown"]}
+		],
+		"Size Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
+		"Thin Blocks": ["StraightThin", "CornerThin",
+			{"Ramps": ["ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"]}
+		],
+		"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown", "ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"]
 	}
 	var root = tree.create_item()
 	tree.hide_root = true
