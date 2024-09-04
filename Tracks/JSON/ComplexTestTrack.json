@@ -194,6 +194,19 @@
 				0
 			],
 			"type": "End"
+		},
+		{
+			"position": [
+				-4,
+				0,
+				6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
 		}
 	]
 }
