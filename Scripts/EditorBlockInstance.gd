@@ -18,6 +18,7 @@ func node() -> MeshInstance3D:
 	new_block.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": self.type}))
 	new_block.position = self.pos
 	new_block.rotation = self.rot
+	new_block.create_trimesh_collision()
 	new_block.name = str(self.id) # I do not understand how float gets a .to_string() fn but int does not?
 	return new_block
 
