@@ -43,6 +43,7 @@ func generate_treeitem(dict, name, parent, tree) -> TreeItem:
 				treeitem,
 				tree
 			))
+			treeitem.get_children()[-1].uncollapse_tree()
 	return treeitem
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
