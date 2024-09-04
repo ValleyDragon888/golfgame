@@ -1,3 +1,4 @@
+CodeEdit
 Control
 Tree
 PopupMenu
@@ -12,4 +13,3 @@ FileDialog
 ConfirmationDialog
 Button
 MenuButton
-ColorRect
