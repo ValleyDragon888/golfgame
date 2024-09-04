@@ -119,13 +119,14 @@ allow_search = false
 collision_layer = 2
 
 [node name="YPlaneMesh" type="MeshInstance3D" parent="YPlane"]
-transform = Transform3D(50, 0, 0, 0, 0.5, 0, 0, 0, 50, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 0.2, 0, 0, 0, 20, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_486vj")
 cast_shadow = 0
 mesh = SubResource("BoxMesh_j07nk")
 skeleton = NodePath("../..")
 
 [node name="YPlaneCollision" type="CollisionShape3D" parent="YPlane"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_alwub")
 
 [connection signal="place" from="Freecam" to="." method="_on_place"]

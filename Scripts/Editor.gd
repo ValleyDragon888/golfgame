@@ -110,6 +110,7 @@ func _on_load_dialog_confirmed():
 
 func _on_load_file_selector_dialog_file_selected(path):
 	# Read in and decode json
+	save_path = path
 	var file = FileAccess.open(path, FileAccess.READ)
 	var contents = file.get_as_text()
 	var json_decoded = JSON.parse_string(contents)
