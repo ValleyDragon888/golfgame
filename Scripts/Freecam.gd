@@ -20,7 +20,9 @@ func _process(delta):
 #Moves the camera
 	var direction = Input.get_vector("Left", "Right", "Forward", "Backward")
 	direction = (camera_pivot_v.transform.basis * Vector3(direction.x, Input.get_axis("Down", "Up"), direction.y)).normalized()
-	
+	if GlobalVariables.mouse_hovered:
+		direction = Vector3.ZERO
+
 	if direction:
 		velocity.x = direction.x * delta * SPEED
 		velocity.y = direction.y * delta * SPEED
@@ -29,7 +31,7 @@ func _process(delta):
 		velocity.x *= 0.95
 		velocity.y *= 0.95
 		velocity.z *= 0.95
-		
+
 	position.x += velocity.x
 	position.y += velocity.y
 	position.z += velocity.z
@@ -37,7 +39,7 @@ func _process(delta):
 #Rotates the tile detector
 	tile_detector.rotation.x = camera_pivot_h.rotation.x * -1
 	tile_detector.rotation.y = deg_to_rad(rad_to_deg(camera_pivot_v.rotation.y) + 180)
-	
+
 #Snaps the tile_pos to 1x1 grid
 	tile_pos.x = snapped(tile_detector_end.global_position.x, 1)
 	tile_pos.y = y_plane.global_position.y
@@ -49,13 +51,19 @@ func _process(delta):
 		tile_indicator.global_position = tile_pos
 		tile_indicator.visible = true
 		tile_indicator.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": type}))
+		if Input.is_action_just_pressed("PlaceBlock") and not GlobalVariables.mouse_hovered:
+			place.emit(type, tile_pos, tile_indicator.rotation)
 		print(tile_pos)
 	type = GlobalVariables.block_selected
 
 #Quits the game
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
-	
+
+#Manages hovering while placing problems - temporary fix
+	if $"../CanvasLayer/LoadDialog".visible or $"../CanvasLayer/LoadFileSelectorDialog".visible or $"../CanvasLayer/SaveAsDialog".visible:
+		GlobalVariables.mouse_hovered = true
+
 func _input(event):
 #Rotates the camera
 	if Input.is_mouse_button_pressed(2):
@@ -66,10 +74,45 @@ func _input(event):
 			camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	
-	if Input.is_action_just_pressed("PlaceBlock"):
-		place.emit(type, tile_pos, tile_indicator.rotation)
+
 	if Input.is_action_just_pressed("RotateTrackPieceLeft"):
 		tile_indicator.rotation_degrees.y += 90
 	if Input.is_action_just_pressed("RotateTrackPieceRight"):
 		tile_indicator.rotation_degrees.y -= 90
+
+#Manages hovering while placing problems - temporary fix
+func _on_tree_mouse_entered():
+	GlobalVariables.mouse_hovered = true
+func _on_tree_mouse_exited():
+	GlobalVariables.mouse_hovered = false
+
+func _on_load_button_mouse_entered():
+	GlobalVariables.mouse_hovered = true
+func _on_load_button_mouse_exited():
+	GlobalVariables.mouse_hovered = false
+
+func _on_save_button_mouse_entered():
+	GlobalVariables.mouse_hovered = true
+func _on_save_button_mouse_exited():
+	GlobalVariables.mouse_hovered = false
+
+func _on_save_as_button_mouse_entered():
+	GlobalVariables.mouse_hovered = true
+func _on_save_as_button_mouse_exited():
+	GlobalVariables.mouse_hovered = false
+
+func _on_show_hide_button_mouse_entered():
+	GlobalVariables.mouse_hovered = true
+func _on_show_hide_button_mouse_exited():
+	GlobalVariables.mouse_hovered = false
+
+
+func _on_load_dialog_visibility_changed():
+	if not $"../CanvasLayer/LoadDialog".visible:
+		GlobalVariables.mouse_hovered = false
+func _on_save_as_dialog_visibility_changed():
+	if not $"../CanvasLayer/SaveAsDialog".visible:
+		GlobalVariables.mouse_hovered = false
+func _on_load_file_selector_dialog_visibility_changed():
+	if not $"../CanvasLayer/LoadFileSelectorDialog".visible:
+		GlobalVariables.mouse_hovered = false

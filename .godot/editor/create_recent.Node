@@ -1,3 +1,4 @@
+Control
 Tree
 PopupMenu
 MenuBar
@@ -12,4 +13,3 @@ ConfirmationDialog
 Button
 MenuButton
 ColorRect
-Polygon2D

@@ -42,7 +42,7 @@ func _process(delta):
 
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and not GlobalVariables.mouse_hovered:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
 			# Why. WHY IS GODOT Z = Y NOOOOOOOO
 			y_plane.position.y += 1
