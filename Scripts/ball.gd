@@ -90,11 +90,12 @@ func _physics_process(delta):
 
 #Rotates and moves the arrow
 	#arrow_pivot.rotate_y(deg_to_rad(input_dir.x)*3/arrow.position.z)
-	arrow.position.z += input_dir.y * 0.1
-	arrow.position.z = clamp(arrow.position.z, -5, -1)
+	arrow.position.z += input_dir.y * 0.05
+	arrow.position.z = clamp(arrow.position.z, -5, 0)
 
 #Scale arrow at far distances to be easily visible
 	arrow.scale.z = (arrow.position.z-3)/-60
 	arrow.scale.x = (arrow.position.z-3)/-60
 	arrow.scale.y = (arrow.position.z-3)/-60
 	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z),0)
+	print(arrow.position.z)
