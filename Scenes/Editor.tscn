@@ -109,10 +109,13 @@ ok_button_text = "Open"
 file_mode = 0
 
 [node name="Tree" type="Tree" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 0.003
+anchor_bottom = 1.0
 offset_left = 4.0
-offset_top = 35.0
-offset_right = 260.0
-offset_bottom = 626.0
+offset_top = 53.0
+offset_right = 256.544
+offset_bottom = -22.0
 allow_search = false
 
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
