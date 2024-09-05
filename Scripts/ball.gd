@@ -90,8 +90,8 @@ func _physics_process(delta):
 
 #Rotates and moves the arrow
 	#arrow_pivot.rotate_y(deg_to_rad(input_dir.x)*3/arrow.position.z)
-	arrow.position.z += input_dir.y * 0.05
-	arrow.position.z = clamp(arrow.position.z, -5, 0)
+	arrow.position.z += input_dir.y * arrow.position.z * -0.03
+	arrow.position.z = clamp(arrow.position.z, -5, -0.1)
 
 #Scale arrow at far distances to be easily visible
 	arrow.scale.z = (arrow.position.z-3)/-60
