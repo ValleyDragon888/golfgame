@@ -14,8 +14,6 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	block_instances.append(EditorBlockInstance.new(0, Vector3.ZERO, Vector3.ZERO, "TrackStraight"))
-	$AddedBlocksRoot.add_child(block_instances[0].node())
 	
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
@@ -59,7 +57,7 @@ func _process(delta):
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
 	if not blocklist_selected.get_text(0) in categories:
 		GlobalVariables.block_selected = blocklist_selected.get_text(0)
-
+	print(block_instances)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not GlobalVariables.mouse_hovered:
@@ -138,6 +136,15 @@ func _on_load_file_selector_dialog_file_selected(path):
 func _on_place(type, pos, rot):
 	block_instances.append(EditorBlockInstance.new(len(block_instances), pos, rot, type))
 	$AddedBlocksRoot.add_child(block_instances[-1].node())
-	
-func _on_delete(pos):
-	print(block_instances[-1].get_json_dict().type)
+	print(block_instances[-1].get_json_dict().position)
+func _on_delete(pos2):
+	for block in len(block_instances):
+		var position = block_instances[block].get_json_dict().position
+		if position[0] == pos2.x and position[1] == pos2.y and position[2] == pos2.z:
+			print(block)
+			block_instances.remove_at(block)
+			for child in $AddedBlocksRoot.get_children():
+				$AddedBlocksRoot[child].queue_free()
+			for i in len(block_instances):
+				$AddedBlocksRoot.add_child(block_instances[i].node())
+			break

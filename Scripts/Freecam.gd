@@ -1,7 +1,7 @@
 extends Node3D
 
 signal place(type: String, pos: Vector3, rot: Vector3)
-signal delete(pos: Vector3)
+signal delete(pos2: Vector3)
 
 #Instance and import variables
 @onready var camera_pivot_v = $CameraPivotV
@@ -54,7 +54,7 @@ func _process(delta):
 		tile_indicator.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": type}))
 		if Input.is_action_just_pressed("PlaceBlock") and not GlobalVariables.mouse_hovered:
 			place.emit(type, tile_pos, tile_indicator.rotation)
-		print(tile_pos)
+		#print(tile_pos)
 		if Input.is_action_just_pressed("DeleteBlock") and not GlobalVariables.mouse_hovered:
 			delete.emit(tile_pos)
 	type = GlobalVariables.block_selected
