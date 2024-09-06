@@ -125,7 +125,7 @@ func _on_load_file_selector_dialog_file_selected(path):
 	block_instances = []
 	for child in $AddedBlocksRoot.get_children():
 		$AddedBlocksRoot.remove_child(child)
-	
+
 	# Add blocks from file.
 	for i in len(json_decoded["blocks"]):
 		# The last arg of blkinstance from json is the id.
@@ -137,14 +137,10 @@ func _on_place(type, pos, rot):
 	block_instances.append(EditorBlockInstance.new(len(block_instances), pos, rot, type))
 	$AddedBlocksRoot.add_child(block_instances[-1].node())
 	print(block_instances[-1].get_json_dict().position)
-func _on_delete(pos2):
+func _on_delete(pos):
 	for block in len(block_instances):
-		var position = block_instances[block].get_json_dict().position
-		if position[0] == pos2.x and position[1] == pos2.y and position[2] == pos2.z:
-			print(block)
+		var block_pos = block_instances[block].get_json_dict().position
+		if block_pos[0] == pos.x and block_pos[1] == pos.y and block_pos[2] == pos.z:
 			block_instances.remove_at(block)
-			for child in $AddedBlocksRoot.get_children():
-				$AddedBlocksRoot[child].queue_free()
-			for i in len(block_instances):
-				$AddedBlocksRoot.add_child(block_instances[i].node())
+			$AddedBlocksRoot.get_children()[block].queue_free()
 			break

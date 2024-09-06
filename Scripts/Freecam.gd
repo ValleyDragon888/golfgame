@@ -1,7 +1,7 @@
 extends Node3D
 
 signal place(type: String, pos: Vector3, rot: Vector3)
-signal delete(pos2: Vector3)
+signal delete(pos: Vector3)
 
 #Instance and import variables
 @onready var camera_pivot_v = $CameraPivotV
