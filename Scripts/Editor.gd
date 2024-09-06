@@ -19,7 +19,9 @@ func _ready():
 	
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
-		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins", "Corner", "End", "Start",
+		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
+		 "Corner", "CornerMedium", "CornerLarge",
+		 "End", "Start",
 			{"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown"]}
 		],
 		"Size Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
