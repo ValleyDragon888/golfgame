@@ -136,3 +136,4 @@ func _on_load_file_selector_dialog_file_selected(path):
 func _on_place(type, pos, rot):
 	block_instances.append(EditorBlockInstance.new(len(block_instances), pos, rot, type))
 	$AddedBlocksRoot.add_child(block_instances[-1].node())
+	print(block_instances[-1].get_json_dict().type)
