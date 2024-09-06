@@ -14,9 +14,6 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	block_instances.append(EditorBlockInstance.new(0, Vector3.ZERO, Vector3.ZERO, "TrackStraight"))
-	$AddedBlocksRoot.add_child(block_instances[0].node())
-	
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
