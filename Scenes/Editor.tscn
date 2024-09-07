@@ -134,8 +134,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_alwub")
 
-[connection signal="delete" from="Freecam" to="." method="_on_delete"]
 [connection signal="delete" from="Freecam" to="." method="_on_freecam_delete"]
+[connection signal="delete" from="Freecam" to="." method="_on_delete"]
 [connection signal="place" from="Freecam" to="." method="_on_place"]
 [connection signal="mouse_entered" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_exited"]
