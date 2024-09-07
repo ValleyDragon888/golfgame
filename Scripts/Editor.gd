@@ -10,7 +10,7 @@ extends Node3D
 @onready var save_as_dialog = $CanvasLayer/SaveAsDialog
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
-@onready var categories = ["Standard Blocks", "Thin Blocks", "Size Transitions", "Ramps"]
+@onready var categories = ["Special Blocks", "Standard Blocks", "Thin Blocks", "Size Transitions", "Ramps"]
 
 
 func _ready():
@@ -18,6 +18,8 @@ func _ready():
 #Instances the blocks into the dictionary
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
+		"Special Blocks": ["StartMarker", "EndMarker"
+		],
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
 		 "Corner", "CornerMedium", "CornerLarge",
 		 "End", "Start",
