@@ -1,0 +1,2617 @@
+{
+	"blocks": [
+		{
+			"position": [
+				-9,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				7
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "RampTransitionUp"
+		},
+		{
+			"position": [
+				-9,
+				1,
+				1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				-9,
+				2,
+				-1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "RampTransitionDown"
+		},
+		{
+			"position": [
+				-9,
+				3,
+				-5
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight6Pins"
+		},
+		{
+			"position": [
+				-9,
+				3,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				-9,
+				3,
+				-8
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-7,
+				3,
+				-7
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "End"
+		},
+		{
+			"position": [
+				-7,
+				3,
+				-5
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-7,
+				3,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				-6,
+				3,
+				-9
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-5,
+				3,
+				-6
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				3,
+				-5
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				3,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				-9,
+				1,
+				-8
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-6,
+				1,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-4,
+				1,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				0,
+				1,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-2,
+				1,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				-7,
+				0,
+				-7
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight4Pins"
+		},
+		{
+			"position": [
+				-9,
+				1,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "RampTransitionUp"
+		},
+		{
+			"position": [
+				-7,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-3,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-3,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight6Pins"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "RampTransitionUp"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-8
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-8
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium2"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-4,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-4,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				2,
+				1,
+				-9
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				2,
+				1,
+				-7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				0,
+				1,
+				-7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-5,
+				1,
+				-7
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "CornerThin"
+		},
+		{
+			"position": [
+				-5,
+				1,
+				-5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "CornerThin"
+		},
+		{
+			"position": [
+				-3,
+				1,
+				-7
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "ThickThinThin"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				-7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "ThickThinThin"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				-7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight6Pins"
+		},
+		{
+			"position": [
+				-3,
+				1,
+				-5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "ThickThickThin"
+		},
+		{
+			"position": [
+				1,
+				1,
+				-5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "RampTransitionUp"
+		},
+		{
+			"position": [
+				3,
+				2,
+				-5
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				3,
+				2,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				1,
+				2,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				-1,
+				3,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-1,
+				3,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				3,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-1,
+				3,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				-5,
+				3,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "RampTransitionDown"
+		},
+		{
+			"position": [
+				-7,
+				3,
+				1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				3,
+				3
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight6Pins"
+		},
+		{
+			"position": [
+				-7,
+				3,
+				5
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "ThickThinThick"
+		},
+		{
+			"position": [
+				-6,
+				3,
+				7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-8,
+				3,
+				7
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-8,
+				2,
+				5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				-6,
+				2,
+				5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				-8,
+				2,
+				3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-6,
+				1,
+				3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "End"
+		},
+		{
+			"position": [
+				-6,
+				0,
+				7
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-4,
+				0,
+				7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-4,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				-4,
+				1,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				0,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "ThickThinThick"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-7
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-3,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-4,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				3,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				3,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				-1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				1,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				1,
+				1,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				1,
+				1,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-1,
+				-1,
+				-5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				-1,
+				-5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				-1,
+				-5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				-1,
+				-7
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				1,
+				-1,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				1,
+				-1,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				0,
+				-1,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				-1,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-4,
+				-1,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				-1,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				-8
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				3,
+				-1,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				3,
+				-1,
+				-5
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				2,
+				-1,
+				-7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				2,
+				-1,
+				-9
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				-1,
+				-1,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				-1,
+				-1,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				-1,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				-1,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				-1,
+				1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-1,
+				-1,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				0,
+				-1,
+				-7
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				1,
+				-1,
+				-5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-4,
+				-1,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				-1,
+				-9
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				-8
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium2"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				-6
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				-1,
+				3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				-1,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-4,
+				-1,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-6,
+				-0.5,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-7,
+				-0.5,
+				-7
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				-4
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				-3
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				-4
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				-2
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				7
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				6
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				6
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				6
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				8
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-6,
+				-1,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-9,
+				-0.5,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-6,
+				-0.5,
+				7
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-4,
+				-0.5,
+				5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-4,
+				-0.5,
+				7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				0,
+				-0.5,
+				5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				0,
+				-0.5,
+				3
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-3,
+				-0.5,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-3,
+				-0.5,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-9,
+				-1,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				0,
+				-1,
+				3
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				0,
+				-1,
+				5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-4,
+				-1,
+				7
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-6,
+				-1,
+				7
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-4,
+				-1,
+				5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-2,
+				-0.5,
+				5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "ThickThinThick"
+		},
+		{
+			"position": [
+				-2,
+				-1,
+				5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "ThickThinThick"
+		},
+		{
+			"position": [
+				-5,
+				-0.5,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-5,
+				-0.5,
+				-5
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				-0.5,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				-0.5,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-5,
+				-0.5,
+				-1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-5,
+				-0.5,
+				1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-7,
+				-0.5,
+				1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-7,
+				-1,
+				1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-5,
+				-1,
+				1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-5,
+				-1,
+				-1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-5,
+				-1,
+				-3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-5,
+				-1,
+				-5
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-3,
+				-1,
+				-1
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-3,
+				-1,
+				1
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-4,
+				-0.5,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-2,
+				-0.5,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-2,
+				-1,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-7,
+				-0.5,
+				-5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				-1,
+				-5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				-1,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				-1,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-7,
+				-1,
+				-7
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Start"
+		}
+	]
+}

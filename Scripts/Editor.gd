@@ -60,15 +60,14 @@ func _process(delta):
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
 	if not blocklist_selected.get_text(0) in categories:
 		GlobalVariables.block_selected = blocklist_selected.get_text(0)
-	print(block_instances)
 
 #Scrolls the placement plane
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not GlobalVariables.mouse_hovered:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
-			y_plane.position.y += 1
+			y_plane.position.y += 0.5
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
-			y_plane.position.y -= 1
+			y_plane.position.y -= 0.5
 
 func set_save_path():
 	save_as_dialog.popup_centered()
@@ -141,8 +140,7 @@ func _on_load_file_selector_dialog_file_selected(path):
 func _on_place(type, pos, rot):
 	block_instances.append(EditorBlockInstance.new(len(block_instances), pos, rot, type))
 	$AddedBlocksRoot.add_child(block_instances[-1].node())
-	print(block_instances[-1].get_json_dict().position)
-	
+
 #Block deletion
 func _on_delete(pos):
 	for j in len(block_instances):
