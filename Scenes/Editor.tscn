@@ -101,6 +101,10 @@ ok_button_text = "Load File"
 dialog_text = "Loading a level will discard any changes to this one.
 Proceed?"
 
+[node name="ErrorDialog" type="AcceptDialog" parent="CanvasLayer"]
+title = "Error!"
+dialog_text = "You must set save path first."
+
 [node name="LoadFileSelectorDialog" type="FileDialog" parent="CanvasLayer"]
 title = "Open a File"
 position = Vector2i(100, 100)

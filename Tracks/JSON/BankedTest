@@ -1,0 +1,173 @@
+{
+	"blocks": [
+		{
+			"position": [
+				-2,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerLarge"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-7
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				3,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium2"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedCorner2"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedCornerLarge"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				1,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedCornerMedium2"
+		},
+		{
+			"position": [
+				2,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				4,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCorner"
+		},
+		{
+			"position": [
+				4,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "BankedStraight"
+		}
+	]
+}

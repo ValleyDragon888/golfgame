@@ -28,7 +28,7 @@ func _ready():
 			{"Ramps": ["ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"]}
 		],
 		"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown", "ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"],
-		"Banked": ["BankedStraight", "BankedCorner", "BankedCornerMedium", "BankedCornerLarge"]
+		"Banked": ["BankedStraight", "BankedCorner", "BankedCornerMedium", "BankedCornerLarge", "BankedCorner2", "BankedCornerMedium2", "BankedCornerLarge2"]
 	}
 	var root = tree.create_item()
 	tree.hide_root = true
@@ -71,7 +71,7 @@ func _input(event: InputEvent) -> void:
 			y_plane.position.y -= 1
 
 func set_save_path():
-	save_as_dialog.popup()
+	save_as_dialog.popup_centered()
 
 func save():
 	var json_dict: Dictionary = {"blocks":[]}
@@ -80,8 +80,11 @@ func save():
 	var json_dict_str = JSON.stringify(json_dict, "\t")
 
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	file.store_string(json_dict_str)
-	file.close()
+	if file == null:
+		$CanvasLayer/ErrorDialog.popup_centered()
+	else:
+		file.store_string(json_dict_str)
+		file.close()
 
 func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	return EditorBlockInstance.new(

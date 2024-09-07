@@ -1,3 +1,4 @@
+AcceptDialog
 CanvasLayer
 CodeEdit
 Control
@@ -11,5 +12,3 @@ MeshInstance3D
 SpringArm3D
 Camera3D
 FileDialog
-ConfirmationDialog
-Button
