@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-#Instance and import variables
+
 const DEFAULT_ZOOM = 5
 @onready var arrow = $"../ArrowPivot/Arrow"
 @onready var arrow_pivot = $"../ArrowPivot"
@@ -13,6 +13,7 @@ const DEFAULT_ZOOM = 5
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
+
 
 #Camera controls
 func _input(event):
@@ -68,7 +69,6 @@ func _physics_process(delta):
 	if Input.is_action_just_released("Up"):
 		just_released = true
 
-
 	if abs(linear_velocity.x) < 0.1 and abs(linear_velocity.y) < 0.1 and abs(linear_velocity.z) < 0.1:
 		has_velocity = false
 
@@ -89,7 +89,6 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
 
 #Rotates and moves the arrow
-	#arrow_pivot.rotate_y(deg_to_rad(input_dir.x)*3/arrow.position.z)
 	arrow.position.z += input_dir.y * arrow.position.z * -0.03
 	arrow.position.z = clamp(arrow.position.z, -5, -0.1)
 

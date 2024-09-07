@@ -1,7 +1,6 @@
 extends Node3D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	load_level_from_file("res://Tracks/JSON/testsave.json")
 
@@ -27,6 +26,5 @@ func load_level_from_file(filename: String):
 	var content = file.get_as_text()
 	process_json(content)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

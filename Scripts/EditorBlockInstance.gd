@@ -1,11 +1,13 @@
 extends Node
 
+
 class_name EditorBlockInstance
 
 var id: int
 var pos: Vector3
 var rot: Vector3
 var type: String
+
 
 func _init(id: int, pos: Vector3, rot: Vector3, type: String):
 	self.id = id
@@ -19,7 +21,7 @@ func node() -> MeshInstance3D:
 	new_block.position = self.pos
 	new_block.rotation = self.rot
 	new_block.create_trimesh_collision()
-	new_block.name = str(self.id) # I do not understand how float gets a .to_string() fn but int does not?
+	new_block.name = str(self.id)
 	return new_block
 
 func get_json_dict() -> Dictionary:

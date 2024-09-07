@@ -1,9 +1,9 @@
 extends Node3D
 
+
 signal place(type: String, pos: Vector3, rot: Vector3)
 signal delete(pos: Vector3)
 
-#Instance and import variables
 @onready var camera_pivot_v = $CameraPivotV
 @onready var camera_pivot_h = $CameraPivotV/CameraPivotH
 @onready var tile_detector = $TileDetector
@@ -16,6 +16,7 @@ const SPEED = 3
 var velocity = Vector3.ZERO
 var tile_pos = Vector3.ZERO
 var type = "TrackStraight"
+
 
 func _process(delta):
 #Moves the camera

@@ -1,10 +1,12 @@
 extends Node3D
 
+
 @onready var blocks_ui_showing = false
 @onready var block_instances: Array[EditorBlockInstance] = []
 @onready var save_path = ""
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
+
 
 func generate_treeitem(dict, name, parent, tree) -> TreeItem:
 	var treeitem = tree.create_item(parent)
@@ -43,12 +45,12 @@ func _on_load_file_selector_dialog_file_selected(path):
 	var file = FileAccess.open(path, FileAccess.READ)
 	var contents = file.get_as_text()
 	var json_decoded = JSON.parse_string(contents)
-	
+
 	# Remove blocks in scene tree and script cache
 	block_instances = []
 	for child in $AddedBlocksRoot.get_children():
 		$AddedBlocksRoot.remove_child(child)
-	
+
 	# Add blocks from file.
 	for i in len(json_decoded["blocks"]):
 		# The last arg of blkinstance from json is the id.

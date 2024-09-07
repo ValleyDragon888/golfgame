@@ -1,5 +1,6 @@
 extends Node3D
 
+
 @onready var show_blocks_button = $CanvasLayer/ShowHideButton
 @onready var blocks_ui_showing = false
 @onready var blocks_ui_root = $CanvasLayer/Tree
@@ -12,9 +13,9 @@ extends Node3D
 @onready var categories = ["Standard Blocks", "Thin Blocks", "Transitions"]
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	
+
+#Instances the blocks into the dictionary
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
@@ -34,7 +35,8 @@ func _ready():
 		root.add_child(generate_treeitem(blocks_dict[key], key, root, tree))
 		root.get_children()[-1].collapsed = true
 	root.get_children()[0].select(0)
-	
+
+#Loads the block viewing system
 func generate_treeitem(dict, name, parent, tree) -> TreeItem:
 	var treeitem = tree.create_item(parent)
 	treeitem.set_text(0, name)
@@ -52,20 +54,19 @@ func generate_treeitem(dict, name, parent, tree) -> TreeItem:
 			treeitem.get_children()[-1].collapsed = true
 	return treeitem
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+#Block selection mechanism
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
 	if not blocklist_selected.get_text(0) in categories:
 		GlobalVariables.block_selected = blocklist_selected.get_text(0)
 	print(block_instances)
 
+#Scrolls the placement plane
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not GlobalVariables.mouse_hovered:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
-			# Why. WHY IS GODOT Z = Y NOOOOOOOO
 			y_plane.position.y += 1
 		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.pressed:
-			# Sanity levels just dropped
 			y_plane.position.y -= 1
 
 func set_save_path():
@@ -76,7 +77,7 @@ func save():
 	for block in block_instances:
 		json_dict["blocks"].append(block.get_json_dict())
 	var json_dict_str = JSON.stringify(json_dict, "\t")
-	
+
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	file.store_string(json_dict_str)
 	file.close()
@@ -90,20 +91,20 @@ func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	)
 
 func _on_show_hide_button_pressed():
-	# lazy. this checks if text is "show blocks"
-	if show_blocks_button.text[0] == "S":
+#This checks if text is "show blocks"
+	if show_blocks_button.text == "Show Blocks":
 		show_blocks_button.text = "Hide Blocks"
 		blocks_ui_root.show()
 	else:
 		show_blocks_button.text = "Show Blocks"
 		blocks_ui_root.hide()
 
+#Linking button presses to code
 func _on_save_button_pressed():
 	save()
 
 func _on_save_path_button_pressed():
 	set_save_path()
-
 
 func _on_save_as_dialog_file_selected(path):
 	save_path = path
@@ -115,30 +116,33 @@ func _on_load_dialog_confirmed():
 	load_fileselector.popup()
 
 func _on_load_file_selector_dialog_file_selected(path):
-	# Read in and decode json
+# Read in and decode json
 	save_path = path
 	var file = FileAccess.open(path, FileAccess.READ)
 	var contents = file.get_as_text()
 	var json_decoded = JSON.parse_string(contents)
-	
-	# Remove blocks in scene tree and script cache
+
+# Remove blocks in scene tree and script cache
 	block_instances = []
 	for child in $AddedBlocksRoot.get_children():
 		$AddedBlocksRoot.remove_child(child)
 
-	# Add blocks from file.
+# Add blocks from file.
 	for i in len(json_decoded["blocks"]):
-		# The last arg of blkinstance from json is the id.
+# The last arg of blkinstance from json is the id.
 		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
 
-
+#Block placement
 func _on_place(type, pos, rot):
 	block_instances.append(EditorBlockInstance.new(len(block_instances), pos, rot, type))
 	$AddedBlocksRoot.add_child(block_instances[-1].node())
 	print(block_instances[-1].get_json_dict().position)
+	
+#Block deletion
 func _on_delete(pos):
-	for block in len(block_instances):
+	for j in len(block_instances):
+		var block = len(block_instances) - j - 1
 		var block_pos = block_instances[block].get_json_dict().position
 		if block_pos[0] == pos.x and block_pos[1] == pos.y and block_pos[2] == pos.z:
 			block_instances.remove_at(block)
