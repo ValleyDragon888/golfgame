@@ -10,7 +10,7 @@ extends Node3D
 @onready var save_as_dialog = $CanvasLayer/SaveAsDialog
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
-@onready var categories = ["Standard Blocks", "Thin Blocks", "Transitions"]
+@onready var categories = ["Standard Blocks", "Thin Blocks", "Size Transitions", "Ramps"]
 
 
 func _ready():
