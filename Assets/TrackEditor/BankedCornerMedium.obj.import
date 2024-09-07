@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dieruwhwjj782"
+path="res://.godot/imported/BankedCornerMedium.obj-2beb1b1cecfa15c94dd646571fe2000e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BankedCornerMedium.obj-2beb1b1cecfa15c94dd646571fe2000e.mesh"]
+
+source_file="res://Assets/TrackEditor/BankedCornerMedium.obj"
+dest_files=["res://.godot/imported/BankedCornerMedium.obj-2beb1b1cecfa15c94dd646571fe2000e.mesh", "res://.godot/imported/BankedCornerMedium.obj-2beb1b1cecfa15c94dd646571fe2000e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

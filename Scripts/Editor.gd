@@ -28,7 +28,7 @@ func _ready():
 			{"Ramps": ["ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"]}
 		],
 		"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown", "ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"],
-		"Banked": ["BankedStraight", "BankedCorner"]
+		"Banked": ["BankedStraight", "BankedCorner", "BankedCornerMedium", "BankedCornerLarge"]
 	}
 	var root = tree.create_item()
 	tree.hide_root = true
