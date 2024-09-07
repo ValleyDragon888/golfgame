@@ -1,4 +1,3 @@
-Scripts/Editor.gd
 res://Scenes/Game.tscn
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
