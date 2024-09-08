@@ -86,7 +86,7 @@ text = "Set Save Path"
 title = "Save As"
 position = Vector2i(100, 100)
 size = Vector2i(1000, 500)
-ok_button_text = "Save"
+ok_button_text = "Set Save Path"
 
 [node name="LoadButton" type="Button" parent="CanvasLayer"]
 offset_left = 301.0
@@ -138,8 +138,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_alwub")
 
-[connection signal="delete" from="Freecam" to="." method="_on_delete"]
 [connection signal="delete" from="Freecam" to="." method="_on_freecam_delete"]
+[connection signal="delete" from="Freecam" to="." method="_on_delete"]
 [connection signal="place" from="Freecam" to="." method="_on_place"]
 [connection signal="mouse_entered" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_exited"]
