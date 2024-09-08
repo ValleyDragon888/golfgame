@@ -10,6 +10,7 @@ const DEFAULT_ZOOM = 5
 @export var sensitivity = -0.3
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
+var previous_position
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
@@ -61,7 +62,7 @@ func _physics_process(_delta):
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity:
 		just_released = false
-		has_velocity = true
+		previous_position = global_position
 		linear_velocity.y = arrow.position.z*-1
 		linear_velocity.z = (arrow.global_position.z - global_position.z) * 10
 		linear_velocity.x = (arrow.global_position.x - global_position.x) * 10
@@ -71,6 +72,8 @@ func _physics_process(_delta):
 
 	if abs(linear_velocity.x) < 0.1 and abs(linear_velocity.y) < 0.1 and abs(linear_velocity.z) < 0.1:
 		has_velocity = false
+	else:
+		has_velocity = true
 
 	if Input.is_action_pressed("Up") and has_velocity and just_released:
 		Engine.time_scale = 3
@@ -82,6 +85,10 @@ func _physics_process(_delta):
 	else:
 		arrow.visible = true
 
+	if position.y < -20:
+		global_position = previous_position
+		linear_velocity = Vector3.ZERO
+		angular_velocity = Vector3.ZERO
 #Quit the game
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
