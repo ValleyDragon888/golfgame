@@ -159,7 +159,8 @@ func _on_delete(pos):
 	for j in len(block_instances):
 		var block = len(block_instances) - j - 1
 		var block_pos = block_instances[block].get_json_dict().position
-		if block_pos[0] == pos.x and block_pos[1] == pos.y and block_pos[2] == pos.z:
-			block_instances.remove_at(block)
-			$AddedBlocksRoot.get_children()[block].queue_free()
-			break
+		if not block_instances[block].get_json_dict().type == "StartMarker":
+			if block_pos[0] == pos.x and block_pos[1] == pos.y and block_pos[2] == pos.z:
+				block_instances.remove_at(block)
+				$AddedBlocksRoot.get_children()[block].queue_free()
+				break
