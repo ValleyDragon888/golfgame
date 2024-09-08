@@ -1,6 +1,7 @@
+Button
+CanvasLayer
 MeshInstance3D
 AcceptDialog
-CanvasLayer
 CodeEdit
 Control
 Tree
@@ -11,4 +12,3 @@ CollisionShape3D
 StaticBody3D
 SpringArm3D
 Camera3D
-FileDialog
