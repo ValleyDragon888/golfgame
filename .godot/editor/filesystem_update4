@@ -1,7 +1,9 @@
 res://Scenes/Game.tscn
+res://Scripts/Ball.gd
+res://Scripts/TrackPlayer.gd
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
 res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
-res://Assets/blocks_config.yaml
+res://Scripts/EditorBlockInstance.gd

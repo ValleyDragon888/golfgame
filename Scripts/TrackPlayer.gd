@@ -6,6 +6,7 @@ extends Node3D
 @onready var save_path = ""
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
+@onready var player = $Player
 
 func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	return EditorBlockInstance.new(
@@ -39,8 +40,10 @@ func _on_load_file_selector_dialog_file_selected(path):
 		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
 
+	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
 	GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
 	GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
 	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
 	
+	player.get_child(0).position = GlobalVariables.start_position * 6
 	print(GlobalVariables.start_position)

@@ -3,12 +3,38 @@
 		{
 			"position": [
 				-2,
-				0.5,
-				0
+				0,
+				-2
 			],
 			"rotation": [
 				-0,
-				3.14159250259399,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
 				0
 			],
 			"type": "StartMarker"
@@ -37,7 +63,7 @@
 				0,
 				0
 			],
-			"type": "Straight"
+			"type": "Straight6Pins"
 		},
 		{
 			"position": [
@@ -47,23 +73,23 @@
 			],
 			"rotation": [
 				-0,
-				3.14159250259399,
+				0,
 				0
 			],
-			"type": "End"
+			"type": "Straight4Pins"
 		},
 		{
 			"position": [
 				-2,
-				0.5,
-				-4
+				0,
+				-6
 			],
 			"rotation": [
 				-0,
-				3.14159250259399,
+				0,
 				0
 			],
-			"type": "EndMarker"
+			"type": "Straight2Pins"
 		}
 	]
 }
