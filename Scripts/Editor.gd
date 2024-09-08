@@ -43,6 +43,7 @@ func _ready():
 		var file = FileAccess.open(GlobalVariables.current_track, FileAccess.READ)
 		var contents = file.get_as_text()
 		var json_decoded = JSON.parse_string(contents)
+		save_path = GlobalVariables.current_track
 
 # Add blocks from file.
 		for i in len(json_decoded["blocks"]):
@@ -130,6 +131,7 @@ func _on_save_path_button_pressed():
 	set_save_path()
 
 func _on_save_as_dialog_file_selected(path):
+	GlobalVariables.current_track = path
 	save_path = path
 
 func _on_load_button_pressed():
@@ -140,6 +142,7 @@ func _on_load_dialog_confirmed():
 
 func _on_load_file_selector_dialog_file_selected(path):
 # Read in and decode json
+	GlobalVariables.current_track = path
 	save_path = path
 	var file = FileAccess.open(path, FileAccess.READ)
 	var contents = file.get_as_text()
@@ -160,7 +163,6 @@ func _on_play_button_pressed():
 	if GlobalVariables.current_track == "":
 		$CanvasLayer/ErrorDialog.popup_centered()
 	else:
-		GlobalVariables.current_track = save_path
 		get_tree().change_scene_to_file("res://Scenes/EditorPlayer.tscn")
 
 #Block placement
