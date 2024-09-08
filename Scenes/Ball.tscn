@@ -19,8 +19,8 @@ radius = 0.505518
 collision_layer = 2
 mass = 0.1
 physics_material_override = SubResource("PhysicsMaterial_e1pkp")
-linear_damp = 1.0
-angular_damp = 1.0
+linear_damp = 0.5
+angular_damp = 0.5
 script = ExtResource("1_urg3s")
 
 [node name="BallMesh" parent="Ball" instance=ExtResource("2_tlyj4")]
