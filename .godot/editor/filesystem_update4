@@ -1,11 +1,10 @@
 res://Scenes/Game.tscn
-res://Scripts/Editor.gd
-res://Scripts/GlobalVariables.gd
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
 res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
-res://Scripts/TrackPlayer.gd
 res://Scripts/Ball.gd
-res://Scripts/Player.gd
+res://Scripts/EditorBlockInstance.gd
+res://Scripts/Editor.gd
+res://Scripts/Freecam.gd

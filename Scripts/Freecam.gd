@@ -70,7 +70,7 @@ func _process(delta):
 
 func _input(event):
 #Rotates the camera
-	if Input.is_mouse_button_pressed(2):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if event is InputEventMouseMotion:
 			camera_pivot_v.rotate_y(deg_to_rad(event.relative.x * sensitivity))

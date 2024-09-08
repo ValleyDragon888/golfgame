@@ -40,9 +40,9 @@ func _ready():
 	root.get_children()[0].select(0)
 
 #Loads the block viewing system
-func generate_treeitem(dict, name, parent, tree) -> TreeItem:
+func generate_treeitem(dict, block_name, parent, tree) -> TreeItem:
 	var treeitem = tree.create_item(parent)
-	treeitem.set_text(0, name)
+	treeitem.set_text(0, block_name)
 	for item in dict:
 		if typeof(item) == TYPE_STRING:
 			var new = tree.create_item(treeitem)
@@ -57,7 +57,7 @@ func generate_treeitem(dict, name, parent, tree) -> TreeItem:
 			treeitem.get_children()[-1].collapsed = true
 	return treeitem
 
-func _process(delta):
+func _process(_delta):
 #Block selection mechanism
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
 	if not blocklist_selected.get_text(0) in categories:
