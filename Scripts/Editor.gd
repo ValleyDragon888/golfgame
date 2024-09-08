@@ -39,6 +39,9 @@ func _ready():
 		root.get_children()[-1].collapsed = true
 	root.get_children()[0].select(0)
 
+	block_instances.insert(0, EditorBlockInstance.new(0, Vector3(0, 0, 0), Vector3(0, 0, 0), "StartMarker"))
+	$AddedBlocksRoot.add_child(block_instances[0].node())
+
 #Loads the block viewing system
 func generate_treeitem(dict, block_name, parent, tree) -> TreeItem:
 	var treeitem = tree.create_item(parent)
@@ -142,7 +145,9 @@ func _on_load_file_selector_dialog_file_selected(path):
 func _on_place(type, pos, rot):
 	if GlobalVariables.block_selected == "StartMarker":
 		GlobalVariables.start_position = pos
-		block_instances.push_front(EditorBlockInstance.new(0, pos, rot, type))
+		block_instances.remove_at(0)
+		block_instances.insert(0, EditorBlockInstance.new(0, pos, rot, type))
+		$AddedBlocksRoot.get_children()[0].queue_free()
 		$AddedBlocksRoot.add_child(block_instances[0].node())
 	else:
 		block_instances.append(EditorBlockInstance.new(len(block_instances) + 1, pos, rot, type))
