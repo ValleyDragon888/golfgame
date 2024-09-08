@@ -18,7 +18,7 @@ func _ready():
 #Instances the blocks into the dictionary
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
-		"Special Blocks": ["StartMarker", "EndMarker"
+		"Special Blocks": ["StartMarker", "EndMarker", "MovingPiece"
 		],
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
 		 "Corner", "CornerMedium", "CornerLarge",
@@ -65,6 +65,10 @@ func _process(_delta):
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
 	if not blocklist_selected.get_text(0) in categories:
 		GlobalVariables.block_selected = blocklist_selected.get_text(0)
+		if blocklist_selected.get_text(0) in GlobalVariables.scene_blocks:
+			GlobalVariables.block_selected_is_scene = true
+		else: GlobalVariables.block_selected_is_scene = false
+		print_debug(GlobalVariables.block_selected_is_scene)
 
 #Scrolls the placement plane
 func _input(event: InputEvent) -> void:
