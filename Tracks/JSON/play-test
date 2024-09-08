@@ -2,9 +2,9 @@
 	"blocks": [
 		{
 			"position": [
-				-5,
+				1,
 				0,
-				0
+				-3
 			],
 			"rotation": [
 				-0,
@@ -15,7 +15,7 @@
 		},
 		{
 			"position": [
-				-5,
+				1,
 				0,
 				0
 			],
@@ -24,24 +24,50 @@
 				0,
 				0
 			],
-			"type": "Straight"
+			"type": "MovingPiece"
 		},
 		{
 			"position": [
-				-5,
+				-1,
 				0,
-				2
+				-3
 			],
 			"rotation": [
 				-0,
 				0,
 				0
 			],
-			"type": "Straight2Pins"
+			"type": "MovingPiece"
 		},
 		{
 			"position": [
-				-5,
+				1,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "MovingPiece"
+		},
+		{
+			"position": [
+				-3,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "MovingPiece"
+		},
+		{
+			"position": [
+				-4,
 				0,
 				-2
 			],
@@ -50,7 +76,59 @@
 				0,
 				0
 			],
-			"type": "Straight4Pins"
+			"type": "MovingPiece"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "MovingPiece"
+		},
+		{
+			"position": [
+				-4,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "MovingPiece"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "MovingPiece"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "MovingPiece"
 		}
 	]
 }
