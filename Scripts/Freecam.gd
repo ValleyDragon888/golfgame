@@ -52,7 +52,12 @@ func _process(delta):
 	else:
 		tile_indicator.global_position = tile_pos
 		tile_indicator.visible = true
-		tile_indicator.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": type}))
+		
+		if not GlobalVariables.block_selected_is_scene:
+			tile_indicator.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": type}))
+		else:
+			tile_indicator.mesh = load("res://Assets/TrackEditor/EndMarker.obj")
+			
 		if Input.is_action_just_pressed("PlaceBlock") and not GlobalVariables.mouse_hovered:
 			place.emit(type, tile_pos, tile_indicator.rotation)
 		#print(tile_pos)

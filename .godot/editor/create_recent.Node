@@ -1,4 +1,4 @@
-Button
+MeshInstance3D
 AcceptDialog
 CanvasLayer
 CodeEdit
@@ -9,6 +9,6 @@ MenuBar
 Node3D
 CollisionShape3D
 StaticBody3D
-MeshInstance3D
 SpringArm3D
 Camera3D
+FileDialog
