@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7q5i0p3u5tbh"]
+
+[ext_resource type="Script" path="res://Scripts/EditorPlayer.gd" id="1_3kqse"]
+[ext_resource type="PackedScene" uid="uid://b7lb2ws1lt0r3" path="res://Scenes/Ball.tscn" id="2_d5fj3"]
+[ext_resource type="PackedScene" uid="uid://ow51gqkh6ids" path="res://Assets/Floor.dae" id="3_b1hiw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v5ktg"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_dkeik"]
+sky_material = SubResource("ProceduralSkyMaterial_v5ktg")
+
+[sub_resource type="Environment" id="Environment_5yp1w"]
+background_mode = 2
+sky = SubResource("Sky_dkeik")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="EditorPlayer" type="Node3D"]
+script = ExtResource("1_3kqse")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5yp1w")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="EditorButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -119.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Back To Editor"
+
+[node name="Player" parent="." instance=ExtResource("2_d5fj3")]
+
+[node name="AddedBlocksRoot" type="Node3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -15, 0)
+
+[node name="Floor" parent="." instance=ExtResource("3_b1hiw")]
+transform = Transform3D(0.1, 0, 0, 0, -0.1, 8.74228e-09, 0, -8.74228e-09, -0.1, 0, -1, 0)
+
+[connection signal="pressed" from="CanvasLayer/EditorButton" to="." method="_on_editor_button_pressed"]

@@ -82,6 +82,15 @@ offset_right = 237.0
 offset_bottom = 31.0
 text = "Set Save Path"
 
+[node name="PlayButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -41.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Play"
+
 [node name="SaveAsDialog" type="FileDialog" parent="CanvasLayer"]
 title = "Save As"
 position = Vector2i(100, 100)
@@ -138,14 +147,15 @@ skeleton = NodePath("../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_alwub")
 
-[connection signal="delete" from="Freecam" to="." method="_on_freecam_delete"]
 [connection signal="delete" from="Freecam" to="." method="_on_delete"]
+[connection signal="delete" from="Freecam" to="." method="_on_freecam_delete"]
 [connection signal="place" from="Freecam" to="." method="_on_place"]
 [connection signal="mouse_entered" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/ShowHideButton" to="." method="_on_show_hide_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SaveAsButton" to="." method="_on_save_path_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="file_selected" from="CanvasLayer/SaveAsDialog" to="." method="_on_save_as_dialog_file_selected"]
 [connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]

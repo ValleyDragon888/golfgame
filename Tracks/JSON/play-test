@@ -1,0 +1,56 @@
+{
+	"blocks": [
+		{
+			"position": [
+				-5,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight4Pins"
+		}
+	]
+}

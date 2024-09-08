@@ -39,9 +39,20 @@ func _ready():
 		root.get_children()[-1].collapsed = true
 	root.get_children()[0].select(0)
 
-	block_instances.insert(0, EditorBlockInstance.new(0, Vector3(0, 0, 0), Vector3(0, 0, 0), "StartMarker"))
-	$AddedBlocksRoot.add_child(block_instances[0].node())
+	if GlobalVariables.current_track != "":
+		var file = FileAccess.open(GlobalVariables.current_track, FileAccess.READ)
+		var contents = file.get_as_text()
+		var json_decoded = JSON.parse_string(contents)
 
+# Add blocks from file.
+		for i in len(json_decoded["blocks"]):
+# The last arg of blkinstance from json is the id.
+			block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
+			$AddedBlocksRoot.add_child(block_instances[-1].node())
+	else:
+		block_instances.insert(0, EditorBlockInstance.new(0, Vector3(0, 0, 0), Vector3(0, 0, 0), "StartMarker"))
+		$AddedBlocksRoot.add_child(block_instances[0].node())
+		
 #Loads the block viewing system
 func generate_treeitem(dict, block_name, parent, tree) -> TreeItem:
 	var treeitem = tree.create_item(parent)
@@ -118,10 +129,10 @@ func _on_save_as_dialog_file_selected(path):
 	save_path = path
 
 func _on_load_button_pressed():
-	load_confirmation_dialog.popup()
+	load_confirmation_dialog.popup_centered()
 
 func _on_load_dialog_confirmed():
-	load_fileselector.popup()
+	load_fileselector.popup_centered()
 
 func _on_load_file_selector_dialog_file_selected(path):
 # Read in and decode json
@@ -140,6 +151,13 @@ func _on_load_file_selector_dialog_file_selected(path):
 # The last arg of blkinstance from json is the id.
 		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
+
+func _on_play_button_pressed():
+	if GlobalVariables.current_track == "":
+		$CanvasLayer/ErrorDialog.popup_centered()
+	else:
+		GlobalVariables.current_track = save_path
+		get_tree().change_scene_to_file("res://Scenes/EditorPlayer.tscn")
 
 #Block placement
 func _on_place(type, pos, rot):

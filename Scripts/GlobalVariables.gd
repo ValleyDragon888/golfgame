@@ -5,3 +5,4 @@ extends Node
 var block_selected: String = "StartMarker"
 var mouse_hovered: bool = false
 var start_position: Vector3 = Vector3.ZERO
+var current_track: String
