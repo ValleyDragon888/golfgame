@@ -8,3 +8,5 @@ res://Scenes/TrackPlayer.tscn
 res://Scripts/Editor.gd
 res://Scripts/Ball.gd
 res://Scripts/EditorPlayer.gd
+res://Scenes/ButtonTheme.tres
+res://Scenes/Home.tscn
