@@ -3,7 +3,6 @@ extends Node3D
 
 @onready var blocks_ui_showing = false
 @onready var block_instances: Array[EditorBlockInstance] = []
-@onready var save_path = ""
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
 @onready var player = $Player
@@ -17,8 +16,7 @@ func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	)
 
 func _ready():
-	var save_path = GlobalVariables.current_track
-	var file = FileAccess.open(save_path, FileAccess.READ)
+	var file = FileAccess.open(GlobalVariables.current_track, FileAccess.READ)
 	var contents = file.get_as_text()
 	var json_decoded = JSON.parse_string(contents)
 
@@ -39,7 +37,6 @@ func _ready():
 	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
 	
 	player.get_child(0).position = GlobalVariables.start_position * 6
-	print(GlobalVariables.start_position)
 
 func _on_editor_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")

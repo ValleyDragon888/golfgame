@@ -97,4 +97,3 @@ func _physics_process(_delta):
 	arrow.scale.x = (arrow.position.z-3)/-60
 	arrow.scale.y = (arrow.position.z-3)/-60
 	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z),0)
-	print(arrow.position.z)

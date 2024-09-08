@@ -6,3 +6,5 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Scripts/Editor.gd
+res://Scripts/Ball.gd
+res://Scripts/EditorPlayer.gd

@@ -2,16 +2,16 @@
 	"blocks": [
 		{
 			"position": [
+				-4,
 				0,
-				0,
-				0
+				6
 			],
 			"rotation": [
-				0,
+				-0,
 				0,
 				0
 			],
-			"type": "TrackStraight"
+			"type": "StartMarker"
 		},
 		{
 			"position": [

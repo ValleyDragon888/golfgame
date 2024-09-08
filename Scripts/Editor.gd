@@ -6,7 +6,6 @@ extends Node3D
 @onready var blocks_ui_root = $CanvasLayer/Tree
 @onready var y_plane = $YPlane
 @onready var block_instances: Array[EditorBlockInstance] = []
-@onready var save_path = ""
 @onready var save_as_dialog = $CanvasLayer/SaveAsDialog
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
@@ -43,7 +42,6 @@ func _ready():
 		var file = FileAccess.open(GlobalVariables.current_track, FileAccess.READ)
 		var contents = file.get_as_text()
 		var json_decoded = JSON.parse_string(contents)
-		save_path = GlobalVariables.current_track
 
 # Add blocks from file.
 		for i in len(json_decoded["blocks"]):
@@ -80,7 +78,6 @@ func _process(_delta):
 		if blocklist_selected.get_text(0) in GlobalVariables.scene_blocks:
 			GlobalVariables.block_selected_is_scene = true
 		else: GlobalVariables.block_selected_is_scene = false
-		print_debug(GlobalVariables.block_selected_is_scene)
 
 #Scrolls the placement plane
 func _input(event: InputEvent) -> void:
@@ -99,7 +96,7 @@ func save():
 		json_dict["blocks"].append(block.get_json_dict())
 	var json_dict_str = JSON.stringify(json_dict, "\t")
 
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	var file = FileAccess.open(GlobalVariables.current_track, FileAccess.WRITE)
 	if file == null:
 		$CanvasLayer/ErrorDialog.popup_centered()
 	else:
@@ -132,7 +129,6 @@ func _on_save_path_button_pressed():
 
 func _on_save_as_dialog_file_selected(path):
 	GlobalVariables.current_track = path
-	save_path = path
 
 func _on_load_button_pressed():
 	load_confirmation_dialog.popup_centered()
@@ -143,7 +139,6 @@ func _on_load_dialog_confirmed():
 func _on_load_file_selector_dialog_file_selected(path):
 # Read in and decode json
 	GlobalVariables.current_track = path
-	save_path = path
 	var file = FileAccess.open(path, FileAccess.READ)
 	var contents = file.get_as_text()
 	var json_decoded = JSON.parse_string(contents)
@@ -176,7 +171,6 @@ func _on_place(type, pos, rot):
 	else:
 		block_instances.append(EditorBlockInstance.new(len(block_instances) + 1, pos, rot, type))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
-	print(block_instances)
 
 #Block deletion
 func _on_delete(pos):
