@@ -7,24 +7,6 @@ extends Node3D
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
 
-
-func generate_treeitem(dict, name, parent, tree) -> TreeItem:
-	var treeitem = tree.create_item(parent)
-	treeitem.set_text(0, name)
-	for item in dict:
-		if typeof(item) == TYPE_STRING:
-			var new = tree.create_item(treeitem)
-			new.set_text(0, item)
-		elif typeof(item) == TYPE_DICTIONARY:
-			treeitem.add_child(generate_treeitem(
-				item[item.keys()[0]],
-				item.keys()[0],
-				treeitem,
-				tree
-			))
-			treeitem.get_children()[-1].uncollapse_tree()
-	return treeitem
-
 func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	return EditorBlockInstance.new(
 		id,
@@ -56,3 +38,9 @@ func _on_load_file_selector_dialog_file_selected(path):
 		# The last arg of blkinstance from json is the id.
 		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
+
+	GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
+	GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
+	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
+	
+	print(GlobalVariables.start_position)

@@ -4,3 +4,4 @@ extends Node
 
 var block_selected: String = "Start"
 var mouse_hovered: bool = false
+var start_position: Vector3 = Vector3.ZERO

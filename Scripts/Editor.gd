@@ -140,8 +140,14 @@ func _on_load_file_selector_dialog_file_selected(path):
 
 #Block placement
 func _on_place(type, pos, rot):
-	block_instances.append(EditorBlockInstance.new(len(block_instances), pos, rot, type))
-	$AddedBlocksRoot.add_child(block_instances[-1].node())
+	if GlobalVariables.block_selected == "StartMarker":
+		GlobalVariables.start_position = pos
+		block_instances.push_front(EditorBlockInstance.new(0, pos, rot, type))
+		$AddedBlocksRoot.add_child(block_instances[0].node())
+	else:
+		block_instances.append(EditorBlockInstance.new(len(block_instances) + 1, pos, rot, type))
+		$AddedBlocksRoot.add_child(block_instances[-1].node())
+	print(block_instances)
 
 #Block deletion
 func _on_delete(pos):

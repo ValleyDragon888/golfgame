@@ -74,6 +74,7 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("Up") and has_velocity and just_released:
 		Engine.time_scale = 3
+		global_position = GlobalVariables.start_position * 6 #test for start position
 	else:
 		Engine.time_scale = 1
 
