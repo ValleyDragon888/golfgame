@@ -4,7 +4,7 @@
 			"position": [
 				-2,
 				0,
-				-1
+				0
 			],
 			"rotation": [
 				-0,
@@ -15,39 +15,26 @@
 		},
 		{
 			"position": [
-				-2,
 				0,
-				-3
+				0,
+				4
 			],
 			"rotation": [
 				-0,
 				0,
-				0
-			],
-			"type": "BankedStraight"
-		},
-		{
-			"position": [
-				-2,
-				0,
-				-5
-			],
-			"rotation": [
-				-0,
-				-1.57079637050629,
 				0
 			],
 			"type": "BankedCornerLarge"
 		},
 		{
 			"position": [
-				2,
+				3,
 				0,
-				-7
+				3
 			],
 			"rotation": [
 				-0,
-				3.14159250259399,
+				1.57079637050629,
 				0
 			],
 			"type": "BankedCornerMedium"
@@ -56,33 +43,20 @@
 			"position": [
 				3,
 				0,
-				-4
+				1
 			],
 			"rotation": [
 				-0,
-				1.57079637050629,
+				-3.14159250259399,
 				0
 			],
 			"type": "BankedCorner"
 		},
 		{
 			"position": [
+				1,
 				0,
-				0,
-				-3
-			],
-			"rotation": [
-				-0,
-				-1.57079637050629,
-				0
-			],
-			"type": "BankedCornerMedium2"
-		},
-		{
-			"position": [
-				0,
-				0,
-				-1
+				1
 			],
 			"rotation": [
 				-0,
@@ -93,81 +67,81 @@
 		},
 		{
 			"position": [
-				2,
+				1,
 				0,
 				-1
 			],
 			"rotation": [
 				-0,
-				3.14159250259399,
-				0
-			],
-			"type": "BankedCornerLarge"
-		},
-		{
-			"position": [
-				-1,
-				0,
-				2
-			],
-			"rotation": [
-				-0,
-				0,
-				0
-			],
-			"type": "BankedCornerMedium"
-		},
-		{
-			"position": [
-				1,
-				0,
-				2
-			],
-			"rotation": [
-				-0,
-				3.14159250259399,
+				-1.57079637050629,
 				0
 			],
 			"type": "BankedCornerMedium2"
 		},
 		{
 			"position": [
-				2,
+				4,
 				0,
-				5
+				-2
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedCornerLarge2"
+		},
+		{
+			"position": [
+				6,
+				0,
+				2
 			],
 			"rotation": [
 				-0,
 				0,
 				0
 			],
-			"type": "BankedCorner"
+			"type": "BankedTransitionLeft"
 		},
 		{
 			"position": [
-				4,
+				-2,
 				0,
-				5
-			],
-			"rotation": [
-				-0,
-				1.57079637050629,
-				0
-			],
-			"type": "BankedCorner"
-		},
-		{
-			"position": [
-				4,
-				0,
-				3
+				-2
 			],
 			"rotation": [
 				-0,
 				-3.14159250259399,
 				0
 			],
-			"type": "BankedStraight"
+			"type": "BankedTransitionRight"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				6,
+				0,
+				4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "End"
 		}
 	]
 }
