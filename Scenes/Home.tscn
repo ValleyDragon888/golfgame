@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://cje8qg3xbxe7a"]
+
+[ext_resource type="Theme" uid="uid://c3v1nsj550ucd" path="res://Scenes/ButtonTheme.tres" id="1_lkv1k"]
+
+[node name="Home" type="Node3D"]
+
+[node name="HomeScreen" type="CanvasLayer" parent="."]
+
+[node name="PlayCampaign" type="Button" parent="HomeScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -62.0
+offset_right = 162.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lkv1k")
+theme_override_font_sizes/font_size = 50
+text = "Play Campaign"
