@@ -1,8 +1,8 @@
+Node3D
+Camera3D
 PathFollow3D
 Path3D
-Camera3D
 MeshInstance3D
-Node3D
 RichTextLabel
 Sprite2D
 CanvasLayer
@@ -12,4 +12,3 @@ StaticBody3D
 CollisionShape3D
 AcceptDialog
 CodeEdit
-Control

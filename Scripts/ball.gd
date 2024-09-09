@@ -56,7 +56,7 @@ func _input(event):
 
 func _physics_process(_delta):
 #Locks camera and arrow to the player
-	camera_pivot_v.position = position
+	camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)
 	arrow_pivot.position = position
 
 #May be replaced with correct controls

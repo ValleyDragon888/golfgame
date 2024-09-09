@@ -1,22 +1,33 @@
-[gd_scene load_steps=7 format=3 uid="uid://cje8qg3xbxe7a"]
+[gd_scene load_steps=9 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
+[ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_r2fhe"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_txcju"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yg2g1"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Curve3D" id="Curve3D_clnlg"]
-bake_interval = 0.01
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -10, 0, 0, -15, 0, 0, 15, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0),
-"tilts": PackedFloat32Array(-0.119596, 0.416579, -0.911906, 0, 0)
-}
-point_count = 5
+[sub_resource type="Sky" id="Sky_dkeik"]
+sky_material = SubResource("ProceduralSkyMaterial_yg2g1")
+
+[sub_resource type="Environment" id="Environment_a5dr3"]
+background_mode = 2
+sky = SubResource("Sky_dkeik")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Home" type="Node3D"]
 script = ExtResource("1_2ptev")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a5dr3")
 
 [node name="HomeScreen" type="CanvasLayer" parent="."]
 
@@ -91,23 +102,18 @@ theme_override_font_sizes/normal_font_size = 63
 theme_override_font_sizes/bold_font_size = 63
 bbcode_enabled = true
 text = "[b]Made By:[/b]
-Benjy Hutchkinson
+Benjy Hutchinson
 Jacob Flint"
 
 [node name="Background" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Background"]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-mesh = SubResource("BoxMesh_txcju")
+mesh = ExtResource("5_r2fhe")
 
-[node name="Path3D" type="Path3D" parent="Background"]
-curve = SubResource("Curve3D_clnlg")
+[node name="CameraOrigin" type="Node3D" parent="Background"]
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Background/Path3D"]
-transform = Transform3D(-0.702056, -0.0843656, 0.707107, -0.119311, 0.992857, -3.72529e-09, -0.702056, -0.0843656, -0.707107, 10, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Background/Path3D/PathFollow3D"]
-transform = Transform3D(-0.702056, 0.0833802, -0.707224, -0.0843656, 0.976389, 0.198863, 0.707107, 0.199279, -0.678445, 5.09119, 1.61431, -8.8947)
+[node name="Camera3D" type="Camera3D" parent="Background/CameraOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 1.87365)
 
 [connection signal="pressed" from="HomeScreen/PlayCredits" to="." method="_on_play_credits_pressed"]
 [connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]

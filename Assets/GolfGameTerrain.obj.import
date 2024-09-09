@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://yymkgtvdypns"
+path="res://.godot/imported/GolfGameTerrain.obj-c77945fdc9fce4c0b470a7630ee0a502.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GolfGameTerrain.obj-c77945fdc9fce4c0b470a7630ee0a502.mesh"]
+
+source_file="res://Assets/GolfGameTerrain.obj"
+dest_files=["res://.godot/imported/GolfGameTerrain.obj-c77945fdc9fce4c0b470a7630ee0a502.mesh", "res://.godot/imported/GolfGameTerrain.obj-c77945fdc9fce4c0b470a7630ee0a502.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
