@@ -1,6 +1,22 @@
-[gd_scene format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=7 format=3 uid="uid://cje8qg3xbxe7a"]
+
+[ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
+[ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
+[ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
+[ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_txcju"]
+
+[sub_resource type="Curve3D" id="Curve3D_clnlg"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, -10, 0, 0, -15, 0, 0, 15, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 0, 10, 0, 0),
+"tilts": PackedFloat32Array(-0.119596, 0.416579, -0.911906, 0, 0)
+}
+point_count = 5
 
 [node name="Home" type="Node3D"]
+script = ExtResource("1_2ptev")
 
 [node name="HomeScreen" type="CanvasLayer" parent="."]
 
@@ -18,3 +34,80 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Play Campaign"
+
+[node name="PlayCredits" type="Button" parent="HomeScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 76.0
+offset_right = 35.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+
+[node name="Credits" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Back" type="Button" parent="Credits"]
+offset_right = 108.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="GodotLogo" type="Sprite2D" parent="Credits"]
+position = Vector2(128, 531)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_5x5jf")
+
+[node name="MadeWith" type="RichTextLabel" parent="Credits"]
+offset_left = 4.0
+offset_top = 331.0
+offset_right = 392.0
+offset_bottom = 427.0
+theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/bold_font_size = 63
+bbcode_enabled = true
+text = "[b]Made With:[/b]"
+
+[node name="BlenderLogo" type="Sprite2D" parent="Credits"]
+position = Vector2(452, 530)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_immrn")
+
+[node name="Git" type="Sprite2D" parent="Credits"]
+position = Vector2(825, 532)
+texture = ExtResource("4_k5njy")
+
+[node name="MadeBy" type="RichTextLabel" parent="Credits"]
+offset_left = 394.0
+offset_top = 29.0
+offset_right = 996.0
+offset_bottom = 379.0
+theme_override_font_sizes/normal_font_size = 63
+theme_override_font_sizes/bold_font_size = 63
+bbcode_enabled = true
+text = "[b]Made By:[/b]
+Benjy Hutchkinson
+Jacob Flint"
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background"]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_txcju")
+
+[node name="Path3D" type="Path3D" parent="Background"]
+curve = SubResource("Curve3D_clnlg")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Background/Path3D"]
+transform = Transform3D(-0.702056, -0.0843656, 0.707107, -0.119311, 0.992857, -3.72529e-09, -0.702056, -0.0843656, -0.707107, 10, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Background/Path3D/PathFollow3D"]
+transform = Transform3D(-0.702056, 0.0833802, -0.707224, -0.0843656, 0.976389, 0.198863, 0.707107, 0.199279, -0.678445, 5.09119, 1.61431, -8.8947)
+
+[connection signal="pressed" from="HomeScreen/PlayCredits" to="." method="_on_play_credits_pressed"]
+[connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
