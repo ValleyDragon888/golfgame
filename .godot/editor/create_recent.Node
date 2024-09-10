@@ -1,3 +1,4 @@
+WorldEnvironment
 HBoxContainer
 ColorRect
 Node3D
@@ -12,4 +13,3 @@ Button
 Area3D
 StaticBody3D
 CollisionShape3D
-AcceptDialog

@@ -1,4 +1,5 @@
 res://Scenes/Editor.tscn
+res://Assets/Theme_1.tres
 res://Scenes/Game.tscn
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
@@ -6,4 +7,3 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Scenes/Home.tscn
-res://Assets/Theme_1.tres

@@ -1,21 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://crnpgfffxreu"]
+[gd_scene load_steps=11 format=3 uid="uid://crnpgfffxreu"]
 
 [ext_resource type="Script" path="res://Scripts/Editor.gd" id="1_megtk"]
 [ext_resource type="PackedScene" uid="uid://c8ng83e0upg4t" path="res://Scenes/Freecam.tscn" id="2_v856w"]
 [ext_resource type="Theme" uid="uid://bp83wcgbo72tr" path="res://Assets/Theme_1.tres" id="3_t24cc"]
+[ext_resource type="Texture2D" uid="uid://f8endkllh5oh" path="res://Assets/Golfgame_Hdri_1.png" id="4_xwpat"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w40u7"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_46uhm"]
+panorama = ExtResource("4_xwpat")
 
-[sub_resource type="Sky" id="Sky_ljo6r"]
-sky_material = SubResource("ProceduralSkyMaterial_w40u7")
+[sub_resource type="Sky" id="Sky_rc7r4"]
+sky_material = SubResource("PanoramaSkyMaterial_46uhm")
 
-[sub_resource type="Environment" id="Environment_6xua7"]
+[sub_resource type="Environment" id="Environment_w8fr2"]
 background_mode = 2
-sky = SubResource("Sky_ljo6r")
-tonemap_mode = 2
-glow_enabled = true
+sky = SubResource("Sky_rc7r4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_486vj"]
 transparency = 1
@@ -30,11 +28,12 @@ size = Vector3(10, 0.1, 10)
 script = ExtResource("1_megtk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(0.489158, -0.870229, 0.0585314, 0.780479, 0.466689, 0.415998, -0.38933, -0.157806, 0.90748, 0, 0, 0)
+light_color = Color(0.844923, 0.680871, 0.5383, 1)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_6xua7")
+environment = SubResource("Environment_w8fr2")
 
 [node name="Freecam" parent="." instance=ExtResource("2_v856w")]
 
@@ -67,19 +66,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SideBar" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 9
 anchor_bottom = 1.0
+offset_top = 80.0
 offset_right = 296.0
 offset_bottom = -5.0
-grow_horizontal = 2
-color = Color(0.305882, 0.584314, 0.85098, 1)
+grow_vertical = 2
+color = Color(0.419608, 0.415686, 0.611765, 0.580392)
 
 [node name="TopBar" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = -1
+anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 80.0
 grow_horizontal = 2
-color = Color(0.572549, 0.815686, 0.313726, 1)
+color = Color(0.839216, 0.572549, 0.517647, 0.541176)
 
 [node name="SaveButton" type="Button" parent="CanvasLayer"]
 offset_left = 213.0
@@ -174,8 +174,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("BoxShape3D_alwub")
 
-[connection signal="delete" from="Freecam" to="." method="_on_freecam_delete"]
 [connection signal="delete" from="Freecam" to="." method="_on_delete"]
+[connection signal="delete" from="Freecam" to="." method="_on_freecam_delete"]
 [connection signal="place" from="Freecam" to="." method="_on_place"]
 [connection signal="mouse_entered" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control" to="Freecam" method="_on_control_mouse_exited"]

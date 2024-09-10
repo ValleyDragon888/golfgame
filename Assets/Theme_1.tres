@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bp83wcgbo72tr"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bp83wcgbo72tr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nb57"]
 bg_color = Color(0.287218, 0.210354, 0, 1)
@@ -29,7 +29,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okaj3"]
-bg_color = Color(1, 0.764706, 0.0431373, 1)
+bg_color = Color(0.968627, 0.541176, 0.419608, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -52,12 +52,15 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itfws"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep54n"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 50.0
 content_margin_bottom = 10.0
-bg_color = Color(0.0823529, 0.376471, 0.509804, 1)
+bg_color = Color(0.517647, 0.509804, 0.741176, 1)
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
@@ -73,4 +76,5 @@ Button/styles/focus = SubResource("StyleBoxFlat_mbuhp")
 Button/styles/hover = SubResource("StyleBoxFlat_q12eg")
 Button/styles/normal = SubResource("StyleBoxFlat_okaj3")
 Button/styles/pressed = SubResource("StyleBoxFlat_1uebq")
+Tree/styles/focus = SubResource("StyleBoxFlat_itfws")
 Tree/styles/panel = SubResource("StyleBoxFlat_ep54n")
