@@ -1,3 +1,6 @@
+Button
+RichTextLabel
+CanvasLayer
 WorldEnvironment
 HBoxContainer
 ColorRect
@@ -6,10 +9,6 @@ Camera3D
 PathFollow3D
 Path3D
 MeshInstance3D
-RichTextLabel
 Sprite2D
-CanvasLayer
-Button
 Area3D
 StaticBody3D
-CollisionShape3D

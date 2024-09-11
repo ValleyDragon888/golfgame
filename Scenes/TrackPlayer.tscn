@@ -30,10 +30,10 @@ environment = SubResource("Environment_5yp1w")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="LoadButton" type="Button" parent="CanvasLayer"]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 112.0
-offset_bottom = 82.0
+offset_left = 13.0
+offset_top = 62.0
+offset_right = 105.0
+offset_bottom = 124.0
 text = "Load"
 
 [node name="LoadDialog" type="ConfirmationDialog" parent="CanvasLayer"]
