@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8rc3b53wu1vg"
+path="res://.godot/imported/Loop.obj-7154d74a731cf506ce2b89f3fb0bdff2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Loop.obj-7154d74a731cf506ce2b89f3fb0bdff2.mesh"]
+
+source_file="res://Assets/TrackEditor/Loop.obj"
+dest_files=["res://.godot/imported/Loop.obj-7154d74a731cf506ce2b89f3fb0bdff2.mesh", "res://.godot/imported/Loop.obj-7154d74a731cf506ce2b89f3fb0bdff2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

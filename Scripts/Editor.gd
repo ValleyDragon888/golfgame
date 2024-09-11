@@ -21,7 +21,7 @@ func _ready():
 		],
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
 		 "Corner", "CornerMedium", "CornerLarge",
-		 "End", "Start",
+		 "End", "Start", "Loop",
 			{"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown"]}
 		],
 		"Size Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
