@@ -22,8 +22,6 @@ func _process(delta):
 #Moves the camera
 	var direction = Input.get_vector("Left", "Right", "Forward", "Backward")
 	direction = (camera_pivot_v.transform.basis * Vector3(direction.x, Input.get_axis("Down", "Up"), direction.y)).normalized()
-	if GlobalVariables.mouse_hovered:
-		direction = Vector3.ZERO
 
 	if direction:
 		velocity.x = direction.x * delta * SPEED

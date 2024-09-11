@@ -1,3 +1,4 @@
+Panel
 Button
 RichTextLabel
 CanvasLayer
@@ -11,4 +12,3 @@ Path3D
 MeshInstance3D
 Sprite2D
 Area3D
-StaticBody3D

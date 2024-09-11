@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://crnpgfffxreu"]
+[gd_scene load_steps=14 format=3 uid="uid://crnpgfffxreu"]
 
 [ext_resource type="Script" path="res://Scripts/Editor.gd" id="1_megtk"]
 [ext_resource type="PackedScene" uid="uid://c8ng83e0upg4t" path="res://Scenes/Freecam.tscn" id="2_v856w"]
@@ -14,6 +14,26 @@ sky_material = SubResource("PanoramaSkyMaterial_46uhm")
 [sub_resource type="Environment" id="Environment_w8fr2"]
 background_mode = 2
 sky = SubResource("Sky_rc7r4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no753"]
+bg_color = Color(0.968627, 0.541176, 0.419608, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0c4e"]
+bg_color = Color(0.419608, 0.415686, 0.611765, 0.580392)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io24g"]
+bg_color = Color(0.839216, 0.572549, 0.517647, 0.541176)
+anti_aliasing = false
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_486vj"]
 transparency = 1
@@ -39,47 +59,46 @@ environment = SubResource("Environment_w8fr2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Crosshair" type="Panel" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 5.0
+offset_left = -9.0
+offset_top = -9.0
+offset_right = 9.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0, 0, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_no753")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -12.0
-offset_top = -13.0
-offset_right = 14.0
-offset_bottom = 13.0
+offset_left = -14.0
+offset_top = -9.0
+offset_right = 12.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SideBar" type="ColorRect" parent="CanvasLayer"]
+[node name="SideBar" type="Panel" parent="CanvasLayer"]
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_top = 80.0
 offset_right = 296.0
-offset_bottom = -5.0
 grow_vertical = 2
-color = Color(0.419608, 0.415686, 0.611765, 0.580392)
+theme_override_styles/panel = SubResource("StyleBoxFlat_d0c4e")
 
-[node name="TopBar" type="ColorRect" parent="CanvasLayer"]
+[node name="TopBar" type="Panel" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 80.0
 grow_horizontal = 2
-color = Color(0.839216, 0.572549, 0.517647, 0.541176)
+theme_override_styles/panel = SubResource("StyleBoxFlat_io24g")
 
 [node name="SaveButton" type="Button" parent="CanvasLayer"]
 offset_left = 213.0
