@@ -9,3 +9,8 @@ var start_position: Vector3 = Vector3.ZERO
 var current_track: String
 
 const scene_blocks = ["MovingPiece"]
+const campaigns = {
+	"Main Campaign": [
+		{"1": "res://Tracks/JSON/Mega Track"}
+	]
+}

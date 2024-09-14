@@ -1,10 +1,12 @@
-res://Scenes/Game.tscn
+res://Scenes/Home.tscn
 res://Assets/Theme_1.tres
+res://Scenes/CampaignSelector.gd
+res://Scenes/Game.tscn
 res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
 res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
-res://Scenes/Home.tscn
+res://Scripts/GlobalVariables.gd
 res://Scripts/Home.gd

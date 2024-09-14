@@ -1,3 +1,6 @@
+ItemList
+RichTextLabel
+Node3D
 Label
 PopupMenu
 Node2D
@@ -6,9 +9,7 @@ PopupPanel
 Panel
 Control
 Button
-RichTextLabel
 CanvasLayer
 WorldEnvironment
 HBoxContainer
-Node3D
 Camera3D

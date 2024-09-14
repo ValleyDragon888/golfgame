@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=11 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_r2fhe"]
+[ext_resource type="Script" path="res://Scenes/CampaignSelector.gd" id="7_b47rm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yg2g1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -119,7 +120,6 @@ Benjy Hutchinson
 Jacob Flint"
 
 [node name="Background" type="Node3D" parent="."]
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Background"]
 mesh = ExtResource("5_r2fhe")
@@ -129,6 +129,45 @@ mesh = ExtResource("5_r2fhe")
 [node name="Camera3D" type="Camera3D" parent="Background/CameraOrigin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 1.87365)
 
+[node name="CampaignSelector" type="Node3D" parent="."]
+script = ExtResource("7_b47rm")
+
+[node name="Title" type="RichTextLabel" parent="CampaignSelector"]
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 1157.0
+offset_bottom = 104.0
+theme = ExtResource("2_sia7g")
+theme_override_font_sizes/bold_font_size = 54
+bbcode_enabled = true
+text = "[b]Play Campaign: Main Campaign[b]"
+fit_content = true
+
+[node name="TracksList" type="ItemList" parent="CampaignSelector"]
+visible = false
+offset_left = 204.0
+offset_top = 110.0
+offset_right = 888.0
+offset_bottom = 532.0
+theme = ExtResource("2_sia7g")
+theme_override_font_sizes/font_size = 57
+item_count = 2
+item_0/text = "0"
+item_1/text = "1"
+
+[node name="Back" type="Button" parent="CampaignSelector"]
+visible = false
+offset_left = 23.0
+offset_top = 105.0
+offset_right = 131.0
+offset_bottom = 171.0
+theme = ExtResource("2_sia7g")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="pressed" from="HomeScreen/PlayCampaign" to="." method="_on_play_campaign_pressed"]
 [connection signal="pressed" from="HomeScreen/PlayCredits" to="." method="_on_play_credits_pressed"]
 [connection signal="pressed" from="HomeScreen/Editor" to="." method="_on_editor_pressed"]
 [connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
+[connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
+[connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]

@@ -11,9 +11,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	#$Background/CameraOrigin.rotation_degrees.y += 10 * delta
-	#$Background/CameraOrigin/Camera3D.look_at($Background/CameraOrigin.position)
-	#$Background/CameraOrigin.rotation_degrees.x = lerp($Background/CameraOrigin.rotation_degrees.x, mouse_position_y, 0.01)
+	$Background/CameraOrigin.rotation_degrees.y += 10 * delta
+	$Background/CameraOrigin/Camera3D.look_at($Background/CameraOrigin.position)
+	$Background/CameraOrigin.rotation_degrees.x = lerp($Background/CameraOrigin.rotation_degrees.x, mouse_position_y, 0.01)
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -33,3 +33,17 @@ func _on_back_pressed():
 func _on_editor_pressed():
 	get_tree().change_scene_to_packed(editor)
 	
+
+
+func _on_play_campaign_pressed():
+	mode = "CampaignSelect"
+	$CampaignSelector.show_campaign_screen("Main Campaign")
+	$HomeScreen.hide()
+
+
+func _on_campaign_select_back_pressed():
+	$CampaignSelector.hide()
+	$CampaignSelector/Back.hide()
+	$CampaignSelector/Title.hide()
+	$CampaignSelector/TracksList.hide()
+	$HomeScreen.show()
