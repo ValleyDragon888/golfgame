@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=10 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
+[ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="2_sia7g"]
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_r2fhe"]
@@ -43,7 +44,8 @@ offset_right = 162.0
 offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("2_sia7g")
+theme_override_font_sizes/font_size = 35
 text = "Play Campaign"
 
 [node name="PlayCredits" type="Button" parent="HomeScreen"]
@@ -52,13 +54,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = 76.0
-offset_right = 35.0
-offset_bottom = 107.0
+offset_left = 468.0
+offset_top = 271.0
+offset_right = 554.0
+offset_bottom = 309.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_sia7g")
 text = "Credits"
+
+[node name="Editor" type="Button" parent="HomeScreen"]
+offset_left = 750.0
+offset_top = 268.0
+offset_right = 943.0
+offset_bottom = 383.0
+theme = ExtResource("2_sia7g")
+theme_override_font_sizes/font_size = 39
+text = "Editor"
 
 [node name="Credits" type="CanvasLayer" parent="."]
 visible = false
@@ -66,6 +78,7 @@ visible = false
 [node name="Back" type="Button" parent="Credits"]
 offset_right = 108.0
 offset_bottom = 66.0
+theme = ExtResource("2_sia7g")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
@@ -106,6 +119,7 @@ Benjy Hutchinson
 Jacob Flint"
 
 [node name="Background" type="Node3D" parent="."]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Background"]
 mesh = ExtResource("5_r2fhe")
@@ -116,4 +130,5 @@ mesh = ExtResource("5_r2fhe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 1.87365)
 
 [connection signal="pressed" from="HomeScreen/PlayCredits" to="." method="_on_play_credits_pressed"]
+[connection signal="pressed" from="HomeScreen/Editor" to="." method="_on_editor_pressed"]
 [connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
