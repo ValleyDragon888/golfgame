@@ -182,3 +182,7 @@ func _on_delete(pos):
 				block_instances.remove_at(block)
 				$AddedBlocksRoot.get_children()[block].queue_free()
 				break
+
+
+func _on_go_home_pressed():
+	get_tree().change_scene_to_packed(GlobalVariables.home)

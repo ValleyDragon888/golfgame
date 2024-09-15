@@ -133,6 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 1.87365)
 script = ExtResource("7_b47rm")
 
 [node name="Title" type="RichTextLabel" parent="CampaignSelector"]
+visible = false
 offset_left = 15.0
 offset_top = 19.0
 offset_right = 1157.0

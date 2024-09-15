@@ -1,3 +1,4 @@
+Button
 ItemList
 RichTextLabel
 Node3D
@@ -8,8 +9,6 @@ ColorRect
 PopupPanel
 Panel
 Control
-Button
 CanvasLayer
 WorldEnvironment
 HBoxContainer
-Camera3D
