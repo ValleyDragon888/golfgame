@@ -26,4 +26,6 @@ func show_campaign_screen(name: String):
 
 func _on_tracks_list_item_activated(index):
 	var track_path_selected = tracks[index].values()[0]
-	print(track_path_selected)
+	GlobalVariables.trackplayer_debug_enabled = false
+	GlobalVariables.trackplayer_requested_scene_load = track_path_selected
+	get_tree().change_scene_to_packed(GlobalVariables.trackplayer)

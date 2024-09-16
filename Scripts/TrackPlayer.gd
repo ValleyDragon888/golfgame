@@ -8,6 +8,11 @@ extends Node3D
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
 @onready var player = $Player
 
+func _ready():
+	if GlobalVariables.trackplayer_debug_enabled == false:
+		load_file(GlobalVariables.trackplayer_requested_scene_load)
+		$CanvasLayer.hide()
+
 func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	return EditorBlockInstance.new(
 		id,
@@ -23,6 +28,9 @@ func _on_load_dialog_confirmed():
 	load_fileselector.popup()
 
 func _on_load_file_selector_dialog_file_selected(path):
+	load_file(path)
+	
+func load_file(path):
 	# Read in and decode json
 	save_path = path
 	var file = FileAccess.open(path, FileAccess.READ)

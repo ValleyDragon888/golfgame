@@ -8,9 +8,12 @@ var mouse_hovered: bool = false
 var start_position: Vector3 = Vector3.ZERO
 var current_track: String
 var homescreen_mode = "HomeScreen"
+var trackplayer_debug_enabled = true
+var trackplayer_requested_scene_load = ""
 
 var home = preload("res://Scenes/Home.tscn")
 var editor = preload("res://Scenes/Editor.tscn")
+var trackplayer = preload("res://Scenes/TrackPlayer.tscn")
 
 const scene_blocks = ["MovingPiece"]
 const campaigns = {
