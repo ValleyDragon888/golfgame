@@ -6,6 +6,7 @@ extends Node3D
 @onready var blocks_ui_root = $CanvasLayer/Tree
 @onready var y_plane = $YPlane
 @onready var block_instances: Array[EditorBlockInstance] = []
+@onready var end_block_position = Vector3(0, 0, -4)
 @onready var save_as_dialog = $CanvasLayer/SaveAsDialog
 @onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
 @onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
@@ -71,6 +72,8 @@ func generate_treeitem(dict, block_name, parent, tree) -> TreeItem:
 	return treeitem
 
 func _process(_delta):
+	$EndBlockIndicator.position = end_block_position
+	
 #Block selection mechanism
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
 	if not blocklist_selected.get_text(0) in categories:
@@ -92,10 +95,15 @@ func set_save_path():
 
 func save():
 	var json_dict: Dictionary = {"blocks":[]}
+	# Add blocks
 	for block in block_instances:
 		json_dict["blocks"].append(block.get_json_dict())
+	
+	# Add end position
+	json_dict["end_position"] = end_block_position
+	
 	var json_dict_str = JSON.stringify(json_dict, "\t")
-
+	
 	var file = FileAccess.open(GlobalVariables.current_track, FileAccess.WRITE)
 	if file == null:
 		$CanvasLayer/ErrorDialog.popup_centered()
@@ -164,10 +172,13 @@ func _on_play_button_pressed():
 func _on_place(type, pos, rot):
 	if GlobalVariables.block_selected == "StartMarker":
 		GlobalVariables.start_position = pos
+		# The first block is always the start
 		block_instances.remove_at(0)
 		block_instances.insert(0, EditorBlockInstance.new(0, pos, rot, type))
 		$AddedBlocksRoot.get_children()[0].queue_free()
 		$AddedBlocksRoot.add_child(block_instances[0].node())
+	elif GlobalVariables.block_selected == "EndMarker":
+		end_block_position = pos
 	else:
 		block_instances.append(EditorBlockInstance.new(len(block_instances) + 1, pos, rot, type))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
