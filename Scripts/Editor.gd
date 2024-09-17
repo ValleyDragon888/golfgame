@@ -163,13 +163,14 @@ func _on_play_button_pressed():
 	if GlobalVariables.current_track == "":
 		$CanvasLayer/ErrorDialog.popup_centered()
 	else:
+		save()
 		get_tree().change_scene_to_file("res://Scenes/EditorPlayer.tscn")
 
 #Block placement
 func _on_place(type, pos, rot):
 	if GlobalVariables.block_selected == "StartMarker":
 		GlobalVariables.start_position = pos
-		# The first block is always the start
+# The first block is always the start
 		block_instances.remove_at(0)
 		block_instances.insert(0, EditorBlockInstance.new(0, pos, rot, "StartMarker"))
 		$AddedBlocksRoot.get_children()[0].queue_free()
@@ -177,7 +178,7 @@ func _on_place(type, pos, rot):
 		$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 0)
 	elif GlobalVariables.block_selected == "EndMarker":
 		GlobalVariables.end_position = pos
-		# The second block is always the end
+# The second block is always the end
 		block_instances.remove_at(1)
 		block_instances.insert(1, EditorBlockInstance.new(0, pos, rot, "EndMarker"))
 		$AddedBlocksRoot.get_children()[1].queue_free()
