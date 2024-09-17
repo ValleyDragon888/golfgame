@@ -10,6 +10,7 @@ var current_track: String
 var homescreen_mode = "HomeScreen"
 var trackplayer_debug_enabled = true
 var trackplayer_requested_scene_load = ""
+var editor_end_block_position = Vector3(0, 0, -4)
 
 var home = preload("res://Scenes/Home.tscn")
 var editor = preload("res://Scenes/Editor.tscn")
