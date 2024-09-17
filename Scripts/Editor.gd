@@ -99,7 +99,11 @@ func save():
 		json_dict["blocks"].append(block.get_json_dict())
 	
 	# Add end position
-	json_dict["end_position"] = GlobalVariables.editor_end_block_position
+	json_dict["end_position"] = [
+		GlobalVariables.editor_end_block_position.x, 
+		GlobalVariables.editor_end_block_position.y,
+		GlobalVariables.editor_end_block_position.z
+		]
 	
 	var json_dict_str = JSON.stringify(json_dict, "\t")
 	
@@ -154,7 +158,8 @@ func _on_load_file_selector_dialog_file_selected(path):
 	block_instances = []
 	for child in $AddedBlocksRoot.get_children():
 		$AddedBlocksRoot.remove_child(child)
-
+	#var end_pos = json_decoded["end_position"]
+	#GlobalVariables.editor_end_block_position = Vector3(json_decoded["end"])
 # Add blocks from file.
 	for i in len(json_decoded["blocks"]):
 # The last arg of blkinstance from json is the id.

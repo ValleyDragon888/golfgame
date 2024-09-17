@@ -10,3 +10,4 @@ res://Scenes/Home.tscn
 res://Scripts/Editor.gd
 res://Scripts/GlobalVariables.gd
 res://Scenes/EditorPlayer.tscn
+res://Tracks/JSON/ComplexTestTrack.json
