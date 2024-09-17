@@ -15,7 +15,7 @@
 		},
 		{
 			"position": [
-				-9,
+				-6,
 				0,
 				9
 			],
@@ -24,7 +24,7 @@
 				0,
 				0
 			],
-			"type": "Start"
+			"type": "EndMarker"
 		},
 		{
 			"position": [
@@ -2622,6 +2622,19 @@
 			"rotation": [
 				-0,
 				-3.14159250259399,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-9,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
 				0
 			],
 			"type": "Start"

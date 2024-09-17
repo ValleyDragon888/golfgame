@@ -51,6 +51,8 @@ func _ready():
 	else:
 		block_instances.insert(0, EditorBlockInstance.new(0, Vector3(0, 0, 0), Vector3(0, 0, 0), "StartMarker"))
 		$AddedBlocksRoot.add_child(block_instances[0].node())
+		block_instances.insert(1, EditorBlockInstance.new(0, Vector3(0, 0, 5), Vector3(0, 0, 0), "EndMarker"))
+		$AddedBlocksRoot.add_child(block_instances[1].node())
 		
 #Loads the block viewing system
 func generate_treeitem(dict, block_name, parent, tree) -> TreeItem:
@@ -71,7 +73,6 @@ func generate_treeitem(dict, block_name, parent, tree) -> TreeItem:
 	return treeitem
 
 func _process(_delta):
-	$EndBlockIndicator.position = GlobalVariables.editor_end_block_position
 	
 #Block selection mechanism
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
@@ -80,7 +81,7 @@ func _process(_delta):
 		if blocklist_selected.get_text(0) in GlobalVariables.scene_blocks:
 			GlobalVariables.block_selected_is_scene = true
 		else: GlobalVariables.block_selected_is_scene = false
-
+	print(GlobalVariables.end_position)
 #Scrolls the placement plane
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not GlobalVariables.mouse_hovered:
@@ -97,16 +98,9 @@ func save():
 	# Add blocks
 	for block in block_instances:
 		json_dict["blocks"].append(block.get_json_dict())
-	
-	# Add end position
-	json_dict["end_position"] = [
-		GlobalVariables.editor_end_block_position.x, 
-		GlobalVariables.editor_end_block_position.y,
-		GlobalVariables.editor_end_block_position.z
-		]
-	
+
 	var json_dict_str = JSON.stringify(json_dict, "\t")
-	
+
 	var file = FileAccess.open(GlobalVariables.current_track, FileAccess.WRITE)
 	if file == null:
 		$CanvasLayer/ErrorDialog.popup_centered()
@@ -158,8 +152,7 @@ func _on_load_file_selector_dialog_file_selected(path):
 	block_instances = []
 	for child in $AddedBlocksRoot.get_children():
 		$AddedBlocksRoot.remove_child(child)
-	var end_pos = json_decoded["end_position"]
-	GlobalVariables.editor_end_block_position = Vector3(end_pos[0], end_pos[1], end_pos[2])
+
 # Add blocks from file.
 	for i in len(json_decoded["blocks"]):
 # The last arg of blkinstance from json is the id.
@@ -178,11 +171,18 @@ func _on_place(type, pos, rot):
 		GlobalVariables.start_position = pos
 		# The first block is always the start
 		block_instances.remove_at(0)
-		block_instances.insert(0, EditorBlockInstance.new(0, pos, rot, type))
+		block_instances.insert(0, EditorBlockInstance.new(0, pos, rot, "StartMarker"))
 		$AddedBlocksRoot.get_children()[0].queue_free()
 		$AddedBlocksRoot.add_child(block_instances[0].node())
+		$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 0)
 	elif GlobalVariables.block_selected == "EndMarker":
-		GlobalVariables.editor_end_block_position = pos
+		GlobalVariables.end_position = pos
+		# The second block is always the end
+		block_instances.remove_at(1)
+		block_instances.insert(1, EditorBlockInstance.new(0, pos, rot, "EndMarker"))
+		$AddedBlocksRoot.get_children()[1].queue_free()
+		$AddedBlocksRoot.add_child(block_instances[1].node())
+		$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
 	else:
 		block_instances.append(EditorBlockInstance.new(len(block_instances) + 1, pos, rot, type))
 		$AddedBlocksRoot.add_child(block_instances[-1].node())
@@ -192,12 +192,10 @@ func _on_delete(pos):
 	for j in len(block_instances):
 		var block = len(block_instances) - j - 1
 		var block_pos = block_instances[block].get_json_dict().position
-		if not block_instances[block].get_json_dict().type == "StartMarker":
+		if not block_instances[block].get_json_dict().type == "StartMarker" and not block_instances[block].get_json_dict().type == "EndMarker":
 			if block_pos[0] == pos.x and block_pos[1] == pos.y and block_pos[2] == pos.z:
 				block_instances.remove_at(block)
 				$AddedBlocksRoot.get_children()[block].queue_free()
-				break
-
 
 func _on_go_home_pressed():
 	get_tree().change_scene_to_packed(GlobalVariables.home)

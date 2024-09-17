@@ -2,16 +2,16 @@
 	"blocks": [
 		{
 			"position": [
-				0,
-				0,
-				0
+				2,
+				-1,
+				-2
 			],
 			"rotation": [
-				0,
+				-0,
 				0,
 				0
 			],
-			"type": "TrackStraight"
+			"type": "StartMarker"
 		},
 		{
 			"position": [
@@ -24,7 +24,7 @@
 				0,
 				0
 			],
-			"type": "End"
+			"type": "EndMarker"
 		},
 		{
 			"position": [
@@ -394,19 +394,6 @@
 			"position": [
 				2,
 				-1,
-				-1
-			],
-			"rotation": [
-				-0,
-				0,
-				0
-			],
-			"type": "ThickThickThin"
-		},
-		{
-			"position": [
-				2,
-				-1,
 				-2
 			],
 			"rotation": [
@@ -623,6 +610,32 @@
 				0
 			],
 			"type": "StraightThin"
+		},
+		{
+			"position": [
+				0,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "End"
+		},
+		{
+			"position": [
+				2,
+				-1,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "ThickThickThin"
 		}
 	]
 }
