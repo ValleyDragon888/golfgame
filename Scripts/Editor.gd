@@ -158,8 +158,8 @@ func _on_load_file_selector_dialog_file_selected(path):
 	block_instances = []
 	for child in $AddedBlocksRoot.get_children():
 		$AddedBlocksRoot.remove_child(child)
-	#var end_pos = json_decoded["end_position"]
-	#GlobalVariables.editor_end_block_position = Vector3(json_decoded["end"])
+	var end_pos = json_decoded["end_position"]
+	GlobalVariables.editor_end_block_position = Vector3(end_pos[0], end_pos[1], end_pos[2])
 # Add blocks from file.
 	for i in len(json_decoded["blocks"]):
 # The last arg of blkinstance from json is the id.
