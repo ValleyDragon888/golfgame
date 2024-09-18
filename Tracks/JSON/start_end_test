@@ -1,0 +1,82 @@
+{
+	"blocks": [
+		{
+			"position": [
+				-3,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "EndMarker"
+		},
+		{
+			"position": [
+				-3,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "End"
+		},
+		{
+			"position": [
+				-3,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Corner"
+		}
+	]
+}
