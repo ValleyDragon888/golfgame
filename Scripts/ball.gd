@@ -18,9 +18,7 @@ var just_released = false
 var shots = 0
 
 
-#Camera controls
 func _input(event):
-
 #Camera movement
 	if Input.is_action_just_pressed("LockCamera") and camera_is_locked == false:
 		camera_is_locked = true
@@ -60,6 +58,10 @@ func _physics_process(_delta):
 #Locks camera and arrow to the player
 	camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)
 	arrow_pivot.position = position
+#Checks if the player is within 1 block of the end
+	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
+	if dist_to_end.x < 1 and dist_to_end.y < 1 and dist_to_end.z < 1:
+		print("Finished!")
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity:

@@ -81,7 +81,7 @@ func _process(_delta):
 		if blocklist_selected.get_text(0) in GlobalVariables.scene_blocks:
 			GlobalVariables.block_selected_is_scene = true
 		else: GlobalVariables.block_selected_is_scene = false
-	print(GlobalVariables.end_position)
+	print(GlobalVariables.start_position)
 #Scrolls the placement plane
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not GlobalVariables.mouse_hovered:
