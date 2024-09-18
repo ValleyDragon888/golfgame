@@ -15,7 +15,7 @@
 		},
 		{
 			"position": [
-				0,
+				6,
 				0,
 				4
 			],
@@ -24,7 +24,7 @@
 				0,
 				0
 			],
-			"type": "BankedCornerLarge"
+			"type": "EndMarker"
 		},
 		{
 			"position": [
@@ -155,6 +155,19 @@
 				0
 			],
 			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedCornerLarge"
 		}
 	]
 }

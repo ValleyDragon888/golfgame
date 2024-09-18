@@ -50,25 +50,30 @@ theme_override_font_sizes/font_size = 35
 text = "Play Campaign"
 
 [node name="PlayCredits" type="Button" parent="HomeScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 468.0
-offset_top = 271.0
-offset_right = 554.0
-offset_bottom = 309.0
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = -53.0
+offset_right = -22.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_sia7g")
 text = "Credits"
 
 [node name="Editor" type="Button" parent="HomeScreen"]
-offset_left = 750.0
-offset_top = 268.0
-offset_right = 943.0
-offset_bottom = 383.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.502
+anchor_right = 0.5
+anchor_bottom = 0.502
+offset_left = 174.0
+offset_top = -57.296
+offset_right = 367.0
+offset_bottom = 57.704
 theme = ExtResource("2_sia7g")
 theme_override_font_sizes/font_size = 39
 text = "Editor"
