@@ -11,3 +11,4 @@ res://Scenes/EditorPlayer.tscn
 res://Scripts/Editor.gd
 res://Scripts/Ball.gd
 res://TODO.md
+res://Scripts/TrackPlayer.gd

@@ -35,18 +35,11 @@ func _ready():
 	GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
 	GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
 	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
-	
 
-	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))	
+	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
 	GlobalVariables.end_position.x = block_instances[1].get_json_dict().position[0]
 	GlobalVariables.end_position.y = block_instances[1].get_json_dict().position[1]
 	GlobalVariables.end_position.z = block_instances[1].get_json_dict().position[2]
-
-	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
-	GlobalVariables.end_position.x = block_instances[0].get_json_dict().position[0]
-	GlobalVariables.end_position.y = block_instances[0].get_json_dict().position[1]
-	GlobalVariables.end_position.z = block_instances[0].get_json_dict().position[2]
-
 	
 	player.get_child(0).position = GlobalVariables.start_position * 6
 	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 10
