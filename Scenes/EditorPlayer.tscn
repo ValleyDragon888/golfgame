@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7q5i0p3u5tbh"]
+[gd_scene load_steps=7 format=3 uid="uid://b7q5i0p3u5tbh"]
 
 [ext_resource type="Script" path="res://Scripts/EditorPlayer.gd" id="1_3kqse"]
+[ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="2_6ikdq"]
 [ext_resource type="PackedScene" uid="uid://b7lb2ws1lt0r3" path="res://Scenes/Ball.tscn" id="2_d5fj3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v5ktg"]
@@ -35,6 +36,7 @@ anchor_right = 1.0
 offset_left = -119.0
 offset_bottom = 31.0
 grow_horizontal = 0
+theme = ExtResource("2_6ikdq")
 text = "Back To Editor"
 
 [node name="Player" parent="." instance=ExtResource("2_d5fj3")]
