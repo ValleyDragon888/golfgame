@@ -1,0 +1,303 @@
+{
+	"blocks": [
+		{
+			"position": [
+				9,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				7,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "EndMarker"
+		},
+		{
+			"position": [
+				9,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				7,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "End"
+		},
+		{
+			"position": [
+				9,
+				0,
+				7
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				9,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				9,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight4Pins"
+		},
+		{
+			"position": [
+				9,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight6Pins"
+		},
+		{
+			"position": [
+				9,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				7,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "CornerMedium"
+		},
+		{
+			"position": [
+				4,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "CornerLarge"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				2,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				2,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Loop"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-2
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Loop"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				1,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "CornerMedium"
+		},
+		{
+			"position": [
+				3,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				5,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				7,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Corner"
+		},
+		{
+			"position": [
+				7,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				7,
+				0,
+				7
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		}
+	]
+}

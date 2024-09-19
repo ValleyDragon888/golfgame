@@ -1,4 +1,4 @@
-# Blender 4.2.1 LTS
+# Blender 4.1.1
 # www.blender.org
 mtllib Straight.mtl
 o Straight_
@@ -37,7 +37,7 @@ vt 1.000000 0.500000
 vt 0.146447 0.146447
 vt 0.000000 0.500000
 s 0
-usemtl Green
+usemtl Grass
 f 8/1/4 5/2/4 6/3/4
 f 8/1/4 7/8/4 5/2/4
 usemtl Wood
