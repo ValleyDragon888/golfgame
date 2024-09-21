@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bolicxdxc7ib7"
+path="res://.godot/imported/Straight4Pins.obj-105640d7a034bf3cb748c3f412ceaaee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Straight4Pins.obj-105640d7a034bf3cb748c3f412ceaaee.mesh"]
+
+source_file="res://test bach export/Straight4Pins.obj"
+dest_files=["res://.godot/imported/Straight4Pins.obj-105640d7a034bf3cb748c3f412ceaaee.mesh", "res://.godot/imported/Straight4Pins.obj-105640d7a034bf3cb748c3f412ceaaee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

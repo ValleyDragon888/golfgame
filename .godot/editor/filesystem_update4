@@ -1,6 +1,5 @@
 res://Scenes/JSONTrackLoader.tscn
 res://Assets/Theme_1.tres
-res://addons/godot-git-plugin/THIRDPARTY.md
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
 res://Scenes/Freecam.tscn

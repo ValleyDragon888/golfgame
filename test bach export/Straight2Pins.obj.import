@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dmjnpxmtcgern"
+path="res://.godot/imported/Straight2Pins.obj-c486e955c8502baab92b4d1d82976f59.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Straight2Pins.obj-c486e955c8502baab92b4d1d82976f59.mesh"]
+
+source_file="res://test bach export/Straight2Pins.obj"
+dest_files=["res://.godot/imported/Straight2Pins.obj-c486e955c8502baab92b4d1d82976f59.mesh", "res://.godot/imported/Straight2Pins.obj-c486e955c8502baab92b4d1d82976f59.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

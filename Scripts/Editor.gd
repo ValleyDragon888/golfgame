@@ -24,7 +24,7 @@ func _ready():
 		 "End", "Start", "Loop",
 			{"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown"]}
 		],
-		"Size Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin"],
+		"Size Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin", "StraightLeft", "StraightRight", "Split"],
 		"Thin Blocks": ["StraightThin", "CornerThin",
 			{"Ramps": ["ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"]}
 		],

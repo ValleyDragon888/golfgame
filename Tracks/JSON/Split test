@@ -1,0 +1,160 @@
+{
+	"blocks": [
+		{
+			"position": [
+				0,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				0,
+				0,
+				5
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"type": "EndMarker"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-7
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight4Pins"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Split"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "StraightRight"
+		},
+		{
+			"position": [
+				1,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "StraightLeft"
+		},
+		{
+			"position": [
+				-1,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "StraightLeft"
+		},
+		{
+			"position": [
+				1,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "StraightRight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Split"
+		},
+		{
+			"position": [
+				0,
+				0,
+				5
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "End"
+		}
+	]
+}
