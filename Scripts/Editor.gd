@@ -17,7 +17,7 @@ func _ready():
 #Instances the blocks into the dictionary
 	var tree = $CanvasLayer/Tree
 	var blocks_dict = {
-		"Special Blocks": ["StartMarker", "EndMarker", "MovingPiece"
+		"Special Blocks": ["StartMarker", "EndMarker", "CheckpointMarker", "MovingPiece"
 		],
 		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
 		 "Corner", "CornerMedium", "CornerLarge",

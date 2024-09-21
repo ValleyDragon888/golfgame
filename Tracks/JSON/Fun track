@@ -119,32 +119,6 @@
 		},
 		{
 			"position": [
-				7,
-				0,
-				-1
-			],
-			"rotation": [
-				-0,
-				0,
-				0
-			],
-			"type": "CornerMedium"
-		},
-		{
-			"position": [
-				4,
-				0,
-				-6
-			],
-			"rotation": [
-				-0,
-				-3.14159250259399,
-				0
-			],
-			"type": "CornerLarge"
-		},
-		{
-			"position": [
 				2,
 				0,
 				-6
@@ -223,19 +197,6 @@
 		},
 		{
 			"position": [
-				1,
-				0,
-				3
-			],
-			"rotation": [
-				-0,
-				0,
-				0
-			],
-			"type": "CornerMedium"
-		},
-		{
-			"position": [
 				3,
 				0,
 				3
@@ -298,6 +259,45 @@
 				0
 			],
 			"type": "Straight"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-5
+			],
+			"rotation": [
+				-0,
+				-3.14159250259399,
+				0
+			],
+			"type": "CornerLarge"
+		},
+		{
+			"position": [
+				6,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "CornerMedium"
+		},
+		{
+			"position": [
+				0,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "CornerMedium"
 		}
 	]
 }
