@@ -17,12 +17,12 @@ ground_horizon_color = Color(0, 0.741829, 0.794995, 1)
 ground_curve = 0.251067
 ground_energy_multiplier = 0.7
 
-[sub_resource type="Sky" id="Sky_7n0yd"]
+[sub_resource type="Sky" id="Sky_py42v"]
 sky_material = SubResource("ProceduralSkyMaterial_mot2b")
 
 [sub_resource type="Environment" id="Environment_udacf"]
 background_mode = 2
-sky = SubResource("Sky_7n0yd")
+sky = SubResource("Sky_py42v")
 
 [node name="EditorPlayer" type="Node3D"]
 script = ExtResource("1_3kqse")
