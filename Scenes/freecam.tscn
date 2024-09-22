@@ -15,7 +15,7 @@ script = ExtResource("1_ywp3r")
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH"]
 
 [node name="Outline" parent="CameraPivotV/CameraPivotH" instance=ExtResource("2_swg6f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="TileDetector" type="SpringArm3D" parent="."]
 collision_mask = 2

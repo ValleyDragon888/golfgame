@@ -136,7 +136,7 @@ mesh = ExtResource("5_r2fhe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 1.87365)
 
 [node name="Outline" parent="Background/CameraOrigin/Camera3D" instance=ExtResource("7_bdkow")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="CampaignSelector" type="Node3D" parent="."]
 script = ExtResource("8_l4xr7")

@@ -44,7 +44,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.75627)
 current = true
 
 [node name="Outline" parent="CameraPivotV/CameraPivotH/SpringArm3D/Camera3D" instance=ExtResource("3_3kb27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="ArrowPivot" type="Node3D" parent="."]
 
