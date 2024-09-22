@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7lb2ws1lt0r3"]
+[gd_scene load_steps=12 format=3 uid="uid://b7lb2ws1lt0r3"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_3kb27"]
 [ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="3_r486x"]
+[ext_resource type="Material" uid="uid://3sxnya3r6tyu" path="res://Scripts/Hit Particles.tres" id="4_1r3lv"]
 [ext_resource type="Material" uid="uid://bgqsqvywe2wit" path="res://Assets/ArrowMaterial.tres" id="4_y5t71"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="5_84cji"]
 
@@ -15,22 +16,11 @@ bounce = 0.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_6kik4"]
 radius = 0.505518
 
-[sub_resource type="Curve" id="Curve_uomki"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_r08v4"]
-curve = SubResource("Curve_uomki")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rks6v"]
-direction = Vector3(0, 1, 0)
-spread = 90.0
-initial_velocity_min = 1.0
-initial_velocity_max = 10.0
-scale_max = 5.0
-scale_curve = SubResource("CurveTexture_r08v4")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijo8g"]
+albedo_color = Color(0, 0.461361, 0.0943459, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rskl"]
+material = SubResource("StandardMaterial3D_ijo8g")
 size = Vector3(0.1, 0.1, 0.1)
 
 [node name="Player" type="Node3D"]
@@ -64,6 +54,14 @@ current = true
 [node name="Outline" parent="CameraPivotV/CameraPivotH/SpringArm3D/Camera3D" instance=ExtResource("3_3kb27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
+[node name="Hit Particles" type="GPUParticles3D" parent="CameraPivotV"]
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("4_1r3lv")
+draw_pass_1 = SubResource("BoxMesh_6rskl")
+
 [node name="ArrowPivot" type="Node3D" parent="."]
 
 [node name="Arrow" type="Node3D" parent="ArrowPivot"]
@@ -83,11 +81,3 @@ theme = ExtResource("5_84cji")
 toggle_mode = true
 button_pressed = true
 text = "Shots: 0"
-
-[node name="Hit Particles" type="GPUParticles3D" parent="."]
-emitting = false
-amount = 20
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_rks6v")
-draw_pass_1 = SubResource("BoxMesh_6rskl")
