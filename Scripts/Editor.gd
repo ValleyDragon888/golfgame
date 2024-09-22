@@ -73,7 +73,11 @@ func generate_treeitem(dict, block_name, parent, tree) -> TreeItem:
 	return treeitem
 
 func _process(_delta):
-	
+#Code to determine if any dialog is open
+	if save_as_dialog.visible or load_confirmation_dialog.visible or load_fileselector.visible or $CanvasLayer/ErrorDialog.visible:
+		GlobalVariables.dialog_open = true
+	else:
+		GlobalVariables.dialog_open = false
 #Block selection mechanism
 	var blocklist_selected = $CanvasLayer/Tree.get_selected()
 	if not blocklist_selected.get_text(0) in categories:

@@ -1,3 +1,7 @@
+AnimationPlayer
+TextureRect
+BackBufferCopy
+ColorRect
 GPUParticles3D
 Node3D
 MeshInstance3D
@@ -9,6 +13,3 @@ RichTextLabel
 Label
 PopupMenu
 Node2D
-ColorRect
-PopupPanel
-Panel

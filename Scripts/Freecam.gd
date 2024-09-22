@@ -16,12 +16,16 @@ const SPEED = 3
 var velocity = Vector3.ZERO
 var tile_pos = Vector3.ZERO
 var type = "TrackStraight"
+var direction = Vector3.ZERO
 
 
 func _process(delta):
 #Moves the camera
-	var direction = Input.get_vector("Left", "Right", "Forward", "Backward")
-	direction = (camera_pivot_v.transform.basis * Vector3(direction.x, Input.get_axis("Down", "Up"), direction.y)).normalized()
+	if GlobalVariables.dialog_open:
+		direction = Vector3.ZERO
+	else:
+		direction = Input.get_vector("Left", "Right", "Forward", "Backward")
+		direction = (camera_pivot_v.transform.basis * Vector3(direction.x, Input.get_axis("Down", "Up"), direction.y)).normalized()
 
 	if direction:
 		velocity.x = direction.x * delta * SPEED

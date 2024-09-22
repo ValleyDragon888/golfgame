@@ -11,3 +11,9 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/Outline.tscn
 res://Scripts/Hit Particles.tres
 res://Scenes/TrackPlayer.tscn
+res://Scripts/Freecam.gd
+res://Scripts/GlobalVariables.gd
+res://Scripts/Editor.gd
+res://Scripts/TrackPlayer.gd
+res://Scripts/Displace.gdshader
+res://Scenes/FastForward.tscn

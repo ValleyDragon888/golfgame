@@ -87,7 +87,9 @@ func _physics_process(_delta):
 
 	if Input.is_action_pressed("Up") and has_velocity and just_released:
 		Engine.time_scale = 3
+		$"../FastForward".visible = true
 	else:
+		$"../FastForward".visible = false
 		Engine.time_scale = 1
 
 	if has_velocity:
