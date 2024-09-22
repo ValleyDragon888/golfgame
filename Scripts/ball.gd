@@ -8,6 +8,7 @@ const DEFAULT_ZOOM = 5
 @onready var camera_pivot_h = $"../CameraPivotV/CameraPivotH"
 @onready var spring_arm = $"../CameraPivotV/CameraPivotH/SpringArm3D"
 @onready var shot_indicator = $"../CanvasLayer/ShotIndicator"
+@onready var hit_particles = $"../Hit Particles"
 @export var sensitivity = -0.3
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
@@ -73,6 +74,7 @@ func _physics_process(_delta):
 		angular_velocity = Vector3(randf()*arrow.position.z, randf()*arrow.position.z, randf()*arrow.position.z)
 		shots += 1
 		shot_indicator.text = "Shots: " + str(shots)
+		hit_particles.emitting = true
 		print(shots)
 	if Input.is_action_just_released("Up"):
 		just_released = true
