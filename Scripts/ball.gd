@@ -14,7 +14,6 @@ const DEFAULT_ZOOM = 5
 @export var zoom_speed = 0.3
 var previous_position
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
-var hit_particles_material = preload("res://Scripts/Hit Particles.tres")
 var has_velocity = false
 var just_released = false
 var shots = 0
@@ -75,8 +74,7 @@ func _physics_process(_delta):
 		angular_velocity = Vector3(randf()*arrow.position.z, randf()*arrow.position.z, randf()*arrow.position.z)
 		shots += 1
 		shot_indicator.text = "Shots: " + str(shots)
-		hit_particles_material.initial_velocity_max = arrow.position.z*3
-		hit_particles_material.scale_max = arrow.position.z
+		hit_particles.scale = Vector3(arrow.position.z, arrow.position.z, arrow.position.z)
 		hit_particles.emitting = true
 		print(shots)
 	if Input.is_action_just_released("Up"):
