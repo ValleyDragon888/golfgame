@@ -8,3 +8,5 @@ res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
 res://Scenes/EditorPlayer.tscn
 res://Scripts/Editor.gd
+res://Scripts/EditorPlayer.gd
+res://Scripts/EditorBlockInstance.gd

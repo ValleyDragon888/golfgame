@@ -23,7 +23,8 @@ func _meshinstance_node() -> MeshInstance3D:
 	new_block.mesh = load("res://Assets/TrackEditor/{type}.obj".format({"type": self.type}))
 	new_block.position = self.pos
 	new_block.rotation = self.rot
-	new_block.create_trimesh_collision()
+	if type != "EndIndicator" and type != "StartIndicator" and type != "CheckpointMarker":
+		new_block.create_trimesh_collision()
 	new_block.name = str(self.id)
 	return new_block
 
