@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ng83e0upg4t"]
+[gd_scene load_steps=4 format=3 uid="uid://c8ng83e0upg4t"]
 
 [ext_resource type="Script" path="res://Scripts/Freecam.gd" id="1_ywp3r"]
+[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="2_swg6f"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8ai8g"]
 
@@ -12,6 +13,9 @@ script = ExtResource("1_ywp3r")
 [node name="CameraPivotH" type="Node3D" parent="CameraPivotV"]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH"]
+
+[node name="Outline" parent="CameraPivotV/CameraPivotH" instance=ExtResource("2_swg6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 
 [node name="TileDetector" type="SpringArm3D" parent="."]
 collision_mask = 2

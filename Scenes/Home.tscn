@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=12 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_r2fhe"]
-[ext_resource type="Script" path="res://Scenes/CampaignSelector.gd" id="7_b47rm"]
+[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="7_bdkow"]
+[ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="8_l4xr7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yg2g1"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -134,8 +135,11 @@ mesh = ExtResource("5_r2fhe")
 [node name="Camera3D" type="Camera3D" parent="Background/CameraOrigin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 1.87365)
 
+[node name="Outline" parent="Background/CameraOrigin/Camera3D" instance=ExtResource("7_bdkow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+
 [node name="CampaignSelector" type="Node3D" parent="."]
-script = ExtResource("7_b47rm")
+script = ExtResource("8_l4xr7")
 
 [node name="Title" type="RichTextLabel" parent="CampaignSelector"]
 visible = false

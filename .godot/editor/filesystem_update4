@@ -1,12 +1,12 @@
-res://Scenes/JSONTrackLoader.tscn
 res://Assets/Theme_1.tres
+res://Scripts/Outline.gdshader
+res://Scenes/Outline.tscn
+res://Scenes/Outline.gdshader
+res://Scenes/JSONTrackLoader.tscn
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
-res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
 res://Scenes/EditorPlayer.tscn
-res://Scripts/Editor.gd
-res://Scripts/EditorPlayer.gd
-res://Scripts/EditorBlockInstance.gd
+res://Scenes/Freecam.tscn

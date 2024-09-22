@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq8emocbeted6"]
+
+[ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="1_2f1tr"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_er2f2"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v47bt"]
+render_priority = 0
+shader = ExtResource("1_2f1tr")
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_thickness = 1.0
+
+[node name="Outline" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+mesh = SubResource("QuadMesh_er2f2")
+surface_material_override/0 = SubResource("ShaderMaterial_v47bt")

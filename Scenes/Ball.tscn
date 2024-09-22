@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7lb2ws1lt0r3"]
+[gd_scene load_steps=9 format=3 uid="uid://b7lb2ws1lt0r3"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
+[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_3kb27"]
 [ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="3_r486x"]
 [ext_resource type="Material" uid="uid://bgqsqvywe2wit" path="res://Assets/ArrowMaterial.tres" id="4_y5t71"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="5_84cji"]
@@ -41,6 +42,9 @@ margin = 0.5
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.75627)
 current = true
+
+[node name="Outline" parent="CameraPivotV/CameraPivotH/SpringArm3D/Camera3D" instance=ExtResource("3_3kb27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 
 [node name="ArrowPivot" type="Node3D" parent="."]
 

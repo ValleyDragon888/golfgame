@@ -1,4 +1,6 @@
 MeshInstance3D
+CSGBox3D
+Camera3D
 Button
 ItemList
 RichTextLabel
@@ -10,6 +12,3 @@ ColorRect
 PopupPanel
 Panel
 Control
-CanvasLayer
-WorldEnvironment
-HBoxContainer
