@@ -4,7 +4,7 @@ render_mode unshaded;
 uniform sampler2D displace : source_color;
 uniform float dispAmt: hint_range(0.0, 0.1);
 uniform float dispSize: hint_range(0.1, 2.0);
-uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
+uniform sampler2D screen_texture: hint_screen_texture, filter_nearest;
 uniform float offset: hint_range(0.0, 0.1);
 
 void fragment()

@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjssut45v6orr"]
+[gd_scene load_steps=10 format=3 uid="uid://cjssut45v6orr"]
 
 [ext_resource type="Shader" path="res://Scripts/Displace.gdshader" id="1_vlj1e"]
 [ext_resource type="Texture2D" uid="uid://dpidq8k40v7sl" path="res://Assets/Displace.jpeg" id="2_6oltx"]
 [ext_resource type="Shader" path="res://Scripts/FastForward.gdshader" id="3_5sgn4"]
-[ext_resource type="Texture2D" uid="uid://bc8dhvphu2tug" path="res://Assets/Screen.png" id="3_p1oau"]
 [ext_resource type="Texture2D" uid="uid://cqbl676h7l70q" path="res://Assets/FastForward.png" id="4_20psu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvqxh"]
@@ -15,8 +14,6 @@ shader_parameter/displace = ExtResource("2_6oltx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1a1ad"]
 shader = ExtResource("3_5sgn4")
-shader_parameter/brightness = 0.04
-shader_parameter/screen = ExtResource("3_p1oau")
 
 [sub_resource type="Animation" id="Animation_sj6c5"]
 resource_name = "Offset"
