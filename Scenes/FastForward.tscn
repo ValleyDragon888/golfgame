@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" path="res://Scripts/Displace.gdshader" id="1_vlj1e"]
 [ext_resource type="Texture2D" uid="uid://dpidq8k40v7sl" path="res://Assets/Displace.jpeg" id="2_6oltx"]
+[ext_resource type="Shader" path="res://Scripts/FastForward.gdshader" id="3_5sgn4"]
 [ext_resource type="Texture2D" uid="uid://bc8dhvphu2tug" path="res://Assets/Screen.png" id="3_p1oau"]
 [ext_resource type="Texture2D" uid="uid://cqbl676h7l70q" path="res://Assets/FastForward.png" id="4_20psu"]
 
@@ -12,22 +13,8 @@ shader_parameter/dispSize = 0.3
 shader_parameter/offset = 0.0
 shader_parameter/displace = ExtResource("2_6oltx")
 
-[sub_resource type="Shader" id="Shader_scfdm"]
-code = "shader_type canvas_item;
-render_mode unshaded;
-
-uniform sampler2D screen : source_color;
-uniform float brightness: hint_range(0.0, 0.1);
-uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
-
-void fragment()
-{
-	COLOR = texture(screen_texture, SCREEN_UV);
-	COLOR.rgb += texture(screen, SCREEN_UV).rgb * brightness;
-}"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1a1ad"]
-shader = SubResource("Shader_scfdm")
+shader = ExtResource("3_5sgn4")
 shader_parameter/brightness = 0.04
 shader_parameter/screen = ExtResource("3_p1oau")
 
