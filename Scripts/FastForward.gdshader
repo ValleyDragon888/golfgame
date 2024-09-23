@@ -10,5 +10,7 @@ void fragment()
 {
 	COLOR = texture(screen_texture, SCREEN_UV);
 	COLOR.rgb += texture(screen, SCREEN_UV).rgb * brightness;
-	COLOR.g = COLOR.g.snappedf(1/colorAmt); # doesnotwork
+	COLOR.r = round(COLOR.r * float(1/colorAmt)) / float(1/colorAmt);
+	COLOR.g = round(COLOR.g * float(1/colorAmt)) / float(1/colorAmt);
+	COLOR.b = round(COLOR.b * float(1/colorAmt)) / float(1/colorAmt);
 }
