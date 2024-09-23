@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjssut45v6orr"]
+[gd_scene load_steps=10 format=3 uid="uid://cjssut45v6orr"]
 
-[ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="1_4rb56"]
 [ext_resource type="Shader" path="res://Scripts/Displace.gdshader" id="1_vlj1e"]
 [ext_resource type="Texture2D" uid="uid://dpidq8k40v7sl" path="res://Assets/Displace.jpeg" id="2_6oltx"]
 [ext_resource type="Shader" path="res://Scripts/FastForward.gdshader" id="3_5sgn4"]
@@ -63,10 +62,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(212, 277)
-texture = ExtResource("1_4rb56")
 
 [node name="Displace" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_fvqxh")
