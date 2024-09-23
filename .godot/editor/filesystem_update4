@@ -1,5 +1,6 @@
 res://Scenes/JSONTrackLoader.tscn
 res://Scripts/Outline.gdshader
+res://Scripts/Toon.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
 res://Scripts/Displace.gdshader
@@ -13,4 +14,3 @@ res://Scenes/Outline.tscn
 res://Scenes/EditorPlayer.tscn
 res://Scenes/TrackPlayer.tscn
 res://Scenes/FastForward.tscn
-res://Scripts/Toon.gdshader
