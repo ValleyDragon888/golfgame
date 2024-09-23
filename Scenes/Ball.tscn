@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7lb2ws1lt0r3"]
+[gd_scene load_steps=15 format=3 uid="uid://b7lb2ws1lt0r3"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://bgqsqvywe2wit" path="res://Assets/ArrowMaterial.tres" id="4_y5t71"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="5_84cji"]
 [ext_resource type="PackedScene" uid="uid://cjssut45v6orr" path="res://Scenes/FastForward.tscn" id="8_2ilx7"]
+[ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="9_h3gg6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1pkp"]
 friction = 4.0
@@ -23,6 +24,10 @@ albedo_color = Color(0, 0.461361, 0.0943459, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_6rskl"]
 material = SubResource("StandardMaterial3D_ijo8g")
 size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smgoc"]
+shader = ExtResource("9_h3gg6")
+shader_parameter/colorAmt = 12.0
 
 [node name="Player" type="Node3D"]
 
@@ -84,3 +89,11 @@ button_pressed = true
 text = "Shots: 0"
 
 [node name="FastForward" parent="." instance=ExtResource("8_2ilx7")]
+
+[node name="Toon" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_smgoc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

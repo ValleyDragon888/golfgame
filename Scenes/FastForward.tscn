@@ -15,7 +15,6 @@ shader_parameter/displace = ExtResource("2_6oltx")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1a1ad"]
 shader = ExtResource("3_5sgn4")
 shader_parameter/brightness = null
-shader_parameter/colorAmt = 10
 
 [sub_resource type="Animation" id="Animation_sj6c5"]
 resource_name = "Offset"
