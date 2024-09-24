@@ -1,16 +1,12 @@
 res://Scenes/JSONTrackLoader.tscn
-res://Scripts/Outline.gdshader
-res://Scripts/Toon.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
-res://Scripts/Displace.gdshader
-res://Scripts/FastForward.gdshader
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
-res://Scenes/Freecam.tscn
+res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
-res://Scenes/Outline.tscn
 res://Scenes/EditorPlayer.tscn
-res://Scenes/TrackPlayer.tscn
 res://Scenes/FastForward.tscn
+res://Scenes/Freecam.tscn
+res://Scripts/BackBufferResize.gd
