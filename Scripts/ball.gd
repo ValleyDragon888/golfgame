@@ -98,7 +98,7 @@ func _physics_process(_delta):
 		arrow.visible = true
 
 	if position.y < -20:
-		global_position = previous_position
+		global_position = previous_position	
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 #Quit the game
