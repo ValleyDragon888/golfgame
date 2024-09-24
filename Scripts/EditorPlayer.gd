@@ -47,8 +47,8 @@ func _ready():
 	$AddedBlocksRoot.add_child(block_instances[1].node())
 	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
 	
-	player.get_child(2).position = GlobalVariables.start_position * 6
-	player.get_child(2).position.y = GlobalVariables.start_position.y * 6 + 10
+	player.get_child(0).position = GlobalVariables.start_position * 6
+	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 10
 	
 func _on_editor_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")

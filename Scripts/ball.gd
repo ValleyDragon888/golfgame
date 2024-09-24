@@ -80,7 +80,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_released("Up"):
 		just_released = true
 
-	if abs(linear_velocity.x) < 0.1 and abs(linear_velocity.y) < 0.1 and abs(linear_velocity.z) < 0.1:
+	if abs(linear_velocity.x) < 0.1 and abs(linear_velocity.y) < 0.1 and abs(linear_velocity.z) < 0.1: 
 		has_velocity = false
 	else:
 		has_velocity = true
@@ -111,9 +111,10 @@ func _physics_process(_delta):
 	arrow.position.z += input_dir.y * arrow.position.z * -0.04
 	arrow.position.z = clamp(arrow.position.z, -8, -0.1)
 	$"../CanvasLayer/PowerIndicator".value = -8 - arrow.position.z
+	$"../CanvasLayer/PowerIndicator".modulate = Color(1,1/abs(arrow.position.z*0.5),0)
 
 #Scale arrow at far distances to be easily visible
 	arrow.scale.z = (arrow.position.z-3)/-60
 	arrow.scale.x = (arrow.position.z-3)/-60
 	arrow.scale.y = (arrow.position.z-3)/-60
-	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z),0)
+	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z*0.5),0)

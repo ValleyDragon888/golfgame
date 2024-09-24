@@ -3,9 +3,11 @@ res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
-res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
 res://Scenes/EditorPlayer.tscn
+res://Scenes/Freecam.tscn
+res://Scripts/EditorPlayer.gd
+res://Scripts/TrackPlayer.gd
 res://Scripts/Ball.gd
