@@ -1,10 +1,12 @@
 res://Scenes/JSONTrackLoader.tscn
 res://Assets/Theme_1.tres
+res://Scripts/Hit Particles.tres
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
-res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
 res://Scenes/EditorPlayer.tscn
-res://Scripts/Ball.gd
+res://Scenes/FastForward.tscn
+res://Scenes/Freecam.tscn
+res://Scripts/BackBufferResize.gd
