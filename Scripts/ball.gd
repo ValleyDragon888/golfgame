@@ -107,9 +107,10 @@ func _physics_process(_delta):
 
 	var input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
 
-#Rotates and moves the arrow
+#Rotates and moves the arrow, and progress bar
 	arrow.position.z += input_dir.y * arrow.position.z * -0.04
 	arrow.position.z = clamp(arrow.position.z, -8, -0.1)
+	$"../CanvasLayer/PowerIndicator".value = -8 - arrow.position.z
 
 #Scale arrow at far distances to be easily visible
 	arrow.scale.z = (arrow.position.z-3)/-60
