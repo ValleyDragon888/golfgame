@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjssut45v6orr"]
+[gd_scene load_steps=12 format=3 uid="uid://cjssut45v6orr"]
 
 [ext_resource type="Shader" path="res://Scripts/Displace.gdshader" id="1_vlj1e"]
 [ext_resource type="Texture2D" uid="uid://dpidq8k40v7sl" path="res://Assets/Displace.jpeg" id="2_6oltx"]
 [ext_resource type="Shader" path="res://Scripts/FastForward.gdshader" id="3_5sgn4"]
+[ext_resource type="Script" path="res://Scripts/BackBufferResize.gd" id="3_mjh76"]
 [ext_resource type="Texture2D" uid="uid://cqbl676h7l70q" path="res://Assets/FastForward.png" id="4_20psu"]
+[ext_resource type="Texture2D" uid="uid://bc8dhvphu2tug" path="res://Assets/Screen.png" id="4_uu6mr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fvqxh"]
 shader = ExtResource("1_vlj1e")
@@ -14,7 +16,8 @@ shader_parameter/displace = ExtResource("2_6oltx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1a1ad"]
 shader = ExtResource("3_5sgn4")
-shader_parameter/brightness = null
+shader_parameter/brightness = 0.05
+shader_parameter/screen = ExtResource("4_uu6mr")
 
 [sub_resource type="Animation" id="Animation_sj6c5"]
 resource_name = "Offset"
@@ -75,6 +78,7 @@ grow_vertical = 2
 position = Vector2(572, 346.5)
 scale = Vector2(6.72, 4.465)
 copy_mode = 2
+script = ExtResource("3_mjh76")
 
 [node name="Screen" type="ColorRect" parent="BackBufferCopy"]
 material = SubResource("ShaderMaterial_1a1ad")
