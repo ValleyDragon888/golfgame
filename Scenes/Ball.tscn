@@ -88,7 +88,19 @@ toggle_mode = true
 button_pressed = true
 text = "Shots: 0"
 
+[node name="PowerIndicator" type="ProgressBar" parent="CanvasLayer"]
+offset_left = 1096.0
+offset_top = 33.0
+offset_right = 1138.0
+offset_bottom = 632.0
+min_value = -8.0
+max_value = -0.01
+value = -0.1
+fill_mode = 3
+show_percentage = false
+
 [node name="Toon" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_smgoc")
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,3 +109,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FastForward" parent="." instance=ExtResource("8_2ilx7")]
+visible = false
