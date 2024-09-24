@@ -87,9 +87,9 @@ func _physics_process(_delta):
 
 	if Input.is_action_pressed("Up") and has_velocity and just_released:
 		Engine.time_scale = 3
-		$"../CanvasLayer/FastForward".visible = true
+		$"../FastForward".visible = true
 	else:
-		$"../CanvasLayer/FastForward".visible = false
+		$"../FastForward".visible = false
 		Engine.time_scale = 1
 
 	if has_velocity:
@@ -110,7 +110,7 @@ func _physics_process(_delta):
 #Rotates and moves the arrow, and progress bar
 	arrow.position.z += input_dir.y * arrow.position.z * -0.04
 	arrow.position.z = clamp(arrow.position.z, -8, -0.1)
-	$"../CanvasLayer/PowerIndicator".value = -8 - arrow.position.z
+	#	$"../CanvasLayer/PowerIndicator".value = -8 - arrow.position.z
 
 #Scale arrow at far distances to be easily visible
 	arrow.scale.z = (arrow.position.z-3)/-60
