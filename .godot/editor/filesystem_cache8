@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727199088
+::res://::1727199685
 Ball_BallDecal.png::CompressedTexture2D::8147045841522545062::1727157440::1727157521::1::::<><>::
 icon.svg::CompressedTexture2D::1147549376388642576::1727157440::1727157440::1::::<><>::
 TODO.md::TextFile::-1::1727157440::0::1::::<><>::
@@ -10,8 +10,8 @@ plugin.cfg::TextFile::-1::1727157440::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1727157440::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1727157440
 ::res://addons/godot-git-plugin/macos/::1727157440
-::res://addons/godot-git-plugin/win64/::1727199076
-::res://Assets/::1727198964
+::res://addons/godot-git-plugin/win64/::1727199672
+::res://Assets/::1727199138
 Arrow.obj::Mesh::757803071144802460::1727157439::1727157531::1::::<><>::
 ArrowMaterial.tres::StandardMaterial3D::2841706409230197075::1727157439::0::1::::<><>::
 Ball.glb::PackedScene::436930410909977581::1727157439::1727157439::1::::<><>::
@@ -25,7 +25,7 @@ GolfGameTerrain.obj::Mesh::1734824120712957144::1727157439::1727157531::1::::<><
 Golfgame_Hdri.jpg::CompressedTexture2D::781842699983653179::1727157439::1727157529::1::::<><>::
 Golfgame_Hdri_1.png::CompressedTexture2D::419334940898858275::1727157439::1727157522::1::::<><>::
 Screen.png::CompressedTexture2D::2595118614897049906::1727157439::1727157520::1::::<><>::
-Theme_1.tres::Theme::4520378298085677843::1727198964::0::1::::<><>::
+Theme_1.tres::Theme::4520378298085677843::1727199138::0::1::::<><>::
 ::res://Assets/Clouds/::1727157531
 Cloud1.obj::Mesh::5704268905650452353::1727157439::1727157531::1::::<><>::
 Cloud2.obj::Mesh::3438320106321464888::1727157439::1727157531::1::::<><>::
@@ -70,36 +70,37 @@ ThickThinThin.obj::Mesh::5549016198069353343::1727157440::1727157530::1::::<><>:
 ThinRamp.obj::Mesh::1970190325189523159::1727157440::1727157530::1::::<><>::
 ThinRampTransitionDown.obj::Mesh::7314476757689718053::1727157440::1727157530::1::::<><>::
 ThinRampTransitionUp.obj::Mesh::2350842023310000523::1727157440::1727157531::1::::<><>::
-::res://Assets/TrackEditor/ScenePieces/::1727198966
-MovingPiece.tscn::PackedScene::3801760483650275914::1727198966::0::1::::<><>::uid://71mxyh4lce1g::::res://Assets/TrackEditor/BankedCorner2.obj
+::res://Assets/TrackEditor/ScenePieces/::1727199636
+MovingPiece.tscn::PackedScene::3801760483650275914::1727199636::0::1::::<><>::uid://71mxyh4lce1g::::res://Assets/TrackEditor/BankedCorner2.obj
 ::res://Blend/::1727157440
-::res://Scenes/::1727198987
-Ball.tscn::PackedScene::4655281953349973194::1727198986::0::1::::<><>::res://Scripts/Ball.gd<>uid://ghwged7m721n::::res://Assets/Ball.glb<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://k2c52gep3o5y::::res://Assets/Arrow.obj<>uid://3sxnya3r6tyu::::res://Scripts/Hit Particles.tres<>uid://bgqsqvywe2wit::::res://Assets/ArrowMaterial.tres<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cjssut45v6orr::::res://Scenes/FastForward.tscn<>res://Scripts/Toon.gdshader
-Editor.tscn::PackedScene::176288540008523976::1727198987::0::1::::<><>::res://Scripts/Editor.gd<>uid://c8ng83e0upg4t::::res://Scenes/Freecam.tscn<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
-EditorPlayer.tscn::PackedScene::4667330857865266405::1727198967::0::1::::<><>::res://Scripts/EditorPlayer.gd<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
+::res://Scenes/::1727199636
+Ball.tscn::PackedScene::4655281953349973194::1727199634::0::1::::<><>::res://Scripts/Ball.gd<>uid://ghwged7m721n::::res://Assets/Ball.glb<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://k2c52gep3o5y::::res://Assets/Arrow.obj<>uid://3sxnya3r6tyu::::res://Scripts/Hit Particles.tres<>uid://bgqsqvywe2wit::::res://Assets/ArrowMaterial.tres<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cjssut45v6orr::::res://Scenes/FastForward.tscn<>res://Scripts/Toon.gdshader
+Editor.tscn::PackedScene::176288540008523976::1727199635::0::1::::<><>::res://Scripts/Editor.gd<>uid://c8ng83e0upg4t::::res://Scenes/freecam.tscn<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
+EditorPlayer.tscn::PackedScene::4667330857865266405::1727199636::0::1::::<><>::res://Scripts/EditorPlayer.gd<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
 FastForward.tscn::PackedScene::5442829425584805587::1727198586::0::1::::<><>::res://Scripts/Displace.gdshader<>uid://dpidq8k40v7sl::::res://Assets/Displace.jpeg<>res://Scripts/FastForward.gdshader<>res://Scripts/BackBufferResize.gd<>uid://cqbl676h7l70q::::res://Assets/FastForward.png<>uid://bc8dhvphu2tug::::res://Assets/Screen.png
-freecam.tscn::PackedScene::7116334829395739741::1727198987::0::1::::<><>::res://Scripts/Freecam.gd<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>res://Scripts/Toon.gdshader
-Home.tscn::PackedScene::1115879269667741803::1727198987::0::1::::<><>::res://Scripts/Home.gd<>uid://ql4788jye4tw::::res://icon.svg<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://bm46u1chwj5jn::::res://Assets/blender_logo.svg<>uid://crubp87ououl5::::res://Assets/git.svg<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>res://Scripts/CampaignSelector.gd<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>res://Scripts/Toon.gdshader
-JSONTrackLoader.tscn::PackedScene::6320869870329876162::1727198964::0::1::::<><>::res://Scripts/JSONTrackLoader.gd
+Freecam.tscn::PackedScene::7116334829395739741::1727199636::0::1::::<><>::res://Scripts/Freecam.gd
+Home.tscn::PackedScene::1115879269667741803::1727199636::0::1::::<><>::res://Scripts/Home.gd<>uid://ql4788jye4tw::::res://icon.svg<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://bm46u1chwj5jn::::res://Assets/blender_logo.svg<>uid://crubp87ououl5::::res://Assets/git.svg<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>res://Scripts/CampaignSelector.gd<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>res://Scripts/Toon.gdshader
+JSONTrackLoader.tscn::PackedScene::6320869870329876162::1727199634::0::1::::<><>::res://Scripts/JSONTrackLoader.gd
 Outline.tscn::PackedScene::8350673051137761677::1727157440::0::1::::<><>::res://Scripts/Outline.gdshader
-TrackPlayer.tscn::PackedScene::1534473085824409207::1727198987::0::1::::<><>::res://Scripts/TrackPlayer.gd<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://ow51gqkh6ids::::res://Assets/Floor.dae<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
-::res://Scripts/::1727198742
+TrackPlayer.tscn::PackedScene::1534473085824409207::1727199636::0::1::::<><>::res://Scripts/TrackPlayer.gd<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://ow51gqkh6ids::::res://Assets/Floor.dae<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
+::res://Scripts/::1727199634
+BackBufferCopyScaled.gd::GDScript::-1::1727199406::0::1::::<>BackBufferCopy<>::
 BackBufferResize.gd::GDScript::-1::1727198586::0::1::::<>BackBufferCopy<>::
-ball.gd::GDScript::-1::1727198742::0::1::::<>RigidBody3D<>::
+Ball.gd::GDScript::-1::1727199634::0::1::::<>RigidBody3D<>::
 CampaignSelector.gd::GDScript::-1::1727157440::0::1::::<>Node3D<>::
 Displace.gdshader::Shader::-1::1727157440::0::1::::<><>::
 Editor.gd::GDScript::-1::1727157440::0::1::::<>Node3D<>::
 EditorBlockInstance.gd::GDScript::-1::1727157440::0::1::::EditorBlockInstance<>Node<>::
-EditorPlayer.gd::GDScript::-1::1727198742::0::1::::<>Node3D<>::
+EditorPlayer.gd::GDScript::-1::1727199406::0::1::::<>Node3D<>::
 FastForward.gdshader::Shader::-1::1727157440::0::1::::<><>::
 Freecam.gd::GDScript::-1::1727157440::0::1::::<>Node3D<>::
 GlobalVariables.gd::GDScript::-1::1727157440::0::1::::<>Node<>::
-Hit Particles.tres::ParticleProcessMaterial::2003867389448929304::1727157440::0::1::::<><>::
+Hit Particles.tres::ParticleProcessMaterial::2003867389448929304::1727199138::0::1::::<><>::
 Home.gd::GDScript::-1::1727157440::0::1::::<>Node3D<>::
 JSONTrackLoader.gd::GDScript::-1::1727157440::0::1::::<>Node3D<>::
 Outline.gdshader::Shader::-1::1727157440::0::1::::<><>::
 Toon.gdshader::Shader::-1::1727157440::0::1::::<><>::
-TrackPlayer.gd::GDScript::-1::1727198742::0::1::::<>Node3D<>::
+TrackPlayer.gd::GDScript::-1::1727199406::0::1::::<>Node3D<>::
 ::res://Tracks/::1727157440
 ::res://Tracks/JSON/::1727157440
 ComplexTestTrack.json::JSON::-1::1727157440::0::1::::<><>::
