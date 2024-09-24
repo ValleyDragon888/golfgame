@@ -8,5 +8,3 @@ res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
 res://Scenes/EditorPlayer.tscn
 res://Scenes/FastForward.tscn
-res://Scenes/Freecam.tscn
-res://Scripts/BackBufferResize.gd
