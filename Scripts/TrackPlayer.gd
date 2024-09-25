@@ -66,3 +66,12 @@ func load_file(path):
 	
 	player.get_child(0).position = GlobalVariables.start_position * 6
 	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 10
+
+
+func _on_player_level_finished():
+	$CanvasLayer.hide()
+	$FinishedScreen.show()
+
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_packed(GlobalVariables.home)
