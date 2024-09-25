@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7lb2ws1lt0r3"]
+[gd_scene load_steps=16 format=3 uid="uid://b7lb2ws1lt0r3"]
 
+[ext_resource type="Script" path="res://Scenes/BallMasterSignalRelayer.gd" id="1_ikqiw"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_3kb27"]
@@ -30,6 +31,7 @@ shader = ExtResource("9_h3gg6")
 shader_parameter/colorAmt = 12.0
 
 [node name="Player" type="Node3D"]
+script = ExtResource("1_ikqiw")
 
 [node name="Ball" type="RigidBody3D" parent="."]
 collision_layer = 2
@@ -93,10 +95,10 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -67.0
-offset_top = 24.0
-offset_right = -25.0
-offset_bottom = -25.0
+offset_left = -56.0
+offset_top = 33.0
+offset_right = -14.0
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 2
 min_value = -8.0
@@ -116,3 +118,5 @@ grow_vertical = 2
 
 [node name="FastForward" parent="." instance=ExtResource("8_2ilx7")]
 visible = false
+
+[connection signal="finished" from="Ball" to="." method="_on_ball_finished"]

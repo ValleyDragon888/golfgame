@@ -52,3 +52,7 @@ func _ready():
 	
 func _on_editor_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")
+
+
+func _on_player_level_finished():
+	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")

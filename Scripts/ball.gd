@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+signal finished
 
 const DEFAULT_ZOOM = 5
 @onready var arrow = $"../ArrowPivot/Arrow"
@@ -63,6 +64,7 @@ func _physics_process(_delta):
 	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
 	if dist_to_end.x < 1 and dist_to_end.y < 1 and dist_to_end.z < 1:
 		print("Finished!")
+		finished.emit()
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity:
