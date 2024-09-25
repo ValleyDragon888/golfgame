@@ -1,3 +1,6 @@
+VBoxContainer
+TextureButton
+TextureRect
 Button
 Label
 ColorRect
@@ -8,8 +11,5 @@ CollisionPolygon3D
 ProgressBar
 Control
 AnimationPlayer
-TextureRect
 BackBufferCopy
 GPUParticles3D
-Node3D
-MeshInstance3D

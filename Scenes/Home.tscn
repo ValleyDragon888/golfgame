@@ -1,15 +1,22 @@
-[gd_scene load_steps=17 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=24 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="2_sia7g"]
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
+[ext_resource type="Texture2D" uid="uid://dlt32p3nymyub" path="res://Assets/UI elements/Background.png" id="3_pauh0"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
+[ext_resource type="Texture2D" uid="uid://cxiq32qbvfygn" path="res://Assets/UI elements/PlayButton.png" id="5_4qhvo"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_r2fhe"]
+[ext_resource type="Texture2D" uid="uid://b1yhjjt3gqinr" path="res://Assets/UI elements/PlayButtonPressed.png" id="6_fa0nr"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="7_bdkow"]
+[ext_resource type="Texture2D" uid="uid://coobq5nmiibhv" path="res://Assets/UI elements/CreditsButton.png" id="7_fvcde"]
+[ext_resource type="Texture2D" uid="uid://s0um4tjcwr6c" path="res://Assets/UI elements/CreditsButtonPressed.png" id="8_g6dce"]
 [ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="8_l4xr7"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="9_oqfu5"]
+[ext_resource type="Texture2D" uid="uid://b4h35kxb20bxf" path="res://Assets/UI elements/SettingsButton.png" id="9_s70g3"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="10_8lyl0"]
+[ext_resource type="Texture2D" uid="uid://eu7jhhfwaovg" path="res://Assets/UI elements/SettingsButtonPressed.png" id="10_u14nc"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="11_ahggl"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="12_j80rn"]
 
@@ -63,50 +70,59 @@ environment = SubResource("Environment_27d6d")
 
 [node name="HomeScreen" type="CanvasLayer" parent="."]
 
-[node name="PlayCampaign" type="Button" parent="HomeScreen"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -62.0
-offset_right = 162.0
-offset_bottom = 62.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_sia7g")
-theme_override_font_sizes/font_size = 35
-text = "Play Campaign"
-
-[node name="PlayCredits" type="Button" parent="HomeScreen"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+[node name="Background" type="TextureRect" parent="HomeScreen"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -108.0
-offset_top = -53.0
-offset_right = -22.0
-offset_bottom = -15.0
+offset_right = 846.0
+offset_bottom = 476.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_sia7g")
-text = "Credits"
+scale = Vector2(0.576512, 0.576512)
+texture = ExtResource("3_pauh0")
+expand_mode = 1
+stretch_mode = 4
 
-[node name="Editor" type="Button" parent="HomeScreen"]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.502
-anchor_right = 0.5
-anchor_bottom = 0.502
-offset_left = 174.0
-offset_top = -57.296
-offset_right = 367.0
-offset_bottom = 57.704
+[node name="Buttons" type="VBoxContainer" parent="HomeScreen"]
+offset_left = 94.0
+offset_top = 163.0
+offset_right = 1091.0
+offset_bottom = 1211.0
+scale = Vector2(0.25, 0.25)
+theme_override_constants/separation = -10
+
+[node name="PlayCampaign" type="TextureButton" parent="HomeScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 theme = ExtResource("2_sia7g")
-theme_override_font_sizes/font_size = 39
-text = "Editor"
+texture_normal = ExtResource("5_4qhvo")
+texture_pressed = ExtResource("6_fa0nr")
+texture_hover = ExtResource("6_fa0nr")
+texture_disabled = ExtResource("5_4qhvo")
+texture_focused = ExtResource("5_4qhvo")
+
+[node name="PlayCredits" type="TextureButton" parent="HomeScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("2_sia7g")
+texture_normal = ExtResource("7_fvcde")
+texture_pressed = ExtResource("8_g6dce")
+texture_hover = ExtResource("8_g6dce")
+texture_disabled = ExtResource("7_fvcde")
+texture_focused = ExtResource("7_fvcde")
+
+[node name="Editor" type="TextureButton" parent="HomeScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("2_sia7g")
+texture_normal = ExtResource("9_s70g3")
+texture_pressed = ExtResource("10_u14nc")
+texture_hover = ExtResource("10_u14nc")
+texture_disabled = ExtResource("9_s70g3")
+texture_focused = ExtResource("9_s70g3")
 
 [node name="Credits" type="CanvasLayer" parent="."]
 visible = false
@@ -251,9 +267,9 @@ theme = ExtResource("2_sia7g")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
-[connection signal="pressed" from="HomeScreen/PlayCampaign" to="." method="_on_play_campaign_pressed"]
-[connection signal="pressed" from="HomeScreen/PlayCredits" to="." method="_on_play_credits_pressed"]
-[connection signal="pressed" from="HomeScreen/Editor" to="." method="_on_editor_pressed"]
+[connection signal="pressed" from="HomeScreen/Buttons/PlayCampaign" to="." method="_on_play_campaign_pressed"]
+[connection signal="pressed" from="HomeScreen/Buttons/PlayCredits" to="." method="_on_play_credits_pressed"]
+[connection signal="pressed" from="HomeScreen/Buttons/Editor" to="." method="_on_editor_pressed"]
 [connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]

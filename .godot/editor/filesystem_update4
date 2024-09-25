@@ -8,8 +8,4 @@ res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
 res://Scenes/EditorPlayer.tscn
-Scenes/Ball.tscn
-Scenes/Editor.tscn
-res://Scripts/EditorPlayer.gd
-res://Scenes/BallMasterSignalRelayer.gd
-res://Scripts/TrackPlayer.gd
+res://Scenes/FastForward.tscn
