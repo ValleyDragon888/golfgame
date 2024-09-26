@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=26 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="2_sia7g"]
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
 [ext_resource type="Texture2D" uid="uid://dlt32p3nymyub" path="res://Assets/UI elements/Background.png" id="3_pauh0"]
+[ext_resource type="Texture2D" uid="uid://bbx0jllunp3x7" path="res://Assets/UI elements/UIBall.png" id="4_18gcv"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
 [ext_resource type="Texture2D" uid="uid://cxiq32qbvfygn" path="res://Assets/UI elements/PlayButton.png" id="5_4qhvo"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_r2fhe"]
@@ -40,6 +41,12 @@ sky_material = SubResource("ProceduralSkyMaterial_nlm6l")
 [sub_resource type="Environment" id="Environment_27d6d"]
 background_mode = 2
 sky = SubResource("Sky_ow2au")
+
+[sub_resource type="Curve2D" id="Curve2D_xl4mh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 44, 98, -6.72717, -44.5675, 6.72717, 44.5675, 19, 167, 0, 0, 0, 0, 41, 263, 0, 0, 0, 0, 26, 378, 0, 0, 0, 0, 27, 473, 0, 0, 0, 0, 57, 542, -31.1815, -2.6727, 31.1815, 2.6727, 116, 592, 0, 0, 0, 0, 154, 580, -16.0362, 22.2725, 16.0362, -22.2725, 182, 552, 0, 0, 0, 0, 187, 496, 0, 0, 0, 0, 166, 475, 0, 0, 0, 0, 137, 467, 0, 0, 0, 0, 103, 489, 0, 0, 0, 0, 85, 529, 0, 0, 0, 0, 74, 584, 0, 0, 0, 0, 85, 614, 0, 0, 0, 0, 111, 616, 0, 0, 0, 0, 136, 611, 0, 0, 0, 0, 176, 600, 0, 0, 0, 0, 239, 580, 0, 0, 0, 0, 279, 575)
+}
+point_count = 21
 
 [node name="Home" type="Node3D"]
 script = ExtResource("1_2ptev")
@@ -84,6 +91,23 @@ size_flags_vertical = 3
 texture = ExtResource("3_pauh0")
 expand_mode = 2
 stretch_mode = 4
+
+[node name="Path2D" type="Path2D" parent="HomeScreen"]
+curve = SubResource("Curve2D_xl4mh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="HomeScreen/Path2D"]
+position = Vector2(32.1347, 230.173)
+rotation = 1.32481
+progress = 141.185
+loop = false
+
+[node name="TextureRect" type="TextureRect" parent="HomeScreen/Path2D/PathFollow2D"]
+offset_left = -24.0634
+offset_top = -25.317
+offset_right = 25.9366
+offset_bottom = 24.683
+texture = ExtResource("4_18gcv")
+expand_mode = 1
 
 [node name="Buttons" type="VBoxContainer" parent="HomeScreen"]
 offset_left = 94.0

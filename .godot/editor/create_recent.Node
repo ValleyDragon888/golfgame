@@ -1,6 +1,8 @@
+TextureRect
+PathFollow2D
+Path2D
 VBoxContainer
 TextureButton
-TextureRect
 Button
 Label
 ColorRect
@@ -10,6 +12,3 @@ Area3D
 CollisionPolygon3D
 ProgressBar
 Control
-AnimationPlayer
-BackBufferCopy
-GPUParticles3D
