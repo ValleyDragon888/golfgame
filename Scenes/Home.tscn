@@ -79,8 +79,10 @@ offset_bottom = 476.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.576512, 0.576512)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("3_pauh0")
-expand_mode = 1
+expand_mode = 2
 stretch_mode = 4
 
 [node name="Buttons" type="VBoxContainer" parent="HomeScreen"]

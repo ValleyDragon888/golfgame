@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 GlobalVariables="*res://Scripts/GlobalVariables.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
