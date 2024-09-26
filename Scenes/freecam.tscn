@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ng83e0upg4t"]
+[gd_scene load_steps=5 format=3 uid="uid://c8ng83e0upg4t"]
 
 [ext_resource type="Script" path="res://Scripts/Freecam.gd" id="1_ywp3r"]
+[ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_7yqmy"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8ai8g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0kqhd"]
+shader = ExtResource("2_7yqmy")
+shader_parameter/colorAmt = 8.0
 
 [node name="Freecam" type="Node3D"]
 script = ExtResource("1_ywp3r")
@@ -23,3 +28,11 @@ margin = 0.0
 [node name="TileIndicator" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_8ai8g")
 skeleton = NodePath("../TileDetector")
+
+[node name="Toon" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0kqhd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

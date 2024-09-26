@@ -1,0 +1,238 @@
+[gd_scene load_steps=21 format=3 uid="uid://dk1de21jjis1e"]
+
+[ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
+[ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
+[ext_resource type="Texture2D" uid="uid://c4ynogw5l0xkh" path="res://Assets/UI elements/PlayBackground.png" id="3_bejlh"]
+[ext_resource type="Texture2D" uid="uid://bbx0jllunp3x7" path="res://Assets/UI elements/UIBall.png" id="4_8hf4v"]
+[ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="5_hyg5i"]
+[ext_resource type="Texture2D" uid="uid://c3iru2kk560yv" path="res://Assets/UI elements/CampaignButton.png" id="6_j8vgo"]
+[ext_resource type="Texture2D" uid="uid://dmpaxa4uwkaic" path="res://Assets/UI elements/CampaignButtonPressed.png" id="7_4af3j"]
+[ext_resource type="Texture2D" uid="uid://b2oxjb1lk3ajf" path="res://Assets/UI elements/EditorButton.png" id="8_s3l4f"]
+[ext_resource type="Texture2D" uid="uid://dfcolhysb7gf4" path="res://Assets/UI elements/EditorButtonPressed.png" id="9_0itgc"]
+[ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
+[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="16_njpon"]
+[ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_w66wo"]
+[ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="18_8nbmw"]
+[ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="19_mt5ny"]
+[ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="20_qradk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c63h5"]
+shader = ExtResource("2_56g8b")
+shader_parameter/colorAmt = 8.0
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nlm6l"]
+sky_top_color = Color(0, 0.424625, 0.890654, 1)
+sky_horizon_color = Color(0, 0.741829, 0.794995, 1)
+sky_curve = 0.178381
+sky_energy_multiplier = 0.7
+ground_bottom_color = Color(1.62441e-07, 0.098056, 0.133979, 1)
+ground_horizon_color = Color(0, 0.741829, 0.794995, 1)
+ground_curve = 0.251067
+ground_energy_multiplier = 0.7
+
+[sub_resource type="Sky" id="Sky_ow2au"]
+sky_material = SubResource("ProceduralSkyMaterial_nlm6l")
+
+[sub_resource type="Environment" id="Environment_27d6d"]
+background_mode = 2
+sky = SubResource("Sky_ow2au")
+
+[sub_resource type="Curve2D" id="Curve2D_xl4mh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 128, 111, 10.0908, -43.7266, -10.0908, 43.7266, 28, 129, 0, 0, 0, 0, 65, 182, 0, 0, 0, 0, 202, 204, -24.6047, -9.92126, 24.6047, 9.92126, 285, 222, 0, 0, 0, 0, 332, 260, 11.1118, -36.5102, -11.1118, 36.5102, 347, 340, 31.3512, -6.3496, -31.3512, 6.3496, 294, 381, 0, 0, 0, 0, 173, 351)
+}
+point_count = 9
+
+[node name="Play" type="Node3D"]
+script = ExtResource("1_kh281")
+
+[node name="Toon" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_c63h5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.489158, -0.870229, 0.0585317, 0.780479, 0.466689, 0.415998, -0.38933, -0.157806, 0.90748, 0, 0, 0)
+light_color = Color(0.844923, 0.680871, 0.5383, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_blur = 1.417
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.489158, 0.870229, -0.0585317, 0.828748, 0.48466, 0.279788, 0.271848, 0.0883525, -0.958276, 0, 0, 0)
+light_color = Color(0.844923, 0.680871, 0.5383, 1)
+shadow_blur = 1.417
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_27d6d")
+
+[node name="HomeScreen" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="HomeScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 846.0
+offset_bottom = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.576512, 0.576512)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_bejlh")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Path2D" type="Path2D" parent="HomeScreen"]
+curve = SubResource("Curve2D_xl4mh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="HomeScreen/Path2D"]
+position = Vector2(27.7503, 130.087)
+rotation = 1.77881
+progress = 112.78
+loop = false
+
+[node name="TextureRect" type="TextureRect" parent="HomeScreen/Path2D/PathFollow2D"]
+offset_left = -24.0634
+offset_top = -25.317
+offset_right = 25.9366
+offset_bottom = 24.683
+texture = ExtResource("4_8hf4v")
+expand_mode = 1
+
+[node name="Buttons" type="VBoxContainer" parent="HomeScreen"]
+offset_left = 46.0
+offset_top = 372.0
+offset_right = 1357.0
+offset_bottom = 1420.0
+scale = Vector2(0.25, 0.25)
+theme_override_constants/separation = -100
+
+[node name="Campaign" type="TextureButton" parent="HomeScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("5_hyg5i")
+texture_normal = ExtResource("6_j8vgo")
+texture_pressed = ExtResource("7_4af3j")
+texture_hover = ExtResource("7_4af3j")
+texture_disabled = ExtResource("6_j8vgo")
+
+[node name="Editor" type="TextureButton" parent="HomeScreen/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("5_hyg5i")
+texture_normal = ExtResource("8_s3l4f")
+texture_pressed = ExtResource("9_0itgc")
+texture_hover = ExtResource("9_0itgc")
+texture_disabled = ExtResource("8_s3l4f")
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background"]
+mesh = ExtResource("15_iyfq5")
+
+[node name="CameraOrigin" type="Node3D" parent="Background"]
+
+[node name="Camera3D" type="Camera3D" parent="Background/CameraOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 2.87365)
+h_offset = -0.9
+
+[node name="Outline" parent="Background/CameraOrigin/Camera3D" instance=ExtResource("16_njpon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="Clouds" type="Node3D" parent="Background"]
+
+[node name="Cloud1" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 8.08085, 9.31929, 1.46716)
+mesh = ExtResource("17_w66wo")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud2" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 7.50195, 9.31929, -7.25392)
+mesh = ExtResource("18_8nbmw")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud3" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, -5.77754, 9.31929, 9.15787)
+mesh = ExtResource("19_mt5ny")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud4" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, 16.6637, 7.15993, 0.303261)
+mesh = ExtResource("17_w66wo")
+skeleton = NodePath("../../..")
+
+[node name="Cloud5" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, -2.0223, 7.15993, -1.60658)
+mesh = ExtResource("18_8nbmw")
+skeleton = NodePath("../../..")
+
+[node name="Cloud6" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, 4.34421, 7.15993, 11.1175)
+mesh = ExtResource("19_mt5ny")
+skeleton = NodePath("../../..")
+
+[node name="Cloud7" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.271225, 0, 0, 0, 0.252622, 0, 0, 0, 0.271225, -2.61878, 9.66593, -9.5708)
+mesh = ExtResource("19_mt5ny")
+skeleton = NodePath("../..")
+
+[node name="Cloud8" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(-0.414585, 0, -0.401459, 0, 0.488759, 0, 0.392019, 0, -0.409272, -11.443, 13.3707, -10.5182)
+mesh = ExtResource("19_mt5ny")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud9" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(-0.301807, 0, -0.498289, 0, 0.488759, 0, 0.479847, 0, -0.291427, -10.3493, 15.8345, -4.27713)
+mesh = ExtResource("17_w66wo")
+skeleton = NodePath("../Cloud4")
+
+[node name="CampaignSelector" type="Node3D" parent="."]
+script = ExtResource("20_qradk")
+
+[node name="Title" type="RichTextLabel" parent="CampaignSelector"]
+visible = false
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 1157.0
+offset_bottom = 104.0
+theme = ExtResource("5_hyg5i")
+theme_override_font_sizes/bold_font_size = 54
+bbcode_enabled = true
+text = "[b]Play Campaign: Main Campaign[b]"
+fit_content = true
+
+[node name="TracksList" type="ItemList" parent="CampaignSelector"]
+visible = false
+offset_left = 204.0
+offset_top = 110.0
+offset_right = 888.0
+offset_bottom = 532.0
+theme = ExtResource("5_hyg5i")
+theme_override_font_sizes/font_size = 57
+item_count = 2
+item_0/text = "0"
+item_1/text = "1"
+
+[node name="Back" type="Button" parent="CampaignSelector"]
+visible = false
+offset_left = 23.0
+offset_top = 105.0
+offset_right = 131.0
+offset_bottom = 171.0
+theme = ExtResource("5_hyg5i")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[connection signal="mouse_entered" from="HomeScreen/Buttons/Campaign" to="." method="_on_campaign_mouse_entered"]
+[connection signal="pressed" from="HomeScreen/Buttons/Campaign" to="." method="_on_campaign_pressed"]
+[connection signal="mouse_entered" from="HomeScreen/Buttons/Editor" to="." method="_on_editor_mouse_entered"]
+[connection signal="pressed" from="HomeScreen/Buttons/Editor" to="." method="_on_editor_pressed"]
+[connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
+[connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]
