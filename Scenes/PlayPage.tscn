@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dk1de21jjis1e"]
+[gd_scene load_steps=21 format=3 uid="uid://cqd7hq8nbf3qa"]
 
 [ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
@@ -91,7 +91,7 @@ stretch_mode = 4
 curve = SubResource("Curve2D_xl4mh")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="HomeScreen/Path2D"]
-position = Vector2(27.7503, 130.087)
+position = Vector2(27.7504, 130.087)
 rotation = 1.77881
 progress = 112.78
 loop = false

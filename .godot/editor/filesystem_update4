@@ -8,12 +8,5 @@ res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/Home.tscn
 res://Scenes/EditorPlayer.tscn
-res://Scenes/FastForward.tscn
-res://Scripts/Home.gd
-res://Scenes/HomePage.tscn
-res://Scripts/Editor.gd
-res://Scripts/TrackPlayer.gd
-res://Scripts/GlobalVariables.gd
-res://Scripts/HomePage.gd
+Scenes/Editor.tscn
 res://Scenes/PlayPage.tscn
-res://Scripts/PlayPage.gd

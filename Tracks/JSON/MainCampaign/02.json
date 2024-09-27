@@ -1,0 +1,225 @@
+{
+	"blocks": [
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-8
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "EndMarker"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				0,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				0,
+				0,
+				6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				9
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "CornerMedium"
+		},
+		{
+			"position": [
+				4,
+				0,
+				8
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "CornerLarge"
+		},
+		{
+			"position": [
+				5,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "RampTransitionUp"
+		},
+		{
+			"position": [
+				5,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				5,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight2Pins"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-8
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "End"
+		}
+	]
+}
