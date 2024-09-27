@@ -1,35 +1,25 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b5nx78qe50cv0"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://b5nx78qe50cv0"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olqg1"]
-bg_color = Color(0.491901, 0.167044, 0.0683805, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk6h6"]
+bg_color = Color(3.60981e-08, 0.152649, 8.42288e-08, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgjnq"]
-bg_color = Color(0.968627, 0.541176, 0.419608, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.0156863, 0.141176, 0.2, 0)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgh60"]
+bg_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0dbt"]
-bg_color = Color(0.945032, 0.449761, 0.308712, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g20ej"]
+bg_color = Color(0, 0.681845, 0, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 2
 border_color = Color(0.0156863, 0.141176, 0.2, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -37,7 +27,16 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okaj3"]
-bg_color = Color(0.968627, 0.541176, 0.419608, 1)
+bg_color = Color(1.63645e-06, 0.808187, 1.54018e-06, 1)
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqvwl"]
+bg_color = Color(0, 0.681845, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -48,27 +47,18 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k1rk"]
-bg_color = Color(0.945032, 0.449761, 0.308712, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.0156863, 0.141176, 0.2, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_md0wk"]
+bg_color = Color(0, 1, 0, 0.180392)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itfws"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab5te"]
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ep54n"]
 content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 50.0
 content_margin_bottom = 10.0
-bg_color = Color(0.517647, 0.509804, 0.741176, 1)
+bg_color = Color(0, 0.435844, 0, 1)
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
@@ -79,10 +69,12 @@ corner_detail = 15
 
 [resource]
 Button/font_sizes/font_size = 24
-Button/styles/disabled = SubResource("StyleBoxFlat_olqg1")
-Button/styles/focus = SubResource("StyleBoxFlat_mgjnq")
-Button/styles/hover = SubResource("StyleBoxFlat_a0dbt")
+Button/styles/disabled = SubResource("StyleBoxFlat_xk6h6")
+Button/styles/focus = SubResource("StyleBoxFlat_fgh60")
+Button/styles/hover = SubResource("StyleBoxFlat_g20ej")
 Button/styles/normal = SubResource("StyleBoxFlat_okaj3")
-Button/styles/pressed = SubResource("StyleBoxFlat_7k1rk")
-Tree/styles/focus = SubResource("StyleBoxFlat_itfws")
+Button/styles/pressed = SubResource("StyleBoxFlat_xqvwl")
+ItemList/font_sizes/font_size = 15
+ItemList/styles/panel = SubResource("StyleBoxFlat_md0wk")
+Tree/styles/focus = SubResource("StyleBoxFlat_ab5te")
 Tree/styles/panel = SubResource("StyleBoxFlat_ep54n")

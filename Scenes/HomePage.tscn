@@ -151,8 +151,10 @@ texture_disabled = ExtResource("10_l8bkm")
 visible = false
 
 [node name="Back" type="Button" parent="Credits"]
-offset_right = 108.0
-offset_bottom = 66.0
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 133.0
+offset_bottom = 91.0
 theme = ExtResource("5_cg640")
 theme_override_font_sizes/font_size = 36
 text = "Back"

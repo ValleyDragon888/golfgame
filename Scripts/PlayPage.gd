@@ -41,7 +41,7 @@ func _on_campaign_pressed():
 	UI_ball_pos = 1.0
 
 
-func _on_campaign_select_back_pressed():
+func _on_campaign_back_pressed():
 	$CampaignSelector.hide()
 	$CampaignSelector/Back.hide()
 	$CampaignSelector/Title.hide()
@@ -50,6 +50,10 @@ func _on_campaign_select_back_pressed():
 	UI_ball_pos = 0.15
 	$HomeScreen/Path2D/PathFollow2D.progress_ratio = 0.15
 
+func _on_back_pressed():
+	GlobalVariables.homescreen_mode = "HomePage"
+	get_tree().change_scene_to_packed(GlobalVariables.homepage)
+	UI_ball_pos = 1.0
 
 func _on_campaign_mouse_entered():
 	UI_ball_pos = 0.22
