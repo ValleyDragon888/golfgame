@@ -11,3 +11,5 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/FastForward.tscn
 res://Scenes/PlayPage.tscn
 res://Scripts/PlayPage.gd
+Scenes/Ball.tscn
+Scenes/Editor.tscn
