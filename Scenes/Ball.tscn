@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://b7lb2ws1lt0r3"]
 
+[ext_resource type="Script" path="res://Scenes/BallMasterSignalRelayer.gd" id="1_ikqiw"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
-[ext_resource type="Script" path="res://Scripts/BallMasterSignalRelayer.gd" id="1_v0fgb"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_3kb27"]
 [ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="3_r486x"]
@@ -31,7 +31,7 @@ shader = ExtResource("9_h3gg6")
 shader_parameter/colorAmt = 12.0
 
 [node name="Player" type="Node3D"]
-script = ExtResource("1_v0fgb")
+script = ExtResource("1_ikqiw")
 
 [node name="Ball" type="RigidBody3D" parent="."]
 collision_layer = 2
@@ -108,6 +108,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Toon" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_smgoc")
 anchors_preset = 15
 anchor_right = 1.0
