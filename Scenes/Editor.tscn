@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://crnpgfffxreu"]
+[gd_scene load_steps=18 format=3 uid="uid://crnpgfffxreu"]
 
 [ext_resource type="Script" path="res://Scripts/Editor.gd" id="1_megtk"]
 [ext_resource type="PackedScene" uid="uid://c8ng83e0upg4t" path="res://Scenes/Freecam.tscn" id="2_v856w"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="3_t24cc"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="4_6mb0a"]
+[ext_resource type="Texture2D" uid="uid://dudxrfe7ek61t" path="res://Assets/UI elements/Flag.png" id="4_frjqv"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="5_sm1x6"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="6_sc7lh"]
 
@@ -153,6 +154,14 @@ offset_bottom = 60.0
 grow_horizontal = 0
 theme = ExtResource("3_t24cc")
 text = "  Play  "
+
+[node name="Flag" type="TextureRect" parent="CanvasLayer"]
+offset_left = 619.0
+offset_top = 11.0
+offset_right = 662.0
+offset_bottom = 69.0
+texture = ExtResource("4_frjqv")
+expand_mode = 1
 
 [node name="SaveAsDialog" type="FileDialog" parent="CanvasLayer"]
 title = "Save As"

@@ -17,14 +17,14 @@ func _process(delta):
 	else:
 		y = mouse_position_y
 	$Background/CameraOrigin.rotation_degrees.x = lerp($Background/CameraOrigin.rotation_degrees.x, y, 0.01)
-	$HomeScreen/Path2D/PathFollow2D.progress_ratio = lerp($HomeScreen/Path2D/PathFollow2D.progress_ratio, UI_ball_pos, 0.03)
+	$PlayScreen/Path2D/PathFollow2D.progress_ratio = lerp($PlayScreen/Path2D/PathFollow2D.progress_ratio, UI_ball_pos, 0.03)
 	
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_position_y = (event.global_position.y / get_viewport().size.y * 20) - 20
 func _on_credits_pressed():
 	GlobalVariables.homescreen_mode = "Credits"
-	$HomeScreen.hide()
+	$PlayScreen.hide()
 	$Credits.show()
 	UI_ball_pos = 1.0
 
@@ -37,7 +37,7 @@ func _on_editor_pressed():
 func _on_campaign_pressed():
 	GlobalVariables.homescreen_mode = "CampaignSelect"
 	$CampaignSelector.show_campaign_screen("Main Campaign")
-	$HomeScreen.hide()
+	$PlayScreen.hide()
 	UI_ball_pos = 1.0
 
 
@@ -46,9 +46,9 @@ func _on_campaign_select_back_pressed():
 	$CampaignSelector/Back.hide()
 	$CampaignSelector/Title.hide()
 	$CampaignSelector/TracksList.hide()
-	$HomeScreen.show()
+	$PlayScreen.show()
 	UI_ball_pos = 0.15
-	$HomeScreen/Path2D/PathFollow2D.progress_ratio = 0.15
+	$PlayScreen/Path2D/PathFollow2D.progress_ratio = 0.15
 
 func _on_back_pressed():
 	GlobalVariables.homescreen_mode = "HomePage"

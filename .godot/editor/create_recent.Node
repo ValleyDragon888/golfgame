@@ -1,8 +1,8 @@
+TextureRect
 CanvasLayer
 Button
 HBoxContainer
 Node3D
-TextureRect
 PathFollow2D
 Path2D
 VBoxContainer

@@ -64,7 +64,7 @@ func load_file(path):
 	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
 	
 	player.get_child(0).position = GlobalVariables.start_position * 6
-	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 10
+	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 5
 
 
 func _on_player_level_finished():
