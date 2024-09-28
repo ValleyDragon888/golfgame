@@ -121,58 +121,6 @@
 			"position": [
 				5,
 				0,
-				1
-			],
-			"rotation": [
-				-0,
-				3.14159250259399,
-				0
-			],
-			"type": "Straight2Pins"
-		},
-		{
-			"position": [
-				5,
-				0,
-				-1
-			],
-			"rotation": [
-				-0,
-				3.14159250259399,
-				0
-			],
-			"type": "Straight2Pins"
-		},
-		{
-			"position": [
-				5,
-				0,
-				-1
-			],
-			"rotation": [
-				-0,
-				-1.57079637050629,
-				0
-			],
-			"type": "Straight2Pins"
-		},
-		{
-			"position": [
-				5,
-				0,
-				1
-			],
-			"rotation": [
-				-0,
-				-1.57079637050629,
-				0
-			],
-			"type": "Straight2Pins"
-		},
-		{
-			"position": [
-				5,
-				0,
 				-3
 			],
 			"rotation": [
@@ -220,6 +168,32 @@
 				0
 			],
 			"type": "End"
+		},
+		{
+			"position": [
+				5,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				5,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "Start"
 		}
 	]
 }
