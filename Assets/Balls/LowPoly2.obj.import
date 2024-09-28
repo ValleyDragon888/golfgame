@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dyy8lsvd8t828"
+path="res://.godot/imported/LowPoly2.obj-5c08847051602d7a45b550721d22d07d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/LowPoly2.obj-5c08847051602d7a45b550721d22d07d.mesh"]
+
+source_file="res://Assets/Balls/LowPoly2.obj"
+dest_files=["res://.godot/imported/LowPoly2.obj-5c08847051602d7a45b550721d22d07d.mesh", "res://.godot/imported/LowPoly2.obj-5c08847051602d7a45b550721d22d07d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

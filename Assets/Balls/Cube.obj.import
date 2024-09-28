@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cdorrhxui2ccn"
+path="res://.godot/imported/Cube.obj-2515e06cd9ddb78a2d71a53f0dfa2cbe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Cube.obj-2515e06cd9ddb78a2d71a53f0dfa2cbe.mesh"]
+
+source_file="res://Assets/Balls/Cube.obj"
+dest_files=["res://.godot/imported/Cube.obj-2515e06cd9ddb78a2d71a53f0dfa2cbe.mesh", "res://.godot/imported/Cube.obj-2515e06cd9ddb78a2d71a53f0dfa2cbe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
