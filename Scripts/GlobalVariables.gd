@@ -21,7 +21,7 @@ var trackplayer = preload("res://Scenes/TrackPlayer.tscn")
 const scene_blocks = ["MovingPiece"]
 const campaigns = {
 	"Main Campaign": [
-		{"1": "res://Tracks/JSON/MainCampaign/01.json"},
-		{"2": "res://Tracks/JSON/MainCampaign/02.json"}
+		{"1 - Introduction": "res://Tracks/JSON/MainCampaign/01.json"},
+		{"2 - Ramps & Turns": "res://Tracks/JSON/MainCampaign/02.json"}
 	]
 }
