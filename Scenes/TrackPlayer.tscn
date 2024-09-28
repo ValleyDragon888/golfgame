@@ -68,6 +68,14 @@ size = Vector2i(1000, 500)
 ok_button_text = "Open"
 file_mode = 0
 
+[node name="Back" type="Button" parent="CanvasLayer"]
+offset_left = 138.0
+offset_top = 5.0
+offset_right = 346.0
+offset_bottom = 41.0
+theme = ExtResource("7_wi0ui")
+text = "Back to Campaign"
+
 [node name="Player" parent="." instance=ExtResource("2_2ytfu")]
 
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
@@ -155,4 +163,5 @@ text = "Continue"
 [connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]
 [connection signal="file_selected" from="CanvasLayer/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="FinishedScreen/Continue" to="." method="_on_continue_pressed"]

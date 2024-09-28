@@ -75,3 +75,7 @@ func _on_player_level_finished():
 
 func _on_continue_pressed():
 	get_tree().change_scene_to_packed(GlobalVariables.homepage)
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_packed(GlobalVariables.homepage)

@@ -11,3 +11,4 @@ res://Scenes/PlayPage.tscn
 res://Scenes/Home.tscn
 res://Scenes/Freecam.tscn
 res://Scripts/GlobalVariables.gd
+res://Scripts/TrackPlayer.gd
