@@ -9,3 +9,4 @@ res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/EditorPlayer.tscn
 res://Scenes/PlayPage.tscn
 res://Scenes/Home.tscn
+res://Scripts/PlayPage.gd

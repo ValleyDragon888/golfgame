@@ -41,7 +41,7 @@ func _on_campaign_pressed():
 	UI_ball_pos = 1.0
 
 
-func _on_campaign_back_pressed():
+func _on_campaign_select_back_pressed():
 	$CampaignSelector.hide()
 	$CampaignSelector/Back.hide()
 	$CampaignSelector/Title.hide()
