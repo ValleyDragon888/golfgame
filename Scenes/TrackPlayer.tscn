@@ -155,5 +155,4 @@ text = "Continue"
 [connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]
 [connection signal="file_selected" from="CanvasLayer/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
-[connection signal="level_finished" from="Player" to="." method="_on_player_level_finished"]
 [connection signal="pressed" from="FinishedScreen/Continue" to="." method="_on_continue_pressed"]

@@ -112,4 +112,3 @@ mesh = ExtResource("4_wgjvc")
 skeleton = NodePath("../Cloud4")
 
 [connection signal="pressed" from="CanvasLayer/EditorButton" to="." method="_on_editor_button_pressed"]
-[connection signal="level_finished" from="Player" to="." method="_on_player_level_finished"]

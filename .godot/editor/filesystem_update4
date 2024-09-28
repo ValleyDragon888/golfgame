@@ -1,15 +1,13 @@
+Scenes/Editor.tscn
 res://Scenes/JSONTrackLoader.tscn
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
-res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
-res://Scenes/HomePage.tscn
 res://Scenes/EditorPlayer.tscn
-res://Scenes/FastForward.tscn
 res://Scenes/PlayPage.tscn
-res://Scripts/PlayPage.gd
-Scenes/Ball.tscn
-Scenes/Editor.tscn
+res://Scenes/Home.tscn
+res://Scenes/Freecam.tscn
+res://Scripts/GlobalVariables.gd

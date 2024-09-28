@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dk1de21jjis1e"]
+[gd_scene load_steps=21 format=3 uid="uid://cqd7hq8nbf3qa"]
 
 [ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dmpaxa4uwkaic" path="res://Assets/UI elements/CampaignButtonPressed.png" id="7_4af3j"]
 [ext_resource type="Texture2D" uid="uid://b2oxjb1lk3ajf" path="res://Assets/UI elements/EditorButton.png" id="8_s3l4f"]
 [ext_resource type="Texture2D" uid="uid://dfcolhysb7gf4" path="res://Assets/UI elements/EditorButtonPressed.png" id="9_0itgc"]
-[ext_resource type="Texture2D" uid="uid://dudxrfe7ek61t" path="res://Assets/UI elements/Flag.png" id="10_jl67i"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="16_njpon"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_w66wo"]
@@ -107,11 +106,11 @@ expand_mode = 1
 
 [node name="Buttons" type="VBoxContainer" parent="HomeScreen"]
 offset_left = 46.0
-offset_top = 348.0
+offset_top = 372.0
 offset_right = 1357.0
-offset_bottom = 1396.0
+offset_bottom = 1420.0
 scale = Vector2(0.25, 0.25)
-theme_override_constants/separation = -400
+theme_override_constants/separation = -100
 
 [node name="Campaign" type="TextureButton" parent="HomeScreen/Buttons"]
 layout_mode = 2
@@ -132,27 +131,6 @@ texture_normal = ExtResource("8_s3l4f")
 texture_pressed = ExtResource("9_0itgc")
 texture_hover = ExtResource("9_0itgc")
 texture_disabled = ExtResource("8_s3l4f")
-
-[node name="Back" type="Button" parent="HomeScreen"]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 25.0
-offset_top = -68.0
-offset_right = 101.0
-offset_bottom = -25.0
-grow_vertical = 0
-theme = ExtResource("5_hyg5i")
-theme_override_font_sizes/font_size = 24
-text = "Back"
-
-[node name="TextureRect" type="TextureRect" parent="HomeScreen"]
-offset_left = 75.0
-offset_top = 163.0
-offset_right = 231.0
-offset_bottom = 375.0
-texture = ExtResource("10_jl67i")
-expand_mode = 1
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -256,6 +234,5 @@ text = "Back"
 [connection signal="pressed" from="HomeScreen/Buttons/Campaign" to="." method="_on_campaign_pressed"]
 [connection signal="mouse_entered" from="HomeScreen/Buttons/Editor" to="." method="_on_editor_mouse_entered"]
 [connection signal="pressed" from="HomeScreen/Buttons/Editor" to="." method="_on_editor_pressed"]
-[connection signal="pressed" from="HomeScreen/Back" to="." method="_on_back_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
-[connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_back_pressed"]
+[connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]

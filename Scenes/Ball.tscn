@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7lb2ws1lt0r3"]
+[gd_scene load_steps=15 format=3 uid="uid://b7lb2ws1lt0r3"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
-[ext_resource type="Script" path="res://Scripts/BallMasterSignalRelayer.gd" id="1_v0fgb"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_3kb27"]
 [ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="3_r486x"]
@@ -31,7 +30,6 @@ shader = ExtResource("9_h3gg6")
 shader_parameter/colorAmt = 12.0
 
 [node name="Player" type="Node3D"]
-script = ExtResource("1_v0fgb")
 
 [node name="Ball" type="RigidBody3D" parent="."]
 collision_layer = 2
@@ -83,12 +81,11 @@ surface_material_override/0 = ExtResource("4_y5t71")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ShotIndicator" type="Button" parent="CanvasLayer"]
-offset_left = 25.0
-offset_top = 25.0
-offset_right = 161.0
-offset_bottom = 78.0
+offset_right = 136.0
+offset_bottom = 53.0
 theme = ExtResource("5_84cji")
 toggle_mode = true
+button_pressed = true
 text = "Shots: 0"
 
 [node name="PowerIndicator" type="ProgressBar" parent="CanvasLayer"]
@@ -97,7 +94,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -56.0
-offset_top = 97.0
+offset_top = 33.0
 offset_right = -14.0
 offset_bottom = -16.0
 grow_horizontal = 0
@@ -109,6 +106,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Toon" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_smgoc")
 anchors_preset = 15
 anchor_right = 1.0

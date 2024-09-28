@@ -1,6 +1,5 @@
-[gd_scene load_steps=17 format=3 uid="uid://bf0gnul0uydmi"]
+[gd_scene load_steps=16 format=3 uid="uid://bf0gnul0uydmi"]
 
-[ext_resource type="Script" path="res://Scripts/Home.gd" id="1_2ptev"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="2_sia7g"]
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
@@ -35,7 +34,6 @@ background_mode = 2
 sky = SubResource("Sky_ow2au")
 
 [node name="Home" type="Node3D"]
-script = ExtResource("1_2ptev")
 
 [node name="Toon" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_c63h5")
