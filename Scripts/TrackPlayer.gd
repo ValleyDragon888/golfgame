@@ -64,5 +64,18 @@ func load_file(path):
 	$AddedBlocksRoot.add_child(block_instances[1].node())
 	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
 	
-	player.get_child(2).position = GlobalVariables.start_position * 6
-	player.get_child(2).position.y = GlobalVariables.start_position.y * 6 + 10
+	player.get_child(0).position = GlobalVariables.start_position * 6
+	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 10
+
+
+func _on_player_level_finished():
+	$CanvasLayer.hide()
+	$FinishedScreen.show()
+
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_packed(GlobalVariables.homepage)
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_packed(GlobalVariables.homepage)

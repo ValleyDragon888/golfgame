@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Golf Game"
-run/main_scene="res://Scenes/Home.tscn"
+run/main_scene="res://Scenes/HomePage.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GlobalVariables="*res://Scripts/GlobalVariables.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor]
 

@@ -203,4 +203,4 @@ func _on_delete(pos):
 				$AddedBlocksRoot.get_children()[block].queue_free()
 
 func _on_go_home_pressed():
-	get_tree().change_scene_to_packed(GlobalVariables.home)
+	get_tree().change_scene_to_packed(GlobalVariables.homepage)

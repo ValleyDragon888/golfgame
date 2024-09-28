@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+signal finished
 
 const DEFAULT_ZOOM = 5
 @onready var arrow = $"../ArrowPivot/Arrow"
@@ -63,6 +64,7 @@ func _physics_process(_delta):
 	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
 	if dist_to_end.x < 1 and dist_to_end.y < 1 and dist_to_end.z < 1:
 		print("Finished!")
+		finished.emit()
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity:
@@ -80,16 +82,16 @@ func _physics_process(_delta):
 	if Input.is_action_just_released("Up"):
 		just_released = true
 
-	if abs(linear_velocity.x) < 0.1 and abs(linear_velocity.y) < 0.1 and abs(linear_velocity.z) < 0.1:
+	if abs(linear_velocity.x) < 0.1 and abs(linear_velocity.y) < 0.1 and abs(linear_velocity.z) < 0.1: 
 		has_velocity = false
 	else:
 		has_velocity = true
 
 	if Input.is_action_pressed("Up") and has_velocity and just_released:
 		Engine.time_scale = 3
-		$"../CanvasLayer/FastForward".visible = true
+		$"../FastForward".visible = true
 	else:
-		$"../CanvasLayer/FastForward".visible = false
+		$"../FastForward".visible = false
 		Engine.time_scale = 1
 
 	if has_velocity:
@@ -98,7 +100,7 @@ func _physics_process(_delta):
 		arrow.visible = true
 
 	if position.y < -20:
-		global_position = previous_position
+		global_position = previous_position	
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 #Quit the game
@@ -111,9 +113,10 @@ func _physics_process(_delta):
 	arrow.position.z += input_dir.y * arrow.position.z * -0.04
 	arrow.position.z = clamp(arrow.position.z, -8, -0.1)
 	$"../CanvasLayer/PowerIndicator".value = -8 - arrow.position.z
+	$"../CanvasLayer/PowerIndicator".modulate = Color(1,1/abs(arrow.position.z*0.5),0)
 
 #Scale arrow at far distances to be easily visible
 	arrow.scale.z = (arrow.position.z-3)/-60
 	arrow.scale.x = (arrow.position.z-3)/-60
 	arrow.scale.y = (arrow.position.z-3)/-60
-	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z),0)
+	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z*0.5),0)
