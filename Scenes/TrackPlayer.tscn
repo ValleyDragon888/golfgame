@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://v4ksu7jwy7fn"]
+[gd_scene load_steps=10 format=3 uid="uid://v4ksu7jwy7fn"]
 
 [ext_resource type="Script" path="res://Scripts/TrackPlayer.gd" id="1_w4wli"]
 [ext_resource type="PackedScene" uid="uid://b7lb2ws1lt0r3" path="res://Scenes/Ball.tscn" id="2_2ytfu"]
-[ext_resource type="PackedScene" uid="uid://ow51gqkh6ids" path="res://Assets/Floor.dae" id="3_4g3qy"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="4_2ip0m"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="5_kdw2f"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="6_ujvuq"]
@@ -44,16 +43,29 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d1g3h")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Screen UI" type="CanvasLayer" parent="."]
 
-[node name="LoadButton" type="Button" parent="CanvasLayer"]
+[node name="Back" type="Button" parent="Screen UI"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = 71.0
+theme = ExtResource("7_wi0ui")
+text = "Back to Campaign"
+
+[node name="Debug" type="CanvasLayer" parent="."]
+
+[node name="LoadButton" type="Button" parent="Debug"]
 offset_left = 13.0
 offset_top = 62.0
 offset_right = 105.0
 offset_bottom = 124.0
 text = "Load"
 
-[node name="LoadDialog" type="ConfirmationDialog" parent="CanvasLayer"]
+[node name="LoadDialog" type="ConfirmationDialog" parent="Debug"]
 title = "Load File?"
 position = Vector2i(0, 36)
 size = Vector2i(413, 106)
@@ -61,28 +73,17 @@ ok_button_text = "Load File"
 dialog_text = "Loading a level will discard any changes to this one.
 Proceed?"
 
-[node name="LoadFileSelectorDialog" type="FileDialog" parent="CanvasLayer"]
+[node name="LoadFileSelectorDialog" type="FileDialog" parent="Debug"]
 title = "Open a File"
 position = Vector2i(100, 74)
 size = Vector2i(1000, 500)
 ok_button_text = "Open"
 file_mode = 0
 
-[node name="Back" type="Button" parent="CanvasLayer"]
-offset_left = 138.0
-offset_top = 5.0
-offset_right = 346.0
-offset_bottom = 41.0
-theme = ExtResource("7_wi0ui")
-text = "Back to Campaign"
-
 [node name="Player" parent="." instance=ExtResource("2_2ytfu")]
 
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -15, 0)
-
-[node name="Floor" parent="." instance=ExtResource("3_4g3qy")]
-transform = Transform3D(0.1, 0, 0, 0, -0.1, 8.74228e-09, 0, -8.74228e-09, -0.1, 0, -1, 0)
 
 [node name="Clouds" type="Node3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
@@ -160,8 +161,8 @@ offset_bottom = 254.0
 theme = ExtResource("7_wi0ui")
 text = "Continue"
 
-[connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
-[connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]
-[connection signal="file_selected" from="CanvasLayer/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
-[connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Screen UI/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="confirmed" from="Debug/LoadDialog" to="." method="_on_load_dialog_confirmed"]
+[connection signal="file_selected" from="Debug/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
 [connection signal="pressed" from="FinishedScreen/Continue" to="." method="_on_continue_pressed"]

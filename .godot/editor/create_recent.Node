@@ -1,3 +1,4 @@
+CanvasLayer
 Button
 HBoxContainer
 Node3D
@@ -8,7 +9,6 @@ VBoxContainer
 TextureButton
 Label
 ColorRect
-CanvasLayer
 CollisionShape3D
 Area3D
 CollisionPolygon3D

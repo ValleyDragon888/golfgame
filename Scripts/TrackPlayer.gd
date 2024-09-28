@@ -1,17 +1,16 @@
 extends Node3D
 
 
-@onready var blocks_ui_showing = false
 @onready var block_instances: Array[EditorBlockInstance] = []
 @onready var save_path = ""
-@onready var load_confirmation_dialog = $CanvasLayer/LoadDialog
-@onready var load_fileselector = $CanvasLayer/LoadFileSelectorDialog
+@onready var load_confirmation_dialog = $Debug/LoadDialog
+@onready var load_fileselector = $Debug/LoadFileSelectorDialog
 @onready var player = $Player
 
 func _ready():
 	if GlobalVariables.trackplayer_debug_enabled == false:
 		load_file(GlobalVariables.trackplayer_requested_scene_load)
-		$CanvasLayer.hide()
+		$Debug.hide()
 
 func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	return EditorBlockInstance.new(
