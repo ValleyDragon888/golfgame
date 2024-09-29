@@ -245,7 +245,6 @@ mesh = ExtResource("5_vbo24")
 
 [node name="Clouds" type="Node3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-visible = false
 
 [node name="Cloud1" type="MeshInstance3D" parent="Clouds"]
 transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 8.08085, 9.31929, 1.46716)

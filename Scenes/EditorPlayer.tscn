@@ -63,13 +63,12 @@ text = "Back To Editor"
 [node name="AddedBlocksRoot" type="Node3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Terrain" type="MeshInstance3D" parent="."]
 transform = Transform3D(42, 0, 0, 0, 42, 0, 0, 0, 42, 9.822, 0, 0)
 mesh = ExtResource("4_ruwcv")
 
 [node name="Clouds" type="Node3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-visible = false
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
 
 [node name="Cloud1" type="MeshInstance3D" parent="Clouds"]
 transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 8.08085, 9.31929, 1.46716)

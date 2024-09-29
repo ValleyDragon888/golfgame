@@ -87,6 +87,7 @@ func _process(_delta):
 		else: GlobalVariables.block_selected_is_scene = false
 	print(GlobalVariables.start_position)
 #Scrolls the placement plane
+	y_plane.position.y = clamp(y_plane.position.y, 0, 10)
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and not GlobalVariables.mouse_hovered:
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
