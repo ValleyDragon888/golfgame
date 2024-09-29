@@ -47,10 +47,7 @@ func _input(event):
 				spring_arm.spring_length -= zoom_speed * spring_arm.spring_length
 
 #Clamps camera zoom
-			if spring_arm.spring_length < 3:
-				spring_arm.spring_length = 3
-			if spring_arm.spring_length > 20:
-				spring_arm.spring_length = 20
+			spring_arm.spring_length = clamp(spring_arm.spring_length, 3, 30)
 
 #Snap to default zoom
 			if event.button_index == MOUSE_BUTTON_MIDDLE:
@@ -62,7 +59,7 @@ func _physics_process(_delta):
 	arrow_pivot.position = position
 #Checks if the player is within 1 block of the end
 	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
-	if dist_to_end.x < 1 and dist_to_end.y < 1 and dist_to_end.z < 1:
+	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1:
 		print("Finished!")
 		finished.emit()
 

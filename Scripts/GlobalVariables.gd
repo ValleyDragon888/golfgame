@@ -12,6 +12,7 @@ var current_track: String
 var homescreen_mode = "HomePage"
 var trackplayer_debug_enabled = true
 var trackplayer_requested_scene_load = ""
+var checkpoints = []
 
 var homepage = preload("res://Scenes/HomePage.tscn")
 var playpage = preload("res://Scenes/PlayPage.tscn")

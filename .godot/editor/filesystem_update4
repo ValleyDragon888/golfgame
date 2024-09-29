@@ -12,3 +12,7 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/PlayPage.tscn
 res://Scenes/Home.tscn
 res://Scripts/Editor.gd
+res://Scripts/Ball.gd
+res://Scripts/EditorPlayer.gd
+res://Scripts/GlobalVariables.gd
+res://Scripts/TrackPlayer.gd

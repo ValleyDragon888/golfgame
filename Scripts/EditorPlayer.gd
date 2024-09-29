@@ -48,8 +48,13 @@ func _ready():
 	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
 	
 	player.get_child(0).position = GlobalVariables.start_position * 6
-	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 10
-	
+	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 5
+
+	for item in len(block_instances):
+		if block_instances[item].get_json_dict().type == "CheckpointMarker":
+			GlobalVariables.checkpoints.append([block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2],])
+			print(GlobalVariables.checkpoints)
+
 func _on_editor_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")
 
