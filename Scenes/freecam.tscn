@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8ng83e0upg4t"]
+[gd_scene load_steps=6 format=3 uid="uid://c8ng83e0upg4t"]
 
 [ext_resource type="Script" path="res://Scripts/Freecam.gd" id="1_ywp3r"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_n6bra"]
+[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="2_trqud"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8ai8g"]
 
@@ -18,6 +19,9 @@ script = ExtResource("1_ywp3r")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH"]
 
+[node name="Outline" parent="CameraPivotV/CameraPivotH/Camera3D" instance=ExtResource("2_trqud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
 [node name="TileDetector" type="SpringArm3D" parent="."]
 collision_mask = 2
 spring_length = 10.0
@@ -30,7 +34,6 @@ mesh = SubResource("SphereMesh_8ai8g")
 skeleton = NodePath("../TileDetector")
 
 [node name="Toon" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_1lp2h")
 anchors_preset = 15
 anchor_right = 1.0
