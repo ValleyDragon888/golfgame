@@ -1,6 +1,10 @@
+Timer
+CanvasLayer
+SubViewport
+ColorRect
+AnimationPlayer
 CSGBox3D
 TextureRect
-CanvasLayer
 Button
 HBoxContainer
 Node3D
@@ -9,6 +13,3 @@ Path2D
 VBoxContainer
 TextureButton
 Label
-ColorRect
-CollisionShape3D
-Area3D

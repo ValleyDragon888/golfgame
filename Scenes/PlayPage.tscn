@@ -107,11 +107,11 @@ expand_mode = 1
 
 [node name="Buttons" type="VBoxContainer" parent="PlayScreen"]
 offset_left = 46.0
-offset_top = 372.0
+offset_top = 341.0
 offset_right = 1357.0
-offset_bottom = 1420.0
+offset_bottom = 1389.0
 scale = Vector2(0.25, 0.25)
-theme_override_constants/separation = -100
+theme_override_constants/separation = -300
 
 [node name="Campaign" type="TextureButton" parent="PlayScreen/Buttons"]
 layout_mode = 2
@@ -140,6 +140,18 @@ offset_right = 230.0
 offset_bottom = 373.0
 texture = ExtResource("10_dedfm")
 expand_mode = 1
+
+[node name="Back" type="Button" parent="PlayScreen"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -58.0
+offset_right = 94.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme = ExtResource("5_hyg5i")
+text = "Back"
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -243,5 +255,6 @@ text = "Back"
 [connection signal="pressed" from="PlayScreen/Buttons/Campaign" to="." method="_on_campaign_pressed"]
 [connection signal="mouse_entered" from="PlayScreen/Buttons/Editor" to="." method="_on_editor_mouse_entered"]
 [connection signal="pressed" from="PlayScreen/Buttons/Editor" to="." method="_on_editor_pressed"]
+[connection signal="pressed" from="PlayScreen/Back" to="." method="_on_back_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]
