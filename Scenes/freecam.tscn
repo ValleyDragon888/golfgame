@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8ng83e0upg4t"]
+[gd_scene load_steps=3 format=3 uid="uid://c8ng83e0upg4t"]
 
 [ext_resource type="Script" path="res://Scripts/Freecam.gd" id="1_ywp3r"]
-[ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_n6bra"]
-[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="2_trqud"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8ai8g"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1lp2h"]
-shader = ExtResource("2_n6bra")
-shader_parameter/colorAmt = 12.0
 
 [node name="Freecam" type="Node3D"]
 script = ExtResource("1_ywp3r")
@@ -18,9 +12,6 @@ script = ExtResource("1_ywp3r")
 [node name="CameraPivotH" type="Node3D" parent="CameraPivotV"]
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH"]
-
-[node name="Outline" parent="CameraPivotV/CameraPivotH/Camera3D" instance=ExtResource("2_trqud")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
 [node name="TileDetector" type="SpringArm3D" parent="."]
 collision_mask = 2
@@ -32,11 +23,3 @@ margin = 0.0
 [node name="TileIndicator" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_8ai8g")
 skeleton = NodePath("../TileDetector")
-
-[node name="Toon" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_1lp2h")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
