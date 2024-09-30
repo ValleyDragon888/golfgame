@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cqd7hq8nbf3qa"]
+[gd_scene load_steps=22 format=3 uid="uid://cqd7hq8nbf3qa"]
 
 [ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dmpaxa4uwkaic" path="res://Assets/UI elements/CampaignButtonPressed.png" id="7_4af3j"]
 [ext_resource type="Texture2D" uid="uid://b2oxjb1lk3ajf" path="res://Assets/UI elements/EditorButton.png" id="8_s3l4f"]
 [ext_resource type="Texture2D" uid="uid://dfcolhysb7gf4" path="res://Assets/UI elements/EditorButtonPressed.png" id="9_0itgc"]
+[ext_resource type="Texture2D" uid="uid://dudxrfe7ek61t" path="res://Assets/UI elements/Flag.png" id="10_dedfm"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="16_njpon"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_w66wo"]
@@ -70,9 +71,9 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_27d6d")
 
-[node name="HomeScreen" type="CanvasLayer" parent="."]
+[node name="PlayScreen" type="CanvasLayer" parent="."]
 
-[node name="Background" type="TextureRect" parent="HomeScreen"]
+[node name="Background" type="TextureRect" parent="PlayScreen"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -87,16 +88,16 @@ texture = ExtResource("3_bejlh")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="Path2D" type="Path2D" parent="HomeScreen"]
+[node name="Path2D" type="Path2D" parent="PlayScreen"]
 curve = SubResource("Curve2D_xl4mh")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="HomeScreen/Path2D"]
+[node name="PathFollow2D" type="PathFollow2D" parent="PlayScreen/Path2D"]
 position = Vector2(27.7504, 130.087)
 rotation = 1.77881
 progress = 112.78
 loop = false
 
-[node name="TextureRect" type="TextureRect" parent="HomeScreen/Path2D/PathFollow2D"]
+[node name="TextureRect" type="TextureRect" parent="PlayScreen/Path2D/PathFollow2D"]
 offset_left = -24.0634
 offset_top = -25.317
 offset_right = 25.9366
@@ -104,7 +105,7 @@ offset_bottom = 24.683
 texture = ExtResource("4_8hf4v")
 expand_mode = 1
 
-[node name="Buttons" type="VBoxContainer" parent="HomeScreen"]
+[node name="Buttons" type="VBoxContainer" parent="PlayScreen"]
 offset_left = 46.0
 offset_top = 372.0
 offset_right = 1357.0
@@ -112,7 +113,7 @@ offset_bottom = 1420.0
 scale = Vector2(0.25, 0.25)
 theme_override_constants/separation = -100
 
-[node name="Campaign" type="TextureButton" parent="HomeScreen/Buttons"]
+[node name="Campaign" type="TextureButton" parent="PlayScreen/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -122,7 +123,7 @@ texture_pressed = ExtResource("7_4af3j")
 texture_hover = ExtResource("7_4af3j")
 texture_disabled = ExtResource("6_j8vgo")
 
-[node name="Editor" type="TextureButton" parent="HomeScreen/Buttons"]
+[node name="Editor" type="TextureButton" parent="PlayScreen/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -131,6 +132,14 @@ texture_normal = ExtResource("8_s3l4f")
 texture_pressed = ExtResource("9_0itgc")
 texture_hover = ExtResource("9_0itgc")
 texture_disabled = ExtResource("8_s3l4f")
+
+[node name="Flag" type="TextureRect" parent="PlayScreen"]
+offset_left = 76.0
+offset_top = 164.0
+offset_right = 230.0
+offset_bottom = 373.0
+texture = ExtResource("10_dedfm")
+expand_mode = 1
 
 [node name="Background" type="Node3D" parent="."]
 
@@ -230,9 +239,9 @@ theme = ExtResource("5_hyg5i")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
-[connection signal="mouse_entered" from="HomeScreen/Buttons/Campaign" to="." method="_on_campaign_mouse_entered"]
-[connection signal="pressed" from="HomeScreen/Buttons/Campaign" to="." method="_on_campaign_pressed"]
-[connection signal="mouse_entered" from="HomeScreen/Buttons/Editor" to="." method="_on_editor_mouse_entered"]
-[connection signal="pressed" from="HomeScreen/Buttons/Editor" to="." method="_on_editor_pressed"]
+[connection signal="mouse_entered" from="PlayScreen/Buttons/Campaign" to="." method="_on_campaign_mouse_entered"]
+[connection signal="pressed" from="PlayScreen/Buttons/Campaign" to="." method="_on_campaign_pressed"]
+[connection signal="mouse_entered" from="PlayScreen/Buttons/Editor" to="." method="_on_editor_mouse_entered"]
+[connection signal="pressed" from="PlayScreen/Buttons/Editor" to="." method="_on_editor_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]
