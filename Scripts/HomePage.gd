@@ -42,13 +42,8 @@ func _on_settings_pressed():
 
 func _on_play_pressed():
 	GlobalVariables.homescreen_mode = "PlayPage"
-	$ScreenFade/ColorRect.visible = true
 	UI_ball_pos = 1.0
-	$ScreenFade/ColorRect/AnimationPlayer.play("Fade Screen")
-
-func _on_animation_finished(anim_name):
-	if anim_name == "Fade Screen":
-		get_tree().change_scene_to_packed(GlobalVariables.playpage)
+	get_tree().change_scene_to_packed(GlobalVariables.playpage)
 
 func _on_campaign_select_back_pressed():
 	$CampaignSelector.hide()

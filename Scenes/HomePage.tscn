@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=26 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/HomePage.gd" id="1_h0sqi"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_4ts8d"]
@@ -47,43 +47,6 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 44, 98, -6.72717, -44.5675, 6.72717, 44.5675, 19, 167, 0, 0, 0, 0, 41, 263, 0, 0, 0, 0, 26, 378, 0, 0, 0, 0, 27, 473, 0, 0, 0, 0, 57, 542, -31.1815, -2.6727, 31.1815, 2.6727, 116, 592, 0, 0, 0, 0, 154, 580, -16.0362, 22.2725, 16.0362, -22.2725, 182, 552, 0, 0, 0, 0, 187, 496, 0, 0, 0, 0, 166, 475, 0, 0, 0, 0, 137, 467, 0, 0, 0, 0, 103, 489, 0, 0, 0, 0, 85, 529, 0, 0, 0, 0, 74, 584, 0, 0, 0, 0, 85, 614, 0, 0, 0, 0, 111, 616, 0, 0, 0, 0, 136, 611, 0, 0, 0, 0, 176, 600, 0, 0, 0, 0, 239, 580, 0, 0, 0, 0, 279, 575)
 }
 point_count = 21
-
-[sub_resource type="Animation" id="Animation_s754j"]
-resource_name = "Fade Screen"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(0.164938, 6.72718, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_pghj7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_p1cqs"]
-_data = {
-"Fade Screen": SubResource("Animation_s754j"),
-"RESET": SubResource("Animation_pghj7")
-}
 
 [node name="Home" type="Node3D"]
 script = ExtResource("1_h0sqi")
@@ -330,22 +293,6 @@ theme = ExtResource("5_cg640")
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
-[node name="ScreenFade" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="ScreenFade"]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenFade/ColorRect"]
-libraries = {
-"": SubResource("AnimationLibrary_p1cqs")
-}
-
 [connection signal="mouse_entered" from="HomeScreen/Buttons/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="HomeScreen/Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="HomeScreen/Buttons/Credits" to="." method="_on_credits_mouse_entered"]
@@ -355,4 +302,3 @@ libraries = {
 [connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]
-[connection signal="animation_finished" from="ScreenFade/ColorRect/AnimationPlayer" to="." method="_on_animation_finished"]

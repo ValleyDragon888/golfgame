@@ -1,3 +1,5 @@
+TabBar
+TabContainer
 Timer
 CanvasLayer
 SubViewport
@@ -10,6 +12,3 @@ HBoxContainer
 Node3D
 PathFollow2D
 Path2D
-VBoxContainer
-TextureButton
-Label

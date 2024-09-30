@@ -1,19 +1,12 @@
-res://Scenes/JSONTrackLoader.tscn
+res://Scenes/PlayPage.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
-res://Tracks/JSON/ComplexTestTrack.json
 res://Scenes/Ball.tscn
 res://Scenes/Editor.tscn
+res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
 res://Scenes/EditorPlayer.tscn
-res://Scenes/PlayPage.tscn
-res://Scenes/Home.tscn
-res://Scenes/Outline.tscn
-res://Scenes/Freecam.tscn
-Tracks/JSON/ComplexTestTrack.json
 res://Scenes/HomePage.tscn
-res://Scripts/PlayPage.gd
-res://Scenes/FadeScreen.tscn
-res://Scripts/HomePage.gd
+res://Scenes/Outline.tscn
