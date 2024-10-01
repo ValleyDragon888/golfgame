@@ -164,6 +164,14 @@ offset_bottom = 69.0
 texture = ExtResource("4_frjqv")
 expand_mode = 1
 
+[node name="ResetButton" type="Button" parent="CanvasLayer"]
+offset_left = 676.0
+offset_top = 17.0
+offset_right = 758.0
+offset_bottom = 57.0
+theme = ExtResource("3_t24cc")
+text = " Reset "
+
 [node name="SaveAsDialog" type="FileDialog" parent="CanvasLayer"]
 title = "Save As"
 position = Vector2i(100, 100)
@@ -187,6 +195,7 @@ Proceed?"
 
 [node name="ErrorDialog" type="AcceptDialog" parent="CanvasLayer"]
 title = "Error!"
+size = Vector2i(236, 100)
 dialog_text = "You must set save path first."
 
 [node name="LoadFileSelectorDialog" type="FileDialog" parent="CanvasLayer"]
@@ -299,6 +308,7 @@ skeleton = NodePath("../Cloud4")
 [connection signal="pressed" from="CanvasLayer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SaveAsButton" to="." method="_on_save_path_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="file_selected" from="CanvasLayer/SaveAsDialog" to="." method="_on_save_as_dialog_file_selected"]
 [connection signal="pressed" from="CanvasLayer/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="CanvasLayer/LoadDialog" to="." method="_on_load_dialog_confirmed"]

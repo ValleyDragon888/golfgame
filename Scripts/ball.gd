@@ -13,7 +13,6 @@ const DEFAULT_ZOOM = 5
 @export var sensitivity = -0.3
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
-var previous_position
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
@@ -66,7 +65,7 @@ func _physics_process(_delta):
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity:
 		just_released = false
-		previous_position = global_position
+		GlobalVariables.start_position = global_position
 		linear_velocity.y = arrow.position.z*-1
 		linear_velocity.z = (arrow.global_position.z - global_position.z) * 10
 		linear_velocity.x = (arrow.global_position.x - global_position.x) * 10
@@ -97,7 +96,8 @@ func _physics_process(_delta):
 		arrow.visible = true
 
 	if position.y < -20:
-		global_position = previous_position	
+		position = GlobalVariables.start_position * 6
+		position.y = GlobalVariables.start_position.y * 6 + 5
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 #Quit the game

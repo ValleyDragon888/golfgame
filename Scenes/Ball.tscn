@@ -108,7 +108,6 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Toon" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_smgoc")
 anchors_preset = 15
 anchor_right = 1.0

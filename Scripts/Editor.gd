@@ -205,3 +205,14 @@ func _on_delete(pos):
 
 func _on_go_home_pressed():
 	get_tree().change_scene_to_packed(GlobalVariables.homepage)
+
+
+func _on_reset_button_pressed():
+	GlobalVariables.current_track = ""
+	block_instances = []
+	for child in $AddedBlocksRoot.get_children():
+		$AddedBlocksRoot.remove_child(child)
+	block_instances.insert(0, EditorBlockInstance.new(0, Vector3(0, 0, 0), Vector3(0, 0, 0), "StartMarker"))
+	$AddedBlocksRoot.add_child(block_instances[0].node())
+	block_instances.insert(1, EditorBlockInstance.new(0, Vector3(0, 0, 5), Vector3(0, 0, 0), "EndMarker"))
+	$AddedBlocksRoot.add_child(block_instances[1].node())

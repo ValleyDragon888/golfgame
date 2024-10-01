@@ -1,0 +1,30 @@
+{
+	"blocks": [
+		{
+			"position": [
+				0,
+				7.5,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				0,
+				0,
+				5
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"type": "EndMarker"
+		}
+	]
+}
