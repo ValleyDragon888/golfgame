@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cqd7hq8nbf3qa"]
+[gd_scene load_steps=26 format=3 uid="uid://cqd7hq8nbf3qa"]
 
 [ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://b2oxjb1lk3ajf" path="res://Assets/UI elements/EditorButton.png" id="8_s3l4f"]
 [ext_resource type="Texture2D" uid="uid://dfcolhysb7gf4" path="res://Assets/UI elements/EditorButtonPressed.png" id="9_0itgc"]
 [ext_resource type="Texture2D" uid="uid://dudxrfe7ek61t" path="res://Assets/UI elements/Flag.png" id="10_dedfm"]
+[ext_resource type="Texture2D" uid="uid://4itgy6updmym" path="res://Assets/UI elements/HostButton.png" id="11_t0r8b"]
+[ext_resource type="Texture2D" uid="uid://cfwb1v3uvekou" path="res://Assets/UI elements/HostButtonPressed.png" id="12_dsb5h"]
+[ext_resource type="Texture2D" uid="uid://cis46g47unrmv" path="res://Assets/UI elements/JoinButton.png" id="13_nvb5v"]
+[ext_resource type="Texture2D" uid="uid://dhevuhrac11ej" path="res://Assets/UI elements/JoinButtonPressed.png" id="14_nvvqu"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="16_njpon"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_w66wo"]
@@ -197,20 +201,20 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme = ExtResource("5_hyg5i")
-texture_normal = ExtResource("6_j8vgo")
-texture_pressed = ExtResource("7_4af3j")
-texture_hover = ExtResource("7_4af3j")
-texture_disabled = ExtResource("6_j8vgo")
+texture_normal = ExtResource("11_t0r8b")
+texture_pressed = ExtResource("12_dsb5h")
+texture_hover = ExtResource("12_dsb5h")
+texture_disabled = ExtResource("11_t0r8b")
 
 [node name="Join" type="TextureButton" parent="PlayScreen/TabContainer/Multiplayer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme = ExtResource("5_hyg5i")
-texture_normal = ExtResource("8_s3l4f")
-texture_pressed = ExtResource("9_0itgc")
-texture_hover = ExtResource("9_0itgc")
-texture_disabled = ExtResource("8_s3l4f")
+texture_normal = ExtResource("13_nvb5v")
+texture_pressed = ExtResource("14_nvvqu")
+texture_hover = ExtResource("14_nvvqu")
+texture_disabled = ExtResource("13_nvb5v")
 
 [node name="Background" type="Node3D" parent="."]
 
