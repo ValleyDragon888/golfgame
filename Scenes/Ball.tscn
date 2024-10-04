@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7lb2ws1lt0r3"]
+[gd_scene load_steps=20 format=3 uid="uid://b7lb2ws1lt0r3"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
 [ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
@@ -18,11 +18,39 @@ bounce = 0.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_6kik4"]
 radius = 0.505518
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijo8g"]
-albedo_color = Color(0, 0.461361, 0.0943459, 1)
+[sub_resource type="Curve" id="Curve_ns1rt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rfew2"]
+curve = SubResource("Curve_ns1rt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ah0w6"]
+lifetime_randomness = 0.1
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, 10, 0)
+spread = 90.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -4, 0)
+scale_min = 0.0
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_rfew2")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36aae"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.65, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yx36e"]
+material = SubResource("StandardMaterial3D_36aae")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17ek3"]
+albedo_color = Color(0, 0.352941, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6rskl"]
-material = SubResource("StandardMaterial3D_ijo8g")
+material = SubResource("StandardMaterial3D_17ek3")
 size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_smgoc"]
@@ -60,9 +88,19 @@ current = true
 [node name="Outline" parent="CameraPivotV/CameraPivotH/SpringArm3D/Camera3D" instance=ExtResource("3_3kb27")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CameraPivotV"]
+emitting = false
+amount = 200
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ah0w6")
+draw_pass_1 = SubResource("BoxMesh_yx36e")
+
 [node name="Hit Particles" type="GPUParticles3D" parent="CameraPivotV"]
 emitting = false
-amount = 20
+amount = 40
 one_shot = true
 explosiveness = 1.0
 process_material = ExtResource("4_1r3lv")
@@ -117,5 +155,3 @@ grow_vertical = 2
 
 [node name="FastForward" parent="." instance=ExtResource("8_2ilx7")]
 visible = false
-
-[connection signal="finished" from="Ball" to="." method="_on_ball_finished"]

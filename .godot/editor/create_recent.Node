@@ -1,14 +1,14 @@
+GPUParticles3D
+ColorRect
+VBoxContainer
 TabBar
 TabContainer
 Timer
 CanvasLayer
 SubViewport
-ColorRect
 AnimationPlayer
 CSGBox3D
 TextureRect
 Button
 HBoxContainer
 Node3D
-PathFollow2D
-Path2D

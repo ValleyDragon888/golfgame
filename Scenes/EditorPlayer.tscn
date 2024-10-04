@@ -115,4 +115,49 @@ transform = Transform3D(-0.301807, 0, -0.498289, 0, 0.488759, 0, 0.479847, 0, -0
 mesh = ExtResource("4_wgjvc")
 skeleton = NodePath("../Cloud4")
 
+[node name="FinishedScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="FinishedScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(4.81308e-08, 0.378839, 0.136708, 0.85098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FinishedScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -107.0
+offset_right = 298.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Level Cleared" type="Label" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 88
+text = "Level Cleared!"
+horizontal_alignment = 1
+
+[node name="Well Done" type="Label" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Well Done!"
+horizontal_alignment = 1
+
+[node name="Continue" type="Button" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_6ikdq")
+theme_override_font_sizes/font_size = 41
+text = "  Continue  "
+
 [connection signal="pressed" from="CanvasLayer/EditorButton" to="." method="_on_editor_button_pressed"]
+[connection signal="pressed" from="FinishedScreen/VBoxContainer/Continue" to="." method="_on_continue_pressed"]

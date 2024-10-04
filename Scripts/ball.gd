@@ -1,7 +1,5 @@
 extends RigidBody3D
 
-signal finished
-
 const DEFAULT_ZOOM = 5
 @onready var arrow = $"../ArrowPivot/Arrow"
 @onready var arrow_pivot = $"../ArrowPivot"
@@ -54,13 +52,18 @@ func _input(event):
 
 func _physics_process(_delta):
 #Locks camera and arrow to the player
-	camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)
+	if not GlobalVariables.finished:
+		camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)
 	arrow_pivot.position = position
 #Checks if the player is within 1 block of the end
 	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
-	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1 and len(GlobalVariables.checkpoints) == 0:
+	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1 and len(GlobalVariables.checkpoints) == 0 and linear_velocity.x < 0.1 and linear_velocity.z < 0.1:
 		print("Finished!")
-		finished.emit()
+		hide()
+		arrow.hide()
+		camera_is_locked = false
+		$"../CameraPivotV/GPUParticles3D".emitting = true
+		GlobalVariables.finished = true
 		
 #Checks if player is within 3 blocks of a checkpoint
 	for item in len(GlobalVariables.checkpoints):
@@ -73,7 +76,7 @@ func _physics_process(_delta):
 			break
 
 #May be replaced with correct controls
-	if Input.is_action_just_pressed("Up") and not has_velocity:
+	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished:
 		just_released = false
 		GlobalVariables.start_position = global_position
 		linear_velocity.y = arrow.position.z*-1
@@ -93,7 +96,7 @@ func _physics_process(_delta):
 	else:
 		has_velocity = true
 
-	if Input.is_action_pressed("Up") and has_velocity and just_released:
+	if Input.is_action_pressed("Up") and has_velocity and just_released and not GlobalVariables.finished:
 		Engine.time_scale = 3
 		$"../FastForward".visible = true
 	else:

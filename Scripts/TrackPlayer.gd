@@ -73,6 +73,11 @@ func load_file(path):
 	player.get_child(0).position = GlobalVariables.start_position * 6
 	player.get_child(0).position.y = GlobalVariables.start_position.y * 6 + 5
 
+func _process(_delta):
+	if GlobalVariables.finished:
+		$FinishedScreen.show()
+	else:
+		$FinishedScreen.hide()
 
 func _on_player_level_finished():
 	$CanvasLayer.hide()
@@ -81,6 +86,7 @@ func _on_player_level_finished():
 
 func _on_continue_pressed():
 	get_tree().change_scene_to_packed(GlobalVariables.homepage)
+	GlobalVariables.finished = false
 
 
 func _on_back_pressed():

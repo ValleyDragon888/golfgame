@@ -57,9 +57,15 @@ func _ready():
 			GlobalVariables.checkpoints.append(Vector3(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2]))
 			print(GlobalVariables.checkpoints)
 
+func _process(_delta):
+	if GlobalVariables.finished:
+		$FinishedScreen.show()
+	else:
+		$FinishedScreen.hide()
+
 func _on_editor_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")
 
 
-func _on_player_level_finished():
+func _on_continue_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")

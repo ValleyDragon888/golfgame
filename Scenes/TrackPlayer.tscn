@@ -141,32 +141,49 @@ skeleton = NodePath("../Cloud4")
 [node name="FinishedScreen" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Level Cleared" type="Label" parent="FinishedScreen"]
-offset_left = 256.0
-offset_top = 35.0
-offset_right = 864.0
-offset_bottom = 159.0
+[node name="ColorRect" type="ColorRect" parent="FinishedScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(4.81308e-08, 0.378839, 0.136708, 0.85098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FinishedScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -107.0
+offset_right = 298.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Level Cleared" type="Label" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 88
 text = "Level Cleared!"
+horizontal_alignment = 1
 
-[node name="Well Done" type="Label" parent="FinishedScreen"]
-offset_left = 433.0
-offset_top = 152.0
-offset_right = 614.0
-offset_bottom = 201.0
+[node name="Well Done" type="Label" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 35
 text = "Well Done!"
+horizontal_alignment = 1
 
-[node name="Continue" type="Button" parent="FinishedScreen"]
-offset_left = 452.0
-offset_top = 209.0
-offset_right = 576.0
-offset_bottom = 254.0
+[node name="Continue" type="Button" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("7_wi0ui")
-text = "Continue"
+theme_override_font_sizes/font_size = 41
+text = "  Continue  "
 
 [connection signal="pressed" from="Screen UI/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="Debug/LoadDialog" to="." method="_on_load_dialog_confirmed"]
 [connection signal="file_selected" from="Debug/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
-[connection signal="pressed" from="FinishedScreen/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="FinishedScreen/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
