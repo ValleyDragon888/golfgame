@@ -58,16 +58,19 @@ func _physics_process(_delta):
 	arrow_pivot.position = position
 #Checks if the player is within 1 block of the end
 	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
-	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1:
+	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1 and len(GlobalVariables.checkpoints) == 0:
 		print("Finished!")
 		finished.emit()
-#This code is experimental and untested
-        for item in len(GlobalVariables.checkpoints):
-	        var dist_to_checkpoint = abs(global_position - (GlobalVariables.checkpoints[item] * 6))
-	        if dist_to_checkpoint.x < 1 and dist_to_checkpoint.y < 3 and dist_to_checkpoint.z < 1:
-		        print("Checkpoint!")
-                        #Then remove it from the variable
-##
+		
+#Checks if player is within 3 blocks of a checkpoint
+	for item in len(GlobalVariables.checkpoints):
+		var dist_to_checkpoint = abs(global_position - (GlobalVariables.checkpoints[item] * 6))
+		if dist_to_checkpoint.x < 3 and dist_to_checkpoint.y < 3 and dist_to_checkpoint.z < 3:
+			print("Checkpoint!")
+#Then removes it from the variable
+			GlobalVariables.checkpoints.remove_at(item)
+			print(GlobalVariables.checkpoints)
+			break
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity:
@@ -103,8 +106,8 @@ func _physics_process(_delta):
 		arrow.visible = true
 
 	if position.y < -20:
-		position = GlobalVariables.start_position * 6
-		position.y = GlobalVariables.start_position.y * 6 + 5
+		position = GlobalVariables.start_position
+		position.y = GlobalVariables.start_position.y + 5
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 #Quit the game

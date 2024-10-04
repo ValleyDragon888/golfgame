@@ -63,9 +63,11 @@ func load_file(path):
 	$AddedBlocksRoot.add_child(block_instances[1].node())
 	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
 
+	#Adds checkpoints to the variable.
+	GlobalVariables.checkpoints.clear()
 	for item in len(block_instances):
 		if block_instances[item].get_json_dict().type == "CheckpointMarker":
-			GlobalVariables.checkpoints.append([block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2],])
+			GlobalVariables.checkpoints.append(Vector3(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2]))
 			print(GlobalVariables.checkpoints)
 
 	player.get_child(0).position = GlobalVariables.start_position * 6

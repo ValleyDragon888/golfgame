@@ -1,3 +1,5 @@
+Scenes/Editor.tscn
+Scripts/ball.gd
 res://Scenes/Ball.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
@@ -11,4 +13,5 @@ res://Scenes/PlayPage.tscn
 res://Scenes/HomePage.tscn
 res://Scenes/Outline.tscn
 res://Scripts/Ball.gd
-res://Scripts/Editor.gd
+res://Scripts/EditorPlayer.gd
+res://Scripts/TrackPlayer.gd
