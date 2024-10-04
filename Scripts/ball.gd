@@ -61,6 +61,13 @@ func _physics_process(_delta):
 	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1:
 		print("Finished!")
 		finished.emit()
+#This code is experimental and untested
+        for item in len(GlobalVariables.checkpoints):
+	        var dist_to_checkpoint = abs(global_position - (GlobalVariables.checkpoints[item] * 6))
+	        if dist_to_checkpoint.x < 1 and dist_to_checkpoint.y < 3 and dist_to_checkpoint.z < 1:
+		        print("Checkpoint!")
+                        #Then remove it from the variable
+##
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity:
