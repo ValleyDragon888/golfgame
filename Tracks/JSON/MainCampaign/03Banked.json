@@ -1,0 +1,238 @@
+{
+	"blocks": [
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				0,
+				0,
+				0
+			],
+			"type": "StartMarker"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-10
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "EndMarker"
+		},
+		{
+			"position": [
+				0,
+				0,
+				0
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Start"
+		},
+		{
+			"position": [
+				0,
+				0,
+				4
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "BankedTransitionLeft"
+		},
+		{
+			"position": [
+				0,
+				0,
+				2
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				6
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-3,
+				0,
+				7
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedCornerLarge"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-1
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-3
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-4
+			],
+			"rotation": [
+				-0,
+				3.14159250259399,
+				0
+			],
+			"type": "Ramp"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-10
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-8
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-6
+			],
+			"rotation": [
+				-0,
+				0,
+				0
+			],
+			"type": "BankedStraight"
+		},
+		{
+			"position": [
+				-5,
+				0,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "BankedCornerMedium"
+		},
+		{
+			"position": [
+				-2,
+				0,
+				-10
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "Straight"
+		},
+		{
+			"position": [
+				0,
+				0,
+				-10
+			],
+			"rotation": [
+				-0,
+				1.57079637050629,
+				0
+			],
+			"type": "End"
+		}
+	]
+}
