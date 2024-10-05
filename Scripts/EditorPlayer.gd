@@ -54,7 +54,7 @@ func _ready():
 	GlobalVariables.checkpoints.clear()
 	for item in len(block_instances):
 		if block_instances[item].get_json_dict().type == "CheckpointMarker":
-			GlobalVariables.checkpoints.append(Vector3(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2]))
+			GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
 			print(GlobalVariables.checkpoints)
 
 func _process(_delta):
@@ -62,6 +62,11 @@ func _process(_delta):
 		$FinishedScreen.show()
 	else:
 		$FinishedScreen.hide()
+	
+	if GlobalVariables.checkpoint_to_delete[1] == true:
+		block_instances.remove_at(GlobalVariables.checkpoint_to_delete[0])
+		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(GlobalVariables.checkpoint_to_delete[0]))
+		GlobalVariables.checkpoint_to_delete[1] = false
 
 func _on_editor_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")
@@ -69,3 +74,4 @@ func _on_editor_button_pressed():
 
 func _on_continue_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")
+	GlobalVariables.finished = false

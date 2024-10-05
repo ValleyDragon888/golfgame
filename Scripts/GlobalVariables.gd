@@ -13,6 +13,7 @@ var homescreen_mode = "HomePage"
 var trackplayer_debug_enabled = true
 var trackplayer_requested_scene_load = ""
 var checkpoints = []
+var checkpoint_to_delete = [0, false]
 var finished = false
 
 var homepage = preload("res://Scenes/HomePage.tscn")

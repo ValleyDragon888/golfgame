@@ -2,6 +2,8 @@ res://Scenes/Ball.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
+res://Scripts/TrackPlayer.gd
+res://Scripts/EditorPlayer.gd
 res://Scenes/Editor.tscn
 res://Scenes/Freecam.tscn
 res://Scenes/TrackPlayer.tscn
@@ -10,3 +12,5 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/PlayPage.tscn
 res://Scenes/HomePage.tscn
 res://Scenes/Outline.tscn
+res://Scripts/Ball.gd
+res://Scripts/GlobalVariables.gd

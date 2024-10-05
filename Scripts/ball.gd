@@ -67,10 +67,15 @@ func _physics_process(_delta):
 		
 #Checks if player is within 3 blocks of a checkpoint
 	for item in len(GlobalVariables.checkpoints):
-		var dist_to_checkpoint = abs(global_position - (GlobalVariables.checkpoints[item] * 6))
-		if dist_to_checkpoint.x < 3 and dist_to_checkpoint.y < 3 and dist_to_checkpoint.z < 3:
+		var dist_to_checkpoint = Vector3(abs(global_position.x - (GlobalVariables.checkpoints[item].x * 6)),abs(global_position.y - (GlobalVariables.checkpoints[item].y * 6)),abs(global_position.z - (GlobalVariables.checkpoints[item].z * 6)))
+		if dist_to_checkpoint.x < 3 and dist_to_checkpoint.y < 6 and dist_to_checkpoint.z < 3:
 			print("Checkpoint!")
 #Then removes it from the variable
+			GlobalVariables.checkpoint_to_delete[0] = GlobalVariables.checkpoints[item].w
+			GlobalVariables.start_position.x = GlobalVariables.checkpoints[item].x * 6
+			GlobalVariables.start_position.y = GlobalVariables.checkpoints[item].y * 6
+			GlobalVariables.start_position.z = GlobalVariables.checkpoints[item].z * 6
+			GlobalVariables.checkpoint_to_delete[1] = true
 			GlobalVariables.checkpoints.remove_at(item)
 			print(GlobalVariables.checkpoints)
 			break
@@ -104,9 +109,9 @@ func _physics_process(_delta):
 		Engine.time_scale = 1
 
 	if has_velocity:
-		arrow.visible = false
-	else:
-		arrow.visible = true
+		arrow.hide()
+	elif not GlobalVariables.finished:
+		arrow.show()
 
 	if position.y < -20:
 		position = GlobalVariables.start_position
