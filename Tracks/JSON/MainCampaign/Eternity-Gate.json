@@ -493,6 +493,32 @@
 				0
 			],
 			"type": "End"
+		},
+		{
+			"position": [
+				5,
+				2,
+				-9
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "CheckpointMarker"
+		},
+		{
+			"position": [
+				2,
+				1,
+				6
+			],
+			"rotation": [
+				-0,
+				-1.57079637050629,
+				0
+			],
+			"type": "CheckpointMarker"
 		}
 	]
 }

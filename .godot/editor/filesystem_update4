@@ -10,4 +10,5 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/PlayPage.tscn
 res://Scenes/HomePage.tscn
 res://Scenes/Outline.tscn
-Scenes/Editor.tscn
+res://Scripts/GlobalVariables.gd
+res://TODO.md
