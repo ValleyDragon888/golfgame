@@ -24,12 +24,17 @@ func _ready():
 		 "End", "Start", "Loop",
 			{"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown"]}
 		],
-		"Size Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin", "StraightLeft", "StraightRight", "Split"],
+		"Size Transitions": ["ThickThickThin", "ThickThin", "ThickThinThick", "ThickThinThin", "StraightLeft", "StraightRight", "Split"
+		],
 		"Thin Blocks": ["StraightThin", "CornerThin",
 			{"Ramps": ["ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"]}
 		],
-		"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown", "ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"],
-		"Banked": ["BankedStraight", "BankedCorner", "BankedCornerMedium", "BankedCornerLarge", "BankedCorner2", "BankedCornerMedium2", "BankedCornerLarge2", "BankedTransitionLeft", "BankedTransitionRight"]
+		"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown", "ThinRamp", "ThinRampTransitionUp", "ThinRampTransitionDown"
+		],
+		"Banked": ["BankedStraight", "BankedCorner", "BankedCornerMedium", "BankedCornerLarge", "BankedCorner2", "BankedCornerMedium2", "BankedCornerLarge2", "BankedTransitionLeft", "BankedTransitionRight"
+		],
+		"Walls & Obstacles": ["StraightWall", "CornerWall", "SandBankSide", "SandBankMiddle"
+		]
 	}
 	var root = tree.create_item()
 	tree.hide_root = true

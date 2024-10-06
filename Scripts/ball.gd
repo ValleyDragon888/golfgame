@@ -57,7 +57,7 @@ func _physics_process(_delta):
 	arrow_pivot.position = position
 #Checks if the player is within 1 block of the end
 	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
-	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1 and len(GlobalVariables.checkpoints) == 0 and linear_velocity.x < 0.1 and linear_velocity.z < 0.1:
+	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1 and len(GlobalVariables.checkpoints) == 0 and linear_velocity.x < 0.2 and linear_velocity.z < 0.2:
 		print("Finished!")
 		hide()
 		arrow.hide()
