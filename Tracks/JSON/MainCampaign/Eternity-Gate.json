@@ -2,13 +2,13 @@
 	"blocks": [
 		{
 			"position": [
-				5,
-				2,
+				-9,
+				3,
 				-9
 			],
 			"rotation": [
 				-0,
-				3.14159250259399,
+				0,
 				0
 			],
 			"type": "StartMarker"
@@ -181,19 +181,6 @@
 				0
 			],
 			"type": "Corner"
-		},
-		{
-			"position": [
-				4,
-				2,
-				-9
-			],
-			"rotation": [
-				-0,
-				-1.57079637050629,
-				0
-			],
-			"type": "CheckpointMarker"
 		},
 		{
 			"position": [
