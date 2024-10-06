@@ -10,5 +10,3 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/PlayPage.tscn
 res://Scenes/HomePage.tscn
 res://Scenes/Outline.tscn
-res://Scripts/Ball.gd
-res://Scripts/Editor.gd
