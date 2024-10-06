@@ -26,6 +26,7 @@ const campaigns = {
 	"Main Campaign": [
 		{"1 - Introduction": "res://Tracks/JSON/MainCampaign/01.json"},
 		{"2 - Ramps & Turns": "res://Tracks/JSON/MainCampaign/02.json"},
-		{"3 - Banked Turns": "res://Tracks/JSON/MainCampaign/03Banked.json"}
+		{"3 - Banked Turns": "res://Tracks/JSON/MainCampaign/03Banked.json"},
+		{"Eternity Gate": "res://Tracks/JSON/MainCampaign/Eternity-Gate.json"}
 	]
 }
