@@ -19,6 +19,8 @@ func _process(delta):
 	$Background/CameraOrigin.rotation_degrees.x = lerp($Background/CameraOrigin.rotation_degrees.x, y, 0.01)
 	$PlayScreen/Path2D/PathFollow2D.progress_ratio = lerp($PlayScreen/Path2D/PathFollow2D.progress_ratio, UI_ball_pos, 0.03)
 	
+	$PlayScreen/SubViewport/Ball3dModel.rotate_y(-(delta)/2)
+	
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_position_y = (event.global_position.y / get_viewport().size.y * 20) - 20

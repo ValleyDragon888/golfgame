@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqd7hq8nbf3qa"]
+[gd_scene load_steps=28 format=3 uid="uid://cqd7hq8nbf3qa"]
 
 [ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
@@ -20,6 +20,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="18_8nbmw"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="19_mt5ny"]
 [ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="20_qradk"]
+[ext_resource type="ArrayMesh" uid="uid://ddn48j4bbskr" path="res://Assets/Balls/LowPoly1.obj" id="21_lsaf8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c63h5"]
 shader = ExtResource("2_56g8b")
@@ -47,6 +48,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 128, 111, 10.0908, -43.7266, -10.0908, 43.7266, 28, 129, 0, 0, 0, 0, 65, 182, 0, 0, 0, 0, 202, 204, -24.6047, -9.92126, 24.6047, 9.92126, 285, 222, 0, 0, 0, 0, 332, 260, 11.1118, -36.5102, -11.1118, 36.5102, 347, 340, 31.3512, -6.3496, -31.3512, 6.3496, 294, 381, 0, 0, 0, 0, 173, 351)
 }
 point_count = 9
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tkx7x"]
+viewport_path = NodePath("PlayScreen/SubViewport")
 
 [node name="Play" type="Node3D"]
 script = ExtResource("1_kh281")
@@ -215,6 +219,20 @@ texture_normal = ExtResource("13_nvb5v")
 texture_pressed = ExtResource("14_nvvqu")
 texture_hover = ExtResource("14_nvvqu")
 texture_disabled = ExtResource("13_nvb5v")
+
+[node name="SubViewport" type="SubViewport" parent="PlayScreen"]
+
+[node name="Ball3dModel" type="MeshInstance3D" parent="PlayScreen/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00348902, 0.0314869, 8.81519)
+mesh = ExtResource("21_lsaf8")
+
+[node name="BallCam" type="Camera3D" parent="PlayScreen/SubViewport"]
+transform = Transform3D(-1, 1.11083e-08, -8.67142e-08, -4.63089e-08, 0.773995, 0.633192, 7.415e-08, 0.633192, -0.773995, 0, 1.57074, 6.53165)
+
+[node name="BallRenderSprite" type="Sprite2D" parent="PlayScreen"]
+position = Vector2(889, 284)
+scale = Vector2(0.35, 0.35)
+texture = SubResource("ViewportTexture_tkx7x")
 
 [node name="Background" type="Node3D" parent="."]
 
