@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="2_5x5jf"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="2_sia7g"]
-[ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="3_immrn"]
-[ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="4_k5njy"]
+[ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/UI elements/blender_logo.svg" id="3_immrn"]
+[ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/UI elements/git.svg" id="4_k5njy"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_r2fhe"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="7_bdkow"]
 [ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="8_l4xr7"]

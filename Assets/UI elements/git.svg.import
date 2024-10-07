@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crubp87ououl5"
-path="res://.godot/imported/git.svg-28bc98dd98c03ab0125fb5f58607811a.ctex"
+path="res://.godot/imported/git.svg-36d1fd87b9f74d6e010b39684a2c4258.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/git.svg"
-dest_files=["res://.godot/imported/git.svg-28bc98dd98c03ab0125fb5f58607811a.ctex"]
+source_file="res://Assets/UI elements/git.svg"
+dest_files=["res://.godot/imported/git.svg-36d1fd87b9f74d6e010b39684a2c4258.ctex"]
 
 [params]
 

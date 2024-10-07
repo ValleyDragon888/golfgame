@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ley3nkoehln4"
-path="res://.godot/imported/Golfgame_Hdri.jpg-775d4520598c570f03ab29ae64d856a2.ctex"
+uid="uid://dpidq8k40v7sl"
+path="res://.godot/imported/Displace.jpeg-70b2703649b266b62972670de6c0e1fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Golfgame_Hdri.jpg"
-dest_files=["res://.godot/imported/Golfgame_Hdri.jpg-775d4520598c570f03ab29ae64d856a2.ctex"]
+source_file="res://Assets/UI elements/Displace.jpeg"
+dest_files=["res://.godot/imported/Displace.jpeg-70b2703649b266b62972670de6c0e1fb.ctex"]
 
 [params]
 

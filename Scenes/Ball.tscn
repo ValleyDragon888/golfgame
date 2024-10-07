@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://b7lb2ws1lt0r3"]
+[gd_scene load_steps=19 format=3 uid="uid://b7lb2ws1lt0r3"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
-[ext_resource type="PackedScene" uid="uid://ghwged7m721n" path="res://Assets/Ball.glb" id="2_tlyj4"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_3kb27"]
 [ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="3_r486x"]
 [ext_resource type="Material" uid="uid://3sxnya3r6tyu" path="res://Scripts/Hit Particles.tres" id="4_1r3lv"]
@@ -68,9 +67,6 @@ angular_damp = 0.5
 script = ExtResource("1_urg3s")
 
 [node name="BallMesh" type="MeshInstance3D" parent="Ball"]
-
-[node name="OldBallMesh" parent="Ball" instance=ExtResource("2_tlyj4")]
-visible = false
 
 [node name="BallCollision" type="CollisionShape3D" parent="Ball"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

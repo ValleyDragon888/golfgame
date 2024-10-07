@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="12_3vsu3"]
 [ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="12_lo573"]
 [ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="13_300hv"]
-[ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="13_tl8rh"]
-[ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="14_mym3y"]
+[ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/UI elements/blender_logo.svg" id="15_46nur"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_dnv3f"]
+[ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/UI elements/git.svg" id="16_fy3s4"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="16_saxo2"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_jl3cu"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="18_bfpb5"]
@@ -240,11 +240,11 @@ text = "[b]Made With:[/b]"
 [node name="BlenderLogo" type="Sprite2D" parent="Credits"]
 position = Vector2(452, 530)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("13_tl8rh")
+texture = ExtResource("15_46nur")
 
 [node name="Git" type="Sprite2D" parent="Credits"]
 position = Vector2(825, 532)
-texture = ExtResource("14_mym3y")
+texture = ExtResource("16_fy3s4")
 
 [node name="MadeBy" type="RichTextLabel" parent="Credits"]
 offset_left = 394.0
