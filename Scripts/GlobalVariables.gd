@@ -31,5 +31,5 @@ const campaigns = {
 		{"Eternity Gate": "res://Tracks/JSON/MainCampaign/Eternity-Gate.json"}
 	]
 }
-const balls = ["PerfectSphere", "LowPoly1", "LowPoly2", "Cube", "TorusBall", "VoxelBall"]
+const balls = ["PerfectSphere", "LowPoly1", "LowPoly2", "Cube", "TorusBall", "VoxelBall", "GearBall", "Realistic"]
 var ball_selected = 0

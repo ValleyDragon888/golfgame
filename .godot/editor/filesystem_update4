@@ -11,3 +11,5 @@ res://Scenes/PlayPage.tscn
 res://Scenes/HomePage.tscn
 res://Scenes/Outline.tscn
 res://Scripts/GlobalVariables.gd
+res://Scripts/HomePage.gd
+res://Scripts/PlayPage.gd

@@ -67,7 +67,10 @@ linear_damp = 0.5
 angular_damp = 0.5
 script = ExtResource("1_urg3s")
 
-[node name="BallMesh" parent="Ball" instance=ExtResource("2_tlyj4")]
+[node name="BallMesh" type="MeshInstance3D" parent="Ball"]
+
+[node name="OldBallMesh" parent="Ball" instance=ExtResource("2_tlyj4")]
+visible = false
 
 [node name="BallCollision" type="CollisionShape3D" parent="Ball"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

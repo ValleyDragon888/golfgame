@@ -1,3 +1,4 @@
+MeshInstance3D
 CSGBox3D
 SubViewportContainer
 Button
@@ -7,9 +8,7 @@ Polygon2D
 Sprite3D
 CSGTorus3D
 Camera3D
-MeshInstance3D
 SubViewport
 GPUParticles3D
 ColorRect
 VBoxContainer
-TabBar

@@ -8,6 +8,7 @@ const DEFAULT_ZOOM = 5
 @onready var spring_arm = $"../CameraPivotV/CameraPivotH/SpringArm3D"
 @onready var shot_indicator = $"../CanvasLayer/ShotIndicator"
 @onready var hit_particles = $"../CameraPivotV/Hit Particles"
+@onready var ball_mesh = $BallMesh
 @export var sensitivity = -0.3
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
@@ -17,6 +18,9 @@ var just_released = false
 var shots = 0
 
 
+func _ready():
+	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
+	
 func _input(event):
 #Camera movement
 	if Input.is_action_just_pressed("LockCamera") and camera_is_locked == false:

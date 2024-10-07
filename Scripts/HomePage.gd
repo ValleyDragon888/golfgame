@@ -5,7 +5,7 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$HomeScreen/SubViewportContainer/SubViewport/Ball3dModel.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
