@@ -2,7 +2,7 @@ shader_type spatial;
 render_mode cull_front, depth_prepass_alpha, depth_draw_opaque, unshaded;
 
 uniform vec4 outline_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
-uniform float distance_falloff : hint_range(0, 5) = 1;
+uniform float distance_falloff : hint_range(0, 10) = 1;
 uniform float smoothing_cutoff : hint_range(0, 1) = 0.1;
 uniform float smoothing_max : hint_range(0, 1) = 0.1;
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;

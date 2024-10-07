@@ -11,7 +11,7 @@ shader = ExtResource("1_2f1tr")
 shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/distance_falloff = 5.0
 shader_parameter/smoothing_cutoff = 0.0
-shader_parameter/smoothing_max = 1.0
+shader_parameter/smoothing_max = 0.7
 
 [node name="Outline" type="Node3D"]
 

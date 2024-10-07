@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cqd7hq8nbf3qa"]
+[gd_scene load_steps=30 format=3 uid="uid://cqd7hq8nbf3qa"]
 
 [ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dhevuhrac11ej" path="res://Assets/UI elements/JoinButtonPressed.png" id="14_nvvqu"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
 [ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="15_qobs0"]
+[ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="16_46juy"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="16_njpon"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_w66wo"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="18_8nbmw"]
@@ -49,8 +50,16 @@ _data = {
 }
 point_count = 9
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_tkx7x"]
-viewport_path = NodePath("PlayScreen/SubViewport")
+[sub_resource type="QuadMesh" id="QuadMesh_a2a3g"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m8plr"]
+render_priority = 0
+shader = ExtResource("16_46juy")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/distance_falloff = 10.0
+shader_parameter/smoothing_cutoff = 0.0
+shader_parameter/smoothing_max = 1.0
 
 [node name="Play" type="Node3D"]
 script = ExtResource("1_kh281")
@@ -220,31 +229,47 @@ texture_pressed = ExtResource("14_nvvqu")
 texture_hover = ExtResource("14_nvvqu")
 texture_disabled = ExtResource("13_nvb5v")
 
-[node name="SubViewport" type="SubViewport" parent="PlayScreen"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="PlayScreen"]
+anchors_preset = -1
+anchor_top = 0.238
+anchor_bottom = 0.713
+offset_left = 724.0
+offset_top = -18.224
+offset_right = 1724.0
+offset_bottom = 673.976
+scale = Vector2(0.33, 0.33)
+stretch = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Ball3dModel" type="MeshInstance3D" parent="PlayScreen/SubViewport"]
+[node name="SubViewport" type="SubViewport" parent="PlayScreen/SubViewportContainer"]
+transparent_bg = true
+size = Vector2i(1000, 1000)
+render_target_update_mode = 4
+
+[node name="Ball3dModel" type="MeshInstance3D" parent="PlayScreen/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00348902, 0.0314869, 8.81519)
+layers = 2
 mesh = ExtResource("15_qobs0")
 
-[node name="BallCam" type="Camera3D" parent="PlayScreen/SubViewport"]
+[node name="BallCam" type="Camera3D" parent="PlayScreen/SubViewportContainer/SubViewport"]
 transform = Transform3D(-1, 1.11083e-08, -8.67142e-08, -3.98236e-08, 0.825123, 0.564953, 7.78256e-08, 0.564953, -0.825123, 0, 1.57074, 6.53165)
+cull_mask = 2
 fov = 55.8
 
-[node name="BallRenderSprite" type="Sprite2D" parent="PlayScreen"]
-position = Vector2(889, 284)
-scale = Vector2(0.35, 0.35)
-texture = SubResource("ViewportTexture_tkx7x")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayScreen/SubViewportContainer/SubViewport"]
+transform = Transform3D(1.5, 0, 3.57628e-07, 0, 1.5, 0, -3.57628e-07, 0, 1.5, 0, 0, 7.67946)
+layers = 2
+mesh = SubResource("QuadMesh_a2a3g")
+surface_material_override/0 = SubResource("ShaderMaterial_m8plr")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PlayScreen"]
 anchors_preset = -1
-anchor_left = 0.747
 anchor_top = 0.674
-anchor_right = 0.796
 anchor_bottom = 0.736
-offset_left = 0.455933
+offset_left = 861.0
 offset_top = 0.247986
-offset_right = 0.00793457
-offset_bottom = 0.0719604
+offset_right = 917.0
+offset_bottom = 0.0719299
 theme = ExtResource("5_hyg5i")
 
 [node name="Left" type="Button" parent="PlayScreen/HBoxContainer"]
@@ -264,6 +289,7 @@ mesh = ExtResource("15_iyfq5")
 
 [node name="Camera3D" type="Camera3D" parent="Background/CameraOrigin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 2.87365)
+cull_mask = 1
 h_offset = -0.9
 
 [node name="Outline" parent="Background/CameraOrigin/Camera3D" instance=ExtResource("16_njpon")]
