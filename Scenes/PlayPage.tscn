@@ -239,7 +239,6 @@ offset_right = 1724.0
 offset_bottom = 673.976
 scale = Vector2(0.33, 0.33)
 stretch = true
-metadata/_edit_use_anchors_ = true
 
 [node name="SubViewport" type="SubViewport" parent="PlayScreen/SubViewportContainer"]
 transparent_bg = true

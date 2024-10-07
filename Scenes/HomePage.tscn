@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=30 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/HomePage.gd" id="1_h0sqi"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_4ts8d"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://b4h35kxb20bxf" path="res://Assets/UI elements/SettingsButton.png" id="10_l8bkm"]
 [ext_resource type="Texture2D" uid="uid://eu7jhhfwaovg" path="res://Assets/UI elements/SettingsButtonPressed.png" id="11_7yrjh"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="12_3vsu3"]
+[ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="12_lo573"]
+[ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="13_300hv"]
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/blender_logo.svg" id="13_tl8rh"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/git.svg" id="14_mym3y"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_dnv3f"]
@@ -47,6 +49,17 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 44, 98, -6.72717, -44.5675, 6.72717, 44.5675, 19, 167, 0, 0, 0, 0, 41, 263, 0, 0, 0, 0, 26, 378, 0, 0, 0, 0, 27, 473, 0, 0, 0, 0, 57, 542, -31.1815, -2.6727, 31.1815, 2.6727, 116, 592, 0, 0, 0, 0, 154, 580, -16.0362, 22.2725, 16.0362, -22.2725, 182, 552, 0, 0, 0, 0, 187, 496, 0, 0, 0, 0, 166, 475, 0, 0, 0, 0, 137, 467, 0, 0, 0, 0, 103, 489, 0, 0, 0, 0, 85, 529, 0, 0, 0, 0, 74, 584, 0, 0, 0, 0, 85, 614, 0, 0, 0, 0, 111, 616, 0, 0, 0, 0, 136, 611, 0, 0, 0, 0, 176, 600, 0, 0, 0, 0, 239, 580, 0, 0, 0, 0, 279, 575)
 }
 point_count = 21
+
+[sub_resource type="QuadMesh" id="QuadMesh_xvh5t"]
+size = Vector2(2, 2)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j7jws"]
+render_priority = 0
+shader = ExtResource("13_300hv")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/distance_falloff = 10.0
+shader_parameter/smoothing_cutoff = 0.0
+shader_parameter/smoothing_max = 1.0
 
 [node name="Home" type="Node3D"]
 script = ExtResource("1_h0sqi")
@@ -147,6 +160,56 @@ texture_pressed = ExtResource("11_7yrjh")
 texture_hover = ExtResource("11_7yrjh")
 texture_disabled = ExtResource("10_l8bkm")
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HomeScreen"]
+anchors_preset = -1
+anchor_top = 0.238
+anchor_bottom = 0.713
+offset_left = 724.0
+offset_top = -18.224
+offset_right = 1724.0
+offset_bottom = 673.976
+scale = Vector2(0.33, 0.33)
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HomeScreen/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1000, 1000)
+render_target_update_mode = 4
+
+[node name="Ball3dModel" type="MeshInstance3D" parent="HomeScreen/SubViewportContainer/SubViewport"]
+layers = 2
+mesh = ExtResource("12_lo573")
+
+[node name="BallCam" type="Camera3D" parent="HomeScreen/SubViewportContainer/SubViewport"]
+transform = Transform3D(-1, 1.11084e-08, -8.67142e-08, -3.98236e-08, 0.825123, 0.564953, 7.78256e-08, 0.564953, -0.825123, 0, 1.57074, -2.23309)
+cull_mask = 2
+fov = 55.8
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="HomeScreen/SubViewportContainer/SubViewport"]
+transform = Transform3D(1.5, 0, 3.57628e-07, 0, 1.5, 0, -3.57628e-07, 0, 1.5, 0, 0, -1.2)
+layers = 2
+mesh = SubResource("QuadMesh_xvh5t")
+surface_material_override/0 = SubResource("ShaderMaterial_j7jws")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HomeScreen"]
+anchors_preset = -1
+anchor_top = 0.674
+anchor_bottom = 0.736
+offset_left = 861.0
+offset_top = 0.247986
+offset_right = 917.0
+offset_bottom = 0.0719299
+theme = ExtResource("5_cg640")
+
+[node name="Left" type="Button" parent="HomeScreen/HBoxContainer"]
+layout_mode = 2
+text = " < "
+
+[node name="Right" type="Button" parent="HomeScreen/HBoxContainer"]
+layout_mode = 2
+text = " > "
+
 [node name="Credits" type="CanvasLayer" parent="."]
 visible = false
 
@@ -204,6 +267,7 @@ mesh = ExtResource("15_dnv3f")
 
 [node name="Camera3D" type="Camera3D" parent="Background/CameraOrigin"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 2.87365)
+cull_mask = 1
 h_offset = -0.9
 
 [node name="Outline" parent="Background/CameraOrigin/Camera3D" instance=ExtResource("16_saxo2")]
@@ -299,6 +363,8 @@ text = "Back"
 [connection signal="pressed" from="HomeScreen/Buttons/Credits" to="." method="_on_credits_pressed"]
 [connection signal="mouse_entered" from="HomeScreen/Buttons/Settings" to="." method="_on_settings_mouse_entered"]
 [connection signal="pressed" from="HomeScreen/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="HomeScreen/HBoxContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="HomeScreen/HBoxContainer/Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]

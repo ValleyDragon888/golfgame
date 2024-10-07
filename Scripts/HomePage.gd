@@ -19,6 +19,8 @@ func _process(delta):
 	$Background/CameraOrigin.rotation_degrees.x = lerp($Background/CameraOrigin.rotation_degrees.x, y, 0.01)
 	$HomeScreen/Path2D/PathFollow2D.progress_ratio = lerp($HomeScreen/Path2D/PathFollow2D.progress_ratio, UI_ball_pos, 0.03)
 	
+	$HomeScreen/SubViewportContainer/SubViewport/Ball3dModel.rotate_y(-(delta)/2)
+
 func _input(event):
 	if event is InputEventMouseMotion:
 		mouse_position_y = (event.global_position.y / get_viewport().size.y * 20) - 20
@@ -65,3 +67,21 @@ func _on_credits_mouse_entered():
 
 func _on_settings_mouse_entered():
 	UI_ball_pos = 0.27
+
+
+func _on_left_pressed():
+	GlobalVariables.ball_selected -= 1
+	if GlobalVariables.ball_selected < 0:
+		GlobalVariables.ball_selected = len(GlobalVariables.balls)-1
+	change_ball()
+
+
+func _on_right_pressed():
+	GlobalVariables.ball_selected += 1
+	if GlobalVariables.ball_selected > len(GlobalVariables.balls)-1:
+		GlobalVariables.ball_selected = 0
+	change_ball()
+
+func change_ball():
+	print(GlobalVariables.balls[GlobalVariables.ball_selected])
+	$HomeScreen/SubViewportContainer/SubViewport/Ball3dModel.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
