@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728313846
+::res://::1728328154
 Ball_BallDecal.png::CompressedTexture2D::8147045841522545062::1723700728::1724866773::1::::<><>::
 icon.svg::CompressedTexture2D::1147549376388642576::1723909873::1723998211::1::::<><>::
 TODO.md::TextFile::-1::1728234554::0::1::::<><>::
@@ -10,8 +10,8 @@ plugin.cfg::TextFile::-1::1723909873::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1726914339::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1723909872
 ::res://addons/godot-git-plugin/macos/::1723909872
-::res://addons/godot-git-plugin/win64/::1728313840
-::res://Assets/::1728282348
+::res://addons/godot-git-plugin/win64/::1728328150
+::res://Assets/::1728328392
 Arrow.obj::Mesh::757803071144802460::1724864512::1724865012::1::::<><>::
 ArrowMaterial.tres::StandardMaterial3D::2841706409230197075::1728233623::0::1::::<><>::
 Ball.glb::PackedScene::436930410909977581::1723700726::1723998212::1::::<><>::
@@ -25,12 +25,14 @@ GolfGameTerrain.obj::Mesh::1734824120712957144::1727718055::1727613812::1::::<><
 Golfgame_Hdri.jpg::CompressedTexture2D::781842699983653179::1726604621::1726604621::1::::<><>::
 Golfgame_Hdri_1.png::CompressedTexture2D::419334940898858275::1726604621::1726604621::1::::<><>::
 Screen.png::CompressedTexture2D::2595118614897049906::1727039078::1727039080::1::::<><>::
-Theme_1.tres::Theme::4520378298085677843::1728282348::0::1::::<><>::
-::res://Assets/Balls/::1727718055
+Theme_1.tres::Theme::4520378298085677843::1728328392::0::1::::<><>::
+::res://Assets/Balls/::1728328537
 Cube.obj::Mesh::5013372138344964593::1727718055::1727718055::1::::<><>::
-LowPoly1.obj::Mesh::217602521598301093::1727718055::1727718055::1::::<><>::
+LowPoly1.obj::Mesh::217602521598301093::1728328459::1728328460::1::::<><>::
 LowPoly2.obj::Mesh::8895363647026148739::1727718055::1727718055::1::::<><>::
 PerfectSphere.obj::Mesh::1644058113605230509::1727718055::1727718055::1::::<><>::
+TorusBall.obj::Mesh::6195494696693607050::1728328506::1728328509::1::::<><>::
+VoxelBall.obj::Mesh::7395664377670099869::1728328538::1728328541::1::::<><>::
 ::res://Assets/Clouds/::1727021409
 Cloud1.obj::Mesh::5704268905650452353::1727021406::1727021409::1::::<><>::
 Cloud2.obj::Mesh::3438320106321464888::1727021406::1727021409::1::::<><>::
@@ -81,8 +83,8 @@ ThickThinThin.obj::Mesh::5549016198069353343::1726988944::1726988955::1::::<><>:
 ThinRamp.obj::Mesh::1970190325189523159::1726983433::1726983437::1::::<><>::
 ThinRampTransitionDown.obj::Mesh::7314476757689718053::1726983433::1726983437::1::::<><>::
 ThinRampTransitionUp.obj::Mesh::2350842023310000523::1726983433::1726983437::1::::<><>::
-::res://Assets/TrackEditor/ScenePieces/::1728283967
-MovingPiece.tscn::PackedScene::3801760483650275914::1728283967::0::1::::<><>::uid://71mxyh4lce1g::::res://Assets/TrackEditor/BankedCorner2.obj
+::res://Assets/TrackEditor/ScenePieces/::1728328512
+MovingPiece.tscn::PackedScene::3801760483650275914::1728328512::0::1::::<><>::uid://71mxyh4lce1g::::res://Assets/TrackEditor/BankedCorner2.obj
 ::res://Assets/UI elements/::1727764258
 CampaignButton.png::CompressedTexture2D::6755713350112905409::1727718055::1727718055::1::::<><>::
 CampaignButtonPressed.png::CompressedTexture2D::8032534960044230274::1727718055::1727718055::1::::<><>::
@@ -102,20 +104,20 @@ PlayButtonPressed.png::CompressedTexture2D::4261317278816170635::1727718055::172
 SettingsButton.png::CompressedTexture2D::4438102003935570543::1727718055::1727718055::1::::<><>::
 SettingsButtonPressed.png::CompressedTexture2D::324002324280671304::1727718055::1727718055::1::::<><>::
 UIBall.png::CompressedTexture2D::2505624808315217702::1727718055::1727718055::1::::<><>::
-::res://Blend/::1728249469
-::res://Scenes/::1728283968
-Ball.tscn::PackedScene::4655281953349973194::1728283967::0::1::::<><>::res://Scripts/Ball.gd<>uid://ghwged7m721n::::res://Assets/Ball.glb<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://k2c52gep3o5y::::res://Assets/Arrow.obj<>uid://3sxnya3r6tyu::::res://Scripts/Hit Particles.tres<>uid://bgqsqvywe2wit::::res://Assets/ArrowMaterial.tres<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cjssut45v6orr::::res://Scenes/FastForward.tscn<>res://Scripts/Toon.gdshader
-Editor.tscn::PackedScene::176288540008523976::1728283967::0::1::::<><>::res://Scripts/Editor.gd<>uid://c8ng83e0upg4t::::res://Scenes/Freecam.tscn<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://dudxrfe7ek61t::::res://Assets/UI elements/Flag.png<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
-EditorPlayer.tscn::PackedScene::4667330857865266405::1728283967::0::1::::<><>::res://Scripts/EditorPlayer.gd<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
+::res://Blend/::1728328368
+::res://Scenes/::1728328513
+Ball.tscn::PackedScene::4655281953349973194::1728328512::0::1::::<><>::res://Scripts/Ball.gd<>uid://ghwged7m721n::::res://Assets/Ball.glb<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://k2c52gep3o5y::::res://Assets/Arrow.obj<>uid://3sxnya3r6tyu::::res://Scripts/Hit Particles.tres<>uid://bgqsqvywe2wit::::res://Assets/ArrowMaterial.tres<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cjssut45v6orr::::res://Scenes/FastForward.tscn<>res://Scripts/Toon.gdshader
+Editor.tscn::PackedScene::176288540008523976::1728328512::0::1::::<><>::res://Scripts/Editor.gd<>uid://c8ng83e0upg4t::::res://Scenes/Freecam.tscn<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://dudxrfe7ek61t::::res://Assets/UI elements/Flag.png<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
+EditorPlayer.tscn::PackedScene::4667330857865266405::1728328512::0::1::::<><>::res://Scripts/EditorPlayer.gd<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
 FastForward.tscn::PackedScene::5442829425584805587::1727533880::0::1::::<><>::res://Scripts/Displace.gdshader<>uid://dpidq8k40v7sl::::res://Assets/Displace.jpeg<>res://Scripts/FastForward.gdshader<>res://Scripts/BackBufferResize.gd<>uid://cqbl676h7l70q::::res://Assets/FastForward.png<>uid://bc8dhvphu2tug::::res://Assets/Screen.png
-Freecam.tscn::PackedScene::7116334829395739741::1728283967::0::1::::<><>::res://Scripts/Freecam.gd<>res://Scripts/Toon.gdshader<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn
+Freecam.tscn::PackedScene::7116334829395739741::1728328512::0::1::::<><>::res://Scripts/Freecam.gd<>res://Scripts/Toon.gdshader<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn
 Home.tscn::PackedScene::2789362931635530764::1727723256::0::1::::<><>::uid://ql4788jye4tw::::res://icon.svg<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://bm46u1chwj5jn::::res://Assets/blender_logo.svg<>uid://crubp87ououl5::::res://Assets/git.svg<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>res://Scripts/CampaignSelector.gd<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>res://Scripts/Toon.gdshader
-HomePage.tscn::PackedScene::1115879269667741803::1728283968::0::1::::<><>::res://Scripts/HomePage.gd<>res://Scripts/Toon.gdshader<>uid://cksooqwfhfmi6::::res://Assets/UI elements/HomeBackground.png<>uid://bbx0jllunp3x7::::res://Assets/UI elements/UIBall.png<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cxiq32qbvfygn::::res://Assets/UI elements/PlayButton.png<>uid://b1yhjjt3gqinr::::res://Assets/UI elements/PlayButtonPressed.png<>uid://coobq5nmiibhv::::res://Assets/UI elements/CreditsButton.png<>uid://s0um4tjcwr6c::::res://Assets/UI elements/CreditsButtonPressed.png<>uid://b4h35kxb20bxf::::res://Assets/UI elements/SettingsButton.png<>uid://eu7jhhfwaovg::::res://Assets/UI elements/SettingsButtonPressed.png<>uid://ql4788jye4tw::::res://icon.svg<>uid://bm46u1chwj5jn::::res://Assets/blender_logo.svg<>uid://crubp87ououl5::::res://Assets/git.svg<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>res://Scripts/CampaignSelector.gd
+HomePage.tscn::PackedScene::1115879269667741803::1728328513::0::1::::<><>::res://Scripts/HomePage.gd<>res://Scripts/Toon.gdshader<>uid://cksooqwfhfmi6::::res://Assets/UI elements/HomeBackground.png<>uid://bbx0jllunp3x7::::res://Assets/UI elements/UIBall.png<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cxiq32qbvfygn::::res://Assets/UI elements/PlayButton.png<>uid://b1yhjjt3gqinr::::res://Assets/UI elements/PlayButtonPressed.png<>uid://coobq5nmiibhv::::res://Assets/UI elements/CreditsButton.png<>uid://s0um4tjcwr6c::::res://Assets/UI elements/CreditsButtonPressed.png<>uid://b4h35kxb20bxf::::res://Assets/UI elements/SettingsButton.png<>uid://eu7jhhfwaovg::::res://Assets/UI elements/SettingsButtonPressed.png<>uid://ql4788jye4tw::::res://icon.svg<>uid://xonnq38osiwr::::res://Assets/Balls/PerfectSphere.obj<>res://Scripts/Outline.gdshader<>uid://bm46u1chwj5jn::::res://Assets/blender_logo.svg<>uid://crubp87ououl5::::res://Assets/git.svg<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>res://Scripts/CampaignSelector.gd
 JSONTrackLoader.tscn::PackedScene::6320869870329876162::1727723536::0::1::::<><>::res://Scripts/JSONTrackLoader.gd
-Outline.tscn::PackedScene::8350673051137761677::1728283968::0::1::::<><>::res://Scripts/Outline.gdshader
-PlayPage.tscn::PackedScene::5904012335127135016::1728283968::0::1::::<><>::res://Scripts/PlayPage.gd<>res://Scripts/Toon.gdshader<>uid://c4ynogw5l0xkh::::res://Assets/UI elements/PlayBackground.png<>uid://bbx0jllunp3x7::::res://Assets/UI elements/UIBall.png<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://c3iru2kk560yv::::res://Assets/UI elements/CampaignButton.png<>uid://dmpaxa4uwkaic::::res://Assets/UI elements/CampaignButtonPressed.png<>uid://b2oxjb1lk3ajf::::res://Assets/UI elements/EditorButton.png<>uid://dfcolhysb7gf4::::res://Assets/UI elements/EditorButtonPressed.png<>uid://dudxrfe7ek61t::::res://Assets/UI elements/Flag.png<>uid://4itgy6updmym::::res://Assets/UI elements/HostButton.png<>uid://cfwb1v3uvekou::::res://Assets/UI elements/HostButtonPressed.png<>uid://cis46g47unrmv::::res://Assets/UI elements/JoinButton.png<>uid://dhevuhrac11ej::::res://Assets/UI elements/JoinButtonPressed.png<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://xonnq38osiwr::::res://Assets/Balls/PerfectSphere.obj<>res://Scripts/Outline.gdshader<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>res://Scripts/CampaignSelector.gd
-TrackPlayer.tscn::PackedScene::1534473085824409207::1728283967::0::1::::<><>::res://Scripts/TrackPlayer.gd<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres
-::res://Scripts/::1728296285
+Outline.tscn::PackedScene::8350673051137761677::1728328513::0::1::::<><>::res://Scripts/Outline.gdshader
+PlayPage.tscn::PackedScene::5904012335127135016::1728328512::0::1::::<><>::res://Scripts/PlayPage.gd<>res://Scripts/Toon.gdshader<>uid://c4ynogw5l0xkh::::res://Assets/UI elements/PlayBackground.png<>uid://bbx0jllunp3x7::::res://Assets/UI elements/UIBall.png<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://c3iru2kk560yv::::res://Assets/UI elements/CampaignButton.png<>uid://dmpaxa4uwkaic::::res://Assets/UI elements/CampaignButtonPressed.png<>uid://b2oxjb1lk3ajf::::res://Assets/UI elements/EditorButton.png<>uid://dfcolhysb7gf4::::res://Assets/UI elements/EditorButtonPressed.png<>uid://dudxrfe7ek61t::::res://Assets/UI elements/Flag.png<>uid://4itgy6updmym::::res://Assets/UI elements/HostButton.png<>uid://cfwb1v3uvekou::::res://Assets/UI elements/HostButtonPressed.png<>uid://cis46g47unrmv::::res://Assets/UI elements/JoinButton.png<>uid://dhevuhrac11ej::::res://Assets/UI elements/JoinButtonPressed.png<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://xonnq38osiwr::::res://Assets/Balls/PerfectSphere.obj<>res://Scripts/Outline.gdshader<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>res://Scripts/CampaignSelector.gd
+TrackPlayer.tscn::PackedScene::1534473085824409207::1728328512::0::1::::<><>::res://Scripts/TrackPlayer.gd<>uid://b7lb2ws1lt0r3::::res://Scenes/Ball.tscn<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres
+::res://Scripts/::1728328513
 BackBufferResize.gd::GDScript::-1::1727197150::0::1::::<>BackBufferCopy<>::
 ball.gd::GDScript::-1::1728233641::0::1::::<>RigidBody3D<>::
 BallMasterSignalRelayer.gd::GDScript::-1::1727718056::0::1::::<>Node3D<>::
@@ -127,11 +129,11 @@ EditorPlayer.gd::GDScript::-1::1728117470::0::1::::<>Node3D<>::
 FastForward.gdshader::Shader::-1::1727118626::0::1::::<><>::
 Freecam.gd::GDScript::-1::1727722616::0::1::::<>Node3D<>::
 GlobalVariables.gd::GDScript::-1::1728281050::0::1::::<>Node<>::
-Hit Particles.tres::ParticleProcessMaterial::2003867389448929304::1728282348::0::1::::<><>::
-HomePage.gd::GDScript::-1::1727727454::0::1::::<>Node3D<>::
+Hit Particles.tres::ParticleProcessMaterial::2003867389448929304::1728328392::0::1::::<><>::
+HomePage.gd::GDScript::-1::1728314480::0::1::::<>Node3D<>::
 JSONTrackLoader.gd::GDScript::-1::1725686795::0::1::::<>Node3D<>::
-Outline.gdshader::Shader::-1::1728296285::0::1::::<><>::
-PlayPage.gd::GDScript::-1::1728283967::0::1::::<>Node3D<>::
+Outline.gdshader::Shader::-1::1728328513::0::1::::<><>::
+PlayPage.gd::GDScript::-1::1728313926::0::1::::<>Node3D<>::
 Toon.gdshader::Shader::-1::1727118626::0::1::::<><>::
 TrackPlayer.gd::GDScript::-1::1728117470::0::1::::<>Node3D<>::
 ::res://Tracks/::1727285942
