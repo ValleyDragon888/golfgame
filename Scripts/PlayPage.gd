@@ -79,3 +79,4 @@ func _on_right_pressed():
 
 func change_ball():
 	print(GlobalVariables.balls[GlobalVariables.ball_selected])
+	$PlayScreen/SubViewportContainer/SubViewport/Ball3dModel.mesh = load("res://Assets/Balls/"+str(GlobalVariables.ball_selected)+".obj")
