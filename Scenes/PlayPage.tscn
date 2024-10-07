@@ -235,6 +235,26 @@ position = Vector2(889, 284)
 scale = Vector2(0.35, 0.35)
 texture = SubResource("ViewportTexture_tkx7x")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayScreen"]
+anchors_preset = -1
+anchor_left = 0.747
+anchor_top = 0.674
+anchor_right = 0.796
+anchor_bottom = 0.736
+offset_left = 0.455933
+offset_top = 0.247986
+offset_right = 0.00793457
+offset_bottom = 0.0719604
+theme = ExtResource("5_hyg5i")
+
+[node name="Left" type="Button" parent="PlayScreen/HBoxContainer"]
+layout_mode = 2
+text = " < "
+
+[node name="Button" type="Button" parent="PlayScreen/HBoxContainer"]
+layout_mode = 2
+text = " > "
+
 [node name="Background" type="Node3D" parent="."]
 
 [node name="Terrain" type="MeshInstance3D" parent="Background"]

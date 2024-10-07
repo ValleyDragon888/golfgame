@@ -1,8 +1,10 @@
+Button
+HBoxContainer
+Sprite2D
 Polygon2D
 Sprite3D
 CSGTorus3D
 Camera3D
-Sprite2D
 SubViewportContainer
 MeshInstance3D
 SubViewport
@@ -10,5 +12,3 @@ GPUParticles3D
 ColorRect
 VBoxContainer
 TabBar
-TabContainer
-Timer
