@@ -227,7 +227,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00348902, 0.0314869, 8.815
 mesh = ExtResource("21_lsaf8")
 
 [node name="BallCam" type="Camera3D" parent="PlayScreen/SubViewport"]
-transform = Transform3D(-1, 1.11083e-08, -8.67142e-08, -4.63089e-08, 0.773995, 0.633192, 7.415e-08, 0.633192, -0.773995, 0, 1.57074, 6.53165)
+transform = Transform3D(-1, 1.11083e-08, -8.67142e-08, -3.98236e-08, 0.825123, 0.564953, 7.78256e-08, 0.564953, -0.825123, 0, 1.57074, 6.53165)
+fov = 55.8
 
 [node name="BallRenderSprite" type="Sprite2D" parent="PlayScreen"]
 position = Vector2(889, 284)
