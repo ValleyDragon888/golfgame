@@ -11,3 +11,4 @@ res://Scenes/EditorPlayer.tscn
 res://Scenes/HomePage.tscn
 res://Scenes/Outline.tscn
 res://Scripts/PlayPage.gd
+res://Scripts/GlobalVariables.gd

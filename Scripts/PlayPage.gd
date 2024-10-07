@@ -62,3 +62,20 @@ func _on_campaign_mouse_entered():
 
 func _on_editor_mouse_entered():
 	UI_ball_pos = 0.7
+
+
+func _on_left_pressed():
+	GlobalVariables.ball_selected -= 1
+	if GlobalVariables.ball_selected < 0:
+		GlobalVariables.ball_selected = len(GlobalVariables.balls)-1
+	change_ball()
+
+
+func _on_right_pressed():
+	GlobalVariables.ball_selected += 1
+	if GlobalVariables.ball_selected > len(GlobalVariables.balls)-1:
+		GlobalVariables.ball_selected = 0
+	change_ball()
+
+func change_ball():
+	print(GlobalVariables.balls[GlobalVariables.ball_selected])

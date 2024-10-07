@@ -15,12 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://cis46g47unrmv" path="res://Assets/UI elements/JoinButton.png" id="13_nvb5v"]
 [ext_resource type="Texture2D" uid="uid://dhevuhrac11ej" path="res://Assets/UI elements/JoinButtonPressed.png" id="14_nvvqu"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
+[ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="15_qobs0"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="16_njpon"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_w66wo"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="18_8nbmw"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="19_mt5ny"]
 [ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="20_qradk"]
-[ext_resource type="ArrayMesh" uid="uid://ddn48j4bbskr" path="res://Assets/Balls/LowPoly1.obj" id="21_lsaf8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c63h5"]
 shader = ExtResource("2_56g8b")
@@ -224,7 +224,7 @@ texture_disabled = ExtResource("13_nvb5v")
 
 [node name="Ball3dModel" type="MeshInstance3D" parent="PlayScreen/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00348902, 0.0314869, 8.81519)
-mesh = ExtResource("21_lsaf8")
+mesh = ExtResource("15_qobs0")
 
 [node name="BallCam" type="Camera3D" parent="PlayScreen/SubViewport"]
 transform = Transform3D(-1, 1.11083e-08, -8.67142e-08, -3.98236e-08, 0.825123, 0.564953, 7.78256e-08, 0.564953, -0.825123, 0, 1.57074, 6.53165)
@@ -251,7 +251,7 @@ theme = ExtResource("5_hyg5i")
 layout_mode = 2
 text = " < "
 
-[node name="Button" type="Button" parent="PlayScreen/HBoxContainer"]
+[node name="Right" type="Button" parent="PlayScreen/HBoxContainer"]
 layout_mode = 2
 text = " > "
 
@@ -360,5 +360,7 @@ text = "Back"
 [connection signal="pressed" from="PlayScreen/TabContainer/Singleplayer/Buttons/Editor" to="." method="_on_editor_pressed"]
 [connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Host" to="." method="_on_campaign_mouse_entered"]
 [connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Join" to="." method="_on_editor_mouse_entered"]
+[connection signal="pressed" from="PlayScreen/HBoxContainer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="PlayScreen/HBoxContainer/Right" to="." method="_on_right_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]
