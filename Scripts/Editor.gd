@@ -128,12 +128,14 @@ func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 
 func _on_show_hide_button_pressed():
 #This checks if text is "show blocks"
-	if show_blocks_button.text == "Show Blocks":
-		show_blocks_button.text = "Hide Blocks"
+	if show_blocks_button.text == "  Show Blocks  ":
+		show_blocks_button.text = "  Hide Blocks  "
 		blocks_ui_root.show()
+		$CanvasLayer/SideBar.show()
 	else:
-		show_blocks_button.text = "Show Blocks"
+		show_blocks_button.text = "  Show Blocks  "
 		blocks_ui_root.hide()
+		$CanvasLayer/SideBar.hide()
 
 #Linking button presses to code
 func _on_save_button_pressed():

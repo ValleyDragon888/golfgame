@@ -116,33 +116,33 @@ grow_vertical = 2
 [node name="SideBar" type="Panel" parent="CanvasLayer"]
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_top = 80.0
-offset_right = 296.0
+offset_top = 55.0
+offset_right = 224.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_d0c4e")
 
 [node name="TopBar" type="Panel" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 80.0
+offset_bottom = 55.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_io24g")
 
 [node name="SaveButton" type="Button" parent="CanvasLayer"]
-offset_left = 423.0
-offset_top = 17.0
-offset_right = 505.0
-offset_bottom = 57.0
+offset_left = 424.0
+offset_top = 12.0
+offset_right = 506.0
+offset_bottom = 42.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource("3_t24cc")
 text = "  Save  "
 
 [node name="SaveAsButton" type="Button" parent="CanvasLayer"]
-offset_left = 230.0
-offset_top = 17.0
-offset_right = 413.0
-offset_bottom = 57.0
+offset_left = 231.0
+offset_top = 12.0
+offset_right = 414.0
+offset_bottom = 42.0
 theme = ExtResource("3_t24cc")
 text = "  Set Save Path  "
 
@@ -150,27 +150,27 @@ text = "  Set Save Path  "
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -97.0
-offset_top = 20.0
-offset_right = -20.0
-offset_bottom = 60.0
+offset_left = -96.0
+offset_top = 15.0
+offset_right = -19.0
+offset_bottom = 45.0
 grow_horizontal = 0
 theme = ExtResource("3_t24cc")
 text = "  Play  "
 
 [node name="Flag" type="TextureRect" parent="CanvasLayer"]
-offset_left = 619.0
-offset_top = 11.0
-offset_right = 662.0
-offset_bottom = 69.0
+offset_left = 621.0
+offset_top = 2.0
+offset_right = 656.0
+offset_bottom = 51.0
 texture = ExtResource("4_frjqv")
 expand_mode = 1
 
 [node name="ResetButton" type="Button" parent="CanvasLayer"]
-offset_left = 676.0
-offset_top = 17.0
-offset_right = 758.0
-offset_bottom = 57.0
+offset_left = 677.0
+offset_top = 12.0
+offset_right = 759.0
+offset_bottom = 42.0
 theme = ExtResource("3_t24cc")
 text = " Reset "
 
@@ -181,10 +181,10 @@ size = Vector2i(1000, 500)
 ok_button_text = "Set Save Path"
 
 [node name="LoadButton" type="Button" parent="CanvasLayer"]
-offset_left = 515.0
-offset_top = 17.0
-offset_right = 600.0
-offset_bottom = 57.0
+offset_left = 516.0
+offset_top = 12.0
+offset_right = 601.0
+offset_bottom = 42.0
 theme = ExtResource("3_t24cc")
 text = "  Load  "
 
@@ -211,26 +211,26 @@ file_mode = 0
 anchors_preset = -1
 anchor_right = 0.003
 anchor_bottom = 1.0
-offset_top = 143.0
-offset_right = 271.544
+offset_top = 111.0
+offset_right = 205.544
 offset_bottom = -22.0
 theme = ExtResource("3_t24cc")
 allow_search = false
 
 [node name="ShowHideButton" type="Button" parent="CanvasLayer"]
 offset_left = 14.0
-offset_top = 94.0
-offset_right = 169.0
-offset_bottom = 132.0
+offset_top = 69.0
+offset_right = 137.0
+offset_bottom = 99.0
 theme = ExtResource("3_t24cc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2qu3r")
-text = "Hide Blocks"
+text = "  Hide Blocks  "
 
 [node name="GoHome" type="Button" parent="CanvasLayer"]
-offset_left = 11.0
-offset_top = 17.0
-offset_right = 85.0
-offset_bottom = 55.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 86.0
+offset_bottom = 42.0
 theme = ExtResource("3_t24cc")
 text = "Home"
 

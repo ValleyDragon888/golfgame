@@ -113,7 +113,7 @@ corner_radius_bottom_right = 50
 corner_detail = 15
 
 [resource]
-Button/font_sizes/font_size = 24
+Button/font_sizes/font_size = 20
 Button/styles/disabled = SubResource("StyleBoxFlat_xk6h6")
 Button/styles/focus = SubResource("StyleBoxFlat_fgh60")
 Button/styles/hover = SubResource("StyleBoxFlat_g20ej")
@@ -130,5 +130,7 @@ TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_vi3b0")
 TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_1sw5n")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_3h4y1")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_mw3h8")
+Tree/font_sizes/font_size = 10
+Tree/font_sizes/title_button_font_size = 20
 Tree/styles/focus = SubResource("StyleBoxFlat_ab5te")
 Tree/styles/panel = SubResource("StyleBoxFlat_ep54n")
