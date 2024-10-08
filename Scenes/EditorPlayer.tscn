@@ -44,9 +44,9 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_udacf")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="ScreenUI" type="CanvasLayer" parent="."]
 
-[node name="EditorButton" type="Button" parent="CanvasLayer"]
+[node name="EditorButton" type="Button" parent="ScreenUI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -57,6 +57,18 @@ offset_bottom = 71.0
 grow_horizontal = 0
 theme = ExtResource("2_6ikdq")
 text = "Back To Editor"
+
+[node name="Restart" type="Button" parent="ScreenUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -322.0
+offset_top = 25.0
+offset_right = -213.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme = ExtResource("2_6ikdq")
+text = "Restart"
 
 [node name="Player" parent="." instance=ExtResource("2_d5fj3")]
 
@@ -159,5 +171,6 @@ theme = ExtResource("2_6ikdq")
 theme_override_font_sizes/font_size = 41
 text = "  Continue  "
 
-[connection signal="pressed" from="CanvasLayer/EditorButton" to="." method="_on_editor_button_pressed"]
+[connection signal="pressed" from="ScreenUI/EditorButton" to="." method="_on_editor_button_pressed"]
+[connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="FinishedScreen/VBoxContainer/Continue" to="." method="_on_continue_pressed"]

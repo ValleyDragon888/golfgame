@@ -75,3 +75,6 @@ func _on_editor_button_pressed():
 func _on_continue_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Editor.tscn")
 	GlobalVariables.finished = false
+
+func _on_restart_pressed():
+	get_tree().reload_current_scene()
