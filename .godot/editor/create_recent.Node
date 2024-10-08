@@ -1,3 +1,4 @@
+Sprite2D
 Node3D
 SubViewport
 Button
@@ -6,10 +7,8 @@ MeshInstance3D
 CSGBox3D
 SubViewportContainer
 HBoxContainer
-Sprite2D
 Polygon2D
 Sprite3D
 CSGTorus3D
 Camera3D
 GPUParticles3D
-ColorRect
