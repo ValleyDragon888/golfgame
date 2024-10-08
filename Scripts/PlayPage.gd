@@ -6,6 +6,7 @@ extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PlayScreen/SubViewportContainer/SubViewport/Ball3dModel.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
+	$PlayScreen/PlayerName.text = GlobalVariables.player_name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -80,3 +81,6 @@ func _on_right_pressed():
 func change_ball():
 	print(GlobalVariables.balls[GlobalVariables.ball_selected])
 	$PlayScreen/SubViewportContainer/SubViewport/Ball3dModel.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
+
+func _on_player_name_text_changed():
+	GlobalVariables.player_name = $PlayScreen/PlayerName.text

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://p5smsbcrc372"]
+[gd_scene load_steps=31 format=3 uid="uid://p5smsbcrc372"]
 
 [ext_resource type="Script" path="res://Scripts/HomePage.gd" id="1_h0sqi"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_4ts8d"]
@@ -60,6 +60,12 @@ shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/distance_falloff = 10.0
 shader_parameter/smoothing_cutoff = 0.0
 shader_parameter/smoothing_max = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uu55"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
 
 [node name="Home" type="Node3D"]
 script = ExtResource("1_h0sqi")
@@ -209,6 +215,20 @@ text = " < "
 [node name="Right" type="Button" parent="HomeScreen/HBoxContainer"]
 layout_mode = 2
 text = " > "
+
+[node name="PlayerName" type="TextEdit" parent="HomeScreen"]
+anchors_preset = -1
+anchor_top = 0.735
+anchor_bottom = 0.826
+offset_left = 756.0
+offset_top = -0.279999
+offset_right = 1018.0
+offset_bottom = -0.248047
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_5uu55")
+placeholder_text = "Enter Name"
 
 [node name="Credits" type="CanvasLayer" parent="."]
 visible = false
@@ -365,6 +385,7 @@ text = "Back"
 [connection signal="pressed" from="HomeScreen/Buttons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="HomeScreen/HBoxContainer/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="HomeScreen/HBoxContainer/Right" to="." method="_on_right_pressed"]
+[connection signal="text_changed" from="HomeScreen/PlayerName" to="." method="_on_player_name_text_changed"]
 [connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
 [connection signal="item_activated" from="CampaignSelector/TracksList" to="CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="CampaignSelector/Back" to="." method="_on_campaign_select_back_pressed"]

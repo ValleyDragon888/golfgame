@@ -15,6 +15,7 @@ var trackplayer_requested_scene_load = ""
 var checkpoints = []
 var checkpoint_to_delete = [0, false]
 var finished = false
+var player_name = ""
 
 var homepage = preload("res://Scenes/HomePage.tscn")
 var playpage = preload("res://Scenes/PlayPage.tscn")
