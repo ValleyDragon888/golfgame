@@ -71,6 +71,7 @@ draw_center = false
 script = ExtResource("1_h0sqi")
 
 [node name="Toon" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_c63h5")
 anchors_preset = 15
 anchor_right = 1.0

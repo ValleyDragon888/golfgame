@@ -1,8 +1,8 @@
+Button
 TextEdit
 MeshInstance3D
 CSGBox3D
 SubViewportContainer
-Button
 HBoxContainer
 Sprite2D
 Polygon2D
@@ -12,4 +12,3 @@ Camera3D
 SubViewport
 GPUParticles3D
 ColorRect
-VBoxContainer

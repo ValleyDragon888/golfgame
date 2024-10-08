@@ -57,6 +57,19 @@ offset_bottom = 71.0
 theme = ExtResource("7_wi0ui")
 text = "Back to Campaign"
 
+[node name="Restart" type="Button" parent="Screen UI"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -369.0
+offset_top = 25.0
+offset_right = -260.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_wi0ui")
+text = "Restart"
+
 [node name="Debug" type="CanvasLayer" parent="."]
 
 [node name="LoadButton" type="Button" parent="Debug"]
@@ -183,6 +196,7 @@ theme_override_font_sizes/font_size = 41
 text = "  Continue  "
 
 [connection signal="pressed" from="Screen UI/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Screen UI/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="Debug/LoadDialog" to="." method="_on_load_dialog_confirmed"]
 [connection signal="file_selected" from="Debug/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
