@@ -12,14 +12,17 @@ const DEFAULT_ZOOM = 5
 @export var sensitivity = -0.3
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
+@export var is_child = false
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
 var shots = 0
+var multiplayer_master = ""
 
 
 func _ready():
 	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
+	multiplayer_master = get_tree().root.get_child(1)
 	
 func _input(event):
 #Camera movement

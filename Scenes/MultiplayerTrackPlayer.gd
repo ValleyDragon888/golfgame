@@ -10,12 +10,13 @@ func _ready():
 	
 	for i in range(num_players):
 		var new_player = SubViewport.new()
+		new_player.size = Vector2(1024, 600)
 		new_player.add_child(GlobalVariables.trackplayer.instantiate())
 		new_player.name = "Player" + str(i)
 		$Players.add_child(new_player)
 		
-	$ViewportDisplayer.texture = ViewportTexture.new()
-	$ViewportDisplayer.texture = $Players/Player0.get_texture()
+	#$ViewportDisplayer.texture = ViewportTexture.new()
+	#$ViewportDisplayer.texture = $Players/Player0.get_texture()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

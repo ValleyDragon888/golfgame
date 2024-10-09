@@ -1,11 +1,11 @@
+SubViewport
+SubViewportContainer
 Sprite2D
 Node3D
-SubViewport
 Button
 TextEdit
 MeshInstance3D
 CSGBox3D
-SubViewportContainer
 HBoxContainer
 Polygon2D
 Sprite3D

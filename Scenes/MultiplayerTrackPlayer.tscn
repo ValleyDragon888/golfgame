@@ -1,13 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb6bggjqn0c46"]
+[gd_scene load_steps=2 format=3 uid="uid://bb6bggjqn0c46"]
 
 [ext_resource type="Script" path="res://Scenes/MultiplayerTrackPlayer.gd" id="1_vhg5q"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_gna8h"]
 
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_vhg5q")
 
-[node name="Players" type="Node3D" parent="."]
-
-[node name="ViewportDisplayer" type="Sprite2D" parent="."]
-texture = SubResource("ViewportTexture_gna8h")
+[node name="Players" type="SubViewportContainer" parent="."]

@@ -6,11 +6,16 @@ extends Node3D
 @onready var load_confirmation_dialog = $Debug/LoadDialog
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
 @onready var player = $Player
+@export var is_child = false 
+var multiplayer_master = ""
 
 func _ready():
 	if GlobalVariables.trackplayer_debug_enabled == false:
 		load_file(GlobalVariables.trackplayer_requested_scene_load)
 		$Debug.hide()
+	if is_child:
+		$Player/Ball.is_child = true
+		multiplayer_master = get_tree().root.get_child(1)
 
 func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
 	return EditorBlockInstance.new(
