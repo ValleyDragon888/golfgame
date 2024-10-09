@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb6bggjqn0c46"]
+[gd_scene load_steps=3 format=3 uid="uid://bb6bggjqn0c46"]
 
 [ext_resource type="Script" path="res://Scenes/MultiplayerTrackPlayer.gd" id="1_vhg5q"]
+[ext_resource type="Script" path="res://Scenes/SubViewportContainerMouseActionWorkaround.gd" id="2_vdcye"]
 
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_vhg5q")
 
 [node name="Players" type="SubViewportContainer" parent="."]
+script = ExtResource("2_vdcye")

@@ -6,7 +6,8 @@ var turn = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# debug, remove later
-	GlobalVariables.current_track = "res://Tracks/JSON/MainCampaign/01.json"
+	GlobalVariables.trackplayer_debug_enabled = false
+	GlobalVariables.trackplayer_requested_scene_load = "res://Tracks/JSON/MainCampaign/01.json"
 	
 	for i in range(num_players):
 		var new_player = SubViewport.new()
