@@ -1,16 +1,13 @@
-res://Scenes/PlayPage.tscn
+res://Scenes/Editor.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
-res://Scenes/MultiplayerTrackPlayer.tscn
-res://Scenes/Editor.tscn
+res://Scenes/MultiplayerTrackPlayer.gd
 res://Scenes/Freecam.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
+res://Scenes/PlayPage.tscn
 res://Scenes/HomePage.tscn
 res://Scenes/Outline.tscn
-res://Scenes/MultiplayerTrackPlayer.gd
-res://Scenes/Ball.tscn
-res://Scripts/TrackPlayer.gd
-res://Scripts/Ball.gd
 res://Scenes/TrackPlayer.tscn
-res://Scenes/SubViewportContainerMouseActionWorkaround.gd
+res://Scenes/Ball.tscn
+res://Scenes/MultiplayerTrackPlayer.tscn
