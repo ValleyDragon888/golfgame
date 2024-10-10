@@ -6,7 +6,8 @@ extends Node3D
 @onready var load_confirmation_dialog = $Debug/LoadDialog
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
 @onready var player = $Player
-@export var is_child = false 
+@export var is_child = false
+@export var is_disabled = false 
 var multiplayer_master = ""
 
 func _ready():
@@ -98,3 +99,11 @@ func _on_back_pressed():
 
 func _on_restart_pressed():
 	get_tree().reload_current_scene()
+
+func disable():
+	is_disabled = true
+	$Player/Ball.disable()
+	
+func enable():
+	is_disabled = false
+	$Player/Ball.enable()

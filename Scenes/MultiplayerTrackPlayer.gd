@@ -15,17 +15,21 @@ func _ready():
 		new_player.add_child(GlobalVariables.trackplayer.instantiate())
 		new_player.name = "Player" + str(i)
 		$Players.add_child(new_player)
-	
+		
 	update_turn()
 
 func update_turn():
 	for i in range(num_players):
 		if i == turn:
+			print(i)
 			var camera = get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer/Player/CameraPivotV/CameraPivotH/SpringArm3D/Camera3D")
 			camera.current = true
+			get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer").enable()
 		else:
+			print(i)
 			var camera = get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer/Player/CameraPivotV/CameraPivotH/SpringArm3D/Camera3D")
-			camera.current = false
+			#camera.current = false
+			get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer").disable()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

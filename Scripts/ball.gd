@@ -13,6 +13,7 @@ const DEFAULT_ZOOM = 5
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
 @export var is_child = false
+@export var is_disabled = false
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
@@ -88,7 +89,7 @@ func _physics_process(_delta):
 			break
 
 #May be replaced with correct controls
-	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished:
+	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:
 		just_released = false
 		GlobalVariables.start_position = global_position
 		linear_velocity.y = arrow.position.z*-1
@@ -142,3 +143,9 @@ func _physics_process(_delta):
 	arrow.scale.x = (arrow.position.z-3)/-60
 	arrow.scale.y = (arrow.position.z-3)/-60
 	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z*0.5),0)
+
+func disable():
+	is_disabled = true
+	
+func enable():
+	is_disabled = false
