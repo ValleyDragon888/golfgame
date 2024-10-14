@@ -41,4 +41,6 @@ func _process(delta):
    
 func next_turn():
 	turn += 1
+	if turn >= num_players:
+		turn = 0
 	update_turn()
