@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ea6u1k1yqo3a"
+path="res://.godot/imported/StraightOneWall.obj-4ee954397abc66f08b60acf70fa2b9fe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/StraightOneWall.obj-4ee954397abc66f08b60acf70fa2b9fe.mesh"]
+
+source_file="res://Assets/TrackEditor/StraightOneWall.obj"
+dest_files=["res://.godot/imported/StraightOneWall.obj-4ee954397abc66f08b60acf70fa2b9fe.mesh", "res://.godot/imported/StraightOneWall.obj-4ee954397abc66f08b60acf70fa2b9fe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

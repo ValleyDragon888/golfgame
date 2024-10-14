@@ -19,7 +19,8 @@ func _ready():
 	var blocks_dict = {
 		"Special Blocks": ["StartMarker", "EndMarker", "CheckpointMarker", "MovingPiece"
 		],
-		"Standard Blocks": ["Straight", "Straight2Pins", "Straight4Pins", "Straight6Pins",
+		"Standard Blocks": ["Straight", "StraightNoWalls", "StraightOneWall",
+		"Straight2Pins", "Straight4Pins", "Straight6Pins",
 		 "Corner", "CornerMedium", "CornerLarge",
 		 "End", "Start", "Loop",
 			{"Ramps": ["Ramp", "RampTransitionUp", "RampTransitionDown"]}

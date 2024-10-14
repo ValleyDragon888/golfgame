@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728883252
+::res://::1728884629
 icon.svg::CompressedTexture2D::1147549376388642576::1727157440::1727157440::1::::<><>::
 TODO.md::TextFile::-1::1728233565::0::1::::<><>::
 ::res://addons/::1727157440
@@ -9,7 +9,7 @@ plugin.cfg::TextFile::-1::1727157440::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1727157440::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1727157440
 ::res://addons/godot-git-plugin/macos/::1727157440
-::res://addons/godot-git-plugin/win64/::1728883229
+::res://addons/godot-git-plugin/win64/::1728884622
 ::res://Assets/::1728537709
 Arrow.obj::Mesh::757803071144802460::1727157439::1727157531::1::::<><>::
 ArrowMaterial.tres::StandardMaterial3D::2841706409230197075::1727157439::0::1::::<><>::
@@ -32,7 +32,7 @@ Cloud2.obj::Mesh::3438320106321464888::1727157439::1727157531::1::::<><>::
 Cloud3.obj::Mesh::5562979273303835753::1727157439::1727157531::1::::<><>::
 ::res://Assets/SFX/::1728022636
 GolfGame.wav::AudioStreamWAV::8795499442331763938::1727674418::1728022636::1::::<><>::
-::res://Assets/TrackEditor/::1728232249
+::res://Assets/TrackEditor/::1728884499
 BankedCorner2.obj::Mesh::2300487767902046122::1727157439::1727157531::1::::<><>::
 BankedCorner.obj::Mesh::7773338445205126366::1727157439::1727157531::1::::<><>::
 BankedCornerLarge2.obj::Mesh::1983104971804605053::1727157439::1727157532::1::::<><>::
@@ -66,6 +66,8 @@ Straight4Pins.obj::Mesh::8225793710257452537::1727157440::1727157530::1::::<><>:
 Straight6Pins.obj::Mesh::6814658672400866010::1727157440::1727157530::1::::<><>::
 Straight.obj::Mesh::2986581196031805249::1727157440::1727157530::1::::<><>::
 StraightLeft.obj::Mesh::1923719734818659190::1727157440::1727157530::1::::<><>::
+StraightNoWalls.obj::Mesh::8771456264238659152::1728884451::1728884499::1::::<><>::
+StraightOneWall.obj::Mesh::282674699475174832::1728884612::1728884630::1::::<><>::
 StraightRight.obj::Mesh::2424581557597966437::1727157440::1727157530::1::::<><>::
 StraightThin.obj::Mesh::1854552668992803952::1727157440::1727157530::1::::<><>::
 StraightWall.obj::Mesh::8030679683591567680::1728232245::1728232249::1::::<><>::
@@ -102,7 +104,7 @@ Screen.png::CompressedTexture2D::2595118614897049906::1728411214::1728411224::1:
 SettingsButton.png::CompressedTexture2D::4438102003935570543::1727448956::1727448962::1::::<><>::
 SettingsButtonPressed.png::CompressedTexture2D::324002324280671304::1727448956::1727448962::1::::<><>::
 UIBall.png::CompressedTexture2D::2505624808315217702::1727448956::1727448962::1::::<><>::
-::res://Blend/::1728411214
+::res://Blend/::1728884330
 ::res://Scenes/::1728540043
 Ball.tscn::PackedScene::4655281953349973194::1728540042::0::1::::<><>::res://Scripts/Ball.gd<>uid://dq8emocbeted6::::res://Scenes/Outline.tscn<>uid://k2c52gep3o5y::::res://Assets/Arrow.obj<>uid://3sxnya3r6tyu::::res://Scripts/Hit Particles.tres<>uid://bgqsqvywe2wit::::res://Assets/ArrowMaterial.tres<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cjssut45v6orr::::res://Scenes/FastForward.tscn<>res://Scripts/Toon.gdshader
 Editor.tscn::PackedScene::176288540008523976::1728540041::0::1::::<><>::res://Scripts/Editor.gd<>uid://c8ng83e0upg4t::::res://Scenes/Freecam.tscn<>uid://b5nx78qe50cv0::::res://Assets/Theme_1.tres<>uid://cnjgqfv7jpr1b::::res://Assets/Clouds/Cloud1.obj<>uid://dudxrfe7ek61t::::res://Assets/UI elements/Flag.png<>uid://bo8svob51p5qi::::res://Assets/Clouds/Cloud2.obj<>uid://yymkgtvdypns::::res://Assets/GolfGameTerrain.obj<>uid://cli0pq8rk4jkj::::res://Assets/Clouds/Cloud3.obj
