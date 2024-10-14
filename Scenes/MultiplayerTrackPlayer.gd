@@ -33,10 +33,12 @@ func update_turn():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	print(turn)
 	if Input.is_key_pressed(KEY_Q):
 		print("chonk")
 		turn = 1
 		update_turn()
-
+   
 func next_turn():
-	print("newx")
+	turn += 1
+	update_turn()

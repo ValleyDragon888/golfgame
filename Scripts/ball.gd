@@ -86,10 +86,10 @@ func _physics_process(_delta):
 			GlobalVariables.start_position.z = GlobalVariables.checkpoints[item].z * 6
 			GlobalVariables.checkpoint_to_delete[1] = true
 			GlobalVariables.checkpoints.remove_at(item)
-			print(GlobalVariables.checkpoints)
+			#print(GlobalVariables.checkpoints)
 			break
 	
-	if has_shot and not has_velocity:
+	if has_shot and not has_velocity and not is_disabled:
 		multiplayer_master.next_turn()
 
 #May be replaced with correct controls
@@ -105,7 +105,7 @@ func _physics_process(_delta):
 		shot_indicator.text = "Shots: " + str(shots)
 		hit_particles.scale = Vector3(arrow.position.z, arrow.position.z, arrow.position.z)
 		hit_particles.emitting = true
-		print(shots)
+		#print(shots)
 	if Input.is_action_just_released("Up"):
 		just_released = true
 
