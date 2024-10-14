@@ -19,6 +19,7 @@ var has_velocity = false
 var just_released = false
 var shots = 0
 var multiplayer_master = ""
+var has_shot = false
 
 
 func _ready():
@@ -87,9 +88,13 @@ func _physics_process(_delta):
 			GlobalVariables.checkpoints.remove_at(item)
 			print(GlobalVariables.checkpoints)
 			break
+	
+	if has_shot and not has_velocity:
+		multiplayer_master.next_turn()
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:
+		has_shot = true
 		just_released = false
 		GlobalVariables.start_position = global_position
 		linear_velocity.y = arrow.position.z*-1
@@ -149,3 +154,4 @@ func disable():
 	
 func enable():
 	is_disabled = false
+	has_shot = false

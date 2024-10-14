@@ -37,3 +37,6 @@ func _process(delta):
 		print("chonk")
 		turn = 1
 		update_turn()
+
+func next_turn():
+	print("newx")
