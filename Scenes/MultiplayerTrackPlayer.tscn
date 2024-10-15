@@ -1,11 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb6bggjqn0c46"]
+[gd_scene load_steps=2 format=3 uid="uid://bb6bggjqn0c46"]
 
 [ext_resource type="Script" path="res://Scenes/MultiplayerTrackPlayer.gd" id="1_vhg5q"]
-[ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_27ppg"]
 
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_vhg5q")
-player_scene = ExtResource("2_27ppg")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Scenes/MutliplayerBall.tscn")
