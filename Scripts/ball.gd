@@ -86,11 +86,10 @@ func _physics_process(_delta):
 			GlobalVariables.start_position.z = GlobalVariables.checkpoints[item].z * 6
 			GlobalVariables.checkpoint_to_delete[1] = true
 			GlobalVariables.checkpoints.remove_at(item)
-			#print(GlobalVariables.checkpoints)
 			break
 	
-	if has_shot and not has_velocity and not is_disabled:
-		multiplayer_master.next_turn()
+	#if has_shot and not has_velocity and not is_disabled:
+	#	multiplayer_master.next_turn()
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:

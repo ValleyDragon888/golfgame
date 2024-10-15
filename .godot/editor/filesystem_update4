@@ -14,3 +14,4 @@ res://Scenes/MutliplayerBall.tscn
 res://Scenes/Ball.tscn
 res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scripts/MultiplayerBall.gd
+res://Scripts/Ball.gd
