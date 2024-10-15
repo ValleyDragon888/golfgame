@@ -19,7 +19,7 @@ func _ready():
 	var blocks_dict = {
 		"Special Blocks": ["StartMarker", "EndMarker", "CheckpointMarker", "MovingPiece"
 		],
-		"Standard Blocks": ["Straight", "StraightNoWalls", "StraightOneWall",
+		"Standard Blocks": ["Straight",
 		"Straight2Pins", "Straight4Pins", "Straight6Pins",
 		 "Corner", "CornerMedium", "CornerLarge",
 		 "End", "Start", "Loop",
@@ -34,7 +34,7 @@ func _ready():
 		],
 		"Banked": ["BankedStraight", "BankedCorner", "BankedCornerMedium", "BankedCornerLarge", "BankedCorner2", "BankedCornerMedium2", "BankedCornerLarge2", "BankedTransitionLeft", "BankedTransitionRight"
 		],
-		"Walls & Obstacles": ["StraightWall", "CornerWall", "SandBankSide", "SandBankMiddle"
+		"Walls & Obstacles": ["StraightWall", "CornerWall", "SandBankSide", "SandBankMiddle", "StraightNoWalls", "StraightOneWall"
 		]
 	}
 	var root = tree.create_item()

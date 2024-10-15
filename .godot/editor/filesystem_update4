@@ -10,5 +10,4 @@ res://Scenes/Outline.tscn
 res://Scenes/TrackPlayer.tscn
 res://Scenes/Ball.tscn
 res://Scenes/MultiplayerTrackPlayer.tscn
-res://Scripts/Ball.gd
-res://Scenes/MultiplayerTrackPlayer.gd
+res://Scripts/Editor.gd
