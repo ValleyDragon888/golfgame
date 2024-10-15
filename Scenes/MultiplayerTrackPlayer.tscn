@@ -1,23 +1,231 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=3 uid="uid://bb6bggjqn0c46"]
 
 [ext_resource type="Script" path="res://Scenes/MultiplayerTrackPlayer.gd" id="1_vhg5q"]
+=======
+[gd_scene load_steps=11 format=3 uid="uid://bb6bggjqn0c46"]
+
+[ext_resource type="Script" path="res://Scenes/MultiplayerTrackPlayer.gd" id="1_vhg5q"]
+[ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_27ppg"]
+[ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="3_snbdw"]
+[ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="5_76k0f"]
+[ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="6_3xnhq"]
+[ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="7_ve80m"]
+[ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="8_jior5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pbkmo"]
+sky_top_color = Color(0, 0.424625, 0.890654, 1)
+sky_horizon_color = Color(0, 0.741829, 0.794995, 1)
+sky_curve = 0.178381
+sky_energy_multiplier = 0.7
+ground_bottom_color = Color(1.62441e-07, 0.098056, 0.133979, 1)
+ground_horizon_color = Color(0, 0.741829, 0.794995, 1)
+ground_curve = 0.251067
+ground_energy_multiplier = 0.7
+
+[sub_resource type="Sky" id="Sky_7n0yd"]
+sky_material = SubResource("ProceduralSkyMaterial_pbkmo")
+
+[sub_resource type="Environment" id="Environment_h1lh2"]
+background_mode = 2
+sky = SubResource("Sky_7n0yd")
+>>>>>>> Stashed changes
 
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_vhg5q")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Scenes/MutliplayerBall.tscn")
-spawn_path = NodePath("../Players")
+spawn_path = NodePath("../PlayerRoot")
 
-[node name="Players" type="Node3D" parent="."]
+[node name="PlayerRoot" type="Node3D" parent="."]
 
-[node name="Host" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.489158, -0.870229, 0.0585317, 0.780479, 0.466689, 0.415998, -0.38933, -0.157806, 0.90748, 0, 0, 0)
+light_color = Color(0.844923, 0.680871, 0.5383, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_blur = 1.417
 
-[node name="Join" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.489158, 0.870229, -0.0585319, 0.828748, 0.48466, 0.279788, 0.271848, 0.0883525, -0.958276, 0, 0, 0)
+light_color = Color(0.844923, 0.680871, 0.5383, 1)
+shadow_blur = 1.417
+sky_mode = 1
 
-[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h1lh2")
+
+[node name="ScreenUI" type="CanvasLayer" parent="."]
+
+[node name="Back" type="Button" parent="ScreenUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_top = 25.0
+offset_right = -25.0
+offset_bottom = 71.0
+theme = ExtResource("3_snbdw")
+text = "Back to Campaign"
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart" type="Button" parent="ScreenUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -369.0
+offset_top = 25.0
+offset_right = -260.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_snbdw")
+text = "Restart"
+metadata/_edit_use_anchors_ = true
+
+[node name="Debug" type="CanvasLayer" parent="."]
+
+[node name="LoadButton" type="Button" parent="Debug"]
+offset_left = 12.0
+offset_top = 88.0
+offset_right = 104.0
+offset_bottom = 150.0
+text = "Load"
+
+[node name="LoadDialog" type="ConfirmationDialog" parent="Debug"]
+title = "Load File?"
+position = Vector2i(0, 36)
+size = Vector2i(413, 106)
+ok_button_text = "Load File"
+dialog_text = "Loading a level will discard any changes to this one.
+Proceed?"
+
+[node name="LoadFileSelectorDialog" type="FileDialog" parent="Debug"]
+title = "Open a File"
+position = Vector2i(100, 74)
+size = Vector2i(1000, 500)
+ok_button_text = "Open"
+file_mode = 0
+
+[node name="Host" type="Button" parent="Debug"]
+offset_left = 12.0
+offset_top = 155.0
+offset_right = 56.0
+offset_bottom = 186.0
+text = "Host"
+
+[node name="Join" type="Button" parent="Debug"]
+offset_left = 12.0
+offset_top = 191.0
+offset_right = 50.0
+offset_bottom = 222.0
+text = "Join"
+
+[node name="AddedBlocksRoot" type="Node3D" parent="."]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="Terrain" type="MeshInstance3D" parent="."]
+transform = Transform3D(42, 0, 0, 0, 42, 0, 0, 0, 42, 9.822, 0, 0)
+mesh = ExtResource("5_76k0f")
+
+[node name="Clouds" type="Node3D" parent="."]
+transform = Transform3D(60, 0, 0, 0, 60, 0, 0, 0, 60, 0, 0, 0)
+
+[node name="Cloud1" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 8.08085, 9.31929, 1.46716)
+mesh = ExtResource("6_3xnhq")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud2" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 7.50195, 9.31929, -7.25392)
+mesh = ExtResource("7_ve80m")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud3" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, -5.77754, 9.31929, 9.15787)
+mesh = ExtResource("8_jior5")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud4" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, 16.6637, 7.15993, 0.303261)
+mesh = ExtResource("6_3xnhq")
+skeleton = NodePath("../../..")
+
+[node name="Cloud5" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, -2.0223, 7.15993, -1.60658)
+mesh = ExtResource("7_ve80m")
+skeleton = NodePath("../../..")
+
+[node name="Cloud6" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, 4.34421, 7.15993, 11.1175)
+mesh = ExtResource("8_jior5")
+skeleton = NodePath("../../..")
+
+[node name="Cloud7" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(0.271225, 0, 0, 0, 0.252622, 0, 0, 0, 0.271225, -2.61878, 9.66593, -9.5708)
+mesh = ExtResource("8_jior5")
+skeleton = NodePath("../..")
+
+[node name="Cloud8" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(-0.414585, 0, -0.401459, 0, 0.488759, 0, 0.392019, 0, -0.409272, -11.443, 13.3707, -10.5182)
+mesh = ExtResource("8_jior5")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud9" type="MeshInstance3D" parent="Clouds"]
+transform = Transform3D(-0.301807, 0, -0.498289, 0, 0.488759, 0, 0.479847, 0, -0.291427, -10.3493, 15.8345, -4.27713)
+mesh = ExtResource("6_3xnhq")
+skeleton = NodePath("../Cloud4")
+
+[node name="FinishedScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="FinishedScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(4.81308e-08, 0.378839, 0.136708, 0.85098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FinishedScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -298.0
+offset_top = -107.0
+offset_right = 298.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Level Cleared" type="Label" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 88
+text = "Level Cleared!"
+horizontal_alignment = 1
+
+[node name="Well Done" type="Label" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Well Done!"
+horizontal_alignment = 1
+
+[node name="Continue" type="Button" parent="FinishedScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_snbdw")
+theme_override_font_sizes/font_size = 41
+text = "  Continue  "
+
+[connection signal="pressed" from="ScreenUI/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="confirmed" from="Debug/LoadDialog" to="." method="_on_load_dialog_confirmed"]
+[connection signal="file_selected" from="Debug/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]
+[connection signal="pressed" from="Debug/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Debug/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="FinishedScreen/VBoxContainer/Continue" to="." method="_on_continue_pressed"]

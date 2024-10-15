@@ -1,9 +1,101 @@
 extends Node3D
 
-const num_players = 2
-var turn = 0
 var peer = ENetMultiplayerPeer.new()
 @export var player_scene: PackedScene
+@onready var block_instances: Array[EditorBlockInstance] = []
+@onready var save_path = ""
+@onready var load_confirmation_dialog = $Debug/LoadDialog
+@onready var load_fileselector = $Debug/LoadFileSelectorDialog
+
+@rpc
+func UpdateStartPosition(value):
+	GlobalVariables.start_position = value
+
+func _ready():
+	if GlobalVariables.trackplayer_debug_enabled == false:
+		load_file(GlobalVariables.trackplayer_requested_scene_load)
+		$Debug.hide()
+
+func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:
+	return EditorBlockInstance.new(
+		id,
+		Vector3(a["position"][0], a["position"][1], a["position"][2]),
+		Vector3(a["rotation"][0], a["rotation"][1], a["rotation"][2]),
+		a["type"]
+	)
+
+func _on_load_button_pressed():
+	load_confirmation_dialog.popup()
+
+func _on_load_dialog_confirmed():
+	load_fileselector.popup()
+
+func _on_load_file_selector_dialog_file_selected(path):
+	load_file(path)
+	
+func load_file(path):
+	# Read in and decode json
+	save_path = path
+	var file = FileAccess.open(path, FileAccess.READ)
+	var contents = file.get_as_text()
+	var json_decoded = JSON.parse_string(contents)
+
+	# Remove blocks in scene tree and script cache
+	block_instances = []
+	for child in $AddedBlocksRoot.get_children():
+		$AddedBlocksRoot.remove_child(child)
+
+	# Add blocks from file.
+	for i in len(json_decoded["blocks"]):
+		# The last arg of blkinstance from json is the id.
+		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
+		$AddedBlocksRoot.add_child(block_instances[-1].node())
+
+	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
+	GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
+	GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
+	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
+	block_instances[0].type = "StartIndicator"
+	$AddedBlocksRoot.add_child(block_instances[0].node())
+	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 0)
+
+	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(1))
+	GlobalVariables.end_position.x = block_instances[1].get_json_dict().position[0]
+	GlobalVariables.end_position.y = block_instances[1].get_json_dict().position[1]
+	GlobalVariables.end_position.z = block_instances[1].get_json_dict().position[2]
+	block_instances[1].type = "EndIndicator"
+	$AddedBlocksRoot.add_child(block_instances[1].node())
+	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
+
+	#Adds checkpoints to the variable.
+	GlobalVariables.checkpoints.clear()
+	for item in len(block_instances):
+		if block_instances[item].get_json_dict().type == "CheckpointMarker":
+			GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
+			print(GlobalVariables.checkpoints)
+
+	rpc("UpdateStartPosition", GlobalVariables.start_position)
+
+func _process(_delta):
+	if GlobalVariables.finished:
+		$FinishedScreen.show()
+	else:
+		$FinishedScreen.hide()
+
+	if GlobalVariables.checkpoint_to_delete[1] == true:
+		block_instances.remove_at(GlobalVariables.checkpoint_to_delete[0])
+		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(GlobalVariables.checkpoint_to_delete[0]))
+		GlobalVariables.checkpoint_to_delete[1] = false
+
+func _on_continue_pressed():
+	get_tree().change_scene_to_packed(GlobalVariables.homepage)
+	GlobalVariables.finished = false
+
+func _on_back_pressed():
+	get_tree().change_scene_to_packed(GlobalVariables.homepage)
+
+func _on_restart_pressed():
+	get_tree().reload_current_scene()
 
 func _on_host_pressed():
 	peer.create_server(135)
@@ -19,38 +111,3 @@ func _add_player(id = 1):
 func _on_join_pressed():
 	peer.create_client("localhost",135)
 	multiplayer.multiplayer_peer = peer
-	
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	# debug, remove later
-	GlobalVariables.trackplayer_debug_enabled = false
-	GlobalVariables.trackplayer_requested_scene_load = "res://Tracks/JSON/MainCampaign/01.json"
-
-	update_turn()
-
-func update_turn():
-	for i in range(num_players):
-		if i == turn:
-			print(i)
-			var camera = get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer/Player/CameraPivotV/CameraPivotH/SpringArm3D/Camera3D")
-			camera.current = true
-			get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer").enable()
-		else:
-			print(i)
-			var camera = get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer/Player/CameraPivotV/CameraPivotH/SpringArm3D/Camera3D")
-			#camera.current = false
-			get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer").disable()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	print(turn)
-	if Input.is_key_pressed(KEY_Q):
-		print("chonk")
-		turn = 1
-		update_turn()
-   
-func next_turn():
-	turn += 1
-	if turn >= num_players:
-		turn = 0
-	update_turn()

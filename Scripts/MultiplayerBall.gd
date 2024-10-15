@@ -18,15 +18,12 @@ var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
 var shots = 0
-var multiplayer_master = ""
-var has_shot = false
 
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())
 
 func _ready():
 	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
-	multiplayer_master = get_tree().root.get_child(1)
 	
 func _input(event):
 #Camera movement
@@ -91,13 +88,9 @@ func _physics_process(_delta):
 			GlobalVariables.checkpoints.remove_at(item)
 			#print(GlobalVariables.checkpoints)
 			break
-	
-	if has_shot and not has_velocity and not is_disabled:
-		multiplayer_master.next_turn()
 
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:
-		has_shot = true
 		just_released = false
 		GlobalVariables.start_position = global_position
 		linear_velocity.y = arrow.position.z*-1
@@ -151,10 +144,3 @@ func _physics_process(_delta):
 	arrow.scale.x = (arrow.position.z-3)/-60
 	arrow.scale.y = (arrow.position.z-3)/-60
 	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z*0.5),0)
-
-func disable():
-	is_disabled = true
-	
-func enable():
-	is_disabled = false
-	has_shot = false

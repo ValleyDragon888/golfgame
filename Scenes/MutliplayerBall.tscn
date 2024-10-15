@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dgofv8kjw14li"]
+[gd_scene load_steps=20 format=3 uid="uid://dgofv8kjw14li"]
 
 [ext_resource type="Script" path="res://Scripts/MultiplayerBall.gd" id="1_ia1ey"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="2_5up0p"]
@@ -55,6 +55,11 @@ size = Vector3(0.1, 0.1, 0.1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_smgoc"]
 shader = ExtResource("7_ynwvh")
 shader_parameter/colorAmt = 12.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rkxpa"]
+properties/0/path = NodePath("Ball:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Player" type="Node3D"]
 
@@ -154,3 +159,6 @@ grow_vertical = 2
 
 [node name="FastForward" parent="." instance=ExtResource("8_xctj2")]
 visible = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_rkxpa")
