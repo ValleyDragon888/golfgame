@@ -6,3 +6,13 @@
 script = ExtResource("1_bxcrg")
 
 [node name="Players" type="Node3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PlayerIndicator" type="Label" parent="CanvasLayer"]
+offset_left = 5.0
+offset_top = 469.0
+offset_right = 391.0
+offset_bottom = 625.0
+theme_override_font_sizes/font_size = 100
+text = "Player 1"

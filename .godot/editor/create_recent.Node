@@ -1,7 +1,9 @@
-MultiplayerSpawner
-Button
-Node3D
+Label
+CanvasLayer
 MultiplayerSynchronizer
+Button
+MultiplayerSpawner
+Node3D
 SubViewport
 SubViewportContainer
 Sprite2D
@@ -11,4 +13,3 @@ CSGBox3D
 HBoxContainer
 Polygon2D
 Sprite3D
-CSGTorus3D
