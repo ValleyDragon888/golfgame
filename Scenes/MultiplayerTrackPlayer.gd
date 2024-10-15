@@ -2,20 +2,30 @@ extends Node3D
 
 const num_players = 2
 var turn = 0
+var peer = ENetMultiplayerPeer.new()
+@export var player_scene: PackedScene
 
+func _on_host_pressed():
+	peer.create_server(135)
+	multiplayer.multiplayer_peer = peer
+	multiplayer.peer_connected.connect(_add_player)
+	_add_player()
+
+func _add_player(id = 1):
+	var player = player_scene.instantiate()
+	player.name = str(id)
+	call_deferred("add_child",player)
+
+func _on_join_pressed():
+	peer.create_client("localhost",135)
+	multiplayer.multiplayer_peer = peer
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# debug, remove later
 	GlobalVariables.trackplayer_debug_enabled = false
 	GlobalVariables.trackplayer_requested_scene_load = "res://Tracks/JSON/MainCampaign/01.json"
-	
-	for i in range(num_players):
-		var new_player = Node3D.new()
-		new_player.position.x = i*1000
-		new_player.add_child(GlobalVariables.trackplayer.instantiate())
-		new_player.name = "Player" + str(i)
-		$Players.add_child(new_player)
-		
+
 	update_turn()
 
 func update_turn():

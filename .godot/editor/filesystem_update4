@@ -11,3 +11,6 @@ res://Scenes/TrackPlayer.tscn
 res://Scenes/Ball.tscn
 res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scripts/Editor.gd
+res://Scenes/MutliplayerBall.tscn
+res://Scripts/MultiplayerBall.gd
+res://Scenes/MultiplayerTrackPlayer.gd

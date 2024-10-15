@@ -1,8 +1,9 @@
+Button
+MultiplayerSpawner
 Node3D
 SubViewport
 SubViewportContainer
 Sprite2D
-Button
 TextEdit
 MeshInstance3D
 CSGBox3D
@@ -11,4 +12,3 @@ Polygon2D
 Sprite3D
 CSGTorus3D
 Camera3D
-GPUParticles3D

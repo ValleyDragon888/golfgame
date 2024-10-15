@@ -1,0 +1,156 @@
+[gd_scene load_steps=19 format=3 uid="uid://dgofv8kjw14li"]
+
+[ext_resource type="Script" path="res://Scripts/MultiplayerBall.gd" id="1_ia1ey"]
+[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="2_5up0p"]
+[ext_resource type="Material" uid="uid://3sxnya3r6tyu" path="res://Scripts/Hit Particles.tres" id="3_oke16"]
+[ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="4_5jpuj"]
+[ext_resource type="Material" uid="uid://bgqsqvywe2wit" path="res://Assets/ArrowMaterial.tres" id="5_vr8vn"]
+[ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="6_pp7wc"]
+[ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="7_ynwvh"]
+[ext_resource type="PackedScene" uid="uid://cjssut45v6orr" path="res://Scenes/FastForward.tscn" id="8_xctj2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1pkp"]
+friction = 4.0
+rough = true
+bounce = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6kik4"]
+radius = 0.505518
+
+[sub_resource type="Curve" id="Curve_ns1rt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rfew2"]
+curve = SubResource("Curve_ns1rt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ah0w6"]
+lifetime_randomness = 0.1
+inherit_velocity_ratio = 1.0
+direction = Vector3(0, 10, 0)
+spread = 90.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -4, 0)
+scale_min = 0.0
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_rfew2")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36aae"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.65, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yx36e"]
+material = SubResource("StandardMaterial3D_36aae")
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17ek3"]
+albedo_color = Color(0, 0.352941, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6rskl"]
+material = SubResource("StandardMaterial3D_17ek3")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smgoc"]
+shader = ExtResource("7_ynwvh")
+shader_parameter/colorAmt = 12.0
+
+[node name="Player" type="Node3D"]
+
+[node name="Ball" type="RigidBody3D" parent="."]
+collision_layer = 2
+mass = 0.1
+physics_material_override = SubResource("PhysicsMaterial_e1pkp")
+linear_damp = 0.5
+angular_damp = 0.5
+script = ExtResource("1_ia1ey")
+
+[node name="BallMesh" type="MeshInstance3D" parent="Ball"]
+
+[node name="BallCollision" type="CollisionShape3D" parent="Ball"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_6kik4")
+
+[node name="CameraPivotV" type="Node3D" parent="."]
+
+[node name="CameraPivotH" type="Node3D" parent="CameraPivotV"]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivotV/CameraPivotH"]
+spring_length = 5.0
+margin = 0.5
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivotV/CameraPivotH/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.75627)
+current = true
+
+[node name="Outline" parent="CameraPivotV/CameraPivotH/SpringArm3D/Camera3D" instance=ExtResource("2_5up0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CameraPivotV"]
+emitting = false
+amount = 200
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.5
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ah0w6")
+draw_pass_1 = SubResource("BoxMesh_yx36e")
+
+[node name="Hit Particles" type="GPUParticles3D" parent="CameraPivotV"]
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("3_oke16")
+draw_pass_1 = SubResource("BoxMesh_6rskl")
+
+[node name="ArrowPivot" type="Node3D" parent="."]
+
+[node name="Arrow" type="Node3D" parent="ArrowPivot"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ArrowPivot/Arrow"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+mesh = ExtResource("4_5jpuj")
+surface_material_override/0 = ExtResource("5_vr8vn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ShotIndicator" type="Button" parent="CanvasLayer"]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 161.0
+offset_bottom = 78.0
+theme = ExtResource("6_pp7wc")
+toggle_mode = true
+button_pressed = true
+text = "Shots: 0"
+
+[node name="PowerIndicator" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = 93.0
+offset_right = -14.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 2
+min_value = -8.0
+max_value = -0.01
+value = -0.1
+fill_mode = 3
+show_percentage = false
+
+[node name="Toon" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_smgoc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FastForward" parent="." instance=ExtResource("8_xctj2")]
+visible = false
