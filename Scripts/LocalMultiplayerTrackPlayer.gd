@@ -30,6 +30,8 @@ func update_turn():
 			var camera = get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer/Player/CameraPivotV/CameraPivotH/SpringArm3D/Camera3D")
 			#camera.current = false
 			get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer").disable()
+	
+	$CanvasLayer/PlayerIndicator.text = "Player " + str(turn+1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
