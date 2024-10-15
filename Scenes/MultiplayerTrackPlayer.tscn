@@ -45,8 +45,6 @@ sky_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d1g3h")
 
-[node name="PlayerRoot" type="Node3D" parent="."]
-
 [node name="ScreenUI" type="CanvasLayer" parent="."]
 
 [node name="Back" type="Button" parent="ScreenUI"]
@@ -215,8 +213,8 @@ theme_override_font_sizes/font_size = 41
 text = "  Continue  "
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/MutliplayerBall.tscn")
-spawn_path = NodePath("../PlayerRoot")
+_spawnable_scenes = PackedStringArray("res://Scenes/MultiplayerTrackPlayer.tscn")
+spawn_path = NodePath("..")
 
 [connection signal="pressed" from="ScreenUI/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
