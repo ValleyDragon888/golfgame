@@ -27,7 +27,7 @@ func _ready():
 	
 func _input(event):
 #Camera movement
-	if is_multiplayer_authority():
+	if true:
 		if Input.is_action_just_pressed("LockCamera") and camera_is_locked == false:
 			camera_is_locked = true
 		elif Input.is_action_just_pressed("LockCamera") and camera_is_locked == true:
@@ -90,7 +90,7 @@ func _physics_process(_delta):
 			break
 
 #May be replaced with correct controls
-	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:
+	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled and is_multiplayer_authority():
 		just_released = false
 		GlobalVariables.start_position = global_position
 		linear_velocity.y = arrow.position.z*-1

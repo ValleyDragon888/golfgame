@@ -1,7 +1,7 @@
-MultiplayerSynchronizer
-Button
 MultiplayerSpawner
+Button
 Node3D
+MultiplayerSynchronizer
 SubViewport
 SubViewportContainer
 Sprite2D
@@ -12,4 +12,3 @@ HBoxContainer
 Polygon2D
 Sprite3D
 CSGTorus3D
-Camera3D

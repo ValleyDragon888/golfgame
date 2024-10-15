@@ -18,12 +18,12 @@ ground_horizon_color = Color(0, 0.741829, 0.794995, 1)
 ground_curve = 0.251067
 ground_energy_multiplier = 0.7
 
-[sub_resource type="Sky" id="Sky_7n0yd"]
+[sub_resource type="Sky" id="Sky_an0pb"]
 sky_material = SubResource("ProceduralSkyMaterial_geudo")
 
 [sub_resource type="Environment" id="Environment_d1g3h"]
 background_mode = 2
-sky = SubResource("Sky_7n0yd")
+sky = SubResource("Sky_an0pb")
 
 [node name="TrackPlayer" type="Node3D"]
 script = ExtResource("1_w4wli")
@@ -56,6 +56,7 @@ offset_right = -25.0
 offset_bottom = 71.0
 theme = ExtResource("7_wi0ui")
 text = "Back to Campaign"
+metadata/_edit_use_anchors_ = true
 
 [node name="Restart" type="Button" parent="ScreenUI"]
 anchors_preset = 1
@@ -69,6 +70,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_wi0ui")
 text = "Restart"
+metadata/_edit_use_anchors_ = true
 
 [node name="Debug" type="CanvasLayer" parent="."]
 
