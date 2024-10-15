@@ -60,6 +60,9 @@ shader_parameter/colorAmt = 12.0
 properties/0/path = NodePath("Ball:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="Player2" type="Node3D"]
 
@@ -159,6 +162,12 @@ grow_vertical = 2
 
 [node name="FastForward" parent="." instance=ExtResource("8_xctj2")]
 visible = false
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62065, 0)
+text = "
+"
+font_size = 48
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_rkxpa")

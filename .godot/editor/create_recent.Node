@@ -1,3 +1,4 @@
+Label3D
 Label
 CanvasLayer
 MultiplayerSynchronizer
@@ -12,4 +13,3 @@ MeshInstance3D
 CSGBox3D
 HBoxContainer
 Polygon2D
-Sprite3D

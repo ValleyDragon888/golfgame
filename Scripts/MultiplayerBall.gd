@@ -10,7 +10,7 @@ const DEFAULT_ZOOM = 5
 @onready var hit_particles = $"../CameraPivotV/Hit Particles"
 @onready var ball_mesh = $BallMesh
 @export var sensitivity = -0.3
-@export var camera_is_locked = true
+@export var camera_is_locked = false
 @export var zoom_speed = 0.3
 @export var is_child = false
 @export var is_disabled = false
@@ -60,6 +60,11 @@ func _input(event):
 				spring_arm.spring_length = DEFAULT_ZOOM
 
 func _physics_process(_delta):
+	$"../Label3D".text = str(is_multiplayer_authority())
+	$"../Label3D".position = position
+	$"../Label3D".position.y = position.y + 2
+	if is_multiplayer_authority():
+		$"../CameraPivotV/CameraPivotH/SpringArm3D/Camera3D".current = true
 #Locks camera and arrow to the player
 	if not GlobalVariables.finished:
 		camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)
