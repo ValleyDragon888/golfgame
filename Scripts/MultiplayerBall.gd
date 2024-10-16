@@ -60,7 +60,7 @@ func _input(event):
 				spring_arm.spring_length = DEFAULT_ZOOM
 
 func _physics_process(_delta):
-	$"../Label3D".text = str(is_multiplayer_authority())
+	$"../Label3D".text = str(name, is_multiplayer_authority())
 	$"../Label3D".position = position
 	$"../Label3D".position.y = position.y + 2
 	if is_multiplayer_authority():
@@ -97,7 +97,7 @@ func _physics_process(_delta):
 #May be replaced with correct controls
 	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:
 		just_released = false
-		GlobalVariables.start_position = global_position
+		GlobalVariables.start_position = global_position / 6
 		linear_velocity.y = arrow.position.z*-1
 		linear_velocity.z = (arrow.global_position.z - global_position.z) * 10
 		linear_velocity.x = (arrow.global_position.x - global_position.x) * 10
@@ -128,8 +128,8 @@ func _physics_process(_delta):
 		arrow.show()
 
 	if position.y < -20:
-		position = GlobalVariables.start_position
-		position.y = GlobalVariables.start_position.y + 5
+		position = GlobalVariables.start_position * 6
+		position.y = GlobalVariables.start_position.y * 6 + 5
 		linear_velocity = Vector3.ZERO
 		angular_velocity = Vector3.ZERO
 #Quit the game

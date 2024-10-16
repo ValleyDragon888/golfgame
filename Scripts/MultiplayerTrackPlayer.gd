@@ -8,8 +8,11 @@ var peer = ENetMultiplayerPeer.new()
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
 
 @rpc
-func UpdateStartPosition(value):
-	GlobalVariables.start_position = value
+func UpdateVariables(SP, BI, ABR):
+	GlobalVariables.start_position = SP
+	block_instances = BI
+	for item in len(block_instances):
+		$AddedBlocksRoot.add_child(block_instances[item].node())
 
 func _ready():
 	if GlobalVariables.trackplayer_debug_enabled == false:
@@ -74,7 +77,7 @@ func load_file(path):
 			GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
 			print(GlobalVariables.checkpoints)
 
-	rpc("UpdateStartPosition", GlobalVariables.start_position)
+	rpc("UpdateVariables", GlobalVariables.start_position, block_instances, $AddedBlocksRoot)
 
 func _process(_delta):
 	if GlobalVariables.finished:
@@ -112,3 +115,4 @@ func _add_player(id = 1):
 func _on_join_pressed():
 	peer.create_client("localhost",135)
 	multiplayer.multiplayer_peer = peer
+	_add_player()
