@@ -1,5 +1,6 @@
-Label
 Button
+VBoxContainer
+Label
 RichTextLabel
 HBoxContainer
 Node2D
@@ -11,4 +12,3 @@ MultiplayerSpawner
 Node3D
 SubViewport
 SubViewportContainer
-Sprite2D
