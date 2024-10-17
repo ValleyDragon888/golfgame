@@ -1,3 +1,134 @@
-[gd_scene format=3 uid="uid://br4f72y3ir37q"]
+[gd_scene load_steps=11 format=3 uid="uid://br4f72y3ir37q"]
+
+[ext_resource type="Script" path="res://Scenes/LocalMultiplayerHomeScreen.gd" id="1_gkwb0"]
+[ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="2_6uq3r"]
+[ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_wnwov"]
+[ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="4_ev3th"]
+[ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="5_ufjak"]
+[ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="6_2wqxe"]
+[ext_resource type="Texture2D" uid="uid://cksooqwfhfmi6" path="res://Assets/UI elements/HomeBackground.png" id="7_xbcn3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvupg"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_g1cpk"]
+sky_material = SubResource("ProceduralSkyMaterial_hvupg")
+
+[sub_resource type="Environment" id="Environment_g3doh"]
+background_mode = 2
+sky = SubResource("Sky_g1cpk")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="LocalMultiplayerHomeScreen" type="Node3D"]
+script = ExtResource("1_gkwb0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_g3doh")
+
+[node name="Background" type="Node3D" parent="."]
+
+[node name="Terrain" type="MeshInstance3D" parent="Background"]
+mesh = ExtResource("2_6uq3r")
+
+[node name="CameraOrigin" type="Node3D" parent="Background"]
+
+[node name="Camera3D" type="Camera3D" parent="Background/CameraOrigin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.855664, 2.87365)
+cull_mask = 1
+h_offset = -0.9
+
+[node name="Outline" parent="Background/CameraOrigin/Camera3D" instance=ExtResource("3_wnwov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="Clouds" type="Node3D" parent="Background"]
+
+[node name="Cloud1" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 8.08085, 9.31929, 1.46716)
+mesh = ExtResource("4_ev3th")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud2" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, 7.50195, 9.31929, -7.25392)
+mesh = ExtResource("5_ufjak")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud3" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.363999, 0, -0.67156, 0, 0.699113, 0, 0.646706, 0, 0.377988, -5.77754, 9.31929, 9.15787)
+mesh = ExtResource("6_2wqxe")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud4" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, 16.6637, 7.15993, 0.303261)
+mesh = ExtResource("4_ev3th")
+skeleton = NodePath("../../..")
+
+[node name="Cloud5" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, -2.0223, 7.15993, -1.60658)
+mesh = ExtResource("5_ufjak")
+skeleton = NodePath("../../..")
+
+[node name="Cloud6" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.520793, 0, 0, 0, 0.350003, 0, 0, 0, 0.520793, 4.34421, 7.15993, 11.1175)
+mesh = ExtResource("6_2wqxe")
+skeleton = NodePath("../../..")
+
+[node name="Cloud7" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(0.271225, 0, 0, 0, 0.252622, 0, 0, 0, 0.271225, -2.61878, 9.66593, -9.5708)
+mesh = ExtResource("6_2wqxe")
+skeleton = NodePath("../..")
+
+[node name="Cloud8" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(-0.414585, 0, -0.401459, 0, 0.488759, 0, 0.392019, 0, -0.409272, -11.443, 13.3707, -10.5182)
+mesh = ExtResource("6_2wqxe")
+skeleton = NodePath("../Cloud4")
+
+[node name="Cloud9" type="MeshInstance3D" parent="Background/Clouds"]
+transform = Transform3D(-0.301807, 0, -0.498289, 0, 0.488759, 0, 0.479847, 0, -0.291427, -10.3493, 15.8345, -4.27713)
+mesh = ExtResource("4_ev3th")
+skeleton = NodePath("../Cloud4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 846.0
+offset_bottom = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.576512, 0.576512)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("7_xbcn3")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="NumPlayers" type="Node2D" parent="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/NumPlayers"]
+offset_left = 100.0
+offset_top = 257.0
+offset_right = 140.0
+offset_bottom = 297.0
+
+[node name="Less" type="Button" parent="CanvasLayer/NumPlayers/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = " < "
+
+[node name="NumberDisplay" type="Label" parent="CanvasLayer/NumPlayers/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = " 1 "
+
+[node name="More" type="Button" parent="CanvasLayer/NumPlayers/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = " > "

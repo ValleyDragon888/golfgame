@@ -12,3 +12,4 @@ res://Scenes/Ball.tscn
 res://Scenes/LocalMultiplayerHomeScreen.tscn
 res://Scenes/Home.tscn
 res://Scenes/HomePage.tscn
+res://Scenes/LocalMultiplayerHomeScreen.gd
