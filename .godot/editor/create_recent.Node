@@ -1,9 +1,9 @@
+Node2D
 Button
 VBoxContainer
 Label
 RichTextLabel
 HBoxContainer
-Node2D
 CanvasLayer
 Camera3D
 Label3D
