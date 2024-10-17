@@ -1,3 +1,4 @@
+Camera3D
 Label3D
 Label
 CanvasLayer
@@ -12,4 +13,3 @@ TextEdit
 MeshInstance3D
 CSGBox3D
 HBoxContainer
-Polygon2D
