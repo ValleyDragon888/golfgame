@@ -1,7 +1,10 @@
-res://Scenes/Editor.tscn
+res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
+res://Scripts/Ball.gd
+res://TODO.md
+res://Scenes/Editor.tscn
 res://Scripts/MultiplayerTrackPlayer.gd
 res://Scenes/Freecam.tscn
 res://Assets/TrackEditor/ScenePieces/MovingPiece.tscn
@@ -11,5 +14,4 @@ res://Scenes/Outline.tscn
 res://Scenes/TrackPlayer.tscn
 res://Scenes/Ball.tscn
 res://Scenes/MutliplayerBall.tscn
-res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scripts/MultiplayerBall.gd

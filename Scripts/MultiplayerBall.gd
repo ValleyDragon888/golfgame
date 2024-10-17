@@ -20,6 +20,7 @@ var just_released = false
 var shots = 0
 
 func _enter_tree():
+	print(name)
 	set_multiplayer_authority(name.to_int())
 
 func _ready():

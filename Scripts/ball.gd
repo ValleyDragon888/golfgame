@@ -12,14 +12,16 @@ const DEFAULT_ZOOM = 5
 @export var sensitivity = -0.3
 @export var camera_is_locked = true
 @export var zoom_speed = 0.3
-@export var is_child = false
-@export var is_disabled = false
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
 var shots = 0
+#LocalMultiplayer variables
+var local_multiplayer_enabled: bool = false
 var multiplayer_master = ""
 var has_shot = false
+@export var is_child = false
+@export var is_disabled = false
 
 
 func _ready():
@@ -88,10 +90,11 @@ func _physics_process(_delta):
 			GlobalVariables.checkpoints.remove_at(item)
 			break
 	
-	#if has_shot and not has_velocity and not is_disabled:
-	#	multiplayer_master.next_turn()
+	if has_shot and not has_velocity and not is_disabled and local_multiplayer_enabled:
+		multiplayer_master.next_turn()
 
-#May be replaced with correct controls
+	if not local_multiplayer_enabled:
+		is_disabled = false
 	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:
 		has_shot = true
 		just_released = false
