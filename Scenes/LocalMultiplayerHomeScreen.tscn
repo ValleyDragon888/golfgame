@@ -218,8 +218,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 23
 placeholder_text = "Enter Name"
 
+[node name="PlayerDetailsNext" type="Button" parent="CanvasLayer/PlayerDetails/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Next"
+
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/Less" to="." method="_on_less_pressed"]
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/More" to="." method="_on_more_pressed"]
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/Next" to="." method="_on_numplayers_next_pressed"]
 [connection signal="pressed" from="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/LastBall" to="." method="_on_last_ball_pressed"]
 [connection signal="pressed" from="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/NextBall" to="." method="_on_next_ball_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayerDetails/VBoxContainer/PlayerDetailsNext" to="." method="_on_player_details_next_pressed"]

@@ -30,7 +30,8 @@ func update_num_players():
 	$CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/NumberDisplay.text = " " + str(num_players) + " "
 
 func player_details_setup():
-	$CanvasLayer/PlayerDetails/EnterNameLabel.text = "Enter Name, Player " + str(current_details_player)
+	$CanvasLayer/PlayerDetails/VBoxContainer/EnterNameLabel.text = "Enter Name, Player " + str(current_details_player)
+	$CanvasLayer/PlayerDetails/VBoxContainer/LineEdit.text = ""
 
 func _on_less_pressed():
 	num_players -= 1
@@ -64,3 +65,8 @@ func _on_next_ball_pressed():
 
 func change_ball():
 	$CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/SubViewportContainer/SubViewport/Ball3dModel.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[player_details_ball_selected])+".obj")
+
+
+func _on_player_details_next_pressed():
+	current_details_player += 1
+	player_details_setup()
