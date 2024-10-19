@@ -166,7 +166,7 @@ offset_top = 137.0
 offset_right = 1104.0
 offset_bottom = 437.0
 
-[node name="Less" type="Button" parent="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer"]
+[node name="LastBall" type="Button" parent="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("10_qrgpf")
 theme_override_font_sizes/font_size = 42
@@ -196,20 +196,30 @@ layers = 2
 mesh = SubResource("QuadMesh_74mxk")
 surface_material_override/0 = SubResource("ShaderMaterial_deuph")
 
-[node name="More" type="Button" parent="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer"]
+[node name="NextBall" type="Button" parent="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("10_qrgpf")
 theme_override_font_sizes/font_size = 42
 text = " > "
 
-[node name="EnterNameLabel" type="Label" parent="CanvasLayer/PlayerDetails"]
-offset_left = 78.0
-offset_top = 205.0
-offset_right = 376.0
-offset_bottom = 260.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PlayerDetails"]
+offset_left = 75.0
+offset_top = 204.0
+offset_right = 373.0
+offset_bottom = 346.0
+
+[node name="EnterNameLabel" type="Label" parent="CanvasLayer/PlayerDetails/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 29
 text = "Enter Name, Player 1"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/PlayerDetails/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+placeholder_text = "Enter Name"
 
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/Less" to="." method="_on_less_pressed"]
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/More" to="." method="_on_more_pressed"]
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/LastBall" to="." method="_on_last_ball_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/NextBall" to="." method="_on_next_ball_pressed"]

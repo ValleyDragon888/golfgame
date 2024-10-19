@@ -1,7 +1,10 @@
+VBoxContainer
+LineEdit
+Control
+SpinBox
 Label
 Node2D
 Button
-VBoxContainer
 RichTextLabel
 HBoxContainer
 CanvasLayer
@@ -9,6 +12,3 @@ Camera3D
 Label3D
 MultiplayerSynchronizer
 MultiplayerSpawner
-Node3D
-SubViewport
-SubViewportContainer

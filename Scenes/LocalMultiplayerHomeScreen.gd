@@ -3,6 +3,7 @@ extends Node3D
 @onready var mouse_position_y
 @onready var state = "numplayers"
 var current_details_player = 1
+var player_details_ball_selected = 0
 var num_players = 2
 
 # Called when the node enters the scene tree for the first time.
@@ -44,3 +45,20 @@ func _on_next_pressed():
 	state = "playerdetails"
 	$CanvasLayer/NumPlayers.hide()
 	$CanvasLayer/PlayerDetails.show()
+
+
+func _on_last_ball_pressed():
+	player_details_ball_selected -= 1
+	if player_details_ball_selected < 0:
+		player_details_ball_selected = len(GlobalVariables.balls)-1
+	change_ball()
+
+
+func _on_next_ball_pressed():
+	player_details_ball_selected += 1
+	if player_details_ball_selected > len(GlobalVariables.balls)-1:
+		player_details_ball_selected = 0
+	change_ball()
+
+func change_ball():
+	$CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/SubViewportContainer/SubViewport/Ball3dModel.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[player_details_ball_selected])+".obj")
