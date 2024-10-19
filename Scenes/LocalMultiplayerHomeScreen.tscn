@@ -125,6 +125,7 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="NumPlayers" type="Node2D" parent="CanvasLayer"]
+visible = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/NumPlayers"]
 offset_left = 104.0
@@ -201,5 +202,14 @@ theme = ExtResource("10_qrgpf")
 theme_override_font_sizes/font_size = 42
 text = " > "
 
+[node name="EnterNameLabel" type="Label" parent="CanvasLayer/PlayerDetails"]
+offset_left = 78.0
+offset_top = 205.0
+offset_right = 376.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 29
+text = "Enter Name, Player 1"
+
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/Less" to="." method="_on_less_pressed"]
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/More" to="." method="_on_more_pressed"]
+[connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/Next" to="." method="_on_next_pressed"]

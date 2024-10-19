@@ -1,7 +1,7 @@
+Label
 Node2D
 Button
 VBoxContainer
-Label
 RichTextLabel
 HBoxContainer
 CanvasLayer
