@@ -22,6 +22,8 @@ func _process(delta):
 	else:
 		y = mouse_position_y
 	$Background/CameraOrigin.rotation_degrees.x = lerp($Background/CameraOrigin.rotation_degrees.x, y, 0.01)
+	
+	$CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/SubViewportContainer/SubViewport/Ball3dModel.rotate_y(-(delta)/2)
 
 
 func update_num_players():
