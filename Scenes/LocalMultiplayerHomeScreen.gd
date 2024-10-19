@@ -43,7 +43,7 @@ func _on_more_pressed():
 	update_num_players()
 
 
-func _on_next_pressed():
+func _on_numplayers_next_pressed():
 	state = "playerdetails"
 	$CanvasLayer/NumPlayers.hide()
 	$CanvasLayer/PlayerDetails.show()

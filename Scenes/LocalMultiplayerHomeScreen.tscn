@@ -220,6 +220,6 @@ placeholder_text = "Enter Name"
 
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/Less" to="." method="_on_less_pressed"]
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/More" to="." method="_on_more_pressed"]
-[connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/Next" to="." method="_on_numplayers_next_pressed"]
 [connection signal="pressed" from="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/LastBall" to="." method="_on_last_ball_pressed"]
 [connection signal="pressed" from="CanvasLayer/PlayerDetails/BallSelector/HBoxContainer/NextBall" to="." method="_on_next_ball_pressed"]
