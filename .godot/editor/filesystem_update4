@@ -11,3 +11,8 @@ res://Scenes/Test Multiplayer/bomb.tscn
 res://Scenes/Test Multiplayer/player.tscn
 res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scenes/LocalMultiplayerTrackPlayer.tscn
+res://Scenes/MutliplayerBall.tscn
+res://Scenes/Ball.tscn
+res://Scripts/Ball.gd
+res://Scenes/TrackPlayer.tscn
+res://Scripts/LocalMultiplayerTrackPlayer.gd

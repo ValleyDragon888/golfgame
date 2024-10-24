@@ -17,7 +17,7 @@ var has_velocity = false
 var just_released = false
 var shots = 0
 #LocalMultiplayer variables
-var local_multiplayer_enabled: bool = false
+var local_multiplayer_enabled: bool = true
 var multiplayer_master = ""
 var has_shot = false
 @export var is_child = false
@@ -26,7 +26,9 @@ var has_shot = false
 
 func _ready():
 	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
-	multiplayer_master = get_tree().root.get_child(1)
+	multiplayer_master = get_tree().root.get_child(2)
+	if self.is_child:
+		print("is clide")
 	
 func _input(event):
 #Camera movement
@@ -91,6 +93,7 @@ func _physics_process(_delta):
 			break
 	
 	if has_shot and not has_velocity and not is_disabled and local_multiplayer_enabled:
+		print("goto next tuen")
 		multiplayer_master.next_turn()
 
 	if not local_multiplayer_enabled:
