@@ -1,7 +1,12 @@
+res://Scenes/Test Multiplayer/battlefield.tscn
 res://Scenes/LocalMultiplayerHomeScreen.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
 res://Scenes/HomePage.tscn
 res://Scenes/PlayPage.tscn
-res://Scenes/LocalMultiplayerHomeScreen.gd
+res://Scenes/LocalMultiplayerTrackPlayer.tscn
+res://Scenes/MultiplayerTrackPlayer.tscn
+res://Scenes/Test Multiplayer/bomb.tscn
+res://Scenes/Test Multiplayer/player.tscn
+res://Scripts/Test Multiplayer/Player.gd

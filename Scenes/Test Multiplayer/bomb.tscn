@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cejfrnaoocdf7"]
+
+[ext_resource type="Texture2D" uid="uid://v3mg5m0qvlp" path="res://Assets/Test Multiplayer/Bomb.png" id="1_ykw6t"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vqpww"]
+bounce = 0.2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_33r1x"]
+polygon = PackedVector2Array(2, -44, -5, -49, -16, -51, -30, -51, -51, -43, -58, -34, -70, -24, -74, -12, -77, 2, -77, 13, -72, 25, -66, 38, -57, 51, -47, 58, -32, 62, -17, 65, 0, 65, 9, 61, 17, 55, 27, 43, 34, 30, 37, 18, 37, 6, 35, -4, 33, -15, 33, -19, 41, -32, 42, -36, 42, -41, 38, -47, 26, -56, 18, -58, 10, -56, 6, -52, 3, -46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa4nv"]
+radius = 70.0286
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_t6lwa"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Bomb" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_vqpww")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_33r1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 0)
+shape = SubResource("CircleShape2D_wa4nv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, 0)
+scale = Vector2(0.172293, 0.172293)
+texture = ExtResource("1_ykw6t")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_t6lwa")

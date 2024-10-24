@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck2g21lhqby62"]
+
+[ext_resource type="Script" path="res://Scripts/Test Multiplayer/Player.gd" id="1_6ipgi"]
+[ext_resource type="Texture2D" uid="uid://ba1yi85lr1vbc" path="res://Assets/Test Multiplayer/Cursor.png" id="1_ari5b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tcgx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 15
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vxf4w"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:collected")
+properties/1/spawn = true
+properties/1/replication_mode = 0
+properties/2/path = NodePath(".:activated")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_82sgk"]
+polygon = PackedVector2Array(-61, -73, 63, -8, 55, 0, 8, 2, 18, 14, 33, 33, 51, 63, 27, 76, -16, 20, -23, 41, -41, 58, -46, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axv82"]
+radius = 96.8963
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_6ipgi")
+
+[node name="AuthDebug" type="Panel" parent="."]
+offset_left = -107.0
+offset_top = -100.0
+offset_right = 87.0
+offset_bottom = 93.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tcgx")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ari5b")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_vxf4w")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_82sgk")
+
+[node name="PLayerArea2D" type="Area2D" parent="."]
+position = Vector2(-6.66667, -3.33333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PLayerArea2D"]
+position = Vector2(-3.33333, 0)
+shape = SubResource("CircleShape2D_axv82")
+
+[node name="VarDebug" type="Label" parent="."]
+offset_left = -76.6667
+offset_top = -293.333
+offset_right = 77.3333
+offset_bottom = -126.333
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="PLayerArea2D" to="." method="_on_area_2d_body_entered"]

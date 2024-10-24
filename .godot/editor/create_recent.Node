@@ -1,3 +1,4 @@
+Camera2D
 VBoxContainer
 LineEdit
 Control
@@ -11,4 +12,3 @@ CanvasLayer
 Camera3D
 Label3D
 MultiplayerSynchronizer
-MultiplayerSpawner
