@@ -8,13 +8,8 @@ var peer = ENetMultiplayerPeer.new()
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
 
 @rpc
-func update_variables(SP, BI):
-	GlobalVariables.start_position = SP
-	block_instances = BI
-	for child in $AddedBlocksRoot.get_children():
-		$AddedBlocksRoot.remove_child(child)
-	for item in len(block_instances):
-		$AddedBlocksRoot.add_child(block_instances[item].node())
+func update_variables(SP, JSON_Contents):
+	load_course(JSON_Contents)
 
 func _ready():
 	if GlobalVariables.trackplayer_debug_enabled == false:
@@ -43,43 +38,9 @@ func load_file(path):
 	save_path = path
 	var file = FileAccess.open(path, FileAccess.READ)
 	var contents = file.get_as_text()
-	var json_decoded = JSON.parse_string(contents)
 
-	# Remove blocks in scene tree and script cache
-	block_instances = []
-	for child in $AddedBlocksRoot.get_children():
-		$AddedBlocksRoot.remove_child(child)
-
-	# Add blocks from file.
-	for i in len(json_decoded["blocks"]):
-		# The last arg of blkinstance from json is the id.
-		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
-		$AddedBlocksRoot.add_child(block_instances[-1].node())
-
-	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
-	GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
-	GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
-	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
-	block_instances[0].type = "StartIndicator"
-	$AddedBlocksRoot.add_child(block_instances[0].node())
-	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 0)
-
-	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(1))
-	GlobalVariables.end_position.x = block_instances[1].get_json_dict().position[0]
-	GlobalVariables.end_position.y = block_instances[1].get_json_dict().position[1]
-	GlobalVariables.end_position.z = block_instances[1].get_json_dict().position[2]
-	block_instances[1].type = "EndIndicator"
-	$AddedBlocksRoot.add_child(block_instances[1].node())
-	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
-
-	#Adds checkpoints to the variable.
-	GlobalVariables.checkpoints.clear()
-	for item in len(block_instances):
-		if block_instances[item].get_json_dict().type == "CheckpointMarker":
-			GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
-			print(GlobalVariables.checkpoints)
-
-	rpc("update_variables", GlobalVariables.start_position, block_instances)
+	load_course(contents)
+	rpc("update_variables", GlobalVariables.start_position, contents)
 
 func _process(_delta):
 	if GlobalVariables.finished:
@@ -118,3 +79,39 @@ func _on_join_pressed():
 	peer.create_client("localhost",135)
 	multiplayer.multiplayer_peer = peer
 	#_add_player()
+
+func load_course(contents):
+	var json_decoded = JSON.parse_string(contents)
+
+	block_instances = []
+	for child in $AddedBlocksRoot.get_children():
+		$AddedBlocksRoot.remove_child(child)
+
+	# Add blocks from file.
+	for i in len(json_decoded["blocks"]):
+		# The last arg of blkinstance from json is the id.
+		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
+		$AddedBlocksRoot.add_child(block_instances[-1].node())
+
+	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
+	GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
+	GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
+	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
+	block_instances[0].type = "StartIndicator"
+	$AddedBlocksRoot.add_child(block_instances[0].node())
+	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 0)
+
+	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(1))
+	GlobalVariables.end_position.x = block_instances[1].get_json_dict().position[0]
+	GlobalVariables.end_position.y = block_instances[1].get_json_dict().position[1]
+	GlobalVariables.end_position.z = block_instances[1].get_json_dict().position[2]
+	block_instances[1].type = "EndIndicator"
+	$AddedBlocksRoot.add_child(block_instances[1].node())
+	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
+
+	#Adds checkpoints to the variable.
+	GlobalVariables.checkpoints.clear()
+	for item in len(block_instances):
+		if block_instances[item].get_json_dict().type == "CheckpointMarker":
+			GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
+			print(GlobalVariables.checkpoints)
