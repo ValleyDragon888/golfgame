@@ -30,6 +30,7 @@ func update_num_players():
 	$CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/NumberDisplay.text = " " + str(num_players) + " "
 
 func player_details_setup():
+	print("chong")
 	$CanvasLayer/PlayerDetails/VBoxContainer/EnterNameLabel.text = "Enter Name, Player " + str(current_details_player)
 	$CanvasLayer/PlayerDetails/VBoxContainer/LineEdit.text = ""
 
@@ -69,4 +70,11 @@ func change_ball():
 
 func _on_player_details_next_pressed():
 	current_details_player += 1
-	player_details_setup()
+	GlobalVariables.local_multiplayer_player_details.append({})
+	GlobalVariables.local_multiplayer_player_details[-1]["name"] = $CanvasLayer/PlayerDetails/VBoxContainer/LineEdit.text
+	GlobalVariables.local_multiplayer_player_details[-1]["ball"] = GlobalVariables.balls[player_details_ball_selected]
+	
+	if current_details_player > num_players:
+		get_tree().change_scene_to_file("res://Scenes/LocalMultiplayerTrackPlayer.tscn")
+	else:
+		player_details_setup()

@@ -17,6 +17,8 @@ var checkpoint_to_delete = [0, false]
 var finished = false
 var player_name = ""
 
+var local_multiplayer_player_details = []
+
 var homepage = preload("res://Scenes/HomePage.tscn")
 var playpage = preload("res://Scenes/PlayPage.tscn")
 var editor = preload("res://Scenes/Editor.tscn")
