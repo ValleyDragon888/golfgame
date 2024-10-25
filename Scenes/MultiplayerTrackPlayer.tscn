@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvw4j325lfcn6"]
+[gd_scene load_steps=13 format=3 uid="uid://cvw4j325lfcn6"]
 
 [ext_resource type="Script" path="res://Scripts/MultiplayerTrackPlayer.gd" id="1_wuwuo"]
 [ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_5u6oj"]
@@ -24,6 +24,16 @@ sky_material = SubResource("ProceduralSkyMaterial_geudo")
 [sub_resource type="Environment" id="Environment_d1g3h"]
 background_mode = 2
 sky = SubResource("Sky_an0pb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g11ts"]
+bg_color = Color(1.63645e-06, 0.808187, 1.54018e-06, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fafh"]
+bg_color = Color(0, 0.435844, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_wuwuo")
@@ -77,30 +87,91 @@ theme = ExtResource("3_8jpej")
 text = "Restart"
 metadata/_edit_use_anchors_ = true
 
+[node name="IntroductionScreen" type="CanvasLayer" parent="."]
+
+[node name="Panel2" type="Panel" parent="IntroductionScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g11ts")
+
+[node name="Panel" type="Panel" parent="IntroductionScreen"]
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 0.259
+anchor_right = 0.832
+anchor_bottom = 0.84
+offset_left = 0.399994
+offset_top = 0.167999
+offset_right = 0.536011
+offset_bottom = -0.320007
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fafh")
+
+[node name="Label" type="Label" parent="IntroductionScreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.0
+offset_right = 169.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "What is LAN Co-Op?"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="IntroductionScreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -353.5
+offset_top = 50.0
+offset_right = 349.5
+offset_bottom = 269.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "LAN co-op is a multiplayer mode where two or more players on the same wifi but different devices. As long as both devices are in the same area and on the same WiFi network, any amount of players can play together. This allows the Host to share custom made or campaign levels and compete with friends."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IntroductionScreen/Panel"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 282.0
+offset_right = 524.0
+offset_bottom = 351.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Join" type="Button" parent="IntroductionScreen/Panel/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_8jpej")
+theme_override_font_sizes/font_size = 36
+text = "  Join  "
+
+[node name="Host" type="Button" parent="IntroductionScreen/Panel/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_8jpej")
+theme_override_font_sizes/font_size = 36
+text = "  Host  "
+
 [node name="Debug" type="CanvasLayer" parent="."]
-
-[node name="Host" type="Button" parent="Debug"]
-offset_left = 13.0
-offset_top = 62.0
-offset_right = 57.0
-offset_bottom = 93.0
-text = "Host
-"
-
-[node name="Join" type="Button" parent="Debug"]
-offset_left = 13.0
-offset_top = 101.0
-offset_right = 51.0
-offset_bottom = 132.0
-text = "Join
-"
 
 [node name="LoadButton" type="Button" parent="Debug"]
 visible = false
-offset_left = 13.0
-offset_top = 62.0
-offset_right = 105.0
-offset_bottom = 124.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -442.0
+offset_top = 25.0
+offset_right = -379.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme = ExtResource("3_8jpej")
 text = "Load"
 
 [node name="LoadDialog" type="ConfirmationDialog" parent="Debug"]
@@ -219,8 +290,8 @@ text = "  Continue  "
 
 [connection signal="pressed" from="ScreenUI/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Debug/Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="Debug/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="IntroductionScreen/Panel/HBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="IntroductionScreen/Panel/HBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="Debug/LoadDialog" to="." method="_on_load_dialog_confirmed"]
 [connection signal="file_selected" from="Debug/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]

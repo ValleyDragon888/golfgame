@@ -68,8 +68,7 @@ func _on_host_pressed():
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_add_player)
 	_add_player()
-	$Debug/Host.hide()
-	$Debug/Join.hide()
+	$IntroductionScreen.hide()
 	$Debug/LoadButton.show()
 
 func _add_player(id = 1):
@@ -81,8 +80,7 @@ func _add_player(id = 1):
 func _on_join_pressed():
 	peer.create_client("localhost",135)
 	multiplayer.multiplayer_peer = peer
-	$Debug/Host.hide()
-	$Debug/Join.hide()
+	$IntroductionScreen.hide()
 	$Debug/LoadButton.hide()
 
 func load_course(contents):
@@ -120,3 +118,7 @@ func load_course(contents):
 		if block_instances[item].get_json_dict().type == "CheckpointMarker":
 			GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
 			print(GlobalVariables.checkpoints)
+
+
+func _on_button_pressed():
+	$IntroductionScreen/Panel.hide()
