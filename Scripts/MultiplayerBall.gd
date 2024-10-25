@@ -12,16 +12,14 @@ const DEFAULT_ZOOM = 5
 @export var sensitivity = -0.3
 @export var camera_is_locked = false
 @export var zoom_speed = 0.3
-@export var is_child = false
-@export var is_disabled = false
 var arrow_material = preload("res://Assets/ArrowMaterial.tres")
 var has_velocity = false
 var just_released = false
 var shots = 0
 
 func _enter_tree():
-	print(name)
-	set_multiplayer_authority(name.to_int())
+	print(get_parent_node_3d().name)
+	set_multiplayer_authority(get_parent_node_3d().name.to_int())
 
 func _ready():
 	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
@@ -96,7 +94,7 @@ func _physics_process(_delta):
 			break
 
 #May be replaced with correct controls
-	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and not is_disabled:
+	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished:
 		just_released = false
 		GlobalVariables.start_position = global_position / 6
 		linear_velocity.y = arrow.position.z*-1

@@ -80,22 +80,23 @@ metadata/_edit_use_anchors_ = true
 [node name="Debug" type="CanvasLayer" parent="."]
 
 [node name="Host" type="Button" parent="Debug"]
-offset_left = 1.0
-offset_top = 141.0
-offset_right = 45.0
-offset_bottom = 172.0
+offset_left = 13.0
+offset_top = 62.0
+offset_right = 57.0
+offset_bottom = 93.0
 text = "Host
 "
 
 [node name="Join" type="Button" parent="Debug"]
-offset_left = 1.0
-offset_top = 180.0
-offset_right = 39.0
-offset_bottom = 211.0
+offset_left = 13.0
+offset_top = 101.0
+offset_right = 51.0
+offset_bottom = 132.0
 text = "Join
 "
 
 [node name="LoadButton" type="Button" parent="Debug"]
+visible = false
 offset_left = 13.0
 offset_top = 62.0
 offset_right = 105.0

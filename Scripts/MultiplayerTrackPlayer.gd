@@ -70,6 +70,7 @@ func _on_host_pressed():
 	_add_player()
 	$Debug/Host.hide()
 	$Debug/Join.hide()
+	$Debug/LoadButton.show()
 
 func _add_player(id = 1):
 	var player = player_scene.instantiate()

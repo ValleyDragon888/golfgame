@@ -6,6 +6,8 @@ res://Scenes/MutliplayerBall.tscn
 res://Scenes/Ball.tscn
 res://Scenes/TrackPlayer.tscn
 res://Scenes/PlayPage.tscn
-res://Scripts/Ball.gd
-res://Scripts/TrackPlayer.gd
-res://Scripts/LocalMultiplayerTrackPlayer.gd
+res://Scenes/MultiplayerTrackPlayer.tscn
+res://Scripts/MultiplayerTrackPlayer.gd
+res://Scripts/MultiplayerBall.gd
+res://Scenes/Test Multiplayer/battlefield.tscn
+res://Scenes/Test Multiplayer/player.tscn
