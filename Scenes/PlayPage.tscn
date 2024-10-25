@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://b2oxjb1lk3ajf" path="res://Assets/UI elements/EditorButton.png" id="8_s3l4f"]
 [ext_resource type="Texture2D" uid="uid://dfcolhysb7gf4" path="res://Assets/UI elements/EditorButtonPressed.png" id="9_0itgc"]
 [ext_resource type="Texture2D" uid="uid://dudxrfe7ek61t" path="res://Assets/UI elements/Flag.png" id="10_dedfm"]
-[ext_resource type="Texture2D" uid="uid://4itgy6updmym" path="res://Assets/UI elements/HostButton.png" id="11_t0r8b"]
-[ext_resource type="Texture2D" uid="uid://cfwb1v3uvekou" path="res://Assets/UI elements/HostButtonPressed.png" id="12_dsb5h"]
-[ext_resource type="Texture2D" uid="uid://cis46g47unrmv" path="res://Assets/UI elements/JoinButton.png" id="13_nvb5v"]
-[ext_resource type="Texture2D" uid="uid://dhevuhrac11ej" path="res://Assets/UI elements/JoinButtonPressed.png" id="14_nvvqu"]
+[ext_resource type="Texture2D" uid="uid://bjluidncixtn7" path="res://Assets/UI elements/LocalCo-opButton.png" id="11_or4lj"]
+[ext_resource type="Texture2D" uid="uid://y42xto2uyslg" path="res://Assets/UI elements/LocalCo-opButtonPressed.png" id="12_y8ln6"]
+[ext_resource type="Texture2D" uid="uid://4qy52f18qegr" path="res://Assets/UI elements/LanCo-OpButton.png" id="13_fywj3"]
+[ext_resource type="Texture2D" uid="uid://7fjvwu1hqx11" path="res://Assets/UI elements/LanCo-OpButtonPressed.png" id="14_l1325"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
 [ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="15_qobs0"]
 [ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="16_46juy"]
@@ -215,25 +215,25 @@ grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 theme_override_constants/separation = -150
 
-[node name="Host" type="TextureButton" parent="PlayScreen/TabContainer/Multiplayer/Buttons"]
+[node name="Local Co-op" type="TextureButton" parent="PlayScreen/TabContainer/Multiplayer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme = ExtResource("5_hyg5i")
-texture_normal = ExtResource("11_t0r8b")
-texture_pressed = ExtResource("12_dsb5h")
-texture_hover = ExtResource("12_dsb5h")
-texture_disabled = ExtResource("11_t0r8b")
+texture_normal = ExtResource("11_or4lj")
+texture_pressed = ExtResource("12_y8ln6")
+texture_hover = ExtResource("12_y8ln6")
+texture_disabled = ExtResource("11_or4lj")
 
-[node name="Join" type="TextureButton" parent="PlayScreen/TabContainer/Multiplayer/Buttons"]
+[node name="Lan Co-op" type="TextureButton" parent="PlayScreen/TabContainer/Multiplayer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme = ExtResource("5_hyg5i")
-texture_normal = ExtResource("13_nvb5v")
-texture_pressed = ExtResource("14_nvvqu")
-texture_hover = ExtResource("14_nvvqu")
-texture_disabled = ExtResource("13_nvb5v")
+texture_normal = ExtResource("13_fywj3")
+texture_pressed = ExtResource("14_l1325")
+texture_hover = ExtResource("14_l1325")
+texture_disabled = ExtResource("13_fywj3")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="PlayScreen"]
 anchors_preset = -1
@@ -403,8 +403,8 @@ text = "Back"
 [connection signal="pressed" from="PlayScreen/TabContainer/Singleplayer/Buttons/Campaign" to="." method="_on_campaign_pressed"]
 [connection signal="mouse_entered" from="PlayScreen/TabContainer/Singleplayer/Buttons/Editor" to="." method="_on_editor_mouse_entered"]
 [connection signal="pressed" from="PlayScreen/TabContainer/Singleplayer/Buttons/Editor" to="." method="_on_editor_pressed"]
-[connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Host" to="." method="_on_campaign_mouse_entered"]
-[connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Join" to="." method="_on_editor_mouse_entered"]
+[connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Local Co-op" to="." method="_on_campaign_mouse_entered"]
+[connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Lan Co-op" to="." method="_on_editor_mouse_entered"]
 [connection signal="pressed" from="PlayScreen/HBoxContainer/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="PlayScreen/HBoxContainer/Right" to="." method="_on_right_pressed"]
 [connection signal="text_changed" from="PlayScreen/PlayerName" to="." method="_on_player_name_text_changed"]
