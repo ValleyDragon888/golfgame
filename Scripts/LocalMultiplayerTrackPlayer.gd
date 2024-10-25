@@ -13,6 +13,7 @@ func _ready():
 		var new_player = Node3D.new()
 		new_player.position.x = i*1000
 		new_player.add_child(GlobalVariables.trackplayer.instantiate())
+		new_player.get_children()[0].is_child = true
 		new_player.name = "Player" + str(i)
 		$Players.add_child(new_player)
 	

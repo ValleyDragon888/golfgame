@@ -16,6 +16,7 @@ func _ready():
 		$Debug.hide()
 	if is_child:
 		$Player/Ball.is_child = true
+		$Player/Ball.local_multiplayer_enabled = true
 		multiplayer_master = get_tree().root.get_child(1)
 
 func block_instance_from_json(a: Dictionary, id: int) -> EditorBlockInstance:

@@ -17,7 +17,7 @@ var has_velocity = false
 var just_released = false
 var shots = 0
 #LocalMultiplayer variables
-var local_multiplayer_enabled: bool = true
+var local_multiplayer_enabled: bool = false
 var multiplayer_master = ""
 var has_shot = false
 @export var is_child = false
