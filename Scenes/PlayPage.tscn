@@ -405,6 +405,7 @@ text = "Back"
 [connection signal="pressed" from="PlayScreen/TabContainer/Singleplayer/Buttons/Editor" to="." method="_on_editor_pressed"]
 [connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Local Co-op" to="." method="_on_campaign_mouse_entered"]
 [connection signal="mouse_entered" from="PlayScreen/TabContainer/Multiplayer/Buttons/Lan Co-op" to="." method="_on_editor_mouse_entered"]
+[connection signal="pressed" from="PlayScreen/TabContainer/Multiplayer/Buttons/Lan Co-op" to="." method="_on_lan_coop_pressed"]
 [connection signal="pressed" from="PlayScreen/HBoxContainer/Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="PlayScreen/HBoxContainer/Right" to="." method="_on_right_pressed"]
 [connection signal="text_changed" from="PlayScreen/PlayerName" to="." method="_on_player_name_text_changed"]

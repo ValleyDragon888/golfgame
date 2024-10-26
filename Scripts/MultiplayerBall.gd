@@ -38,7 +38,7 @@ func _input(event):
 				camera_pivot_v.rotate_y(deg_to_rad(event.relative.x * sensitivity))
 				camera_pivot_h.rotate_x(deg_to_rad(event.relative.y * sensitivity))
 				camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(45))
-			if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+			if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and is_multiplayer_authority():
 				arrow_pivot.rotation.y = camera_pivot_v.rotation.y
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -94,7 +94,7 @@ func _physics_process(_delta):
 			break
 
 #May be replaced with correct controls
-	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished:
+	if Input.is_action_just_pressed("Up") and not has_velocity and not GlobalVariables.finished and is_multiplayer_authority():
 		just_released = false
 		GlobalVariables.start_position = global_position / 6
 		linear_velocity.y = arrow.position.z*-1
@@ -114,12 +114,12 @@ func _physics_process(_delta):
 	else:
 		has_velocity = true
 
-	if Input.is_action_pressed("Up") and has_velocity and just_released and not GlobalVariables.finished:
-		Engine.time_scale = 3
-		$"../FastForward".visible = true
-	else:
-		$"../FastForward".visible = false
-		Engine.time_scale = 1
+	#if Input.is_action_pressed("Up") and has_velocity and just_released and not GlobalVariables.finished:
+	#	Engine.time_scale = 3
+	#	$"../FastForward".visible = true
+	#else:
+	#	$"../FastForward".visible = false
+	#	Engine.time_scale = 1
 
 	if has_velocity:
 		arrow.hide()

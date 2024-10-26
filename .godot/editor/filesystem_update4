@@ -7,7 +7,7 @@ res://Scenes/Ball.tscn
 res://Scenes/TrackPlayer.tscn
 res://Scenes/PlayPage.tscn
 res://Scenes/MultiplayerTrackPlayer.tscn
-res://Scripts/MultiplayerTrackPlayer.gd
-res://Scripts/MultiplayerBall.gd
 res://Scenes/Test Multiplayer/battlefield.tscn
 res://Scenes/Test Multiplayer/player.tscn
+res://Scripts/PlayPage.gd
+res://Scripts/MultiplayerBall.gd

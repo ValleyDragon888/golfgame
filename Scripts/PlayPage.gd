@@ -84,3 +84,7 @@ func change_ball():
 
 func _on_player_name_text_changed():
 	GlobalVariables.player_name = $PlayScreen/PlayerName.text
+
+
+func _on_lan_coop_pressed():
+	get_tree().change_scene_to_packed(preload("res://Scenes/MultiplayerTrackPlayer.tscn"))
