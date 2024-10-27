@@ -32,7 +32,8 @@ func update_turn():
 			#camera.current = false
 			get_node("/root/MultiplayerTrackPlayer/Players/Player" + str(i) + "/TrackPlayer").disable()
 	
-	$CanvasLayer/PlayerIndicator.text = "Player " + str(turn+1)
+	#$CanvasLayer/PlayerIndicator.text = "Player " + str(turn+1)
+	$CanvasLayer/PlayerIndicator.text = GlobalVariables.local_multiplayer_player_details[turn]["name"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

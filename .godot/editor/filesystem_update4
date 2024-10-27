@@ -2,6 +2,7 @@ res://Scenes/LocalMultiplayerTrackPlayer.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
+res://Scripts/LocalMultiplayerTrackPlayer.gd
 res://Scenes/MutliplayerBall.tscn
 res://Scenes/Ball.tscn
 res://Scenes/TrackPlayer.tscn
@@ -9,5 +10,4 @@ res://Scenes/PlayPage.tscn
 res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scenes/Test Multiplayer/battlefield.tscn
 res://Scenes/Test Multiplayer/player.tscn
-res://Scripts/PlayPage.gd
-res://Scripts/MultiplayerBall.gd
+res://Scenes/LocalMultiplayerHomeScreen.tscn

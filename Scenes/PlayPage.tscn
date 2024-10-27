@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cqd7hq8nbf3qa"]
+[gd_scene load_steps=27 format=3 uid="uid://cqd7hq8nbf3qa"]
 
 [ext_resource type="Script" path="res://Scripts/PlayPage.gd" id="1_kh281"]
 [ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_56g8b"]
@@ -10,10 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://b2oxjb1lk3ajf" path="res://Assets/UI elements/EditorButton.png" id="8_s3l4f"]
 [ext_resource type="Texture2D" uid="uid://dfcolhysb7gf4" path="res://Assets/UI elements/EditorButtonPressed.png" id="9_0itgc"]
 [ext_resource type="Texture2D" uid="uid://dudxrfe7ek61t" path="res://Assets/UI elements/Flag.png" id="10_dedfm"]
-[ext_resource type="Texture2D" uid="uid://bjluidncixtn7" path="res://Assets/UI elements/LocalCo-opButton.png" id="11_or4lj"]
-[ext_resource type="Texture2D" uid="uid://y42xto2uyslg" path="res://Assets/UI elements/LocalCo-opButtonPressed.png" id="12_y8ln6"]
-[ext_resource type="Texture2D" uid="uid://4qy52f18qegr" path="res://Assets/UI elements/LanCo-OpButton.png" id="13_fywj3"]
-[ext_resource type="Texture2D" uid="uid://7fjvwu1hqx11" path="res://Assets/UI elements/LanCo-OpButtonPressed.png" id="14_l1325"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_iyfq5"]
 [ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="15_qobs0"]
 [ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="16_46juy"]
@@ -220,20 +216,12 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme = ExtResource("5_hyg5i")
-texture_normal = ExtResource("11_or4lj")
-texture_pressed = ExtResource("12_y8ln6")
-texture_hover = ExtResource("12_y8ln6")
-texture_disabled = ExtResource("11_or4lj")
 
 [node name="Lan Co-op" type="TextureButton" parent="PlayScreen/TabContainer/Multiplayer/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 theme = ExtResource("5_hyg5i")
-texture_normal = ExtResource("13_fywj3")
-texture_pressed = ExtResource("14_l1325")
-texture_hover = ExtResource("14_l1325")
-texture_disabled = ExtResource("13_fywj3")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="PlayScreen"]
 anchors_preset = -1
