@@ -2,6 +2,8 @@ extends Node3D
 
 const num_players = 2
 var turn = 0
+var finished_players = []
+var finished_names = []
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +16,7 @@ func _ready():
 		new_player.position.x = i*1000
 		new_player.add_child(GlobalVariables.trackplayer.instantiate())
 		new_player.get_children()[0].is_child = true
+		new_player.get_children()[0].get_node("Player").get_children()[0].player_name = GlobalVariables.local_multiplayer_player_details[i]["name"]
 		new_player.name = "Player" + str(i)
 		$Players.add_child(new_player)
 	
@@ -47,4 +50,17 @@ func next_turn():
 	turn += 1
 	if turn >= num_players:
 		turn = 0
+	if GlobalVariables.local_multiplayer_player_details[turn]["name"] in finished_names:
+		next_turn()
+		print("nextt")
 	update_turn()
+
+func finished(player_name, shots):
+	print(player_name)
+	finished_players.append({"name":player_name, "shots":shots})
+	finished_names.append(player_name)
+	if not len(finished_players) == len(GlobalVariables.local_multiplayer_player_details):
+		next_turn()
+	else:
+		print("ALL FINISED")
+	

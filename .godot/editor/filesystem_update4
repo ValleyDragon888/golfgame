@@ -11,3 +11,4 @@ res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scenes/Test Multiplayer/battlefield.tscn
 res://Scenes/Test Multiplayer/player.tscn
 res://Scenes/LocalMultiplayerHomeScreen.tscn
+res://Scripts/Ball.gd

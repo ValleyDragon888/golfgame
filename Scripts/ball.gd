@@ -20,6 +20,7 @@ var shots = 0
 var local_multiplayer_enabled: bool = false
 var multiplayer_master = ""
 var has_shot = false
+var player_name = ""
 @export var is_child = false
 @export var is_disabled = false
 
@@ -27,8 +28,6 @@ var has_shot = false
 func _ready():
 	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
 	multiplayer_master = get_tree().root.get_child(2)
-	if self.is_child:
-		print("is clide")
 	
 func _input(event):
 #Camera movement
@@ -72,11 +71,15 @@ func _physics_process(_delta):
 	var dist_to_end = abs(global_position - (GlobalVariables.end_position * 6))
 	if dist_to_end.x < 1 and dist_to_end.y < 3 and dist_to_end.z < 1 and len(GlobalVariables.checkpoints) == 0 and linear_velocity.x < 0.2 and linear_velocity.z < 0.2:
 		print("Finished!")
-		hide()
-		arrow.hide()
-		camera_is_locked = false
-		$"../CameraPivotV/GPUParticles3D".emitting = true
-		GlobalVariables.finished = true
+		if not local_multiplayer_enabled:
+			hide()
+			arrow.hide()
+			camera_is_locked = false
+			$"../CameraPivotV/GPUParticles3D".emitting = true
+			GlobalVariables.finished = true
+		else:
+			print("fin")
+			multiplayer_master.finished(player_name, shots)
 		
 #Checks if player is within 3 blocks of a checkpoint
 	for item in len(GlobalVariables.checkpoints):
