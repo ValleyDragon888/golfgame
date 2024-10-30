@@ -1,4 +1,4 @@
-* Things that need to be completed before the game is finished:
+# Things that need to be completed before the game is finished:
 	- 3 campaigns:
 		- A very basic one, to indroduce a player to the game
 		- One with "normal" tracks
@@ -10,7 +10,7 @@
 		- When press "play", it shows icons for the three campaigns.
 		- When you select a track it asks you if you want to play is singleplayer,
 		online or local.
-** Minor things:
+  ## Minor things:
 	- Tidy up code
 	- Add comments (hashtags) to explain code
 
