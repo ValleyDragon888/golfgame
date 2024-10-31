@@ -1,5 +1,6 @@
-res://Scenes/Ball.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
-res://TODO.md
+res://Scenes/LocalMultiplayerLeaderboard.tscn
+res://Scenes/LocalMultiplayerTrackPlayer.tscn
+res://Scenes/LocalMultiplayerHomeScreen.tscn

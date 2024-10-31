@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://c45der67887gd"]
+
+[ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="1_p4sn4"]
+
+[node name="LocalMultiplayerLeaderboard" type="Node3D"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 644.0
+
+[node name="Final Results" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 83
+text = "Final Results"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(100, 400)
+layout_mode = 2
+theme = ExtResource("1_p4sn4")
+theme_override_font_sizes/font_size = 45
+allow_search = false
+item_count = 2
+item_0/text = "1st - Jacobobob"
+item_1/text = "2nd - r bonk"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Main Menu" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_p4sn4")
+theme_override_font_sizes/font_size = 31
+text = "Back to Main Menu"
+
+[node name="Play Again" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_p4sn4")
+theme_override_font_sizes/font_size = 31
+text = "Play again with the same track"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
