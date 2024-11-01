@@ -16,6 +16,7 @@ func _ready():
 		new_player.position.x = i*1000
 		new_player.add_child(GlobalVariables.trackplayer.instantiate())
 		new_player.get_children()[0].is_child = true
+		print(GlobalVariables.local_multiplayer_player_details[i]["name"])
 		new_player.get_children()[0].get_node("Player").get_children()[0].player_name = GlobalVariables.local_multiplayer_player_details[i]["name"]
 		new_player.name = "Player" + str(i)
 		$Players.add_child(new_player)
@@ -57,10 +58,14 @@ func next_turn():
 
 func finished(player_name, shots):
 	print(player_name)
-	finished_players.append({"name":player_name, "shots":shots})
+	finished_players.append({
+		"name":GlobalVariables.local_multiplayer_player_details[turn]["name"],
+		"shots":shots}
+	)
 	finished_names.append(player_name)
 	if not len(finished_players) == len(GlobalVariables.local_multiplayer_player_details):
 		next_turn()
 	else:
 		print("ALL FINISED")
+		print(finished_players)
 	

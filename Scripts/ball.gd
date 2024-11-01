@@ -78,7 +78,7 @@ func _physics_process(_delta):
 			$"../CameraPivotV/GPUParticles3D".emitting = true
 			GlobalVariables.finished = true
 		else:
-			print("fin")
+			print(player_name)
 			multiplayer_master.finished(player_name, shots)
 		
 #Checks if player is within 3 blocks of a checkpoint
