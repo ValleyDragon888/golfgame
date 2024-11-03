@@ -17,6 +17,17 @@ bounce = 0.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_6kik4"]
 radius = 0.505518
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rkxpa"]
+properties/0/path = NodePath("Ball:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("CameraPivotV/Hit Particles:emitting")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("CameraPivotV/GPUParticles3D:emitting")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
 [sub_resource type="Curve" id="Curve_ns1rt"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
@@ -56,11 +67,6 @@ size = Vector3(0.1, 0.1, 0.1)
 shader = ExtResource("7_ynwvh")
 shader_parameter/colorAmt = 12.0
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rkxpa"]
-properties/0/path = NodePath("Ball:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-
 [node name="Player" type="Node3D"]
 
 [node name="Ball" type="RigidBody3D" parent="."]
@@ -76,6 +82,10 @@ script = ExtResource("1_ia1ey")
 [node name="BallCollision" type="CollisionShape3D" parent="Ball"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_6kik4")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Ball"]
+root_path = NodePath("../..")
+replication_config = SubResource("SceneReplicationConfig_rkxpa")
 
 [node name="CameraPivotV" type="Node3D" parent="."]
 
@@ -117,12 +127,14 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ArrowPivot/Arrow"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+visible = false
 mesh = ExtResource("4_5jpuj")
 surface_material_override/0 = ExtResource("5_vr8vn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ShotIndicator" type="Button" parent="CanvasLayer"]
+visible = false
 offset_left = 25.0
 offset_top = 25.0
 offset_right = 161.0
@@ -133,6 +145,7 @@ button_pressed = true
 text = "Shots: 0"
 
 [node name="PowerIndicator" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
@@ -165,6 +178,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62065, 0)
 text = "
 "
 font_size = 48
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_rkxpa")

@@ -64,6 +64,9 @@ func _physics_process(_delta):
 	$"../Label3D".position.y = position.y + 2
 	if is_multiplayer_authority():
 		$"../CameraPivotV/CameraPivotH/SpringArm3D/Camera3D".current = true
+		$"../CanvasLayer/PowerIndicator".show()
+		$"../CanvasLayer/ShotIndicator".show()
+		$"../ArrowPivot/Arrow/MeshInstance3D".show()
 #Locks camera and arrow to the player
 	if not GlobalVariables.finished:
 		camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)
@@ -138,13 +141,14 @@ func _physics_process(_delta):
 	var input_dir = Input.get_vector("Left", "Right", "Forward", "Backward")
 
 #Rotates and moves the arrow, and progress bar
-	arrow.position.z += input_dir.y * arrow.position.z * -0.04
-	arrow.position.z = clamp(arrow.position.z, -8, -0.1)
-	$"../CanvasLayer/PowerIndicator".value = -8 - arrow.position.z
-	$"../CanvasLayer/PowerIndicator".modulate = Color(1,1/abs(arrow.position.z*0.5),0)
+	if is_multiplayer_authority():
+		arrow.position.z += input_dir.y * arrow.position.z * -0.04
+		arrow.position.z = clamp(arrow.position.z, -8, -0.1)
+		$"../CanvasLayer/PowerIndicator".value = -8 - arrow.position.z
+		$"../CanvasLayer/PowerIndicator".modulate = Color(1,1/abs(arrow.position.z*0.5),0)
 
 #Scale arrow at far distances to be easily visible
-	arrow.scale.z = (arrow.position.z-3)/-60
-	arrow.scale.x = (arrow.position.z-3)/-60
-	arrow.scale.y = (arrow.position.z-3)/-60
-	arrow_material.albedo_color = Color(1,1/abs(arrow.position.z*0.5),0)
+		arrow.scale.z = (arrow.position.z-3)/-60
+		arrow.scale.x = (arrow.position.z-3)/-60
+		arrow.scale.y = (arrow.position.z-3)/-60
+		arrow_material.albedo_color = Color(1,1/abs(arrow.position.z*0.5),0)
