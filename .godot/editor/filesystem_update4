@@ -1,11 +1,8 @@
-res://Scenes/LocalMultiplayerTrackPlayer.tscn
+res://Scenes/LocalMultiplayerHomeScreen.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
-res://Scenes/LocalMultiplayerHomeScreen.tscn
+res://Scenes/LocalMultiplayerTrackPlayer.tscn
 res://Scenes/LocalMultiplayerLeaderboard.tscn
 res://Scenes/Ball.tscn
-res://Scenes/MultiplayerTrackPlayer.tscn
-res://Scenes/MutliplayerBall.tscn
-res://Scripts/MultiplayerBall.gd
-res://Scripts/MultiplayerTrackPlayer.gd
+res://Scripts/LocalMultiplayerTrackPlayer.gd
