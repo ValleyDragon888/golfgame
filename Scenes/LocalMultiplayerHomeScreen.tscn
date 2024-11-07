@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://br4f72y3ir37q"]
+[gd_scene load_steps=17 format=3 uid="uid://br4f72y3ir37q"]
 
 [ext_resource type="Script" path="res://Scenes/LocalMultiplayerHomeScreen.gd" id="1_gkwb0"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="2_6uq3r"]
@@ -34,6 +34,13 @@ shader_parameter/outline_color = Color(0, 0, 0, 1)
 shader_parameter/distance_falloff = 10.0
 shader_parameter/smoothing_cutoff = 0.0
 shader_parameter/smoothing_max = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy8jb"]
+bg_color = Color(0, 0.435844, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="LocalMultiplayerHomeScreen" type="Node3D"]
 script = ExtResource("1_gkwb0")
@@ -222,6 +229,48 @@ placeholder_text = "Enter Name"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Next"
+
+[node name="Introduction" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 0.259
+anchor_right = 0.832
+anchor_bottom = 0.84
+offset_left = 487.4
+offset_top = -85.832
+offset_right = 164.536
+offset_bottom = 16.68
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xy8jb")
+
+[node name="Title" type="Label" parent="CanvasLayer/Introduction"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -177.5
+offset_top = 43.0
+offset_right = 173.5
+offset_bottom = 93.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "What is local Co-Op?"
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="CanvasLayer/Introduction"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 93.0
+offset_right = 198.0
+offset_bottom = 460.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Local Co-op is a multiplayer mode where two or more players can play on a chosen map toghether on the same device. The game works as normal but players take turns hitting their golf ball and race to see who can reach the end in the least amount of shots or time."
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/Less" to="." method="_on_less_pressed"]
 [connection signal="pressed" from="CanvasLayer/NumPlayers/VBoxContainer/HBoxContainer/More" to="." method="_on_more_pressed"]

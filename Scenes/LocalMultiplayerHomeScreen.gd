@@ -49,6 +49,7 @@ func _on_numplayers_next_pressed():
 	state = "playerdetails"
 	$CanvasLayer/NumPlayers.hide()
 	$CanvasLayer/PlayerDetails.show()
+	$CanvasLayer/Introduction.hide()
 
 
 func _on_last_ball_pressed():

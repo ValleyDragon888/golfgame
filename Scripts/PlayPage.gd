@@ -88,3 +88,7 @@ func _on_player_name_text_changed():
 
 func _on_lan_coop_pressed():
 	get_tree().change_scene_to_packed(preload("res://Scenes/MultiplayerTrackPlayer.tscn"))
+
+
+func _on_local_coop_pressed():
+	get_tree().change_scene_to_packed(preload("res://Scenes/LocalMultiplayerHomeScreen.tscn"))

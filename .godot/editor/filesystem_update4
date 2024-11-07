@@ -8,3 +8,5 @@ res://Scenes/LocalMultiplayerLeaderboard.tscn
 res://Scenes/Ball.tscn
 res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scenes/MutliplayerBall.tscn
+res://Scripts/PlayPage.gd
+res://Scenes/LocalMultiplayerHomeScreen.gd
