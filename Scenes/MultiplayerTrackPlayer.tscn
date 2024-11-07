@@ -70,7 +70,7 @@ offset_top = 25.0
 offset_right = -25.0
 offset_bottom = 71.0
 theme = ExtResource("3_8jpej")
-text = "Back to Campaign"
+text = "Back to Home"
 metadata/_edit_use_anchors_ = true
 
 [node name="Restart" type="Button" parent="ScreenUI"]
@@ -96,6 +96,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g11ts")
+
+[node name="Back2" type="Button" parent="IntroductionScreen"]
+modulate = Color(0.435192, 0.435192, 0.435192, 1)
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -59.0
+offset_right = -17.0
+offset_bottom = -13.0
+grow_horizontal = 0
+theme = ExtResource("3_8jpej")
+text = "  Back to Home  "
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="IntroductionScreen"]
 anchors_preset = -1
@@ -290,6 +306,7 @@ text = "  Continue  "
 
 [connection signal="pressed" from="ScreenUI/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="IntroductionScreen/Back2" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Panel/HBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Panel/HBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]
