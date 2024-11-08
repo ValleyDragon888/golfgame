@@ -165,6 +165,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g11ts")
 
 [node name="StartScreen" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PlayersConnected" type="Tree" parent="StartScreen"]
 anchors_preset = -1
@@ -251,7 +252,6 @@ theme_override_font_sizes/font_size = 24
 text = "  Host  "
 
 [node name="IntroductionScreen" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Back2" type="Button" parent="IntroductionScreen"]
 anchors_preset = 3

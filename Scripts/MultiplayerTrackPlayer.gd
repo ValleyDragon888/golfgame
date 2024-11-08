@@ -6,6 +6,7 @@ var peer = ENetMultiplayerPeer.new()
 @onready var save_path = ""
 @onready var load_confirmation_dialog = $Debug/LoadDialog
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
+@onready var players_connected = $StartScreen/PlayersConnected
 
 @rpc
 func update_variables(SP, JSON_Contents):
@@ -71,7 +72,12 @@ func _on_host_pressed():
 	$StartScreen/HBoxContainer.hide()
 	$StartScreen/Panel.hide()
 	$Debug/LoadButton.show()
-
+	var root = players_connected.create_item()
+	players_connected.hide_root = true
+	var treeitem = players_connected.create_item(root)
+	treeitem.set_text(0, "YOU")
+	root.add_child(treeitem)
+	
 func _add_player(id = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
