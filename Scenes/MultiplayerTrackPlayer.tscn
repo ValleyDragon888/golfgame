@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cvw4j325lfcn6"]
+[gd_scene load_steps=21 format=3 uid="uid://cvw4j325lfcn6"]
 
 [ext_resource type="Script" path="res://Scripts/MultiplayerTrackPlayer.gd" id="1_wuwuo"]
 [ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_5u6oj"]
@@ -27,6 +27,75 @@ sky = SubResource("Sky_an0pb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g11ts"]
 bg_color = Color(1.63645e-06, 0.808187, 1.54018e-06, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh32v"]
+bg_color = Color(0, 0.435844, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6xir"]
+bg_color = Color(0, 0.435844, 0, 1)
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y20bs"]
+bg_color = Color(1.6184e-06, 0.364729, 0, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8cde"]
+bg_color = Color(1.6184e-06, 0.364729, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jilq"]
+bg_color = Color(3.60981e-08, 0.152649, 8.42288e-08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uh7a"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk6h6"]
+bg_color = Color(3.60981e-08, 0.152649, 8.42288e-08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0156863, 0.141176, 0.2, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgh60"]
+bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fafh"]
 bg_color = Color(0, 0.435844, 0, 1)
@@ -87,9 +156,7 @@ theme = ExtResource("3_8jpej")
 text = "Restart"
 metadata/_edit_use_anchors_ = true
 
-[node name="IntroductionScreen" type="CanvasLayer" parent="."]
-
-[node name="Panel2" type="Panel" parent="IntroductionScreen"]
+[node name="Panel2" type="Panel" parent="ScreenUI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -97,9 +164,36 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g11ts")
 
-[node name="Back2" type="Button" parent="IntroductionScreen"]
-modulate = Color(0.435192, 0.435192, 0.435192, 1)
+[node name="StartScreen" type="CanvasLayer" parent="."]
+
+[node name="PlayersConnected" type="Tree" parent="StartScreen"]
 anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -414.0
+offset_top = 135.0
+offset_right = 415.0
+offset_bottom = -82.0
+theme = ExtResource("3_8jpej")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mh32v")
+allow_search = false
+
+[node name="Start" type="Button" parent="StartScreen"]
+offset_left = 513.0
+offset_top = 580.0
+offset_right = 643.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y20bs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d8cde")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7jilq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1uh7a")
+text = "  START!  "
+
+[node name="Back3" type="Button" parent="StartScreen"]
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -109,7 +203,73 @@ offset_top = -59.0
 offset_right = -17.0
 offset_bottom = -13.0
 grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y20bs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d8cde")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xk6h6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fgh60")
+text = "  Back to Home  "
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="StartScreen"]
+anchors_preset = -1
+anchor_left = 0.165
+anchor_top = 0.247
+anchor_right = 0.165
+anchor_bottom = 0.247
+offset_left = -0.0800018
+offset_top = -82.056
+offset_right = 187.92
+offset_bottom = -0.0559998
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fafh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="StartScreen"]
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.208
+anchor_right = 0.12
+anchor_bottom = 0.208
+offset_left = -0.240005
+offset_top = -45.784
+offset_right = 292.76
+offset_bottom = 0.216003
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Join" type="Button" parent="StartScreen/HBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_8jpej")
+theme_override_font_sizes/font_size = 24
+text = "  Join  "
+
+[node name="Host" type="Button" parent="StartScreen/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_8jpej")
+theme_override_font_sizes/font_size = 24
+text = "  Host  "
+
+[node name="IntroductionScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Back2" type="Button" parent="IntroductionScreen"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -59.0
+offset_right = -17.0
+offset_bottom = -13.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y20bs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d8cde")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xk6h6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fgh60")
 text = "  Back to Home  "
 metadata/_edit_use_anchors_ = true
 
@@ -126,54 +286,37 @@ offset_bottom = -0.320007
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1fafh")
 
-[node name="Label" type="Label" parent="IntroductionScreen/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="IntroductionScreen/Panel"]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -173.0
-offset_right = 169.0
-offset_bottom = 50.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 27.0
+offset_right = -16.0
+offset_bottom = -28.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="IntroductionScreen/Panel/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "What is LAN Co-Op?"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="IntroductionScreen/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -353.5
-offset_top = 50.0
-offset_right = 349.5
-offset_bottom = 269.0
-grow_horizontal = 2
+[node name="Label2" type="Label" parent="IntroductionScreen/Panel/VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "LAN co-op is a multiplayer mode where two or more players on the same wifi but different devices. As long as both devices are in the same area and on the same WiFi network, any amount of players can play together. This allows the Host to share custom made or campaign levels and compete with friends."
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="IntroductionScreen/Panel"]
-layout_mode = 0
-offset_left = 231.0
-offset_top = 282.0
-offset_right = 524.0
-offset_bottom = 351.0
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Join" type="Button" parent="IntroductionScreen/Panel/HBoxContainer"]
+[node name="OK" type="Button" parent="IntroductionScreen/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 theme = ExtResource("3_8jpej")
-theme_override_font_sizes/font_size = 36
-text = "  Join  "
-
-[node name="Host" type="Button" parent="IntroductionScreen/Panel/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("3_8jpej")
-theme_override_font_sizes/font_size = 36
-text = "  Host  "
+theme_override_font_sizes/font_size = 30
+text = "    OK    "
 
 [node name="Debug" type="CanvasLayer" parent="."]
 
@@ -306,9 +449,12 @@ text = "  Continue  "
 
 [connection signal="pressed" from="ScreenUI/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="StartScreen/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="StartScreen/Back3" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="StartScreen/HBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="StartScreen/HBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Back2" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="IntroductionScreen/Panel/HBoxContainer/Join" to="." method="_on_join_pressed"]
-[connection signal="pressed" from="IntroductionScreen/Panel/HBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="IntroductionScreen/Panel/VBoxContainer/OK" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="confirmed" from="Debug/LoadDialog" to="." method="_on_load_dialog_confirmed"]
 [connection signal="file_selected" from="Debug/LoadFileSelectorDialog" to="." method="_on_load_file_selector_dialog_file_selected"]

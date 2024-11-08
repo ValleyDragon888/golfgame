@@ -1,9 +1,9 @@
-CanvasLayer
+VBoxContainer
 Button
+CanvasLayer
 HBoxContainer
 ItemList
 Label
-VBoxContainer
 Panel
 Camera2D
 LineEdit
