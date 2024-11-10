@@ -11,3 +11,4 @@ res://Scenes/Editor.tscn
 res://Scenes/PlayPage.tscn
 res://Scripts/MultiplayerTrackPlayer.gd
 res://Scripts/MultiplayerBall.gd
+res://Scripts/GlobalVariables.gd

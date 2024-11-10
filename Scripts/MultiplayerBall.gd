@@ -20,29 +20,27 @@ var shots = 0
 func _enter_tree():
 	print(get_parent_node_3d().name)
 	set_multiplayer_authority(get_parent_node_3d().name.to_int())
-	$"../Label3D".text = str(get_parent_node_3d().name, is_multiplayer_authority())
 
 func _ready():
 	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
-	
+
 func _input(event):
 #Camera movement
-	if true:
-		if Input.is_action_just_pressed("LockCamera") and camera_is_locked == false:
-			camera_is_locked = true
-		elif Input.is_action_just_pressed("LockCamera") and camera_is_locked == true:
-			camera_is_locked = false
+	if Input.is_action_just_pressed("LockCamera") and camera_is_locked == false:
+		camera_is_locked = true
+	elif Input.is_action_just_pressed("LockCamera") and camera_is_locked == true:
+		camera_is_locked = false
 
-		if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) or camera_is_locked:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			if event is InputEventMouseMotion:
-				camera_pivot_v.rotate_y(deg_to_rad(event.relative.x * sensitivity))
-				camera_pivot_h.rotate_x(deg_to_rad(event.relative.y * sensitivity))
-				camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(45))
-			if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and is_multiplayer_authority():
-				arrow_pivot.rotation.y = camera_pivot_v.rotation.y
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) or camera_is_locked:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if event is InputEventMouseMotion:
+			camera_pivot_v.rotate_y(deg_to_rad(event.relative.x * sensitivity))
+			camera_pivot_h.rotate_x(deg_to_rad(event.relative.y * sensitivity))
+			camera_pivot_h.rotation.x = clamp(camera_pivot_h.rotation.x, deg_to_rad(-90), deg_to_rad(45))
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT) and is_multiplayer_authority():
+			arrow_pivot.rotation.y = camera_pivot_v.rotation.y
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 #Camera zoom
 		if event is InputEventMouseButton:
@@ -68,6 +66,10 @@ func _physics_process(_delta):
 		$"../CanvasLayer/PowerIndicator".show()
 		$"../CanvasLayer/ShotIndicator".show()
 		$"../ArrowPivot/Arrow/MeshInstance3D".show()
+		GlobalVariables.LAN_player_names.clear()
+	if len(GlobalVariables.LAN_player_names) < len(multiplayer.get_peers()) + 1:
+		GlobalVariables.LAN_player_names.append($"../Label3D".text)
+
 #Locks camera and arrow to the player
 	if not GlobalVariables.finished:
 		camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)

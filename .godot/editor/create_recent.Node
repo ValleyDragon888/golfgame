@@ -1,3 +1,4 @@
+Label
 MultiplayerSynchronizer
 TextEdit
 ItemList
@@ -5,7 +6,6 @@ VBoxContainer
 Button
 CanvasLayer
 HBoxContainer
-Label
 Panel
 Camera2D
 LineEdit

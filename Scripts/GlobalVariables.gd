@@ -18,6 +18,7 @@ var finished = false
 var player_name = ""
 
 var local_multiplayer_player_details = []
+var LAN_player_names: Array = []
 
 var homepage = preload("res://Scenes/HomePage.tscn")
 var playpage = preload("res://Scenes/PlayPage.tscn")

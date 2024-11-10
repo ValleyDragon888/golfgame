@@ -63,16 +63,21 @@ func _process(_delta):
 		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(GlobalVariables.checkpoint_to_delete[0]))
 		GlobalVariables.checkpoint_to_delete[1] = false
 
-	players_add.remove_at(0)
-	players_add.push_front(str(GlobalVariables.player_name + " (YOU)"))
-	players = multiplayer.get_peers()
-	print(players)
 	players_connected.clear()
-	for item in players_add:
-		players_connected.add_item(str(item))
-	for item in players:
-		if not item == 1:
-			players_connected.add_item(str(item))
+	for item in len(GlobalVariables.LAN_player_names):
+		players_connected.add_item(str(GlobalVariables.LAN_player_names[item]))
+	#GlobalVariables.LAN_player_names = []
+	
+	#players_add.remove_at(0)
+	#players_add.push_front(str(GlobalVariables.player_name + " (YOU)"))
+	#players = multiplayer.get_peers()
+	#print(players)
+	#players_connected.clear()
+	#for item in players_add:
+	#	players_connected.add_item(str(item))
+	#for item in players:
+	#	if not item == 1:
+	#		players_connected.add_item(str(item))
 
 
 func _on_continue_pressed():
