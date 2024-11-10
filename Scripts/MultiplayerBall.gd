@@ -67,8 +67,7 @@ func _physics_process(_delta):
 		$"../CanvasLayer/ShotIndicator".show()
 		$"../ArrowPivot/Arrow/MeshInstance3D".show()
 		GlobalVariables.LAN_player_names.clear()
-	if len(GlobalVariables.LAN_player_names) < len(multiplayer.get_peers()) + 1:
-		GlobalVariables.LAN_player_names.append($"../Label3D".text)
+	GlobalVariables.LAN_player_names.append($"../Label3D".text)
 
 #Locks camera and arrow to the player
 	if not GlobalVariables.finished:

@@ -20,6 +20,10 @@ func start_game():
 	$StartScreen.hide()
 	$ScreenUI/Panel2.hide()
 
+@rpc
+func Update_LAN_player_names(New_LAN_player_names):
+	GlobalVariables.LAN_player_names = New_LAN_player_names
+
 func _ready():
 	$StartScreen/TextEdit.text = GlobalVariables.player_name
 	if GlobalVariables.trackplayer_debug_enabled == false:
@@ -63,6 +67,9 @@ func _process(_delta):
 		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(GlobalVariables.checkpoint_to_delete[0]))
 		GlobalVariables.checkpoint_to_delete[1] = false
 
+	if multiplayer.is_server():
+		rpc("Update_LAN_player_names", GlobalVariables.LAN_player_names)
+
 	players_connected.clear()
 	for item in len(GlobalVariables.LAN_player_names):
 		players_connected.add_item(str(GlobalVariables.LAN_player_names[item]))
@@ -99,7 +106,6 @@ func _on_host_pressed():
 	$StartScreen/HBoxContainer2.show()
 	$StartScreen/Start.show()
 	players_add = ["YOU"]
-	players_connected.add_item(GlobalVariables.player_name)
 	
 func _add_player(id = 1):
 	var player = player_scene.instantiate()
@@ -113,7 +119,6 @@ func _on_join_pressed():
 	$StartScreen/HBoxContainer.hide()
 	$StartScreen/Panel.hide()
 	players_add = ["YOU", "HOST"]
-	players_connected.add_item(GlobalVariables.player_name)
 
 func load_course(contents):
 	var json_decoded = JSON.parse_string(contents)
