@@ -59,7 +59,7 @@ func _input(event):
 				spring_arm.spring_length = DEFAULT_ZOOM
 
 func _physics_process(_delta):
-	$"../Label3D".text = str(name, is_multiplayer_authority())
+	$"../Label3D".text = str(get_parent_node_3d().name, is_multiplayer_authority())
 	$"../Label3D".position = position
 	$"../Label3D".position.y = position.y + 2
 	if is_multiplayer_authority():
@@ -67,6 +67,7 @@ func _physics_process(_delta):
 		$"../CanvasLayer/PowerIndicator".show()
 		$"../CanvasLayer/ShotIndicator".show()
 		$"../ArrowPivot/Arrow/MeshInstance3D".show()
+	#get_parent_node_3d().name = GlobalVariables.player_name
 #Locks camera and arrow to the player
 	if not GlobalVariables.finished:
 		camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)

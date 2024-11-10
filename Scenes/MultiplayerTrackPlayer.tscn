@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cvw4j325lfcn6"]
+[gd_scene load_steps=24 format=3 uid="uid://cvw4j325lfcn6"]
 
 [ext_resource type="Script" path="res://Scripts/MultiplayerTrackPlayer.gd" id="1_wuwuo"]
 [ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_5u6oj"]
@@ -27,13 +27,6 @@ sky = SubResource("Sky_an0pb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g11ts"]
 bg_color = Color(1.63645e-06, 0.808187, 1.54018e-06, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh32v"]
-bg_color = Color(0, 0.435844, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6xir"]
 bg_color = Color(0, 0.435844, 0, 1)
@@ -104,6 +97,32 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh32v"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0.435844, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tu7y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk3uh"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1.6184e-06, 0.364729, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asb3t"]
+
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_wuwuo")
 player_scene = ExtResource("2_5u6oj")
@@ -165,22 +184,9 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g11ts")
 
 [node name="StartScreen" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="PlayersConnected" type="Tree" parent="StartScreen"]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -414.0
-offset_top = 135.0
-offset_right = 415.0
-offset_bottom = -82.0
-theme = ExtResource("3_8jpej")
-theme_override_styles/panel = SubResource("StyleBoxFlat_mh32v")
-allow_search = false
 
 [node name="Start" type="Button" parent="StartScreen"]
+visible = false
 offset_left = 513.0
 offset_top = 580.0
 offset_right = 643.0
@@ -226,6 +232,34 @@ offset_bottom = -0.0559998
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1fafh")
 
+[node name="PlayersConnected" type="ItemList" parent="StartScreen"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -414.0
+offset_top = 135.0
+offset_right = 415.0
+offset_bottom = -82.0
+theme = ExtResource("3_8jpej")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxFlat_mh32v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3tu7y")
+allow_search = false
+
+[node name="LoadButton" type="Button" parent="StartScreen"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -848.0
+offset_top = 89.0
+offset_right = -785.0
+offset_bottom = 135.0
+grow_horizontal = 0
+theme = ExtResource("3_8jpej")
+text = "Load"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="StartScreen"]
 anchors_preset = -1
 anchor_left = 0.12
@@ -251,7 +285,18 @@ theme = ExtResource("3_8jpej")
 theme_override_font_sizes/font_size = 24
 text = "  Host  "
 
+[node name="TextEdit" type="TextEdit" parent="StartScreen"]
+offset_left = 384.0
+offset_top = 83.0
+offset_right = 661.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mk3uh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_asb3t")
+placeholder_text = "Enter Name"
+
 [node name="IntroductionScreen" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Back2" type="Button" parent="IntroductionScreen"]
 anchors_preset = 3
@@ -451,8 +496,10 @@ text = "  Continue  "
 [connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="StartScreen/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="StartScreen/Back3" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="StartScreen/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="text_changed" from="StartScreen/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="pressed" from="IntroductionScreen/Back2" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Panel/VBoxContainer/OK" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]

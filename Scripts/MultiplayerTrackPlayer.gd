@@ -7,10 +7,16 @@ var peer = ENetMultiplayerPeer.new()
 @onready var load_confirmation_dialog = $Debug/LoadDialog
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
 @onready var players_connected = $StartScreen/PlayersConnected
+var players: Array = []
 
 @rpc
 func update_variables(SP, JSON_Contents):
 	load_course(JSON_Contents)
+
+@rpc
+func start_game():
+	$StartScreen.hide()
+	$ScreenUI/Panel2.hide()
 
 func _ready():
 	if GlobalVariables.trackplayer_debug_enabled == false:
@@ -54,6 +60,14 @@ func _process(_delta):
 		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(GlobalVariables.checkpoint_to_delete[0]))
 		GlobalVariables.checkpoint_to_delete[1] = false
 
+	players = multiplayer.get_peers()
+	players_connected.clear()
+	players_connected.add_item("YOU")
+	for item in players:
+		if not item == 1:
+			players_connected.add_item(str(item))
+
+
 func _on_continue_pressed():
 	get_tree().change_scene_to_packed(GlobalVariables.homepage)
 	GlobalVariables.finished = false
@@ -70,13 +84,9 @@ func _on_host_pressed():
 	multiplayer.peer_connected.connect(_add_player)
 	_add_player()
 	$StartScreen/HBoxContainer.hide()
-	$StartScreen/Panel.hide()
 	$Debug/LoadButton.show()
-	var root = players_connected.create_item()
-	players_connected.hide_root = true
-	var treeitem = players_connected.create_item(root)
-	treeitem.set_text(0, "YOU")
-	root.add_child(treeitem)
+	players.append("YOU")
+	$StartScreen/Start.show()
 	
 func _add_player(id = 1):
 	var player = player_scene.instantiate()
@@ -88,7 +98,6 @@ func _on_join_pressed():
 	peer.create_client("localhost",135)
 	multiplayer.multiplayer_peer = peer
 	$StartScreen/HBoxContainer.hide()
-	$StartScreen/Panel.hide()
 	$Debug/LoadButton.hide()
 
 func load_course(contents):
@@ -130,8 +139,13 @@ func load_course(contents):
 func _on_start_pressed():
 	$StartScreen.hide()
 	$ScreenUI/Panel2.hide()
+	rpc("start_game")
 
 
 func _on_ok_pressed():
 	$IntroductionScreen.hide()
 	$StartScreen.show()
+
+
+func _on_text_edit_text_changed():
+	GlobalVariables.player_name = $StartScreen/TextEdit.text

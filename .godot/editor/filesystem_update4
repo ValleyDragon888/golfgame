@@ -1,12 +1,14 @@
-res://Scenes/MultiplayerTrackPlayer.tscn
+res://Scenes/LocalMultiplayerTrackPlayer.tscn
 res://Scripts/Outline.gdshader
 res://Assets/Theme_1.tres
 res://Scripts/Hit Particles.tres
-res://Scenes/LocalMultiplayerTrackPlayer.tscn
 res://Scenes/LocalMultiplayerHomeScreen.tscn
 res://Scenes/LocalMultiplayerLeaderboard.tscn
 res://Scenes/Ball.tscn
+res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scenes/MutliplayerBall.tscn
-res://Scenes/PlayPage.tscn
-res://Scripts/MultiplayerTrackPlayer.gd
 res://Scenes/Editor.tscn
+res://Scenes/PlayPage.tscn
+res://Scripts/MultiplayerBall.gd
+res://Scripts/GlobalVariables.gd
+res://Scripts/MultiplayerTrackPlayer.gd

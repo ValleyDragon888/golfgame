@@ -1,8 +1,9 @@
+TextEdit
+ItemList
 VBoxContainer
 Button
 CanvasLayer
 HBoxContainer
-ItemList
 Label
 Panel
 Camera2D
