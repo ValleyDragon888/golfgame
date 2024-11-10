@@ -20,6 +20,7 @@ var shots = 0
 func _enter_tree():
 	print(get_parent_node_3d().name)
 	set_multiplayer_authority(get_parent_node_3d().name.to_int())
+	$"../Label3D".text = str(get_parent_node_3d().name, is_multiplayer_authority())
 
 func _ready():
 	ball_mesh.mesh = load("res://Assets/Balls/"+str(GlobalVariables.balls[GlobalVariables.ball_selected])+".obj")
@@ -59,15 +60,14 @@ func _input(event):
 				spring_arm.spring_length = DEFAULT_ZOOM
 
 func _physics_process(_delta):
-	$"../Label3D".text = str(get_parent_node_3d().name, is_multiplayer_authority())
 	$"../Label3D".position = position
 	$"../Label3D".position.y = position.y + 2
 	if is_multiplayer_authority():
+		$"../Label3D".text = str(GlobalVariables.player_name)
 		$"../CameraPivotV/CameraPivotH/SpringArm3D/Camera3D".current = true
 		$"../CanvasLayer/PowerIndicator".show()
 		$"../CanvasLayer/ShotIndicator".show()
 		$"../ArrowPivot/Arrow/MeshInstance3D".show()
-	#get_parent_node_3d().name = GlobalVariables.player_name
 #Locks camera and arrow to the player
 	if not GlobalVariables.finished:
 		camera_pivot_v.position = lerp(camera_pivot_v.position, position, 0.1 * Engine.time_scale)

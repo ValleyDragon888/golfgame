@@ -1,3 +1,4 @@
+MultiplayerSynchronizer
 TextEdit
 ItemList
 VBoxContainer
@@ -11,5 +12,3 @@ LineEdit
 Control
 SpinBox
 Node2D
-RichTextLabel
-Camera3D

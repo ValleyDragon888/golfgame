@@ -8,6 +8,8 @@ var peer = ENetMultiplayerPeer.new()
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
 @onready var players_connected = $StartScreen/PlayersConnected
 var players: Array = []
+var players_add: Array = []
+var player
 
 @rpc
 func update_variables(SP, JSON_Contents):
@@ -19,6 +21,7 @@ func start_game():
 	$ScreenUI/Panel2.hide()
 
 func _ready():
+	$StartScreen/TextEdit.text = GlobalVariables.player_name
 	if GlobalVariables.trackplayer_debug_enabled == false:
 		load_file(GlobalVariables.trackplayer_requested_scene_load)
 		$Debug.hide()
@@ -60,9 +63,13 @@ func _process(_delta):
 		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(GlobalVariables.checkpoint_to_delete[0]))
 		GlobalVariables.checkpoint_to_delete[1] = false
 
+	players_add.remove_at(0)
+	players_add.push_front(str(GlobalVariables.player_name + " (YOU)"))
 	players = multiplayer.get_peers()
+	print(players)
 	players_connected.clear()
-	players_connected.add_item("YOU")
+	for item in players_add:
+		players_connected.add_item(str(item))
 	for item in players:
 		if not item == 1:
 			players_connected.add_item(str(item))
@@ -85,8 +92,9 @@ func _on_host_pressed():
 	_add_player()
 	$StartScreen/HBoxContainer.hide()
 	$Debug/LoadButton.show()
-	players.append("YOU")
 	$StartScreen/Start.show()
+	players_add = ["YOU"]
+	players_connected.add_item(GlobalVariables.player_name)
 	
 func _add_player(id = 1):
 	var player = player_scene.instantiate()
@@ -99,6 +107,8 @@ func _on_join_pressed():
 	multiplayer.multiplayer_peer = peer
 	$StartScreen/HBoxContainer.hide()
 	$Debug/LoadButton.hide()
+	players_add = ["YOU", "HOST"]
+	players_connected.add_item(GlobalVariables.player_name)
 
 func load_course(contents):
 	var json_decoded = JSON.parse_string(contents)
