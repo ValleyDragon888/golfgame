@@ -247,19 +247,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mh32v")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3tu7y")
 allow_search = false
 
-[node name="LoadButton" type="Button" parent="StartScreen"]
-visible = false
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -848.0
-offset_top = 89.0
-offset_right = -785.0
-offset_bottom = 135.0
-grow_horizontal = 0
-theme = ExtResource("3_8jpej")
-text = "Load"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="StartScreen"]
 anchors_preset = -1
 anchor_left = 0.12
@@ -284,6 +271,23 @@ layout_mode = 2
 theme = ExtResource("3_8jpej")
 theme_override_font_sizes/font_size = 24
 text = "  Host  "
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="StartScreen"]
+visible = false
+offset_left = 199.0
+offset_top = 91.0
+offset_right = 369.0
+offset_bottom = 131.0
+
+[node name="CampaignButton" type="Button" parent="StartScreen/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_8jpej")
+text = " Campaign "
+
+[node name="LoadButton" type="Button" parent="StartScreen/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_8jpej")
+text = " Load "
 
 [node name="TextEdit" type="TextEdit" parent="StartScreen"]
 offset_left = 384.0
@@ -496,9 +500,9 @@ text = "  Continue  "
 [connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="StartScreen/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="StartScreen/Back3" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="StartScreen/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="StartScreen/HBoxContainer2/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="text_changed" from="StartScreen/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="pressed" from="IntroductionScreen/Back2" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Panel/VBoxContainer/OK" to="." method="_on_ok_pressed"]

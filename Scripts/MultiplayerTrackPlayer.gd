@@ -96,7 +96,7 @@ func _on_host_pressed():
 	multiplayer.peer_connected.connect(_add_player)
 	_add_player()
 	$StartScreen/HBoxContainer.hide()
-	$Debug/LoadButton.show()
+	$StartScreen/HBoxContainer2.show()
 	$StartScreen/Start.show()
 	players_add = ["YOU"]
 	players_connected.add_item(GlobalVariables.player_name)
@@ -111,7 +111,7 @@ func _on_join_pressed():
 	peer.create_client("localhost",135)
 	multiplayer.multiplayer_peer = peer
 	$StartScreen/HBoxContainer.hide()
-	$Debug/LoadButton.hide()
+	$StartScreen/Panel.hide()
 	players_add = ["YOU", "HOST"]
 	players_connected.add_item(GlobalVariables.player_name)
 
