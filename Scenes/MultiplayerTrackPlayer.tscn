@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://cvw4j325lfcn6"]
+[gd_scene load_steps=25 format=3 uid="uid://cvw4j325lfcn6"]
 
 [ext_resource type="Script" path="res://Scripts/MultiplayerTrackPlayer.gd" id="1_wuwuo"]
 [ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_5u6oj"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="3_8jpej"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="4_y7xse"]
+[ext_resource type="Script" path="res://Scripts/MultiplayerCampaignSelector.gd" id="4_yq3xp"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="5_u30uv"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="6_rryda"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="7_oq2lj"]
@@ -184,6 +185,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g11ts")
 
 [node name="StartScreen" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Start" type="Button" parent="StartScreen"]
 visible = false
@@ -299,8 +301,44 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mk3uh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_asb3t")
 placeholder_text = "Enter Name"
 
-[node name="IntroductionScreen" type="CanvasLayer" parent="."]
+[node name="CampaignSelector" type="Node3D" parent="StartScreen"]
+script = ExtResource("4_yq3xp")
+
+[node name="Title" type="RichTextLabel" parent="StartScreen/CampaignSelector"]
 visible = false
+offset_left = 15.0
+offset_top = 19.0
+offset_right = 1157.0
+offset_bottom = 104.0
+theme = ExtResource("3_8jpej")
+theme_override_font_sizes/bold_font_size = 54
+bbcode_enabled = true
+text = "[b]Play Campaign: Main Campaign[b]"
+fit_content = true
+
+[node name="TracksList" type="ItemList" parent="StartScreen/CampaignSelector"]
+visible = false
+offset_left = 204.0
+offset_top = 110.0
+offset_right = 888.0
+offset_bottom = 532.0
+theme = ExtResource("3_8jpej")
+theme_override_font_sizes/font_size = 57
+item_count = 2
+item_0/text = "0"
+item_1/text = "1"
+
+[node name="Back" type="Button" parent="StartScreen/CampaignSelector"]
+visible = false
+offset_left = 23.0
+offset_top = 105.0
+offset_right = 131.0
+offset_bottom = 171.0
+theme = ExtResource("3_8jpej")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+
+[node name="IntroductionScreen" type="CanvasLayer" parent="."]
 
 [node name="Back2" type="Button" parent="IntroductionScreen"]
 anchors_preset = 3
@@ -504,6 +542,7 @@ text = "  Continue  "
 [connection signal="pressed" from="StartScreen/HBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer2/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="text_changed" from="StartScreen/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="item_activated" from="StartScreen/CampaignSelector/TracksList" to="StartScreen/CampaignSelector" method="_on_tracks_list_item_activated"]
 [connection signal="pressed" from="IntroductionScreen/Back2" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Panel/VBoxContainer/OK" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]

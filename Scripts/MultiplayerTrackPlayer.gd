@@ -23,6 +23,9 @@ func start_game():
 @rpc
 func Update_LAN_player_names(New_LAN_player_names):
 	GlobalVariables.LAN_player_names = New_LAN_player_names
+	players_connected.clear()
+	for item in len(GlobalVariables.LAN_player_names):
+		players_connected.add_item(str(GlobalVariables.LAN_player_names[item]))
 
 func _ready():
 	$StartScreen/TextEdit.text = GlobalVariables.player_name
@@ -69,22 +72,9 @@ func _process(_delta):
 
 	if multiplayer.is_server():
 		rpc("Update_LAN_player_names", GlobalVariables.LAN_player_names)
-
-	players_connected.clear()
-	for item in len(GlobalVariables.LAN_player_names):
-		players_connected.add_item(str(GlobalVariables.LAN_player_names[item]))
-	#GlobalVariables.LAN_player_names = []
-	
-	#players_add.remove_at(0)
-	#players_add.push_front(str(GlobalVariables.player_name + " (YOU)"))
-	#players = multiplayer.get_peers()
-	#print(players)
-	#players_connected.clear()
-	#for item in players_add:
-	#	players_connected.add_item(str(item))
-	#for item in players:
-	#	if not item == 1:
-	#		players_connected.add_item(str(item))
+		players_connected.clear()
+		for item in len(GlobalVariables.LAN_player_names):
+			players_connected.add_item(str(GlobalVariables.LAN_player_names[item]))
 
 
 func _on_continue_pressed():
