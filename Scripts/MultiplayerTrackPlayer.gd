@@ -7,8 +7,6 @@ var peer = ENetMultiplayerPeer.new()
 @onready var load_confirmation_dialog = $Debug/LoadDialog
 @onready var load_fileselector = $Debug/LoadFileSelectorDialog
 @onready var players_connected = $StartScreen/PlayersConnected
-var players: Array = []
-var players_add: Array = []
 var player
 
 @rpc
@@ -95,8 +93,7 @@ func _on_host_pressed():
 	$StartScreen/HBoxContainer.hide()
 	$StartScreen/HBoxContainer2.show()
 	$StartScreen/Start.show()
-	players_add = ["YOU"]
-	
+
 func _add_player(id = 1):
 	var player = player_scene.instantiate()
 	player.name = str(id)
@@ -108,7 +105,6 @@ func _on_join_pressed():
 	multiplayer.multiplayer_peer = peer
 	$StartScreen/HBoxContainer.hide()
 	$StartScreen/Panel.hide()
-	players_add = ["YOU", "HOST"]
 
 func load_course(contents):
 	var json_decoded = JSON.parse_string(contents)
@@ -159,3 +155,17 @@ func _on_ok_pressed():
 
 func _on_text_edit_text_changed():
 	GlobalVariables.player_name = $StartScreen/TextEdit.text
+
+
+func _on_campaign_button_pressed():
+	$StartScreen.hide()
+	$StartScreen/CampaignSelector.show_campaign_screen("Main Campaign")
+	$StartScreen/CampaignSelector/Panel2.show()
+
+func _on_campaign_back_pressed():
+	$StartScreen/CampaignSelector/Panel2.hide()
+	$StartScreen.show()
+	$StartScreen/CampaignSelector.hide()
+	$StartScreen/CampaignSelector/Back.hide()
+	$StartScreen/CampaignSelector/Title.hide()
+	$StartScreen/CampaignSelector/TracksList.hide()

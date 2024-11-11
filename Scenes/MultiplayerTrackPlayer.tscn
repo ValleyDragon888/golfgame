@@ -302,7 +302,22 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_asb3t")
 placeholder_text = "Enter Name"
 
 [node name="CampaignSelector" type="Node3D" parent="StartScreen"]
+visible = false
 script = ExtResource("4_yq3xp")
+
+[node name="Panel2" type="Panel" parent="StartScreen/CampaignSelector"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.165
+anchor_top = 0.247
+anchor_right = 0.165
+anchor_bottom = 0.247
+offset_left = -298.08
+offset_top = -143.056
+offset_right = 735.92
+offset_bottom = 399.944
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fafh")
 
 [node name="Title" type="RichTextLabel" parent="StartScreen/CampaignSelector"]
 visible = false
@@ -540,9 +555,11 @@ text = "  Continue  "
 [connection signal="pressed" from="StartScreen/Back3" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer/Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="StartScreen/HBoxContainer2/CampaignButton" to="." method="_on_campaign_button_pressed"]
 [connection signal="pressed" from="StartScreen/HBoxContainer2/LoadButton" to="." method="_on_load_button_pressed"]
 [connection signal="text_changed" from="StartScreen/TextEdit" to="." method="_on_text_edit_text_changed"]
 [connection signal="item_activated" from="StartScreen/CampaignSelector/TracksList" to="StartScreen/CampaignSelector" method="_on_tracks_list_item_activated"]
+[connection signal="pressed" from="StartScreen/CampaignSelector/Back" to="." method="_on_campaign_back_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Back2" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="IntroductionScreen/Panel/VBoxContainer/OK" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Debug/LoadButton" to="." method="_on_load_button_pressed"]

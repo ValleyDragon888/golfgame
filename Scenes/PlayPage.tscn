@@ -21,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_w66wo"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="18_8nbmw"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="19_mt5ny"]
-[ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="20_qradk"]
+[ext_resource type="Script" path="res://Scripts/MultiplayerCampaignSelector.gd" id="22_pig42"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c63h5"]
 shader = ExtResource("2_56g8b")
@@ -362,7 +362,7 @@ mesh = ExtResource("17_w66wo")
 skeleton = NodePath("../Cloud4")
 
 [node name="CampaignSelector" type="Node3D" parent="."]
-script = ExtResource("20_qradk")
+script = ExtResource("22_pig42")
 
 [node name="Title" type="RichTextLabel" parent="CampaignSelector"]
 visible = false

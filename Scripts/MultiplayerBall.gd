@@ -61,7 +61,10 @@ func _physics_process(_delta):
 	$"../Label3D".position = position
 	$"../Label3D".position.y = position.y + 2
 	if is_multiplayer_authority():
-		$"../Label3D".text = str(GlobalVariables.player_name)
+		if str(GlobalVariables.player_name) == "":
+			$"../Label3D".text = "Unnamed Player"
+		else:
+			$"../Label3D".text = str(GlobalVariables.player_name)
 		$"../CameraPivotV/CameraPivotH/SpringArm3D/Camera3D".current = true
 		$"../CanvasLayer/PowerIndicator".show()
 		$"../CanvasLayer/ShotIndicator".show()
