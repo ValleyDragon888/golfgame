@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cvw4j325lfcn6"]
+[gd_scene load_steps=26 format=3 uid="uid://cvw4j325lfcn6"]
 
 [ext_resource type="Script" path="res://Scripts/MultiplayerTrackPlayer.gd" id="1_wuwuo"]
 [ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_5u6oj"]
@@ -100,7 +100,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh32v"]
 content_margin_left = 10.0
-content_margin_top = 10.0
+content_margin_top = 40.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
 bg_color = Color(0, 0.435844, 0, 1)
@@ -123,6 +123,11 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_asb3t"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_quex7"]
+properties/0/path = NodePath("StartScreen/TrackSeleceted:text")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_wuwuo")
@@ -185,7 +190,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_g11ts")
 
 [node name="StartScreen" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Start" type="Button" parent="StartScreen"]
 visible = false
@@ -244,10 +248,18 @@ offset_top = 135.0
 offset_right = 415.0
 offset_bottom = -82.0
 theme = ExtResource("3_8jpej")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 18
 theme_override_styles/panel = SubResource("StyleBoxFlat_mh32v")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3tu7y")
 allow_search = false
+
+[node name="Label" type="Label" parent="StartScreen"]
+offset_left = 169.0
+offset_top = 142.0
+offset_right = 388.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 24
+text = "Players connected:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="StartScreen"]
 anchors_preset = -1
@@ -300,6 +312,13 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_mk3uh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_asb3t")
 placeholder_text = "Enter Name"
+
+[node name="TrackSeleceted" type="Label" parent="StartScreen"]
+offset_left = 675.0
+offset_top = 96.0
+offset_right = 810.0
+offset_bottom = 119.0
+text = "No track selected"
 
 [node name="CampaignSelector" type="Node3D" parent="StartScreen"]
 visible = false
@@ -354,6 +373,7 @@ theme_override_font_sizes/font_size = 36
 text = "Back"
 
 [node name="IntroductionScreen" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Back2" type="Button" parent="IntroductionScreen"]
 anchors_preset = 3
@@ -548,6 +568,9 @@ size_flags_horizontal = 4
 theme = ExtResource("3_8jpej")
 theme_override_font_sizes/font_size = 41
 text = "  Continue  "
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_quex7")
 
 [connection signal="pressed" from="ScreenUI/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="ScreenUI/Restart" to="." method="_on_restart_pressed"]

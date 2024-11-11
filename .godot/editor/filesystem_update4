@@ -9,7 +9,7 @@ res://Scenes/MultiplayerTrackPlayer.tscn
 res://Scenes/MutliplayerBall.tscn
 res://Scenes/Editor.tscn
 res://Scenes/PlayPage.tscn
-res://Scripts/MultiplayerTrackPlayer.gd
-res://Scripts/MultiplayerBall.gd
-res://Scripts/GlobalVariables.gd
 res://Scripts/MultiplayerCampaignSelector.gd
+res://Scripts/MultiplayerTrackPlayer.gd
+res://Scripts/GlobalVariables.gd
+res://Scripts/MultiplayerBall.gd

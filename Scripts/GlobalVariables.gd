@@ -15,6 +15,7 @@ var trackplayer_requested_scene_load = ""
 var checkpoints = []
 var checkpoint_to_delete = [0, false]
 var finished = false
+var started = false
 var player_name = ""
 
 var local_multiplayer_player_details = []

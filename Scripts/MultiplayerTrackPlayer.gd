@@ -53,7 +53,9 @@ func load_file(path):
 	save_path = path
 	var file = FileAccess.open(path, FileAccess.READ)
 	var contents = file.get_as_text()
-
+	var file_name = path.split("/", true, 0)
+	$StartScreen/TrackSeleceted.text = file_name[file_name.size()-1]
+	
 	load_course(contents)
 	rpc("update_variables", GlobalVariables.start_position, contents)
 
@@ -73,7 +75,6 @@ func _process(_delta):
 		players_connected.clear()
 		for item in len(GlobalVariables.LAN_player_names):
 			players_connected.add_item(str(GlobalVariables.LAN_player_names[item]))
-
 
 func _on_continue_pressed():
 	get_tree().change_scene_to_packed(GlobalVariables.homepage)
@@ -114,38 +115,42 @@ func load_course(contents):
 		$AddedBlocksRoot.remove_child(child)
 
 	# Add blocks from file.
-	for i in len(json_decoded["blocks"]):
-		# The last arg of blkinstance from json is the id.
-		block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
-		$AddedBlocksRoot.add_child(block_instances[-1].node())
+	if not json_decoded == null:
+		for i in len(json_decoded["blocks"]):
+			# The last arg of blkinstance from json is the id.
+			block_instances.append(block_instance_from_json(json_decoded["blocks"][i], i))
+			$AddedBlocksRoot.add_child(block_instances[-1].node())
 
-	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
-	GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
-	GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
-	GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
-	block_instances[0].type = "StartIndicator"
-	$AddedBlocksRoot.add_child(block_instances[0].node())
-	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 0)
+		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(0))
+		GlobalVariables.start_position.x = block_instances[0].get_json_dict().position[0]
+		GlobalVariables.start_position.y = block_instances[0].get_json_dict().position[1]
+		GlobalVariables.start_position.z = block_instances[0].get_json_dict().position[2]
+		block_instances[0].type = "StartIndicator"
+		$AddedBlocksRoot.add_child(block_instances[0].node())
+		$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 0)
 
-	$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(1))
-	GlobalVariables.end_position.x = block_instances[1].get_json_dict().position[0]
-	GlobalVariables.end_position.y = block_instances[1].get_json_dict().position[1]
-	GlobalVariables.end_position.z = block_instances[1].get_json_dict().position[2]
-	block_instances[1].type = "EndIndicator"
-	$AddedBlocksRoot.add_child(block_instances[1].node())
-	$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
+		$AddedBlocksRoot.remove_child($AddedBlocksRoot.get_child(1))
+		GlobalVariables.end_position.x = block_instances[1].get_json_dict().position[0]
+		GlobalVariables.end_position.y = block_instances[1].get_json_dict().position[1]
+		GlobalVariables.end_position.z = block_instances[1].get_json_dict().position[2]
+		block_instances[1].type = "EndIndicator"
+		$AddedBlocksRoot.add_child(block_instances[1].node())
+		$AddedBlocksRoot.move_child($AddedBlocksRoot.get_children()[-1], 1)
 
-	#Adds checkpoints to the variable.
-	GlobalVariables.checkpoints.clear()
-	for item in len(block_instances):
-		if block_instances[item].get_json_dict().type == "CheckpointMarker":
-			GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
-			print(GlobalVariables.checkpoints)
+		#Adds checkpoints to the variable.
+		GlobalVariables.checkpoints.clear()
+		for item in len(block_instances):
+			if block_instances[item].get_json_dict().type == "CheckpointMarker":
+				GlobalVariables.checkpoints.append(Vector4(block_instances[item].get_json_dict().position[0], block_instances[item].get_json_dict().position[1], block_instances[item].get_json_dict().position[2], item))
+				print(GlobalVariables.checkpoints)
+	else:
+		$StartScreen/TrackSeleceted.text = "No track selected (An error occured)"
 
 func _on_start_pressed():
 	$StartScreen.hide()
 	$ScreenUI/Panel2.hide()
 	rpc("start_game")
+	GlobalVariables.started = true
 
 
 func _on_ok_pressed():

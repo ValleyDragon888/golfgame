@@ -70,6 +70,14 @@ func _physics_process(_delta):
 		$"../CanvasLayer/ShotIndicator".show()
 		$"../ArrowPivot/Arrow/MeshInstance3D".show()
 		GlobalVariables.LAN_player_names.clear()
+		
+		if GlobalVariables.started:
+			position = GlobalVariables.start_position * 6
+			position.y = GlobalVariables.start_position.y * 6 + 5
+			linear_velocity = Vector3.ZERO
+			angular_velocity = Vector3.ZERO
+			GlobalVariables.started = false
+
 	GlobalVariables.LAN_player_names.append($"../Label3D".text)
 
 #Locks camera and arrow to the player

@@ -1,7 +1,7 @@
+MultiplayerSynchronizer
+Label
 Button
 HBoxContainer
-Label
-MultiplayerSynchronizer
 TextEdit
 ItemList
 VBoxContainer

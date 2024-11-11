@@ -36,4 +36,4 @@ func _on_tracks_list_item_activated(index):
 	$Back.hide()
 	$Title.hide()
 	$TracksList.hide()
-	
+	$"../TrackSeleceted".text = $TracksList.get_item_text(index)
