@@ -25,15 +25,19 @@ func show_campaign_screen(name: String):
 
 
 func _on_tracks_list_item_activated(index):
+	#var track_path_selected = tracks[index].values()[0]
+	#var file = FileAccess.open(track_path_selected, FileAccess.READ)
+	#var contents = file.get_as_text()
+	#$"../..".load_file(track_path_selected)
+	#$"../..".rpc("update_variables", GlobalVariables.start_position, contents)
+	#$Panel2.hide()
+	#$"..".show()
+	#hide()
+	#$Back.hide()
+	#$Title.hide()
+	#$TracksList.hide()
+	#$"../TrackSeleceted".text = $TracksList.get_item_text(index)
 	var track_path_selected = tracks[index].values()[0]
-	var file = FileAccess.open(track_path_selected, FileAccess.READ)
-	var contents = file.get_as_text()
-	$"../..".load_file(track_path_selected)
-	$"../..".rpc("update_variables", GlobalVariables.start_position, contents)
-	$Panel2.hide()
-	$"..".show()
-	hide()
-	$Back.hide()
-	$Title.hide()
-	$TracksList.hide()
-	$"../TrackSeleceted".text = $TracksList.get_item_text(index)
+	GlobalVariables.trackplayer_debug_enabled = false
+	GlobalVariables.trackplayer_requested_scene_load = track_path_selected
+	get_tree().change_scene_to_packed(GlobalVariables.trackplayer)
