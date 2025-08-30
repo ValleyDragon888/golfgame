@@ -1,10 +1,10 @@
 [gd_scene load_steps=26 format=3 uid="uid://cvw4j325lfcn6"]
 
-[ext_resource type="Script" path="res://Scripts/MultiplayerTrackPlayer.gd" id="1_wuwuo"]
+[ext_resource type="Script" uid="uid://l0vj720iums6" path="res://Scripts/MultiplayerTrackPlayer.gd" id="1_wuwuo"]
 [ext_resource type="PackedScene" uid="uid://dgofv8kjw14li" path="res://Scenes/MutliplayerBall.tscn" id="2_5u6oj"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="3_8jpej"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="4_y7xse"]
-[ext_resource type="Script" path="res://Scripts/MultiplayerCampaignSelector.gd" id="4_yq3xp"]
+[ext_resource type="Script" uid="uid://qjdofh0m5823" path="res://Scripts/MultiplayerCampaignSelector.gd" id="4_yq3xp"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="5_u30uv"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="6_rryda"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="7_oq2lj"]
@@ -29,8 +29,14 @@ sky = SubResource("Sky_an0pb")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g11ts"]
 bg_color = Color(1.63645e-06, 0.808187, 1.54018e-06, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6xir"]
-bg_color = Color(0, 0.435844, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uh7a"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jilq"]
+bg_color = Color(3.60981e-08, 0.152649, 8.42288e-08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.0156863, 0.141176, 0.2, 1)
 corner_radius_top_left = 5
@@ -61,11 +67,8 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jilq"]
-bg_color = Color(3.60981e-08, 0.152649, 8.42288e-08, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6xir"]
+bg_color = Color(0, 0.435844, 0, 1)
 border_width_bottom = 2
 border_color = Color(0.0156863, 0.141176, 0.2, 1)
 corner_radius_top_left = 5
@@ -73,7 +76,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uh7a"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgh60"]
 bg_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk6h6"]
@@ -88,15 +91,14 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgh60"]
-bg_color = Color(1, 1, 1, 0)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fafh"]
 bg_color = Color(0, 0.435844, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tu7y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh32v"]
 content_margin_left = 10.0
@@ -108,8 +110,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tu7y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mk3uh"]
 content_margin_left = 5.0
@@ -150,7 +150,7 @@ sky_mode = 1
 environment = SubResource("Environment_d1g3h")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/MutliplayerBall.tscn")
+_spawnable_scenes = PackedStringArray("uid://dgofv8kjw14li")
 spawn_path = NodePath("..")
 
 [node name="ScreenUI" type="CanvasLayer" parent="."]
@@ -198,11 +198,11 @@ offset_top = 580.0
 offset_right = 643.0
 offset_bottom = 636.0
 theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1uh7a")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_7jilq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y20bs")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d8cde")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_7jilq")
-theme_override_styles/focus = SubResource("StyleBoxFlat_1uh7a")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
 text = "  START!  "
 
 [node name="Back3" type="Button" parent="StartScreen"]
@@ -217,11 +217,11 @@ offset_right = -17.0
 offset_bottom = -13.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fgh60")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xk6h6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y20bs")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d8cde")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_xk6h6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_fgh60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
 text = "  Back to Home  "
 metadata/_edit_use_anchors_ = true
 
@@ -249,8 +249,8 @@ offset_right = 415.0
 offset_bottom = -82.0
 theme = ExtResource("3_8jpej")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/panel = SubResource("StyleBoxFlat_mh32v")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3tu7y")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mh32v")
 allow_search = false
 
 [node name="Label" type="Label" parent="StartScreen"]
@@ -387,11 +387,11 @@ offset_right = -17.0
 offset_bottom = -13.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fgh60")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xk6h6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_y20bs")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d8cde")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_xk6h6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_fgh60")
+theme_override_styles/normal = SubResource("StyleBoxFlat_y6xir")
 text = "  Back to Home  "
 metadata/_edit_use_anchors_ = true
 

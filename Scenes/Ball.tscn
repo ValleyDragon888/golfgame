@@ -1,13 +1,13 @@
 [gd_scene load_steps=19 format=3 uid="uid://b7lb2ws1lt0r3"]
 
-[ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_urg3s"]
+[ext_resource type="Script" uid="uid://bhvo1ec6hcic3" path="res://Scripts/Ball.gd" id="1_urg3s"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_3kb27"]
 [ext_resource type="ArrayMesh" uid="uid://k2c52gep3o5y" path="res://Assets/Arrow.obj" id="3_r486x"]
 [ext_resource type="Material" uid="uid://3sxnya3r6tyu" path="res://Scripts/Hit Particles.tres" id="4_1r3lv"]
 [ext_resource type="Material" uid="uid://bgqsqvywe2wit" path="res://Assets/ArrowMaterial.tres" id="4_y5t71"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="5_84cji"]
 [ext_resource type="PackedScene" uid="uid://cjssut45v6orr" path="res://Scenes/FastForward.tscn" id="8_2ilx7"]
-[ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="9_h3gg6"]
+[ext_resource type="Shader" uid="uid://b7e2fvno8fc5f" path="res://Scripts/Toon.gdshader" id="9_h3gg6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1pkp"]
 friction = 4.0

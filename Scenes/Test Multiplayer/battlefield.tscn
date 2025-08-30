@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://byyanlvq0xn5t"]
 
-[ext_resource type="Script" path="res://Scripts/Test Multiplayer/Battlefield.gd" id="1_acat0"]
+[ext_resource type="Script" uid="uid://b3ikq5gqvgrcp" path="res://Scripts/Test Multiplayer/Battlefield.gd" id="1_acat0"]
 [ext_resource type="PackedScene" uid="uid://ck2g21lhqby62" path="res://Scenes/Test Multiplayer/player.tscn" id="2_oqv0g"]
 [ext_resource type="PackedScene" uid="uid://cejfrnaoocdf7" path="res://Scenes/Test Multiplayer/bomb.tscn" id="3_78mx0"]
 [ext_resource type="Texture2D" uid="uid://ctj7r5riex6q5" path="res://Assets/Test Multiplayer/Background.png" id="3_dt2wm"]

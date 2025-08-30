@@ -42,5 +42,3 @@ func _on_area_2d_body_entered(body):
 		elif not Global.active.has(body) and not collected.has(body):
 			print("Not yet collected")
 			collected.append(body)
-
-

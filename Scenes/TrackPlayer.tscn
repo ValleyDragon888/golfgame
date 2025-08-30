@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://v4ksu7jwy7fn"]
 
-[ext_resource type="Script" path="res://Scripts/TrackPlayer.gd" id="1_w4wli"]
+[ext_resource type="Script" uid="uid://ymrycytqeroc" path="res://Scripts/TrackPlayer.gd" id="1_w4wli"]
 [ext_resource type="PackedScene" uid="uid://b7lb2ws1lt0r3" path="res://Scenes/Ball.tscn" id="2_2ytfu"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="4_2ip0m"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="4_lydkd"]

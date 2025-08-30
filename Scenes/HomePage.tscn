@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://p5smsbcrc372"]
 
-[ext_resource type="Script" path="res://Scripts/HomePage.gd" id="1_h0sqi"]
-[ext_resource type="Shader" path="res://Scripts/Toon.gdshader" id="2_4ts8d"]
+[ext_resource type="Script" uid="uid://tfuj8fcwtje6" path="res://Scripts/HomePage.gd" id="1_h0sqi"]
+[ext_resource type="Shader" uid="uid://b7e2fvno8fc5f" path="res://Scripts/Toon.gdshader" id="2_4ts8d"]
 [ext_resource type="Texture2D" uid="uid://cksooqwfhfmi6" path="res://Assets/UI elements/HomeBackground.png" id="3_prkya"]
 [ext_resource type="Texture2D" uid="uid://bbx0jllunp3x7" path="res://Assets/UI elements/UIBall.png" id="4_nwl47"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="5_cg640"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://eu7jhhfwaovg" path="res://Assets/UI elements/SettingsButtonPressed.png" id="11_7yrjh"]
 [ext_resource type="Texture2D" uid="uid://ql4788jye4tw" path="res://icon.svg" id="12_3vsu3"]
 [ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="12_lo573"]
-[ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="13_300hv"]
+[ext_resource type="Shader" uid="uid://cr7j4r316ohby" path="res://Scripts/Outline.gdshader" id="13_300hv"]
 [ext_resource type="Texture2D" uid="uid://bm46u1chwj5jn" path="res://Assets/UI elements/blender_logo.svg" id="15_46nur"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="15_dnv3f"]
 [ext_resource type="Texture2D" uid="uid://crubp87ououl5" path="res://Assets/UI elements/git.svg" id="16_fy3s4"]
@@ -21,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="17_jl3cu"]
 [ext_resource type="ArrayMesh" uid="uid://bo8svob51p5qi" path="res://Assets/Clouds/Cloud2.obj" id="18_bfpb5"]
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="19_uc5da"]
-[ext_resource type="Script" path="res://Scripts/CampaignSelector.gd" id="20_ubi46"]
+[ext_resource type="Script" uid="uid://f4tisfy4gnn7" path="res://Scripts/CampaignSelector.gd" id="20_ubi46"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c63h5"]
 shader = ExtResource("2_4ts8d")

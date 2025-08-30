@@ -57,13 +57,15 @@ func _process(delta):
 	#update_turn()
 	
 func next_turn():
-	turn += 1
-	if turn >= num_players:
-		turn = 0
+	var nt = turn
+	nt += 1
+	if nt >= num_players:
+		nt = 0
 	while GlobalVariables.local_multiplayer_player_details[turn]["name"] in finished_names:
-		turn += 1
-		if turn >= num_players:
-			turn = 0
+		nt += 1
+		if nt >= num_players:
+			nt = 0
+	turn = nt
 	update_turn()
 		
 

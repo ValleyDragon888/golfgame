@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://br4f72y3ir37q"]
 
-[ext_resource type="Script" path="res://Scenes/LocalMultiplayerHomeScreen.gd" id="1_gkwb0"]
+[ext_resource type="Script" uid="uid://p37ceutsccij" path="res://Scenes/LocalMultiplayerHomeScreen.gd" id="1_gkwb0"]
 [ext_resource type="ArrayMesh" uid="uid://yymkgtvdypns" path="res://Assets/GolfGameTerrain.obj" id="2_6uq3r"]
 [ext_resource type="PackedScene" uid="uid://dq8emocbeted6" path="res://Scenes/Outline.tscn" id="3_wnwov"]
 [ext_resource type="ArrayMesh" uid="uid://cnjgqfv7jpr1b" path="res://Assets/Clouds/Cloud1.obj" id="4_ev3th"]
@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cli0pq8rk4jkj" path="res://Assets/Clouds/Cloud3.obj" id="6_2wqxe"]
 [ext_resource type="Texture2D" uid="uid://cksooqwfhfmi6" path="res://Assets/UI elements/HomeBackground.png" id="7_xbcn3"]
 [ext_resource type="ArrayMesh" uid="uid://xonnq38osiwr" path="res://Assets/Balls/PerfectSphere.obj" id="8_neita"]
-[ext_resource type="Shader" path="res://Scripts/Outline.gdshader" id="9_fiea0"]
+[ext_resource type="Shader" uid="uid://cr7j4r316ohby" path="res://Scripts/Outline.gdshader" id="9_fiea0"]
 [ext_resource type="Theme" uid="uid://b5nx78qe50cv0" path="res://Assets/Theme_1.tres" id="10_qrgpf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvupg"]

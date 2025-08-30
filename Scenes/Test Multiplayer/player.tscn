@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ck2g21lhqby62"]
 
-[ext_resource type="Script" path="res://Scripts/Test Multiplayer/Player.gd" id="1_6ipgi"]
+[ext_resource type="Script" uid="uid://dval0xhfq77ra" path="res://Scripts/Test Multiplayer/Player.gd" id="1_6ipgi"]
 [ext_resource type="Texture2D" uid="uid://ba1yi85lr1vbc" path="res://Assets/Test Multiplayer/Cursor.png" id="1_ari5b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tcgx"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3bhxep2ygpqp"]
 
-[ext_resource type="Script" path="res://Scripts/LocalMultiplayerTrackPlayer.gd" id="1_bxcrg"]
+[ext_resource type="Script" uid="uid://hlhpey1o11p1" path="res://Scripts/LocalMultiplayerTrackPlayer.gd" id="1_bxcrg"]
 
 [node name="MultiplayerTrackPlayer" type="Node3D"]
 script = ExtResource("1_bxcrg")
